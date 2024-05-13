@@ -5,7 +5,6 @@ import type { JSX } from "preact";
 import { invoke } from "../../runtime.ts";
 import { clx } from "../../sdk/clx.ts";
 
-
 export interface Banner {
   /** @description desktop otimized image */
   desktop?: ImageWidget;
@@ -73,10 +72,10 @@ function Newsletter(
     <div
       class={clx(
         "flex flex-col gap-4 bg-[#121926]",
-        tiled && "lg:flex-row lg:w-full lg:justify-between lg:flex-1 lg:items-center",
+        tiled &&
+          "lg:flex-row lg:w-full lg:justify-between lg:flex-1 lg:items-center",
       )}
     >
-
       <div class="flex flex-col gap-4 px-[120px]">
         {content?.title && (
           <h3 class="text-[28px] text-slate-100">{content.title}</h3>
@@ -105,7 +104,6 @@ function Newsletter(
             </button>
           </div>
         </form>
-
       </div>
 
       <Picture preload={lcp}>
