@@ -73,26 +73,26 @@ function Newsletter(
       class={clx(
         "flex flex-col gap-4 bg-[#121926]",
         tiled &&
-          "lg:flex-row lg:w-full lg:justify-between lg:flex-1 lg:items-center",
+        "lg:flex-row lg:w-full lg:justify-between lg:flex-1 lg:items-center",
       )}
     >
-      <div class="flex flex-col gap-4 px-[120px]">
+      <div class="flex flex-col w-full gap-4 py-5 px-5 lg:pl-[26px] lg:pr-[80px] xl:pl-[120px]">
         {content?.title && (
-          <h3 class="text-[28px] text-slate-100">{content.title}</h3>
+          <h3 class="text-[20px] lg:text-[28px] text-neutral-200 font-light">{content.title}</h3>
         )}
 
         {content?.description && (
-          <p class="text-[14px] text-slate-100">{content.description}</p>
+          <p class="text-[14px] text-neutral-200 font-light">{content.description}</p>
         )}
 
         <form
           class="form-control"
           onSubmit={handleSubmit}
         >
-          <div class="flex flex-wrap gap-3 relative">
+          <div class="flex flex-wrap gap-3 relative w-full">
             <input
               name="email"
-              class="flex-auto md:flex-none input input-bordered md:w-80 text-base-content"
+              class="flex-auto input input-bordered md:w-80 text-base-content pr-0"
               placeholder={content?.form?.placeholder || "Digite seu email"}
             />
             <button
@@ -100,7 +100,7 @@ function Newsletter(
               class="btn absolute right-0 disabled:loading"
               disabled={loading}
             >
-              {content?.form?.buttonText || "->"}
+              <img src="https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/9166/e39a0e1d-b911-4d6c-9fba-0fa6008c6936" alt="Flecha" loading={"lazy"} />
             </button>
           </div>
         </form>
