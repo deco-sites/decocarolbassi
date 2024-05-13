@@ -29,6 +29,10 @@ export interface Form {
   buttonText?: string;
   /** @format html */
   helpText?: string;
+  /** @format color */
+  backgroundColor?: string;
+  /** @format color */
+  colorText?: string;
 }
 
 export interface Props {
@@ -70,21 +74,25 @@ function Newsletter(
 
   return (
     <div
+      style={{ backgroundColor: content?.form?.backgroundColor !== "#000000" ? content?.form?.backgroundColor : "#121926" }}
       class={clx(
-        "flex flex-col gap-4 bg-[#121926]",
+        "flex flex-col gap-4",
         tiled &&
         "lg:flex-row lg:w-full lg:justify-between lg:flex-1 lg:items-center",
       )}
     >
       <div class="flex flex-col w-full gap-4 py-5 px-5 lg:pl-[26px] lg:pr-[80px] xl:pl-[120px]">
         {content?.title && (
-          <h3 class="text-[20px] lg:text-[28px] text-neutral-200 font-light">{content.title}</h3>
+          <h3 style={{ color: content?.form?.colorText !== "#000000" ? content?.form?.colorText : undefined }}
+            class="text-[20px] lg:text-[28px] text-neutral-200 font-light">{content.title}
+          </h3>
         )}
 
         {content?.description && (
-          <p class="text-[14px] text-neutral-200 font-light">{content.description}</p>
+          <p style={{ color: content?.form?.colorText !== "#000000" ? content?.form?.colorText : undefined }}
+            class="text-[14px] text-neutral-200 font-light">{content.description}
+          </p>
         )}
-
         <form
           class="form-control"
           onSubmit={handleSubmit}
@@ -107,13 +115,16 @@ function Newsletter(
       </div>
 
       <Picture preload={lcp}>
-        <Source
-          media="(max-width: 767px)"
-          fetchPriority={lcp ? "high" : "auto"}
-          src={images?.mobile ?? ""}
-          width={430}
-          height={590}
-        />
+        {images?.mobile ? (
+          <Source
+            media="(max-width: 767px)"
+            fetchPriority={lcp ? "high" : "auto"}
+            src={images?.mobile ?? ""}
+            width={430}
+            height={590}
+          />
+        ) : null}
+
         <Source
           media="(min-width: 768px)"
           fetchPriority={lcp ? "high" : "auto"}

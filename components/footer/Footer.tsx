@@ -24,12 +24,12 @@ export type Section = {
 
 export interface SocialItem {
   label:
-    | "Discord"
-    | "Facebook"
-    | "Instagram"
-    | "Linkedin"
-    | "Tiktok"
-    | "Twitter";
+  | "Discord"
+  | "Facebook"
+  | "Instagram"
+  | "Linkedin"
+  | "Tiktok"
+  | "Twitter";
   link: string;
 }
 
@@ -73,21 +73,25 @@ export interface NewsletterForm {
   buttonText?: string;
   /** @format html */
   helpText?: string;
+  /** @format color */
+  backgroundColor?: string;
+  /** @format color */
+  colorText?: string;
 }
 
 export interface Layout {
   backgroundColor?:
-    | "Primary"
-    | "Secondary"
-    | "Accent"
-    | "Base 100"
-    | "Base 100 inverted";
+  | "Primary"
+  | "Secondary"
+  | "Accent"
+  | "Base 100"
+  | "Base 100 inverted";
   variation?:
-    | "Variation 1"
-    | "Variation 2"
-    | "Variation 3"
-    | "Variation 4"
-    | "Variation 5";
+  | "Variation 1"
+  | "Variation 2"
+  | "Variation 3"
+  | "Variation 4"
+  | "Variation 5";
   hide?: {
     logo?: boolean;
     newsletter?: boolean;
@@ -145,7 +149,7 @@ function Footer({
   newsletter = {
     title: "Newsletter",
     description: "",
-    form: { placeholder: "", buttonText: "", helpText: "" },
+    form: { placeholder: "", buttonText: "", helpText: "", colorText: "", backgroundColor: "" },
     images: {},
     lcp: true,
   },
