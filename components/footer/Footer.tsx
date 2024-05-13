@@ -76,7 +76,7 @@ export interface NewsletterForm {
   /** @format color */
   backgroundColor?: string;
   /** @format color */
-  colorText?: string;
+  color?: string;
 }
 
 export interface Layout {
@@ -116,7 +116,6 @@ export interface Props {
     description?: string;
     form?: NewsletterForm;
     images?: NewsletterBanner;
-    lcp?: boolean;
   };
   sections?: Section[];
   social?: {
@@ -149,9 +148,8 @@ function Footer({
   newsletter = {
     title: "Newsletter",
     description: "",
-    form: { placeholder: "", buttonText: "", helpText: "", colorText: "", backgroundColor: "" },
+    form: { placeholder: "", buttonText: "", helpText: "", color: "", backgroundColor: "" },
     images: {},
-    lcp: true,
   },
   sections = [{
     "label": "Sobre",

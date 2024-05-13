@@ -32,7 +32,7 @@ export interface Form {
   /** @format color */
   backgroundColor?: string;
   /** @format color */
-  colorText?: string;
+  color?: string;
 }
 
 export interface Props {
@@ -42,7 +42,6 @@ export interface Props {
     description?: string;
     form?: Form;
     images?: Banner;
-    lcp?: boolean;
   };
   layout?: {
     tiled?: boolean;
@@ -52,7 +51,7 @@ export interface Props {
 function Newsletter(
   { content, layout = {} }: Props,
 ) {
-  const { images, lcp } = content;
+  const { images } = content;
 
   const { tiled = false } = layout;
   const loading = useSignal(false);
@@ -83,13 +82,13 @@ function Newsletter(
     >
       <div class="flex flex-col w-full gap-4 py-5 px-5 lg:pl-[26px] lg:pr-[80px] xl:pl-[120px]">
         {content?.title && (
-          <h3 style={{ color: content?.form?.colorText !== "#000000" ? content?.form?.colorText : undefined }}
+          <h3 style={{ color: content?.form?.color !== "#000000" ? content?.form?.color : undefined }}
             class="text-[20px] lg:text-[28px] text-neutral-200 font-light">{content.title}
           </h3>
         )}
 
         {content?.description && (
-          <p style={{ color: content?.form?.colorText !== "#000000" ? content?.form?.colorText : undefined }}
+          <p style={{ color: content?.form?.color !== "#000000" ? content?.form?.color : undefined }}
             class="text-[14px] text-neutral-200 font-light">{content.description}
           </p>
         )}
@@ -114,11 +113,11 @@ function Newsletter(
         </form>
       </div>
 
-      <Picture preload={lcp}>
+      <Picture>
         {images?.mobile ? (
           <Source
             media="(max-width: 767px)"
-            fetchPriority={lcp ? "high" : "auto"}
+            fetchPriority={"low"}
             src={images?.mobile ?? ""}
             width={430}
             height={590}
@@ -127,14 +126,14 @@ function Newsletter(
 
         <Source
           media="(min-width: 768px)"
-          fetchPriority={lcp ? "high" : "auto"}
+          fetchPriority={"low"}
           src={images?.desktop ?? ""}
           width={1440}
           height={600}
         />
         <img
           class="object-contain w-full h-full"
-          loading={lcp ? "eager" : "lazy"}
+          loading={"lazy"}
           src={images?.desktop}
           alt={images?.alt}
         />
