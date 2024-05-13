@@ -1,3 +1,5 @@
+import type { ImageWidget } from "apps/admin/widgets.ts";
+import PoweredByDeco from "apps/website/components/PoweredByDeco.tsx";
 import BackToTop from "../../components/footer/BackToTop.tsx";
 import Divider from "../../components/footer/Divider.tsx";
 import ExtraLinks from "../../components/footer/ExtraLinks.tsx";
@@ -9,8 +11,6 @@ import RegionSelector from "../../components/footer/RegionSelector.tsx";
 import Social from "../../components/footer/Social.tsx";
 import Newsletter from "../../islands/Newsletter.tsx";
 import { clx } from "../../sdk/clx.ts";
-import type { ImageWidget } from "apps/admin/widgets.ts";
-import PoweredByDeco from "apps/website/components/PoweredByDeco.tsx";
 
 export type Item = {
   label: string;
@@ -24,12 +24,12 @@ export type Section = {
 
 export interface SocialItem {
   label:
-    | "Discord"
-    | "Facebook"
-    | "Instagram"
-    | "Linkedin"
-    | "Tiktok"
-    | "Twitter";
+  | "Discord"
+  | "Facebook"
+  | "Instagram"
+  | "Linkedin"
+  | "Tiktok"
+  | "Twitter";
   link: string;
 }
 
@@ -49,6 +49,25 @@ export interface RegionOptions {
   language?: Item[];
 }
 
+export interface NewsletterBanner {
+  /** @description desktop otimized image */
+  desktop?: ImageWidget;
+  /** @description mobile otimized image */
+  mobile?: ImageWidget;
+  /** @description Image's alt text */
+  alt?: string;
+  action?: {
+    /** @description when user clicks on the image, go to this link */
+    href: string;
+    /** @description Image text title */
+    title: string;
+    /** @description Image text subtitle */
+    subTitle: string;
+    /** @description Button label */
+    label: string;
+  };
+}
+
 export interface NewsletterForm {
   placeholder?: string;
   buttonText?: string;
@@ -58,17 +77,17 @@ export interface NewsletterForm {
 
 export interface Layout {
   backgroundColor?:
-    | "Primary"
-    | "Secondary"
-    | "Accent"
-    | "Base 100"
-    | "Base 100 inverted";
+  | "Primary"
+  | "Secondary"
+  | "Accent"
+  | "Base 100"
+  | "Base 100 inverted";
   variation?:
-    | "Variation 1"
-    | "Variation 2"
-    | "Variation 3"
-    | "Variation 4"
-    | "Variation 5";
+  | "Variation 1"
+  | "Variation 2"
+  | "Variation 3"
+  | "Variation 4"
+  | "Variation 5";
   hide?: {
     logo?: boolean;
     newsletter?: boolean;
@@ -92,6 +111,8 @@ export interface Props {
     /** @format textarea */
     description?: string;
     form?: NewsletterForm;
+    images?: NewsletterBanner;
+    lcp?: boolean;
   };
   sections?: Section[];
   social?: {
@@ -125,6 +146,8 @@ function Footer({
     title: "Newsletter",
     description: "",
     form: { placeholder: "", buttonText: "", helpText: "" },
+    images: {},
+    lcp: true
   },
   sections = [{
     "label": "Sobre",
