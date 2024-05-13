@@ -73,23 +73,41 @@ function Newsletter(
 
   return (
     <div
-      style={{ backgroundColor: content?.form?.backgroundColor !== "#000000" ? content?.form?.backgroundColor : "#121926" }}
+      style={{
+        backgroundColor: content?.form?.backgroundColor !== "#000000"
+          ? content?.form?.backgroundColor
+          : "#121926",
+      }}
       class={clx(
         "flex flex-col gap-4",
         tiled &&
-        "lg:flex-row lg:w-full lg:justify-between lg:flex-1 lg:items-center",
+          "lg:flex-row lg:w-full lg:justify-between lg:flex-1 lg:items-center",
       )}
     >
       <div class="flex flex-col w-full gap-4 py-5 px-5 lg:pl-[26px] lg:pr-[80px] xl:pl-[120px]">
         {content?.title && (
-          <h3 style={{ color: content?.form?.color !== "#000000" ? content?.form?.color : undefined }}
-            class="text-[20px] lg:text-[28px] text-neutral-200 font-light">{content.title}
+          <h3
+            style={{
+              color: content?.form?.color !== "#000000"
+                ? content?.form?.color
+                : undefined,
+            }}
+            class="text-[20px] lg:text-[28px] text-neutral-200 font-light"
+          >
+            {content.title}
           </h3>
         )}
 
         {content?.description && (
-          <p style={{ color: content?.form?.color !== "#000000" ? content?.form?.color : undefined }}
-            class="text-[14px] text-neutral-200 font-light">{content.description}
+          <p
+            style={{
+              color: content?.form?.color !== "#000000"
+                ? content?.form?.color
+                : undefined,
+            }}
+            class="text-[14px] text-neutral-200 font-light"
+          >
+            {content.description}
           </p>
         )}
         <form
@@ -107,22 +125,28 @@ function Newsletter(
               class="btn absolute right-0 disabled:loading"
               disabled={loading}
             >
-              <img src="https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/9166/e39a0e1d-b911-4d6c-9fba-0fa6008c6936" alt="Flecha" loading={"lazy"} />
+              <img
+                src="https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/9166/e39a0e1d-b911-4d6c-9fba-0fa6008c6936"
+                alt="Flecha"
+                loading={"lazy"}
+              />
             </button>
           </div>
         </form>
       </div>
 
       <Picture>
-        {images?.mobile ? (
-          <Source
-            media="(max-width: 767px)"
-            fetchPriority={"low"}
-            src={images?.mobile ?? ""}
-            width={430}
-            height={590}
-          />
-        ) : null}
+        {images?.mobile
+          ? (
+            <Source
+              media="(max-width: 767px)"
+              fetchPriority={"low"}
+              src={images?.mobile ?? ""}
+              width={430}
+              height={590}
+            />
+          )
+          : null}
 
         <Source
           media="(min-width: 768px)"
