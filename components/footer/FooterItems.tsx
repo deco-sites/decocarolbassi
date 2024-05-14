@@ -17,9 +17,8 @@ export default function FooterItems(
         <>
           {/* Tablet and Desktop view */}
           <ul
-            class={`hidden md:flex flex-row gap-6 lg:gap-10 lg:px-[3rem] ${
-              justify && "lg:justify-between"
-            }`}
+            class={`hidden md:flex flex-row gap-6 lg:gap-10 lg:px-[3rem] ${justify && "lg:justify-between"
+              }`}
           >
             {sections.map((section) => (
               <li>
@@ -48,8 +47,7 @@ export default function FooterItems(
           <ul class="flex flex-col md:hidden gap-8 text-center">
             {sections.map((section) => (
               <li class="mb-1">
-                <div class=" ">
-                  {/* <input id={section.label} type="checkbox" class="min-h-[0]" /> */}
+                <div>
                   <label
                     htmlFor={section.label}
                     class="text-[18px] lg:text-[21px] collapse-title min-h-[0] !p-0 flex gap-2 justify-center text-paragraph-color font-semibold"

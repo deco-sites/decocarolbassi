@@ -24,12 +24,12 @@ export type Section = {
 
 export interface SocialItem {
   label:
-    | "Discord"
-    | "Facebook"
-    | "Instagram"
-    | "Linkedin"
-    | "Tiktok"
-    | "Twitter";
+  | "Discord"
+  | "Facebook"
+  | "Instagram"
+  | "Linkedin"
+  | "Tiktok"
+  | "Twitter";
   link: string;
 }
 
@@ -81,17 +81,17 @@ export interface NewsletterForm {
 
 export interface Layout {
   backgroundColor?:
-    | "Primary"
-    | "Secondary"
-    | "Accent"
-    | "Base 100"
-    | "Base 100 inverted";
+  | "Primary"
+  | "Secondary"
+  | "Accent"
+  | "Base 100"
+  | "Base 100 inverted";
   variation?:
-    | "Variation 1"
-    | "Variation 2"
-    | "Variation 3"
-    | "Variation 4"
-    | "Variation 5";
+  | "Variation 1"
+  | "Variation 2"
+  | "Variation 3"
+  | "Variation 4"
+  | "Variation 5";
   hide?: {
     logo?: boolean;
     newsletter?: boolean;
@@ -354,20 +354,6 @@ function Footer({
               <div class="flex flex-col md:flex-row lg:flex-col gap-10 lg:gap-10 lg:w-full lg:pl-10">
                 {_sectionLinks}
               </div>
-              {
-                /* <div class="flex flex-col md:flex-row lg:flex-col gap-10 lg:gap-10 lg:w-2/5 lg:pl-10">
-                <div class="flex flex-col md:flex-row gap-10 lg:gap-20">
-                  <div class="lg:flex-auto">
-                    {_payments}
-                  </div>
-
-                </div>
-                <div class="flex flex-col gap-10 lg:gap-10">
-                  {_region}
-                  {_apps}
-                </div>
-              </div> */
-              }
             </div>
             <div class="lg:flex-auto">
               {_social}
