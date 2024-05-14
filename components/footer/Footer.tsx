@@ -24,12 +24,12 @@ export type Section = {
 
 export interface SocialItem {
   label:
-    | "Discord"
-    | "Facebook"
-    | "Instagram"
-    | "Linkedin"
-    | "Tiktok"
-    | "Twitter";
+  | "Discord"
+  | "Facebook"
+  | "Instagram"
+  | "Linkedin"
+  | "Tiktok"
+  | "Twitter";
   link: string;
 }
 
@@ -81,17 +81,17 @@ export interface NewsletterForm {
 
 export interface Layout {
   backgroundColor?:
-    | "Primary"
-    | "Secondary"
-    | "Accent"
-    | "Base 100"
-    | "Base 100 inverted";
+  | "Primary"
+  | "Secondary"
+  | "Accent"
+  | "Base 100"
+  | "Base 100 inverted";
   variation?:
-    | "Variation 1"
-    | "Variation 2"
-    | "Variation 3"
-    | "Variation 4"
-    | "Variation 5";
+  | "Variation 1"
+  | "Variation 2"
+  | "Variation 3"
+  | "Variation 4"
+  | "Variation 5";
   hide?: {
     logo?: boolean;
     newsletter?: boolean;
@@ -122,6 +122,10 @@ export interface Props {
     title?: string;
     items: SocialItem[];
   };
+  seoTexts?: {
+    title: string;
+    description: string;
+  }
   payments?: {
     title?: string;
     items: PaymentItem[];
@@ -194,6 +198,10 @@ function Footer({
     title: "Redes sociais",
     items: [{ label: "Instagram", link: "/" }, { label: "Tiktok", link: "/" }],
   },
+  seoTexts = {
+    title: "Carol Bassi",
+    description: "A Carol Bassi foi fundada em 2014 por Anna Carolina Bassi, empresária que cresceu ao redor da moda. A estilista então, criou sua própria label, que une seu DNA, seu espírito, sua alegria de viver e seu estilo pessoal."
+  },
   payments = {
     title: "Formas de pagamento",
     items: [{ label: "Mastercard" }, { label: "Visa" }, { label: "Pix" }],
@@ -232,7 +240,7 @@ function Footer({
     <FooterItems
       sections={sections}
       justify={layout?.variation == "Variation 2" ||
-        layout?.variation == "Variation 3"}
+        layout?.variation == "Variation 3" || layout?.variation === "Variation 4"}
     />
   );
   const _social = layout?.hide?.socialLinks
@@ -334,22 +342,29 @@ function Footer({
           <div class="flex flex-col gap-10">
             {_newsletter}
             {layout?.hide?.newsletter ? <></> : <Divider />}
-            <div class="flex flex-col lg:flex-row gap-10 lg:gap-20 lg:justify-between">
-              {_sectionLinks}
-              <div class="flex flex-col md:flex-row lg:flex-col gap-10 lg:gap-10 lg:w-2/5 lg:pl-10">
+            <div class="flex flex-col lg:flex-row gap-10 lg:gap-20">
+              <div class="w-3/5">
+                <h3>{seoTexts.title}</h3>
+                <p>{seoTexts.description}</p>
+              </div>
+              <div class="flex flex-col md:flex-row lg:flex-col gap-10 lg:gap-10 lg:w-full lg:pl-10">
+                {_sectionLinks}
+              </div>
+              {/* <div class="flex flex-col md:flex-row lg:flex-col gap-10 lg:gap-10 lg:w-2/5 lg:pl-10">
                 <div class="flex flex-col md:flex-row gap-10 lg:gap-20">
                   <div class="lg:flex-auto">
                     {_payments}
                   </div>
-                  <div class="lg:flex-auto">
-                    {_social}
-                  </div>
+
                 </div>
                 <div class="flex flex-col gap-10 lg:gap-10">
                   {_region}
                   {_apps}
                 </div>
-              </div>
+              </div> */}
+            </div>
+            <div class="lg:flex-auto">
+              {_social}
             </div>
             <Divider />
             <div class="flex flex-col md:flex-row md:justify-between gap-10 md:items-center">
