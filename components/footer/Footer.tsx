@@ -346,8 +346,8 @@ function Footer({
             {layout?.hide?.newsletter ? <></> : <Divider />}
             <div class="flex flex-col lg:flex-row gap-10 lg:gap-20">
               <div class="lg:w-3/5">
-                <h3 class="text-xl uppercase text-black">{seoTexts.title}</h3>
-                <p class="font-light text-paragraph-color">
+                <h3 class="text-center sm:text-left text-xl uppercase text-black">{seoTexts.title}</h3>
+                <p class="text-center sm:text-left font-light text-paragraph-color">
                   {seoTexts.description}
                 </p>
               </div>
