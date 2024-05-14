@@ -1,4 +1,3 @@
-
 export type Item = {
   label: string;
   href: string;
@@ -18,8 +17,9 @@ export default function FooterItems(
         <>
           {/* Tablet and Desktop view */}
           <ul
-            class={`hidden md:flex flex-row gap-6 lg:gap-10 lg:px-[3rem] ${justify && "lg:justify-between"
-              }`}
+            class={`hidden md:flex flex-row gap-6 lg:gap-10 lg:px-[3rem] ${
+              justify && "lg:justify-between"
+            }`}
           >
             {sections.map((section) => (
               <li>
