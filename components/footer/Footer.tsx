@@ -264,7 +264,7 @@ function Footer({
   return (
     <footer
       class={clx(
-        "w-full flex flex-col pt-10 pb-2 md:pb-10 gap-10",
+        "w-full flex flex-col pt-10 gap-10 relative",
         LAYOUT[layout?.backgroundColor ?? "Primary"],
       )}
     >
@@ -345,9 +345,11 @@ function Footer({
             {_newsletter}
             {layout?.hide?.newsletter ? <></> : <Divider />}
             <div class="flex flex-col lg:flex-row gap-10 lg:gap-20">
-              <div class="w-3/5">
-                <h3>{seoTexts.title}</h3>
-                <p>{seoTexts.description}</p>
+              <div class="lg:w-3/5">
+                <h3 class="text-xl uppercase text-black">{seoTexts.title}</h3>
+                <p class="font-light text-paragraph-color">
+                  {seoTexts.description}
+                </p>
               </div>
               <div class="flex flex-col md:flex-row lg:flex-col gap-10 lg:gap-10 lg:w-full lg:pl-10">
                 {_sectionLinks}
@@ -369,11 +371,6 @@ function Footer({
             </div>
             <div class="lg:flex-auto">
               {_social}
-            </div>
-            <Divider />
-            <div class="flex flex-col md:flex-row md:justify-between gap-10 md:items-center">
-              {_logo}
-              <PoweredByDeco />
             </div>
           </div>
         )}
@@ -400,6 +397,14 @@ function Footer({
             </div>
           </div>
         )}
+      </div>
+      <div class="flex flex-1 items-center justify-center bg-secondary-neutral-300">
+        <p class="text-[12px] py-4 px-4">
+          {new Date().getFullYear()}{" "}
+          Carol Bassi. Todos os direitos reservado. Guaraná Brasil Difusão de
+          moda LTDA | Rua Major Paladino, 128. Vila Ribeiro de Barros - Galpão
+          Modulo 10. CEP: 05307-000 - São Paulo/SP | CNPJ: 54.877.063/0001-50
+        </p>
       </div>
       {layout?.hide?.backToTheTop
         ? <></>

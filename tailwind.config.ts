@@ -36,7 +36,7 @@ export default {
       "secondary-neutral-600": "#CDD5DF",
       "secondary-neutral-700": "#9AA4B2",
       "secondary-neutral-800": "#9AA4B2",
-      "secondary-neutral-900": "#4B5565",
+      "paragraph-color": "#4B5565",
 
       "success-light": "#D5FDD7",
       "success-medium": "#25A760",
