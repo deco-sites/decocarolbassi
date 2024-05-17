@@ -1,13 +1,13 @@
+import type { ComponentChildren } from "preact";
+import { lazy, Suspense } from "preact/compat";
 import type { Props as MenuProps } from "../../components/header/Menu.tsx";
 import Cart from "../../components/minicart/Cart.tsx";
 import type { Props as SearchbarProps } from "../../components/search/Searchbar.tsx";
 import Button from "../../components/ui/Button.tsx";
 import Drawer from "../../components/ui/Drawer.tsx";
 import Icon from "../../components/ui/Icon.tsx";
-import { useUI } from "../../sdk/useUI.ts";
 import { usePlatform } from "../../sdk/usePlatform.tsx";
-import type { ComponentChildren } from "preact";
-import { lazy, Suspense } from "preact/compat";
+import { useUI } from "../../sdk/useUI.ts";
 
 const Menu = lazy(() => import("../../components/header/Menu.tsx"));
 const Searchbar = lazy(() => import("../../components/search/Searchbar.tsx"));
@@ -29,7 +29,7 @@ const Aside = (
     children: ComponentChildren;
   },
 ) => (
-  <div class="bg-base-100 grid grid-rows-[auto_1fr] h-full divide-y max-w-[100vw]">
+  <div class="bg-base-100 grid grid-rows-[auto_1fr] h-full divide-y max-w-[100vw] overflow-scroll">
     <div class="flex justify-between items-center">
       <h1 class="px-4 py-3">
         <span class="font-medium text-2xl">{title}</span>
@@ -58,6 +58,7 @@ function Drawers({ menu, searchbar, children, platform }: Props) {
   return (
     <>
       <Drawer // left drawer
+        class="drawer-end"
         open={displayMenu.value || displaySearchDrawer.value}
         onClose={() => {
           displayMenu.value = false;

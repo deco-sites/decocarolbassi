@@ -1,6 +1,6 @@
 import { useSignal } from "@preact/signals";
-import Icon from "../../../components/ui/Icon.tsx";
 import Button from "../../../components/ui/Button.tsx";
+import Icon from "../../../components/ui/Icon.tsx";
 import { sendEvent } from "../../../sdk/analytics.tsx";
 
 export interface Props {
@@ -78,7 +78,7 @@ function ButtonCommon({
       <Icon
         id="Heart"
         size={24}
-        strokeWidth={2}
+        strokeWidth={.4}
         fill={inWishlist ? "black" : "none"}
       />
       {variant === "icon" ? null : inWishlist ? "Remover" : "Favoritar"}

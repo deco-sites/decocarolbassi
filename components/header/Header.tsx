@@ -38,6 +38,12 @@ export interface Props {
    */
   navItems?: SiteNavigationElement[] | null;
 
+  /**
+   * @title Items Per Column
+   * @description Maxium items per column
+   */
+  itemsPerColumn?: number;
+
   /** @title Logo */
   logo?: Logo;
 
@@ -81,6 +87,7 @@ function Header({
   logoPosition = "center",
   buttons,
   device,
+  itemsPerColumn
 }: SectionProps<typeof loader>) {
   const platform = usePlatform();
   const items = navItems ?? [];
@@ -102,6 +109,7 @@ function Header({
               logo={logo}
               logoPosition={logoPosition}
               buttons={buttons}
+              itemsPerColumn={itemsPerColumn}
             />
           </div>
         </Drawers>

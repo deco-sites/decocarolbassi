@@ -9,6 +9,10 @@
  * no JavaScript is shipped to the browser!
  */
 
+import { Suggestion } from "apps/commerce/types.ts";
+import { Resolved } from "deco/engine/core/resolver.ts";
+import { useEffect, useRef } from "preact/compat";
+import type { Platform } from "../../apps/site.ts";
 import ProductCard from "../../components/product/ProductCard.tsx";
 import Button from "../../components/ui/Button.tsx";
 import Icon from "../../components/ui/Icon.tsx";
@@ -17,10 +21,6 @@ import { sendEvent } from "../../sdk/analytics.tsx";
 import { useId } from "../../sdk/useId.ts";
 import { useSuggestions } from "../../sdk/useSuggestions.ts";
 import { useUI } from "../../sdk/useUI.ts";
-import { Suggestion } from "apps/commerce/types.ts";
-import { Resolved } from "deco/engine/core/resolver.ts";
-import { useEffect, useRef } from "preact/compat";
-import type { Platform } from "../../apps/site.ts";
 
 // Editable props
 export interface Props {
@@ -53,7 +53,7 @@ export interface Props {
 }
 
 function Searchbar({
-  placeholder = "What are you looking for?",
+  placeholder = "O que você procura?",
   action = "/s",
   name = "q",
   loader,
@@ -75,7 +75,7 @@ function Searchbar({
 
   return (
     <div
-      class="w-full grid gap-8 px-4 py-6 overflow-y-hidden"
+      class="w-full grid gap-8 px-4 py-6 overflow-y-hidden mt-[3rem]"
       style={{ gridTemplateRows: "min-content auto" }}
     >
       <form id={id} action={action} class="join">
@@ -93,7 +93,7 @@ function Searchbar({
         <input
           ref={searchInputRef}
           id="search-input"
-          class="input input-bordered join-item flex-grow"
+          class="input input-bordered join-item flex-grow focus:outline-none"
           name={name}
           onInput={(e) => {
             const value = e.currentTarget.value;

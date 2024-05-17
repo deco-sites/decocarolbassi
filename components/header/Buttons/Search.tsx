@@ -8,12 +8,14 @@ export default function SearchButton() {
   return (
     <>
       <Button
-        class="btn-circle btn-sm btn-ghost hidden sm:flex"
+        // class="btn-circle btn-sm btn-ghost hidden sm:flex"
+        class="bg-transparent hidden sm:flex shadow-none border-0 hover:bg-transparent px-4"
         aria-label="search icon button"
         onClick={() => {
           displaySearchPopup.value = !displaySearchPopup.value;
         }}
       >
+        <span class="font-light text-paragraph-color mr-8">Procurando por algo?</span>
         <Icon id="MagnifyingGlass" size={20} strokeWidth={0.1} />
       </Button>
       <Button

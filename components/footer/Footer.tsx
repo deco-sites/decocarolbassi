@@ -24,12 +24,12 @@ export type Section = {
 
 export interface SocialItem {
   label:
-    | "Discord"
-    | "Facebook"
-    | "Instagram"
-    | "Linkedin"
-    | "Tiktok"
-    | "Twitter";
+  | "Discord"
+  | "Facebook"
+  | "Instagram"
+  | "Linkedin"
+  | "Tiktok"
+  | "Twitter";
   link: string;
 }
 
@@ -81,17 +81,17 @@ export interface NewsletterForm {
 
 export interface Layout {
   backgroundColor?:
-    | "Primary"
-    | "Secondary"
-    | "Accent"
-    | "Base 100"
-    | "Base 100 inverted";
+  | "Primary"
+  | "Secondary"
+  | "Accent"
+  | "Base 100"
+  | "Base 100 inverted";
   variation?:
-    | "Variation 1"
-    | "Variation 2"
-    | "Variation 3"
-    | "Variation 4"
-    | "Variation 5";
+  | "Variation 1"
+  | "Variation 2"
+  | "Variation 3"
+  | "Variation 4"
+  | "Variation 5";
   hide?: {
     logo?: boolean;
     newsletter?: boolean;
@@ -343,7 +343,6 @@ function Footer({
         {layout?.variation == "Variation 4" && (
           <div class="flex flex-col gap-10">
             {_newsletter}
-            {layout?.hide?.newsletter ? <></> : <Divider />}
             <div class="flex flex-col lg:flex-row gap-10 lg:gap-20">
               <div class="lg:w-3/5">
                 <h3 class="text-center sm:text-left text-xl uppercase text-black">

@@ -15,9 +15,8 @@ export interface Props {
   device: string;
 }
 
-function Alert({ alerts = [], interval = 5, device }: Props) {
+function Alert({ alerts = [], interval = 5 }: Props) {
   const id = useId();
-  console.log({ meuamigo: device })
   return (
     <div id={id}>
       <Slider class="carousel carousel-center w-screen bg-secondary gap-6">
