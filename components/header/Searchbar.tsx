@@ -17,7 +17,6 @@ function SearchbarModal({ searchbar }: Props) {
   return displaySearchPopup.value ? (
     <div
       class="absolute top-0 bg-base-100 z-50 w-screen right-0"
-      style={{ marginTop: "0px" }}
     >
       <Searchbar {...searchbar} />
     </div>
