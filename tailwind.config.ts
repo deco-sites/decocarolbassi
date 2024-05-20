@@ -8,13 +8,18 @@ export default {
     container: { center: true },
     extend: {
       animation: {
-        sliding: "sliding 30s linear infinite",
+        sliding: "sliding 30s linear ",
+        'sliding-down': 'sliding-down 0.2s ease-in-out',
       },
       keyframes: {
         sliding: {
           "0%": { transform: "translateX(0)" },
           "100%": { transform: "translateX(-50%)" },
         },
+        'sliding-down': {
+          "0%": { transform: "translateY(-50%)" },
+          "100%": { transform: "translateY(0%)" },
+        }
       },
     },
     colors: {
@@ -37,6 +42,7 @@ export default {
       "secondary-neutral-700": "#9AA4B2",
       "secondary-neutral-800": "#9AA4B2",
       "paragraph-color": "#4B5565",
+      "dark-blue": "#121926",
 
       "success-light": "#D5FDD7",
       "success-medium": "#25A760",

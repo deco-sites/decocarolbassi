@@ -153,7 +153,7 @@ function Navbar(
 export default Navbar;
 
 
-export const UserIcon = () => (
+const UserIcon = () => (
   <svg
     width={24}
     height={24}
