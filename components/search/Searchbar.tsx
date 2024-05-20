@@ -9,7 +9,9 @@
  * no JavaScript is shipped to the browser!
  */
 
-import { Suggestion } from "apps/commerce/types.ts";
+import { IS_BROWSER } from "$fresh/runtime.ts";
+import { useSignal } from "@preact/signals";
+import { Product, Suggestion } from "apps/commerce/types.ts";
 import { Resolved } from "deco/engine/core/resolver.ts";
 import { useEffect, useRef } from "preact/compat";
 import type { Platform } from "../../apps/site.ts";
@@ -63,9 +65,15 @@ function Searchbar({
   const { displaySearchPopup } = useUI();
   const searchInputRef = useRef<HTMLInputElement>(null);
   const { setQuery, payload, loading } = useSuggestions(loader);
-  const { products = [], searches = [] } = payload.value ?? {};
+  const { products = [] } = payload.value ?? {};
   const hasProducts = Boolean(products.length);
-  const hasTerms = Boolean(searches.length);
+  const userSearches = useSignal<string[]>([]);
+
+  if (IS_BROWSER) {
+    const getUserSearches = localStorage.getItem('userSearches') ?? "";
+    const parsedSearches = getUserSearches ? JSON.parse(getUserSearches) as string[] : null;
+    if (parsedSearches) userSearches.value = parsedSearches;
+  }
 
   useEffect(() => {
     if (displaySearchPopup.value === true) {
@@ -73,27 +81,27 @@ function Searchbar({
     }
   }, [displaySearchPopup.value]);
 
+  const handleSearch = (product: Product) => {
+    const productName = product?.isVariantOf?.name;
+    const getUserSearches = localStorage.getItem('userSearches');
+    const searches = getUserSearches ? JSON.parse(getUserSearches) : [];
+
+    if (!searches.includes(productName)) {
+      searches.push(productName);
+      return localStorage.setItem('userSearches', JSON.stringify(searches));
+    }
+  }
+
   return (
     <div
-      class="w-full grid gap-8 px-4 py-6 overflow-y-hidden mt-[3rem]"
+      class="w-full grid gap-8 pb-6 overflow-y-hidden mt-[3rem] lg:mt-0 animate-sliding-down"
       style={{ gridTemplateRows: "min-content auto" }}
     >
-      <form id={id} action={action} class="join">
-        <Button
-          type="submit"
-          class="join-item btn-square"
-          aria-label="Search"
-          for={id}
-          tabIndex={-1}
-        >
-          {loading.value
-            ? <span class="loading loading-spinner loading-xs" />
-            : <Icon id="MagnifyingGlass" size={24} strokeWidth={0.01} />}
-        </Button>
+      <form id={id} action={action} class="join py-6 px-[3.5rem] bg-secondary-neutral-200" >
         <input
           ref={searchInputRef}
           id="search-input"
-          class="input input-bordered join-item flex-grow focus:outline-none"
+          class="input border-0 border-b border-dark-blue join-item flex-grow focus:outline-none focus:border-primary-900 bg-secondary-neutral-200 placeholder:text-paragraph-color placeholder:font-light"
           name={name}
           onInput={(e) => {
             const value = e.currentTarget.value;
@@ -115,31 +123,46 @@ function Searchbar({
           autocomplete="off"
         />
         <Button
+          type="submit"
+          class="join-item btn-square shadow-none border-0 border-b border-dark-blue bg-secondary-neutral-200"
+          aria-label="Search"
+          for={id}
+          tabIndex={-1}
+          onClick={() => handleSearch(products[0])}
+        >
+          {loading.value
+            ? <span class="loading loading-spinner loading-xs" />
+            : <Icon id="MagnifyingGlass" size={24} strokeWidth={2} />}
+        </Button>
+        <Button
           type="button"
           class="join-item btn-ghost btn-square hidden sm:inline-flex"
-          onClick={() => displaySearchPopup.value = false}
+          onClick={() => {
+            setQuery('');
+            displaySearchPopup.value = false;
+          }}
           ariaLabel={displaySearchPopup.value ? "open search" : "search closed"}
         >
-          <Icon id="XMark" size={24} strokeWidth={2} />
+          <Icon id="XMark" size={24} strokeWidth={2} class="mt-[-5px]" />
         </Button>
       </form>
 
       <div
-        class={`overflow-y-scroll ${!hasProducts && !hasTerms ? "hidden" : ""}`}
+        class={`overflow-y-scroll px-[5rem]`}
       >
-        <div class="gap-4 grid grid-cols-1 sm:grid-rows-1 sm:grid-cols-[150px_1fr]">
-          <div class="flex flex-col gap-6">
+        <div class="gap-4 grid grid-cols-1 sm:grid-rows-1">
+          <div class={`${hasProducts ? "hidden" : ''} flex flex flex-col gap-6`}>
             <span
-              class="font-medium text-xl"
+              class="font-light text-xl text-paragraph-color"
               role="heading"
               aria-level={3}
             >
-              Sugestões
+              Suas buscas recentes
             </span>
             <ul id="search-suggestion" class="flex flex-col gap-6">
-              {searches.map(({ term }) => (
+              {userSearches.value.slice(-4).map((search) => (
                 <li>
-                  <a href={`/s?q=${term}`} class="flex gap-4 items-center">
+                  <a href={`/s?q=${search}`} class="flex gap-4 items-center">
                     <span>
                       <Icon
                         id="MagnifyingGlass"
@@ -147,25 +170,26 @@ function Searchbar({
                         strokeWidth={0.01}
                       />
                     </span>
-                    <span dangerouslySetInnerHTML={{ __html: term }} />
+                    <span dangerouslySetInnerHTML={{ __html: search }} />
                   </a>
                 </li>
               ))}
             </ul>
           </div>
-          <div class="flex flex-col pt-6 md:pt-0 gap-6 overflow-x-hidden">
+          <div class={`${!hasProducts ? 'hidden' : ''} flex flex-col pt-6 md:pt-0 gap-6 overflow-x-hidden`}>
             <span
-              class="font-medium text-xl"
+              class="font-light text-xl text-paragraph-color"
               role="heading"
               aria-level={3}
             >
-              Produtos sugeridos
+              Sugestões para você
             </span>
             <Slider class="carousel">
-              {products.map((product, index) => (
+              {products.map((product, index: number) => (
                 <Slider.Item
                   index={index}
                   class="carousel-item first:ml-4 last:mr-4 min-w-[200px] max-w-[200px]"
+                  onClick={() => handleSearch(product)}
                 >
                   <ProductCard
                     product={product}
@@ -179,7 +203,7 @@ function Searchbar({
           </div>
         </div>
       </div>
-    </div>
+    </div >
   );
 }
 
