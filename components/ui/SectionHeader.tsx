@@ -21,17 +21,17 @@ function Header(props: Props) {
         ? (
           <div
             class={`flex flex-col gap-2 ${
-              props.alignment === "left" ? "text-left" : "text-center"
+              props.alignment === "left" ? "text-left ml-8" : "text-center"
             }`}
           >
             {props.title &&
               (
                 <h1
                   class={clx(
-                    "text-2xl font-light leading-8 lg:leading-10",
+                    "text-[24px] lg:text-[32px] font-normal leading-8 lg:leading-10 uppercase",
                     props.colorReverse
                       ? "text-primary-content"
-                      : "text-base-content",
+                      : "text-dark-blue",
                     fontSizeClasses[props.fontSize || "Normal"],
                   )}
                 >

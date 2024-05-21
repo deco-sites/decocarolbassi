@@ -1,11 +1,13 @@
 import Header from "../../components/ui/SectionHeader.tsx";
 import { useId } from "../../sdk/useId.ts";
 import Image from "apps/website/components/Image.tsx";
-import type { ImageWidget } from "apps/admin/widgets.ts";
+import Video from "apps/website/components/Video.tsx";
+import type { ImageWidget, VideoWidget } from "apps/admin/widgets.ts";
 import Button from "../../components/ui/Button.tsx";
 
 export interface CategoryGridProps {
   href?: string;
+  video?: VideoWidget;
   image?: ImageWidget;
   /** @description Alternative text */
   label?: string;
@@ -39,6 +41,7 @@ const DEFAULT_LIST = [
     image:
       "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/2753/b2278d2d-2270-482b-98d4-f09d5f05ba97",
     label: "category",
+    video: "",
     buttonText: "Explore collection",
   },
   {
@@ -46,6 +49,7 @@ const DEFAULT_LIST = [
     image:
       "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/2753/b2278d2d-2270-482b-98d4-f09d5f05ba97",
     label: "category",
+    video: "",
     buttonText: "Explore collection",
   },
   {
@@ -53,6 +57,7 @@ const DEFAULT_LIST = [
     image:
       "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/2753/b2278d2d-2270-482b-98d4-f09d5f05ba97",
     label: "category",
+    video: "",
     buttonText: "Explore collection",
   },
   {
@@ -60,6 +65,7 @@ const DEFAULT_LIST = [
     image:
       "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/2753/b2278d2d-2270-482b-98d4-f09d5f05ba97",
     label: "category",
+    video: "",
     buttonText: "Explore collection",
   },
 ];
@@ -92,14 +98,14 @@ function CategoryGrid(props: Props) {
         alignment={layout.headerAlignment || "center"}
       />
 
-      <div class="grid md:grid-cols-2 grid-cols-1 mt-6">
-        {list.map((
-          { href, image, label, buttonText },
+      <div class="grid md:grid-cols-2 grid-cols-1 mt-6 gap-4">
+        {list?.map((
+          { href, image, label, buttonText, video },
         ) => (
-          <div>
+           <div>
             <a
               href={href}
-              class={`relative flex ${
+              class={`relative h-[100%] flex ${
                 layout.categoryCard?.textAlignment === "left"
                   ? "justify-start"
                   : "justify-start items-center"
@@ -109,9 +115,10 @@ function CategoryGrid(props: Props) {
                   : "flex-col"
               }`}
             >
-              {image &&
-                (
-                  <figure>
+              {video ? (
+                <Video src={video} width={720} height={480} muted autoPlay loop class="h-full object-cover w-full"/>
+              ): image ? (
+                   <figure>
                     <Image
                       class="w-full"
                       src={image}
@@ -121,16 +128,20 @@ function CategoryGrid(props: Props) {
                       loading="lazy"
                     />
                   </figure>
-                )}
-              <Button
-                class="font-light text-base-content bg-base-100 py-4 px-6 absolute m-6"
-                aria-label={label}
-              >
-                {buttonText}
-              </Button>
+              ): null}
+
+                <div class="absolute flex flex-col items-center gap-4 uppercase m-6">
+                  <h3 class="text-secondary-neutral-100 text-[32px]">{label}</h3>
+                  <Button
+                    class="font-normal bg-transparent text-sm text-secondary-neutral-100 uppercase py-4 px-6"
+                    aria-label={label}
+                    >
+                    {buttonText}
+                  </Button>
+                </div>
             </a>
           </div>
-        ))}
+))}
       </div>
     </div>
   );

@@ -1,4 +1,4 @@
-import type { ImageWidget } from "apps/admin/widgets.ts";
+import type { ImageWidget, VideoWidget } from "apps/admin/widgets.ts";
 import { Picture, Source } from "apps/website/components/Picture.tsx";
 import {
   SendEventOnClick,
@@ -8,17 +8,19 @@ import Button from "../../components/ui/Button.tsx";
 import Icon from "../../components/ui/Icon.tsx";
 import Slider from "../../components/ui/Slider.tsx";
 import { useId } from "../../sdk/useId.ts";
+import Video from "apps/website/components/Video.tsx";
 
 /**
  * @titleBy alt
  */
-export interface Banner {
+export interface Element {
+  video?: VideoWidget;
   /** @description desktop otimized image */
-  desktop: ImageWidget;
+  desktop?: ImageWidget;
   /** @description mobile otimized image */
-  mobile: ImageWidget;
+  mobile?: ImageWidget;
   /** @description Image's alt text */
-  alt: string;
+  alt?: string;
   action?: {
     /** @description when user clicks on the image, go to this link */
     href: string;
@@ -32,7 +34,7 @@ export interface Banner {
 }
 
 export interface Props {
-  images?: Banner[];
+  elements?: Element[];
   /**
    * @description Check this option when this banner is the biggest image on the screen for image optimizations
    */
@@ -55,7 +57,7 @@ export interface Props {
 }
 
 const DEFAULT_PROPS = {
-  images: [
+  elements: [
     {
       alt: "/feminino",
       action: {
@@ -100,14 +102,15 @@ const DEFAULT_PROPS = {
 };
 
 function BannerItem(
-  { image, lcp, id }: { image: Banner; lcp?: boolean; id: string },
+  { element, lcp, id }: { element: Element; lcp?: boolean; id: string },
 ) {
   const {
     alt,
     mobile,
     desktop,
     action,
-  } = image;
+    video
+  } = element;
 
   return (
     <a
@@ -132,18 +135,19 @@ function BannerItem(
           </Button>
         </div>
       )}
-      <Picture preload={lcp}>
+      {video ? <Video src={video} width={1440} height={500} controls autoPlay class="w-full h-full object-cover"/> : (
+        <Picture preload={lcp}>
         <Source
           media="(max-width: 767px)"
           fetchPriority={lcp ? "high" : "auto"}
-          src={mobile}
+          src={mobile!}
           width={430}
           height={590}
         />
         <Source
           media="(min-width: 768px)"
           fetchPriority={lcp ? "high" : "auto"}
-          src={desktop}
+          src={desktop!}
           width={1440}
           height={600}
         />
@@ -154,11 +158,13 @@ function BannerItem(
           alt={alt}
         />
       </Picture>
+      )}
+      
     </a>
   );
 }
 
-function Dots({ images, interval = 0 }: Props) {
+function Dots({ elements, interval = 0 }: Props) {
   return (
     <>
       <style
@@ -173,7 +179,7 @@ function Dots({ images, interval = 0 }: Props) {
         }}
       />
       <ul class="carousel justify-center col-span-full gap-6 z-10 row-start-4">
-        {images?.map((_, index) => (
+        {elements?.map((_, index) => (
           <li class="carousel-item">
             <Slider.Dot index={index}>
               <div class="py-5">
@@ -219,7 +225,7 @@ function Buttons() {
 
 function BannerCarousel(props: Props) {
   const id = useId();
-  const { images, preload, interval } = { ...DEFAULT_PROPS, ...props };
+  const { elements, preload, interval } = { ...DEFAULT_PROPS, ...props };
 
   return (
     <div
@@ -227,12 +233,12 @@ function BannerCarousel(props: Props) {
       class="grid grid-cols-[48px_1fr_48px] sm:grid-cols-[120px_1fr_120px] grid-rows-[1fr_48px_1fr_64px] sm:min-h-min min-h-[660px]"
     >
       <Slider class="carousel carousel-center w-full col-span-full row-span-full gap-6">
-        {images?.map((image, index) => {
-          const params = { promotion_name: image.alt };
+        {elements?.map((element, index) => {
+          const params = { promotion_name: element.alt };
           return (
             <Slider.Item index={index} class="carousel-item w-full">
               <BannerItem
-                image={image}
+                element={element}
                 lcp={index === 0 && preload}
                 id={`${id}::${index}`}
               />
@@ -251,7 +257,7 @@ function BannerCarousel(props: Props) {
 
       {props.arrows && <Buttons />}
 
-      {props.dots && <Dots images={images} interval={interval} />}
+      {props.dots && <Dots elements={elements} interval={interval} />}
 
       <Slider.JS rootId={id} interval={interval && interval * 1e3} infinite />
     </div>
