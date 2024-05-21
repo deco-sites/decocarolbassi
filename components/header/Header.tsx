@@ -1,10 +1,11 @@
+import type { ImageWidget } from "apps/admin/widgets.ts";
+import type { SiteNavigationElement } from "apps/commerce/types.ts";
+import type { SectionProps } from "deco/types.ts";
 import { AppContext } from "../../apps/site.ts";
 import type { Props as SearchbarProps } from "../../components/search/Searchbar.tsx";
 import Drawers from "../../islands/Header/Drawers.tsx";
 import { usePlatform } from "../../sdk/usePlatform.tsx";
-import type { ImageWidget } from "apps/admin/widgets.ts";
-import type { SiteNavigationElement } from "apps/commerce/types.ts";
-import type { SectionProps } from "deco/types.ts";
+import { AvailableIcons } from "../ui/Icon.tsx";
 import Alert from "./Alert.tsx";
 import Navbar from "./Navbar.tsx";
 import { headerHeight } from "./constants.ts";
@@ -23,7 +24,11 @@ export interface Buttons {
 }
 
 export interface Props {
-  alerts?: string[];
+  alerts?: {
+    label: string;
+    icon: AvailableIcons;
+  }[];
+  lightThemeBar?: boolean;
 
   /** @title Search Bar */
   searchbar?: Omit<SearchbarProps, "platform">;
@@ -33,6 +38,12 @@ export interface Props {
    * @description Navigation items used both on mobile and desktop menus
    */
   navItems?: SiteNavigationElement[] | null;
+
+  /**
+   * @title Items Per Column
+   * @description Maxium items per column
+   */
+  itemsPerColumn?: number;
 
   /** @title Logo */
   logo?: Logo;
@@ -44,6 +55,7 @@ export interface Props {
 
 function Header({
   alerts,
+  lightThemeBar = false,
   searchbar,
   navItems = [
     {
@@ -77,6 +89,7 @@ function Header({
   logoPosition = "center",
   buttons,
   device,
+  itemsPerColumn
 }: SectionProps<typeof loader>) {
   const platform = usePlatform();
   const items = navItems ?? [];
@@ -89,8 +102,8 @@ function Header({
           searchbar={searchbar}
           platform={platform}
         >
-          <div class="bg-base-100 fixed w-full z-50">
-            {alerts && alerts.length > 0 && <Alert alerts={alerts} />}
+          <div class="bg-base-100 fixed w-full z-40">
+            {alerts && alerts.length > 0 && <Alert alerts={alerts} lightTheme={lightThemeBar} />}
             <Navbar
               device={device}
               items={items}
@@ -98,6 +111,7 @@ function Header({
               logo={logo}
               logoPosition={logoPosition}
               buttons={buttons}
+              itemsPerColumn={itemsPerColumn}
             />
           </div>
         </Drawers>
