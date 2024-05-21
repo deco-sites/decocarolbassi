@@ -8,7 +8,6 @@ export default function SearchButton() {
   return (
     <>
       <Button
-        // class="btn-circle btn-sm btn-ghost hidden sm:flex"
         class="bg-transparent hidden sm:flex shadow-none border-0 hover:bg-transparent px-4"
         aria-label="search icon button"
         onClick={() => {
