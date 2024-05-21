@@ -5,19 +5,25 @@ export interface Props {
   items: SiteNavigationElement[];
 }
 
-function MenuItem({ item }: { item: SiteNavigationElement }) {
+function MenuItem({ item, childNode }: { item: SiteNavigationElement, childNode?: boolean }) {
+  const notHasChildren = childNode || !item.children;
   return (
     <div class="collapse collapse-plus">
-      <input type="checkbox" />
-      <div class="collapse-title">{item.name}</div>
+      <input type="checkbox" class={`${notHasChildren ? "hidden" : ""}`} />
+      {
+        notHasChildren ? (
+          <div class={`${!item.children ? "m-4 text-base" : ""} text-sm font-light m-2 text-primary-900`}>{item.name}</div>
+        ) : (
+          <div class="collapse-title text-base font-light text-primary-900 menu">{item.name}</div>
+        )
+      }
       <div class="collapse-content">
         <ul>
-          <li>
-            <a class="underline text-sm" href={item.url}>Ver todos</a>
-          </li>
           {item.children?.map((node) => (
             <li>
-              <MenuItem item={node} />
+              <a href={node.url}>
+                <MenuItem childNode item={node} />
+              </a>
             </li>
           ))}
         </ul>
@@ -28,8 +34,8 @@ function MenuItem({ item }: { item: SiteNavigationElement }) {
 
 function Menu({ items }: Props) {
   return (
-    <div class="flex flex-col h-full w-[250px]">
-      <ul class="px-4 flex-grow flex flex-col divide-y divide-base-200 mt-[4rem]">
+    <div class="flex flex-col h-full w-[350px]">
+      <ul class="px-4 flex-grow flex flex-col divide-y divide-base-200 mt-4">
         {items.map((item) => (
           <li>
             <MenuItem item={item} />
@@ -37,22 +43,22 @@ function Menu({ items }: Props) {
         ))}
       </ul>
 
-      <ul class="flex flex-col py-2 bg-base-200">
-        <li>
+      <ul class="flex justify-evenly py-2 bg-base-200">
+        <li class="w-full">
           <a
-            class="flex items-center gap-4 px-4 py-2"
+            class="flex flex-col items-center px-4 py-4 m-3 border-2 border-dotted border-secondary-neutral-600"
             href="https://www.deco.cx"
           >
             <UserIcon />
             <span class="text-sm">Minha conta</span>
           </a>
         </li>
-        <li>
+        <li class="w-full">
           <a
-            class="flex items-center gap-4 px-4 py-2"
+            class="flex flex-col items-center px-4 py-4 m-3 border-2 border-dotted border-secondary-neutral-600"
             href="https://www.deco.cx"
           >
-            <Icon id="ShoppingCart" size={24} strokeWidth={2} />
+            <Icon id="ShoppingCart" size={26} strokeWidth={2} />
             <span class="text-sm">Sacola</span>
           </a>
         </li>
@@ -66,9 +72,9 @@ export default Menu;
 
 const UserIcon = () => (
   <svg
-    width={24}
-    height={24}
-    viewBox="0 0 24 24"
+    width={26}
+    height={26}
+    viewBox="0 0 26 26"
     fill="none"
     xmlns="http://www.w3.org/2000/svg"
   >

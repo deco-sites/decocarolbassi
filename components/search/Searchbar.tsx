@@ -15,7 +15,7 @@ import { Product, Suggestion } from "apps/commerce/types.ts";
 import { Resolved } from "deco/engine/core/resolver.ts";
 import { useEffect, useRef } from "preact/compat";
 import type { Platform } from "../../apps/site.ts";
-import ProductCard from "../../components/product/ProductCard.tsx";
+import ProductCardHeader from "../../components/product/ProductCardHeader.tsx";
 import Button from "../../components/ui/Button.tsx";
 import Icon from "../../components/ui/Icon.tsx";
 import Slider from "../../components/ui/Slider.tsx";
@@ -97,7 +97,7 @@ function Searchbar({
       class="w-full grid gap-8 pb-6 overflow-y-hidden mt-[3rem] lg:mt-0 animate-sliding-down"
       style={{ gridTemplateRows: "min-content auto" }}
     >
-      <form id={id} action={action} class="join py-6 px-[3.5rem] bg-secondary-neutral-200" >
+      <form id={id} action={action} class="join py-6 px-[1rem] lg:px-[3.5rem] bg-secondary-neutral-200" >
         <input
           ref={searchInputRef}
           id="search-input"
@@ -138,7 +138,7 @@ function Searchbar({
           type="button"
           class="join-item btn-ghost btn-square hidden sm:inline-flex"
           onClick={() => {
-            setQuery('');
+            setQuery("c")
             displaySearchPopup.value = false;
           }}
           ariaLabel={displaySearchPopup.value ? "open search" : "search closed"}
@@ -148,7 +148,7 @@ function Searchbar({
       </form>
 
       <div
-        class={`overflow-y-scroll px-[5rem]`}
+        class={`overflow-y-scroll px-[1rem] lg:px-[5rem]`}
       >
         <div class="gap-4 grid grid-cols-1 sm:grid-rows-1">
           <div class={`${hasProducts ? "hidden" : ''} flex flex flex-col gap-6`}>
@@ -160,17 +160,17 @@ function Searchbar({
               Suas buscas recentes
             </span>
             <ul id="search-suggestion" class="flex flex-col gap-6">
-              {userSearches.value.slice(-4).map((search) => (
+              {userSearches.value.slice(-4).map((search: string) => (
                 <li>
-                  <a href={`/s?q=${search}`} class="flex gap-4 items-center">
+                  <a href={`/s?q=${search}`} class="flex gap-4 items-center justify-between">
+                    <span class="font-light text-sm lg:text-base text-paragraph-color" dangerouslySetInnerHTML={{ __html: search }} />
                     <span>
                       <Icon
-                        id="MagnifyingGlass"
+                        id="SearchAgain"
                         size={24}
                         strokeWidth={0.01}
                       />
                     </span>
-                    <span dangerouslySetInnerHTML={{ __html: search }} />
                   </a>
                 </li>
               ))}
@@ -178,22 +178,21 @@ function Searchbar({
           </div>
           <div class={`${!hasProducts ? 'hidden' : ''} flex flex-col pt-6 md:pt-0 gap-6 overflow-x-hidden`}>
             <span
-              class="font-light text-xl text-paragraph-color"
+              class="font-light text-xl text-paragraph-color ml-4"
               role="heading"
               aria-level={3}
             >
               Sugestões para você
             </span>
-            <Slider class="carousel">
-              {products.map((product, index: number) => (
+            <Slider class="carousel flex-col">
+              {products.map((product: Product, index: number) => (
                 <Slider.Item
                   index={index}
-                  class="carousel-item first:ml-4 last:mr-4 min-w-[200px] max-w-[200px]"
+                  class="carousel-item min-w-[200px]"
                   onClick={() => handleSearch(product)}
                 >
-                  <ProductCard
+                  <ProductCardHeader
                     product={product}
-                    platform={platform}
                     index={index}
                     itemListName="Suggeestions"
                   />

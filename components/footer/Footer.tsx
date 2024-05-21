@@ -348,7 +348,7 @@ function Footer({
                 <h3 class="text-center sm:text-left text-xl uppercase text-black">
                   {seoTexts.title}
                 </h3>
-                <p class="text-center sm:text-left font-light text-paragraph-color">
+                <p class="text-center text-sm sm:text-left lg:text-base font-light text-paragraph-color">
                   {seoTexts.description}
                 </p>
               </div>

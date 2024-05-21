@@ -29,14 +29,14 @@ const Aside = (
     children: ComponentChildren;
   },
 ) => (
-  <div class="bg-base-100 grid grid-rows-[auto_1fr] h-full divide-y max-w-[100vw] overflow-scroll">
+  <div class="bg-base-100 grid grid-rows-[auto_1fr] h-full divide-y max-w-[100vw] overflow-scroll z-50">
     <div class="flex justify-between items-center">
       <h1 class="px-4 py-3">
-        <span class="font-medium text-2xl">{title}</span>
+        <span class="font-light text-2xl">{title}</span>
       </h1>
       {onClose && (
         <Button aria-label="X" class="btn btn-ghost" onClick={onClose}>
-          <Icon id="XMark" size={24} strokeWidth={2} />
+          <Icon id="XMark" size={24} strokeWidth={1} />
         </Button>
       )}
     </div>
@@ -70,7 +70,7 @@ function Drawers({ menu, searchbar, children, platform }: Props) {
               displayMenu.value = false;
               displaySearchDrawer.value = false;
             }}
-            title={displayMenu.value ? "Menu" : "Buscar"}
+            title={displayMenu.value ? "CAROL BASSI" : "Buscar"}
           >
             {displayMenu.value && <Menu {...menu} />}
             {searchbar && displaySearchDrawer.value && (

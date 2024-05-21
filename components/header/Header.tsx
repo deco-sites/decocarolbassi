@@ -28,6 +28,7 @@ export interface Props {
     label: string;
     icon: AvailableIcons;
   }[];
+  lightThemeBar?: boolean;
 
   /** @title Search Bar */
   searchbar?: Omit<SearchbarProps, "platform">;
@@ -54,6 +55,7 @@ export interface Props {
 
 function Header({
   alerts,
+  lightThemeBar = false,
   searchbar,
   navItems = [
     {
@@ -100,8 +102,8 @@ function Header({
           searchbar={searchbar}
           platform={platform}
         >
-          <div class="bg-base-100 fixed w-full z-50">
-            {alerts && alerts.length > 0 && <Alert alerts={alerts} device={device} />}
+          <div class="bg-base-100 fixed w-full z-40">
+            {alerts && alerts.length > 0 && <Alert alerts={alerts} lightTheme={lightThemeBar} />}
             <Navbar
               device={device}
               items={items}
