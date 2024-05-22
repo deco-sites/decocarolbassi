@@ -1,9 +1,13 @@
-import Header from "../../components/ui/SectionHeader.tsx";
-import { useId } from "../../sdk/useId.ts";
+import type { ImageWidget, VideoWidget } from "apps/admin/widgets.ts";
 import Image from "apps/website/components/Image.tsx";
 import Video from "apps/website/components/Video.tsx";
-import type { ImageWidget, VideoWidget } from "apps/admin/widgets.ts";
+import { SectionProps } from "deco/types.ts";
+import { AppContext } from "../../apps/site.ts";
 import Button from "../../components/ui/Button.tsx";
+import Icon from "../../components/ui/Icon.tsx";
+import Header from "../../components/ui/SectionHeader.tsx";
+import Slider from "../../components/ui/Slider.tsx";
+import { useId } from "../../sdk/useId.ts";
 
 export interface CategoryGridProps {
   href?: string;
@@ -25,6 +29,13 @@ export interface Props {
      */
     description?: string;
   };
+
+  /**
+   * @title 3 images in row
+  */
+  /** @description Active to display the images in row */
+  isThreeImages?: boolean;
+  interval?: number;
   list?: CategoryGridProps[];
   layout?: {
     headerAlignment?: "center" | "left";
@@ -70,7 +81,7 @@ const DEFAULT_LIST = [
   },
 ];
 
-function CategoryGrid(props: Props) {
+function CategoryGrid(props: SectionProps<typeof loader>) {
   const id = useId();
   const {
     header = {
@@ -85,12 +96,17 @@ function CategoryGrid(props: Props) {
         textAlignment: "left",
       },
     },
+    isThreeImages = false,
+    device,
+    interval = 0
   } = props;
+
+  console.log({ device });
 
   return (
     <div
       id={id}
-      class="container mt-16"
+      class="container my-16"
     >
       <Header
         title={header.title}
@@ -98,53 +114,148 @@ function CategoryGrid(props: Props) {
         alignment={layout.headerAlignment || "center"}
       />
 
-      <div class="grid md:grid-cols-2 grid-cols-1 mt-6 gap-4">
-        {list?.map((
-          { href, image, label, buttonText, video },
-        ) => (
-           <div>
-            <a
-              href={href}
-              class={`relative h-[100%] flex ${
-                layout.categoryCard?.textAlignment === "left"
+      {isThreeImages && device === "mobile" ? (
+        <div
+          id={id}
+          class={"relative grid grid-rows-[1fr_48px_1fr_40px] grid-cols-[30px_1fr_30px] sm:grid-cols-[48px_1fr_48px]"}
+        >
+          <Slider class="relative carousel carousel-center col-start-2 col-end-2 row-start-1 row-end-4">
+            {list?.map(({ href, image, label, buttonText, video }, index) => (
+              <Slider.Item
+                index={index}
+                class="carousel-item w-auto max-h-full"
+              >
+
+                <div>
+                  <a
+                    href={href}
+                    class={`relative h-[100%] flex ${layout.categoryCard?.textAlignment === "left"
+                      ? "justify-start"
+                      : "justify-start items-center"
+                      } ${layout.categoryCard?.textPosition === "bottom"
+                        ? "flex-col-reverse"
+                        : "flex-col"
+                      }`}
+                  >
+                    {video ? (
+                      <Video src={video} width={720} height={480} muted autoPlay loop class="h-full object-cover w-full" />
+                    ) : image ? (
+                      <figure>
+                        <img
+                          src={image!}
+                          alt={label}
+                          loading="lazy"
+                        />
+                      </figure>
+                    ) : null}
+
+                    <div class="absolute left-[70px] flex flex-col items-center gap-4 uppercase m-6">
+                      <h3 class="text-secondary-neutral-100 text-[32px]">{label}</h3>
+                      <Button
+                        class="font-normal bg-transparent text-sm text-secondary-neutral-100 uppercase py-4 px-6"
+                        aria-label={label}
+                      >
+                        {buttonText}
+                      </Button>
+                    </div>
+                  </a>
+                </div>
+              </Slider.Item>
+            ))}
+          </Slider>
+
+          <div class="flex items-center justify-start z-10 col-start-1 row-start-2 absolute bottom-1 left-3">
+            <Slider.PrevButton
+              class={"btn btn-circle btn-sm"}
+            >
+              <Icon
+                class="text-base-content"
+                size={24}
+                id="ChevronLeft"
+                strokeWidth={2}
+              />
+            </Slider.PrevButton>
+          </div>
+          <div class="flex items-center justify-end z-10 col-start-3 row-start-2 absolute bottom-1 right-3">
+            <Slider.NextButton
+              class={"btn btn-circle btn-sm"}
+            >
+              <Icon
+                class="text-base-content"
+                size={28}
+                id="ChevronRight"
+                strokeWidth={2}
+              />
+            </Slider.NextButton>
+          </div>
+
+          <ul class={`carousel grid grid-cols-${list.length} items-end col-span-full z-10 row-start-4 w-[calc(100%-100px)] m-auto bg-secondary-neutral-600`}>
+            {list?.map((_, index) => (
+              <li class="carousel-item w-full">
+                <Slider.Dot index={index} classes="w-full">
+                  <div class="w-full h-[0.20rem] group-disabled:bg-dark-blue bg-transparent" />
+                </Slider.Dot>
+              </li>
+            ))}
+          </ul>
+          <Slider.JS rootId={id} interval={interval && interval * 1e3} infinite />
+        </div>
+      ) : (
+        <div class={`grid ${isThreeImages ? "md:grid-cols-3" : "md:grid-cols-2"} grid-cols-1 mt-6 gap-4`}>
+          {list?.map((
+            { href, image, label, buttonText, video },
+          ) => (
+            <div>
+              <a
+                href={href}
+                class={`relative h-[100%] flex ${layout.categoryCard?.textAlignment === "left"
                   ? "justify-start"
                   : "justify-start items-center"
-              } ${
-                layout.categoryCard?.textPosition === "bottom"
-                  ? "flex-col-reverse"
-                  : "flex-col"
-              }`}
-            >
-              {video ? (
-                <Video src={video} width={720} height={480} muted autoPlay loop class="h-full object-cover w-full"/>
-              ): image ? (
-                   <figure>
+                  } ${layout.categoryCard?.textPosition === "bottom"
+                    ? "flex-col-reverse"
+                    : "flex-col"
+                  }`}
+              >
+                {video ? (
+                  <Video src={video} width={720} height={480} muted autoPlay loop class={`h-full object-cover w-full ${device === "mobile" ? "aspect-[3/2]" : ""}`} />
+                ) : image ? (
+                  <figure>
                     <Image
-                      class="w-full"
+                      class={`w-full ${device === "mobile" ? "aspect-[3/2]" : ""}`}
                       src={image}
                       alt={label}
-                      width={720}
-                      height={480}
+                      width={isThreeImages ? 960 : 720}
+                      height={isThreeImages ? 1440 : 480}
                       loading="lazy"
                     />
                   </figure>
-              ): null}
+                ) : null}
 
                 <div class="absolute flex flex-col items-center gap-4 uppercase m-6">
                   <h3 class="text-secondary-neutral-100 text-[32px]">{label}</h3>
                   <Button
                     class="font-normal bg-transparent text-sm text-secondary-neutral-100 uppercase py-4 px-6"
                     aria-label={label}
-                    >
+                  >
                     {buttonText}
                   </Button>
                 </div>
-            </a>
-          </div>
-))}
-      </div>
+              </a>
+            </div>
+          ))}
+        </div>
+      )}
+
+
     </div>
   );
 }
+
+export const loader = (props: Props, req: Request, ctx: AppContext) => {
+  return {
+    ...props,
+    device: ctx.device
+  };
+};
 
 export default CategoryGrid;

@@ -1,5 +1,6 @@
 import type { ImageWidget, VideoWidget } from "apps/admin/widgets.ts";
 import { Picture, Source } from "apps/website/components/Picture.tsx";
+import Video from "apps/website/components/Video.tsx";
 import {
   SendEventOnClick,
   SendEventOnView,
@@ -8,7 +9,6 @@ import Button from "../../components/ui/Button.tsx";
 import Icon from "../../components/ui/Icon.tsx";
 import Slider from "../../components/ui/Slider.tsx";
 import { useId } from "../../sdk/useId.ts";
-import Video from "apps/website/components/Video.tsx";
 
 /**
  * @titleBy alt
@@ -135,31 +135,31 @@ function BannerItem(
           </Button>
         </div>
       )}
-      {video ? <Video src={video} width={1440} height={500} controls autoPlay class="w-full h-full object-cover"/> : (
+      {video ? <Video src={video} width={1440} height={500} controls={false} autoPlay loop muted class="w-full h-full object-cover" /> : (
         <Picture preload={lcp}>
-        <Source
-          media="(max-width: 767px)"
-          fetchPriority={lcp ? "high" : "auto"}
-          src={mobile!}
-          width={430}
-          height={590}
-        />
-        <Source
-          media="(min-width: 768px)"
-          fetchPriority={lcp ? "high" : "auto"}
-          src={desktop!}
-          width={1440}
-          height={600}
-        />
-        <img
-          class="object-cover w-full h-full"
-          loading={lcp ? "eager" : "lazy"}
-          src={desktop}
-          alt={alt}
-        />
-      </Picture>
+          <Source
+            media="(max-width: 767px)"
+            fetchPriority={lcp ? "high" : "auto"}
+            src={mobile!}
+            width={430}
+            height={590}
+          />
+          <Source
+            media="(min-width: 768px)"
+            fetchPriority={lcp ? "high" : "auto"}
+            src={desktop!}
+            width={1440}
+            height={600}
+          />
+          <img
+            class="object-cover w-full h-full"
+            loading={lcp ? "eager" : "lazy"}
+            src={desktop}
+            alt={alt}
+          />
+        </Picture>
       )}
-      
+
     </a>
   );
 }
