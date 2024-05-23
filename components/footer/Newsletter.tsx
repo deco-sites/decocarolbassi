@@ -1,6 +1,5 @@
 import { useSignal } from "@preact/signals";
 import { ImageWidget } from "apps/admin/widgets.ts";
-import { Picture, Source } from "apps/website/components/Picture.tsx";
 import type { JSX } from "preact";
 import { invoke } from "../../runtime.ts";
 import { clx } from "../../sdk/clx.ts";
@@ -8,8 +7,6 @@ import { clx } from "../../sdk/clx.ts";
 export interface Banner {
   /** @description desktop otimized image */
   desktop?: ImageWidget;
-  /** @description mobile otimized image */
-  mobile?: ImageWidget;
   /** @description Image's alt text */
   alt?: string;
   action?: {
@@ -81,7 +78,7 @@ function Newsletter(
       class={clx(
         "flex flex-col gap-4",
         tiled &&
-          "lg:flex-row lg:w-full lg:justify-between lg:flex-1 lg:items-center",
+        "lg:flex-row lg:w-full lg:justify-between lg:flex-1 lg:items-center",
       )}
     >
       <div class="flex flex-col w-full gap-4 py-5 px-5 lg:pl-[26px] lg:pr-[80px] xl:pl-[120px]">
@@ -135,33 +132,13 @@ function Newsletter(
         </form>
       </div>
 
-      <Picture>
-        {images?.mobile
-          ? (
-            <Source
-              media="(max-width: 767px)"
-              fetchPriority={"low"}
-              src={images?.mobile ?? ""}
-              width={430}
-              height={590}
-            />
-          )
-          : null}
 
-        <Source
-          media="(min-width: 768px)"
-          fetchPriority={"low"}
-          src={images?.desktop ?? ""}
-          width={1440}
-          height={600}
-        />
-        <img
-          class="object-contain w-full h-full"
-          loading={"lazy"}
-          src={images?.desktop}
-          alt={images?.alt}
-        />
-      </Picture>
+      <img
+        class="hidden lg:block object-contain w-full h-full"
+        loading={"lazy"}
+        src={images?.desktop}
+        alt={images?.alt}
+      />
     </div>
   );
 }

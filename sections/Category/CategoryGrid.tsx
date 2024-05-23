@@ -31,10 +31,9 @@ export interface Props {
   };
 
   /**
-   * @title 3 images in row
+   * @title Banners in Row - active to display banners in row
   */
-  /** @description Active to display the images in row */
-  isThreeImages?: boolean;
+  isBannerRowList?: boolean;
   interval?: number;
   list?: CategoryGridProps[];
   layout?: {
@@ -96,17 +95,15 @@ function CategoryGrid(props: SectionProps<typeof loader>) {
         textAlignment: "left",
       },
     },
-    isThreeImages = false,
+    isBannerRowList = false,
     device,
     interval = 0
   } = props;
 
-  console.log({ device });
-
   return (
     <div
       id={id}
-      class="container my-16"
+      class="container my-16 "
     >
       <Header
         title={header.title}
@@ -114,10 +111,10 @@ function CategoryGrid(props: SectionProps<typeof loader>) {
         alignment={layout.headerAlignment || "center"}
       />
 
-      {isThreeImages && device === "mobile" ? (
+      {isBannerRowList && device === "mobile" ? (
         <div
           id={id}
-          class={"relative grid grid-rows-[1fr_48px_1fr_40px] grid-cols-[30px_1fr_30px] sm:grid-cols-[48px_1fr_48px]"}
+          class={"relative grid grid-cols-[30px_1fr_30px] sm:grid-cols-[48px_1fr_48px] mt-6"}
         >
           <Slider class="relative carousel carousel-center col-start-2 col-end-2 row-start-1 row-end-4">
             {list?.map(({ href, image, label, buttonText, video }, index) => (
@@ -125,31 +122,25 @@ function CategoryGrid(props: SectionProps<typeof loader>) {
                 index={index}
                 class="carousel-item w-auto max-h-full"
               >
-
                 <div>
                   <a
                     href={href}
-                    class={`relative h-[100%] flex ${layout.categoryCard?.textAlignment === "left"
-                      ? "justify-start"
-                      : "justify-start items-center"
-                      } ${layout.categoryCard?.textPosition === "bottom"
-                        ? "flex-col-reverse"
-                        : "flex-col"
-                      }`}
+                    class={`relative h-[100%] flex`}
                   >
                     {video ? (
-                      <Video src={video} width={720} height={480} muted autoPlay loop class="h-full object-cover w-full" />
+                      <Video src={video} width={720} height={480} muted autoPlay loop class="h-[80%] object-cover w-full" />
                     ) : image ? (
-                      <figure>
-                        <img
-                          src={image!}
-                          alt={label}
-                          loading="lazy"
-                        />
-                      </figure>
+                      <img
+                        src={image!}
+                        height={550}
+                        width={400}
+                        alt={label}
+                        loading="lazy"
+                        class="h-[80%]"
+                      />
                     ) : null}
 
-                    <div class="absolute left-[70px] flex flex-col items-center gap-4 uppercase m-6">
+                    <div class="absolute left-[70px] flex flex-col items-center gap-4 uppercase m-6 bottom-[100px]">
                       <h3 class="text-secondary-neutral-100 text-[32px]">{label}</h3>
                       <Button
                         class="font-normal bg-transparent text-sm text-secondary-neutral-100 uppercase py-4 px-6"
@@ -164,7 +155,7 @@ function CategoryGrid(props: SectionProps<typeof loader>) {
             ))}
           </Slider>
 
-          <div class="flex items-center justify-start z-10 col-start-1 row-start-2 absolute bottom-1 left-3">
+          <div class="flex items-center justify-start z-10 col-start-1 row-start-2 absolute bottom-16 left-3">
             <Slider.PrevButton
               class={"btn btn-circle btn-sm"}
             >
@@ -176,7 +167,7 @@ function CategoryGrid(props: SectionProps<typeof loader>) {
               />
             </Slider.PrevButton>
           </div>
-          <div class="flex items-center justify-end z-10 col-start-3 row-start-2 absolute bottom-1 right-3">
+          <div class="flex items-center justify-end z-10 col-start-3 row-start-2 absolute bottom-16 right-3">
             <Slider.NextButton
               class={"btn btn-circle btn-sm"}
             >
@@ -189,7 +180,7 @@ function CategoryGrid(props: SectionProps<typeof loader>) {
             </Slider.NextButton>
           </div>
 
-          <ul class={`carousel grid grid-cols-${list.length} items-end col-span-full z-10 row-start-4 w-[calc(100%-100px)] m-auto bg-secondary-neutral-600`}>
+          <ul class={`carousel grid grid-cols-${list.length} mt-[-80px] items-end col-span-full z-10 row-start-4 w-[calc(100%-100px)] m-auto bg-secondary-neutral-600`}>
             {list?.map((_, index) => (
               <li class="carousel-item w-full">
                 <Slider.Dot index={index} classes="w-full">
@@ -201,7 +192,7 @@ function CategoryGrid(props: SectionProps<typeof loader>) {
           <Slider.JS rootId={id} interval={interval && interval * 1e3} infinite />
         </div>
       ) : (
-        <div class={`grid ${isThreeImages ? "md:grid-cols-3" : "md:grid-cols-2"} grid-cols-1 mt-6 gap-4`}>
+        <div class={`grid ${isBannerRowList ? "md:grid-cols-3" : "md:grid-cols-2"} grid-cols-1 mt-6 gap-4 px-4`}>
           {list?.map((
             { href, image, label, buttonText, video },
           ) => (
@@ -217,24 +208,24 @@ function CategoryGrid(props: SectionProps<typeof loader>) {
                   }`}
               >
                 {video ? (
-                  <Video src={video} width={720} height={480} muted autoPlay loop class={`h-full object-cover w-full ${device === "mobile" ? "aspect-[3/2]" : ""}`} />
+                  <Video src={video} width={720} height={480} muted autoPlay loop class={`h-full object-cover w-full ${device === "mobile" ? "aspect-[3/3]" : ""}`} />
                 ) : image ? (
                   <figure>
                     <Image
-                      class={`w-full ${device === "mobile" ? "aspect-[3/2]" : ""}`}
+                      class={`w-full ${device === "mobile" ? "aspect-[3/3]" : ""}`}
                       src={image}
                       alt={label}
-                      width={isThreeImages ? 960 : 720}
-                      height={isThreeImages ? 1440 : 480}
+                      width={isBannerRowList ? 960 : 720}
+                      height={isBannerRowList ? 1440 : 480}
                       loading="lazy"
                     />
                   </figure>
                 ) : null}
 
                 <div class="absolute flex flex-col items-center gap-4 uppercase m-6">
-                  <h3 class="text-secondary-neutral-100 text-[32px]">{label}</h3>
+                  <h3 class="text-secondary-neutral-100 text-2xl lg:text-[32px]">{label}</h3>
                   <Button
-                    class="font-normal bg-transparent text-sm text-secondary-neutral-100 uppercase py-4 px-6"
+                    class="font-normal text-xs lg:text-sm bg-transparent text-secondary-neutral-100 uppercase py-4 px-6"
                     aria-label={label}
                   >
                     {buttonText}
