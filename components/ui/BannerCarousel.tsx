@@ -5,10 +5,10 @@ import {
   SendEventOnClick,
   SendEventOnView,
 } from "../../components/Analytics.tsx";
-import Button from "../../components/ui/Button.tsx";
 import Icon from "../../components/ui/Icon.tsx";
 import Slider from "../../components/ui/Slider.tsx";
 import { useId } from "../../sdk/useId.ts";
+import ButtonBanner from "./ButtonBanner.tsx";
 
 /**
  * @titleBy alt
@@ -22,6 +22,11 @@ export interface Element {
   /** @description Image's alt text */
   alt?: string;
   action?: {
+    /** @description active to turn the button negative */
+    buttonNegative?: boolean;
+    /** @description button position */
+    buttonPositionDesktop?: "Center" | "Right";
+    buttonPositionMobile?: "Center" | "Left";
     /** @description when user clicks on the image, go to this link */
     href: string;
     /** @description Image text title */
@@ -61,6 +66,7 @@ const DEFAULT_PROPS = {
     {
       alt: "/feminino",
       action: {
+        buttonNegative: false,
         title: "New collection",
         subTitle: "Main title",
         label: "Explore collection",
@@ -74,6 +80,7 @@ const DEFAULT_PROPS = {
     {
       alt: "/feminino",
       action: {
+        buttonNegative: false,
         title: "New collection",
         subTitle: "Main title",
         label: "Explore collection",
@@ -87,6 +94,7 @@ const DEFAULT_PROPS = {
     {
       alt: "/feminino",
       action: {
+        buttonNegative: false,
         title: "New collection",
         subTitle: "Main title",
         label: "Explore collection",
@@ -121,19 +129,20 @@ function BannerItem(
     >
       {action && (
         // <div class="absolute bottom-6 right-8 top-0 md:bottom-0 lg:right-20 max-w-full flex flex-col justify-end items-end gap-4 px-12 py-24">
-        <div class="absolute bottom-0 translate-x-[50%] translate-y-[calc(100%-80px)] lg:right-12 lg:px-12 lg:py-12 lg:translate-x-0 lg:translate-y-0">
+        <div class="absolute z-10 bottom-0 translate-x-[50%] translate-y-[calc(100%-80px)]  lg:right-12 lg:px-12 lg:py-12 lg:translate-x-0 lg:translate-y-0">
           <span class="text-2xl font-light text-base-100">
             {action.title}
           </span>
           <span class="font-normal text-4xl text-base-100">
             {action.subTitle}
           </span>
-          <Button
-            class="bg-base-100 text-sm font-light py-4 px-6 w-fit uppercase"
+
+          <ButtonBanner
             aria-label={action.label}
+            negative={element.action?.buttonNegative}
           >
             {action.label}
-          </Button>
+          </ButtonBanner>
         </div>
       )}
       {video ? <Video src={video} width={1440} height={500} controls={false} autoPlay loop muted class="w-full h-full object-cover" /> : (
@@ -226,7 +235,7 @@ function Buttons() {
 
 function BannerCarousel(props: Props) {
   const id = useId();
-  const { elements, preload, interval } = { ...DEFAULT_PROPS, ...props };
+  const { elements, preload, interval } = props;
 
   return (
     <div

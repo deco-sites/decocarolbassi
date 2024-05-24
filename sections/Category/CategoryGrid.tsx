@@ -3,7 +3,7 @@ import Image from "apps/website/components/Image.tsx";
 import Video from "apps/website/components/Video.tsx";
 import { SectionProps } from "deco/types.ts";
 import { AppContext } from "../../apps/site.ts";
-import Button from "../../components/ui/Button.tsx";
+import ButtonBanner from "../../components/ui/ButtonBanner.tsx";
 import Icon from "../../components/ui/Icon.tsx";
 import Header from "../../components/ui/SectionHeader.tsx";
 import Slider from "../../components/ui/Slider.tsx";
@@ -106,13 +106,15 @@ function CategoryGrid(props: SectionProps<typeof loader>) {
   return (
     <div
       id={id}
-      class="container mb-0 mt-16 sm:my-16"
+      class={`mb-0 mt-16 ${isBannerRowList && "px-8 pb-8"}`}
     >
-      <Header
-        title={header.title}
-        description={header.description || ""}
-        alignment={layout.headerAlignment || "center"}
-      />
+      <div class={`${!isBannerRowList && "ml-8"}`}>
+        <Header
+          title={header.title}
+          description={header.description || ""}
+          alignment={layout.headerAlignment || "center"}
+        />
+      </div>
 
       {isBannerRowList && device === "mobile" ? (
         <div
@@ -131,7 +133,7 @@ function CategoryGrid(props: SectionProps<typeof loader>) {
                     class={`relative h-[100%] flex`}
                   >
                     {video ? (
-                      <Video src={video} width={720} height={480} muted autoPlay loop class="h-[80%] object-cover w-full" />
+                      <Video src={video} width={720} height={480} muted autoPlay loop class="h-4/5 object-cover w-full" />
                     ) : image ? (
                       <img
                         src={image!}
@@ -139,19 +141,19 @@ function CategoryGrid(props: SectionProps<typeof loader>) {
                         width={400}
                         alt={label}
                         loading="lazy"
-                        class="h-[80%]"
+                        class="h-4/5"
                         style={{ aspectRatio }}
                       />
                     ) : null}
 
                     <div class="absolute left-0 right-0 flex flex-col items-center gap-4 uppercase m-6 bottom-[100px]">
                       <h3 class="text-secondary-neutral-100 text-[32px]">{label}</h3>
-                      <Button
-                        class="font-normal bg-transparent text-sm text-secondary-neutral-100 uppercase py-4 px-6"
+                      <ButtonBanner
+                        class="font-normal bg-transparent border-secondary-neutral-100 text-sm text-secondary-neutral-100 uppercase py-3 px-6"
                         aria-label={label}
                       >
                         {buttonText}
-                      </Button>
+                      </ButtonBanner>
                     </div>
                   </a>
                 </div>
@@ -196,7 +198,7 @@ function CategoryGrid(props: SectionProps<typeof loader>) {
           <Slider.JS rootId={id} interval={interval && interval * 1e3} infinite />
         </div>
       ) : (
-        <div class={`grid ${isBannerRowList ? "md:grid-cols-3" : "md:grid-cols-2"} grid-cols-1 mt-6 gap-4 px-4`}>
+        <div class={`grid ${isBannerRowList ? "md:grid-cols-3" : "md:grid-cols-2"} grid-cols-1 mt-6 gap-4`}>
           {list?.map((
             { href, image, label, buttonText, video },
           ) => (
@@ -226,14 +228,16 @@ function CategoryGrid(props: SectionProps<typeof loader>) {
                   </figure>
                 ) : null}
 
+                {!isBannerRowList && <div class="absolute inset-0 bg-gradient-to-b from-transparent to-[#21212191]"></div>}
+
                 <div class="absolute flex flex-col items-center gap-4 uppercase m-6">
                   <h3 class="text-secondary-neutral-100 text-2xl lg:text-[32px]">{label}</h3>
-                  <Button
-                    class="font-normal text-xs lg:text-sm bg-transparent text-secondary-neutral-100 uppercase py-4 px-6"
+                  <ButtonBanner
+                    class="font-normal text-xs lg:text-sm bg-transparent border-secondary-neutral-100 text-secondary-neutral-100 uppercase py-3 px-6"
                     aria-label={label}
                   >
                     {buttonText}
-                  </Button>
+                  </ButtonBanner>
                 </div>
               </a>
             </div>

@@ -82,7 +82,7 @@ function Newsletter(
         "lg:flex-row lg:w-full lg:justify-between lg:flex-1 lg:items-center",
       )}
     >
-      <div class="flex flex-col w-full gap-4 py-5 px-5 lg:pl-[26px] lg:pr-[80px] xl:pl-[120px]">
+      <div class="flex lg:flex-2 flex-col w-full gap-4 py-5 px-5 lg:pl-[26px] lg:pr-[80px] xl:pl-[120px]">
         {content?.title && (
           <h3
             style={{
@@ -115,7 +115,7 @@ function Newsletter(
           <div class="flex flex-wrap gap-3 relative w-full">
             <input
               name="email"
-              class="flex-auto input input-bordered md:w-80 text-base-content pr-0"
+              class="flex-auto input input-bordered w-full text-base-content pr-0"
               placeholder={content?.form?.placeholder || "Digite seu email"}
             />
             <button
@@ -133,7 +133,7 @@ function Newsletter(
         </form>
       </div>
 
-      <Picture>
+      <Picture class="lg:flex-4">
         <Source
           media="(min-width: 768px)"
           fetchPriority={"low"}

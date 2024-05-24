@@ -30,7 +30,7 @@ function ProductCardHeader({
   itemListName,
   index,
 }: Props) {
-  const { url, productID, name, image: images, offers } = product;
+  const { url, productID, name, image: images, offers, isVariantOf } = product;
   const id = `product-card-${productID}`;
   const [front, back] = images ?? [];
   const { listPrice, price } = useOffer(offers);
@@ -121,7 +121,7 @@ function ProductCardHeader({
           <div class="flex flex-col">
             <h2
               class="truncate text-base capitalize font-light"
-              dangerouslySetInnerHTML={{ __html: name ?? "" }}
+              dangerouslySetInnerHTML={{ __html: isVariantOf?.name ?? "" }}
             />
           </div>
         </div>

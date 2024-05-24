@@ -41,7 +41,7 @@ function ProductShelf({
   const slideDesktop = {
     1: "md:w-full",
     2: "md:w-1/2",
-    3: "md:w-1/3",
+    3: "md:w-[28%]",
     4: "md:w-1/4",
     5: "md:w-1/5",
   };
@@ -54,20 +54,22 @@ function ProductShelf({
     5: "w-1/5",
   };
   return (
-    <div class="w-full container py-8 flex flex-col gap-6 lg:py-10">
-      <Header
-        title={title || ""}
-        description={description || ""}
-        fontSize={layout?.headerfontSize || "Large"}
-        alignment={layout?.headerAlignment || "center"}
-      />
+    <div class="w-full py-8 flex flex-col gap-6 lg:py-10">
+      <div class="ml-8">
+        <Header
+          title={title || ""}
+          description={description || ""}
+          fontSize={layout?.headerfontSize || "Large"}
+          alignment={layout?.headerAlignment || "center"}
+        />
+      </div>
 
       <div
         id={id}
         class={clx(
           "relative grid",
-          layout?.showArrows && "grid-cols-[48px_1fr_48px] lg:grid-cols-[0px_1fr_48px]",
-          "px-0 md:px-5 container",
+          layout?.showArrows && "grid-cols-[48px_1fr_48px] lg:grid-cols-[0px_1fr_0px]",
+          "px-0 ml-8",
         )}
       >
         <Slider class="relative carousel carousel-center col-start-2 col-end-2 row-start-1 row-end-4">

@@ -14,7 +14,7 @@ export default function SearchButton() {
           displaySearchPopup.value = !displaySearchPopup.value;
         }}
       >
-        <span class="font-light text-paragraph-color mr-8">Procurando por algo?</span>
+        <span class="font-light text-paragraph-color mr-8">O que você procura?</span>
         <Icon id="MagnifyingGlass" size={20} strokeWidth={0.1} />
       </Button>
       <Button

@@ -64,7 +64,7 @@ function ProductCard({
         }}
       />
 
-      <div class="flex flex-col gap-2 lg:group-hover:-translate-y-2">
+      <div class="flex flex-col gap-2">
         <figure
           class="relative overflow-hidden"
           style={{ aspectRatio }}
@@ -120,13 +120,13 @@ function ProductCard({
         {/* Name/Description */}
         <div class="flex flex-col">
           <h2
-            class="truncate text-base lg:text-lg font-light text-paragraph-color ml-4"
+            class="truncate text-base lg:text-base font-light text-paragraph-color ml-4"
             dangerouslySetInnerHTML={{ __html: isVariantOf?.name ?? "" }}
           />
         </div>
 
         {/* Price from/to */}
-        <div class="flex gap-2 items-center justify-start text-dark-blue ml-4">
+        <div class="flex gap-2 items-center justify-start text-dark-blue ml-4 font-light">
           <span>
             {formatPrice(price, offers?.priceCurrency)}
           </span>

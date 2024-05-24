@@ -94,7 +94,7 @@ function Searchbar({
 
   return (
     <div
-      class="w-full grid gap-8 pb-6 overflow-y-hidden lg:mt-0 animate-sliding-down"
+      class="w-full grid gap-8 pb-6 overflow-y-hidden lg:mt-0 animate-sliding-down shadow-header"
       style={{ gridTemplateRows: "min-content auto" }}
     >
       <form id={id} action={action} class="join py-6 px-[1rem] lg:px-[3.5rem] bg-secondary-neutral-200" >
@@ -132,7 +132,7 @@ function Searchbar({
         >
           {loading.value
             ? <span class="loading loading-spinner loading-xs" />
-            : <Icon id="MagnifyingGlass" size={24} strokeWidth={2} />}
+            : <Icon id="MagnifyingGlass" size={24} strokeWidth={0.01} />}
         </Button>
         <Button
           type="button"
@@ -143,7 +143,7 @@ function Searchbar({
           }}
           ariaLabel={displaySearchPopup.value ? "open search" : "search closed"}
         >
-          <Icon id="XMark" size={24} strokeWidth={2} class="mt-[-5px]" />
+          <Icon id="XMark" size={24} strokeWidth={1} class="mt-[-5px]" />
         </Button>
       </form>
 
@@ -184,7 +184,7 @@ function Searchbar({
             >
               Sugestões para você
             </span>
-            <Slider class="carousel flex-col">
+            <Slider class="carousel flex-col gap-4">
               {products.map((product: Product, index: number) => (
                 <Slider.Item
                   index={index}
