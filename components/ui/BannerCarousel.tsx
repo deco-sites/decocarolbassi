@@ -25,9 +25,9 @@ export interface Element {
     /** @description when user clicks on the image, go to this link */
     href: string;
     /** @description Image text title */
-    title: string;
+    title?: string;
     /** @description Image text subtitle */
-    subTitle: string;
+    subTitle?: string;
     /** @description Button label */
     label: string;
   };
@@ -120,7 +120,8 @@ function BannerItem(
       class="relative overflow-y-hidden w-full"
     >
       {action && (
-        <div class="absolute top-0 md:bottom-0 bottom-1/2 left-0 right-0 sm:right-auto max-w-[407px] flex flex-col justify-end gap-4 px-8 py-12">
+        // <div class="absolute bottom-6 right-8 top-0 md:bottom-0 lg:right-20 max-w-full flex flex-col justify-end items-end gap-4 px-12 py-24">
+        <div class="absolute bottom-0 translate-x-[50%] translate-y-[calc(100%-80px)] lg:right-12 lg:px-12 lg:py-12 lg:translate-x-0 lg:translate-y-0">
           <span class="text-2xl font-light text-base-100">
             {action.title}
           </span>
@@ -128,7 +129,7 @@ function BannerItem(
             {action.subTitle}
           </span>
           <Button
-            class="bg-base-100 text-sm font-light py-4 px-6 w-fit"
+            class="bg-base-100 text-sm font-light py-4 px-6 w-fit uppercase"
             aria-label={action.label}
           >
             {action.label}
@@ -232,7 +233,7 @@ function BannerCarousel(props: Props) {
       id={id}
       class="grid grid-cols-[48px_1fr_48px] sm:grid-cols-[120px_1fr_120px] grid-rows-[1fr_48px_1fr_64px] sm:min-h-min min-h-[660px]"
     >
-      <Slider class="carousel carousel-center w-full col-span-full row-span-full gap-6">
+      <Slider class="carousel carousel-center w-full col-span-full row-span-full gap-6 max-h-[85dvh] md:max-h-[700px]">
         {elements?.map((element, index) => {
           const params = { promotion_name: element.alt };
           return (

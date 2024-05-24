@@ -22,6 +22,7 @@ export interface Props {
     headerAlignment?: "center" | "left";
     headerfontSize?: "Normal" | "Large" | "Small";
     showArrows?: boolean;
+    showDots?: boolean;
   };
 }
 
@@ -64,12 +65,12 @@ function ProductShelf({
       <div
         id={id}
         class={clx(
-          "grid",
-          layout?.showArrows && "grid-cols-[48px_1fr_48px]",
+          "relative grid",
+          layout?.showArrows && "grid-cols-[48px_1fr_48px] lg:grid-cols-[0px_1fr_48px]",
           "px-0 md:px-5 container",
         )}
       >
-        <Slider class="carousel carousel-center sm:carousel-end sm:gap-1 row-start-2 row-end-5">
+        <Slider class="relative carousel carousel-center col-start-2 col-end-2 row-start-1 row-end-4">
           {products?.map((product, index) => (
             <Slider.Item
               index={index}
@@ -96,13 +97,25 @@ function ProductShelf({
                 <Icon size={24} id="ChevronLeft" strokeWidth={3} class="w-5" />
               </Slider.PrevButton>
             </div>
-            <div class="relative block z-10 col-start-3 row-start-3">
+            <div class="absolute col-start-3 lg:col-start-auto lg:left-[265px] block z-10 row-start-3">
               <Slider.NextButton class="absolute w-12 h-12 flex justify-center items-center">
                 <Icon size={24} id="ChevronRight" strokeWidth={3} />
               </Slider.NextButton>
             </div>
           </>
         )}
+        {layout?.showDots && (
+          <ul class={`absolute left-[50px] carousel grid grid-cols-${products.length} mt-[22px] items-end col-span-full z-10 row-start-4 w-[calc(100%-100px)] lg:w-[200px] m-auto bg-secondary-neutral-600`}>
+            {products?.map((_, index) => (
+              <li class="carousel-item w-full">
+                <Slider.Dot index={index} classes="w-full">
+                  <div class="w-full h-[0.20rem] group-disabled:bg-dark-blue bg-transparent" />
+                </Slider.Dot>
+              </li>
+            ))}
+          </ul>
+        )}
+
         <Slider.JS rootId={id} />
         <SendEventOnView
           id={id}

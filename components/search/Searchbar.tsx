@@ -94,7 +94,7 @@ function Searchbar({
 
   return (
     <div
-      class="w-full grid gap-8 pb-6 overflow-y-hidden mt-[3rem] lg:mt-0 animate-sliding-down"
+      class="w-full grid gap-8 pb-6 overflow-y-hidden lg:mt-0 animate-sliding-down"
       style={{ gridTemplateRows: "min-content auto" }}
     >
       <form id={id} action={action} class="join py-6 px-[1rem] lg:px-[3.5rem] bg-secondary-neutral-200" >
@@ -151,7 +151,7 @@ function Searchbar({
         class={`overflow-y-scroll px-[1rem] lg:px-[5rem]`}
       >
         <div class="gap-4 grid grid-cols-1 sm:grid-rows-1">
-          <div class={`${hasProducts ? "hidden" : ''} flex flex flex-col gap-6`}>
+          <div class={`${hasProducts ? "hidden" : ''} flex flex-col gap-6`}>
             <span
               class="font-light text-xl text-paragraph-color"
               role="heading"

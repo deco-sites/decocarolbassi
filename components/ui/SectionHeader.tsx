@@ -20,9 +20,8 @@ function Header(props: Props) {
       {props.title || props.description
         ? (
           <div
-            class={`flex flex-col gap-2 ${
-              props.alignment === "left" ? "text-left ml-8" : "text-center"
-            }`}
+            class={`flex flex-col gap-2 ${props.alignment === "left" ? "text-left ml-8" : "text-center"
+              }`}
           >
             {props.title &&
               (
@@ -32,7 +31,6 @@ function Header(props: Props) {
                     props.colorReverse
                       ? "text-primary-content"
                       : "text-dark-blue",
-                    fontSizeClasses[props.fontSize || "Normal"],
                   )}
                 >
                   {props.title}
@@ -40,17 +38,16 @@ function Header(props: Props) {
               )}
             {props.description &&
               (
-                <h2
+                <p
                   class={clx(
-                    "leading-6 lg:leading-8",
+                    "leading-6 lg:leading-8 font-light text-[18px]",
                     props.colorReverse
                       ? "text-primary-content"
                       : "text-base-content",
-                    fontSizeClasses[props.fontSize || "Normal"],
                   )}
                 >
                   {props.description}
-                </h2>
+                </p>
               )}
           </div>
         )

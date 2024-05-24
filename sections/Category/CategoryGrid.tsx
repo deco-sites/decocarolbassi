@@ -100,10 +100,13 @@ function CategoryGrid(props: SectionProps<typeof loader>) {
     interval = 0
   } = props;
 
+  const aspectRatio = 200 / 279;
+
+
   return (
     <div
       id={id}
-      class="container my-16 "
+      class="container mb-0 mt-16 sm:my-16"
     >
       <Header
         title={header.title}
@@ -137,10 +140,11 @@ function CategoryGrid(props: SectionProps<typeof loader>) {
                         alt={label}
                         loading="lazy"
                         class="h-[80%]"
+                        style={{ aspectRatio }}
                       />
                     ) : null}
 
-                    <div class="absolute left-[70px] flex flex-col items-center gap-4 uppercase m-6 bottom-[100px]">
+                    <div class="absolute left-0 right-0 flex flex-col items-center gap-4 uppercase m-6 bottom-[100px]">
                       <h3 class="text-secondary-neutral-100 text-[32px]">{label}</h3>
                       <Button
                         class="font-normal bg-transparent text-sm text-secondary-neutral-100 uppercase py-4 px-6"
