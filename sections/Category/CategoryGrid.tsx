@@ -32,7 +32,7 @@ export interface Props {
 
   /**
    * @title Banners in Row - active to display banners in row
-  */
+   */
   isBannerRowList?: boolean;
   interval?: number;
   list?: CategoryGridProps[];
@@ -97,11 +97,10 @@ function CategoryGrid(props: SectionProps<typeof loader>) {
     },
     isBannerRowList = false,
     device,
-    interval = 0
+    interval = 0,
   } = props;
 
   const aspectRatio = 200 / 279;
-
 
   return (
     <div
@@ -116,136 +115,183 @@ function CategoryGrid(props: SectionProps<typeof loader>) {
         />
       </div>
 
-      {isBannerRowList && device === "mobile" ? (
-        <div
-          id={id}
-          class={"relative grid grid-cols-[30px_1fr_30px] sm:grid-cols-[48px_1fr_48px] mt-6"}
-        >
-          <Slider class="relative carousel carousel-center col-start-2 col-end-2 row-start-1 row-end-4">
-            {list?.map(({ href, image, label, buttonText, video }, index) => (
-              <Slider.Item
-                index={index}
-                class="carousel-item w-auto max-h-full"
+      {isBannerRowList && device === "mobile"
+        ? (
+          <div
+            id={id}
+            class={"relative grid grid-cols-[30px_1fr_30px] sm:grid-cols-[48px_1fr_48px] mt-6"}
+          >
+            <Slider class="relative carousel carousel-center col-start-2 col-end-2 row-start-1 row-end-4">
+              {list?.map(({ href, image, label, buttonText, video }, index) => (
+                <Slider.Item
+                  index={index}
+                  class="carousel-item w-auto max-h-full"
+                >
+                  <div>
+                    <a
+                      href={href}
+                      class={`relative h-[100%] flex`}
+                    >
+                      {video
+                        ? (
+                          <Video
+                            src={video}
+                            width={720}
+                            height={480}
+                            muted
+                            autoPlay
+                            loop
+                            class="h-4/5 object-cover w-full"
+                          />
+                        )
+                        : image
+                        ? (
+                          <img
+                            src={image!}
+                            height={550}
+                            width={400}
+                            alt={label}
+                            loading="lazy"
+                            class="h-4/5"
+                            style={{ aspectRatio }}
+                          />
+                        )
+                        : null}
+
+                      <div class="absolute left-0 right-0 flex flex-col items-center gap-4 uppercase m-6 bottom-[100px]">
+                        <h3 class="text-secondary-neutral-100 text-[32px]">
+                          {label}
+                        </h3>
+                        <ButtonBanner
+                          class="font-normal bg-transparent border-secondary-neutral-100 text-sm text-secondary-neutral-100 uppercase py-3 px-6"
+                          aria-label={label}
+                        >
+                          {buttonText}
+                        </ButtonBanner>
+                      </div>
+                    </a>
+                  </div>
+                </Slider.Item>
+              ))}
+            </Slider>
+
+            <div class="flex items-center justify-start z-10 col-start-1 row-start-2 absolute bottom-16 left-3">
+              <Slider.PrevButton
+                class={"btn btn-circle btn-sm"}
               >
-                <div>
-                  <a
-                    href={href}
-                    class={`relative h-[100%] flex`}
-                  >
-                    {video ? (
-                      <Video src={video} width={720} height={480} muted autoPlay loop class="h-4/5 object-cover w-full" />
-                    ) : image ? (
-                      <img
-                        src={image!}
-                        height={550}
-                        width={400}
-                        alt={label}
-                        loading="lazy"
-                        class="h-4/5"
-                        style={{ aspectRatio }}
-                      />
-                    ) : null}
-
-                    <div class="absolute left-0 right-0 flex flex-col items-center gap-4 uppercase m-6 bottom-[100px]">
-                      <h3 class="text-secondary-neutral-100 text-[32px]">{label}</h3>
-                      <ButtonBanner
-                        class="font-normal bg-transparent border-secondary-neutral-100 text-sm text-secondary-neutral-100 uppercase py-3 px-6"
-                        aria-label={label}
-                      >
-                        {buttonText}
-                      </ButtonBanner>
-                    </div>
-                  </a>
-                </div>
-              </Slider.Item>
-            ))}
-          </Slider>
-
-          <div class="flex items-center justify-start z-10 col-start-1 row-start-2 absolute bottom-16 left-3">
-            <Slider.PrevButton
-              class={"btn btn-circle btn-sm"}
-            >
-              <Icon
-                class="text-base-content"
-                size={24}
-                id="ChevronLeft"
-                strokeWidth={2}
-              />
-            </Slider.PrevButton>
-          </div>
-          <div class="flex items-center justify-end z-10 col-start-3 row-start-2 absolute bottom-16 right-3">
-            <Slider.NextButton
-              class={"btn btn-circle btn-sm"}
-            >
-              <Icon
-                class="text-base-content"
-                size={28}
-                id="ChevronRight"
-                strokeWidth={2}
-              />
-            </Slider.NextButton>
-          </div>
-
-          <ul class={`carousel grid grid-cols-${list.length} mt-[-80px] items-end col-span-full z-10 row-start-4 w-[calc(100%-100px)] m-auto bg-secondary-neutral-600`}>
-            {list?.map((_, index) => (
-              <li class="carousel-item w-full">
-                <Slider.Dot index={index} classes="w-full">
-                  <div class="w-full h-[0.20rem] group-disabled:bg-dark-blue bg-transparent" />
-                </Slider.Dot>
-              </li>
-            ))}
-          </ul>
-          <Slider.JS rootId={id} interval={interval && interval * 1e3} infinite />
-        </div>
-      ) : (
-        <div class={`grid ${isBannerRowList ? "md:grid-cols-3" : "md:grid-cols-2"} grid-cols-1 mt-6 gap-4`}>
-          {list?.map((
-            { href, image, label, buttonText, video },
-          ) => (
-            <div>
-              <a
-                href={href}
-                class={`relative h-[100%] flex ${layout.categoryCard?.textAlignment === "left"
-                  ? "justify-start"
-                  : "justify-start items-center"
-                  } ${layout.categoryCard?.textPosition === "bottom"
-                    ? "flex-col-reverse"
-                    : "flex-col"
-                  }`}
-              >
-                {video ? (
-                  <Video src={video} width={720} height={480} muted autoPlay loop class={`h-full object-cover w-full ${device === "mobile" ? "aspect-[3/3]" : ""}`} />
-                ) : image ? (
-                  <figure>
-                    <Image
-                      class={`w-full ${device === "mobile" ? "aspect-[3/3]" : ""}`}
-                      src={image}
-                      alt={label}
-                      width={isBannerRowList ? 960 : 720}
-                      height={isBannerRowList ? 1440 : 480}
-                      loading="lazy"
-                    />
-                  </figure>
-                ) : null}
-
-                {!isBannerRowList && <div class="absolute inset-0 bg-gradient-to-b from-transparent to-[#21212191]"></div>}
-
-                <div class="absolute flex flex-col items-center gap-4 uppercase m-6">
-                  <h3 class="text-secondary-neutral-100 text-2xl lg:text-[32px]">{label}</h3>
-                  <ButtonBanner
-                    class="font-normal text-xs lg:text-sm bg-transparent border-secondary-neutral-100 text-secondary-neutral-100 uppercase py-3 px-6"
-                    aria-label={label}
-                  >
-                    {buttonText}
-                  </ButtonBanner>
-                </div>
-              </a>
+                <Icon
+                  class="text-base-content"
+                  size={24}
+                  id="ChevronLeft"
+                  strokeWidth={2}
+                />
+              </Slider.PrevButton>
             </div>
-          ))}
-        </div>
-      )}
+            <div class="flex items-center justify-end z-10 col-start-3 row-start-2 absolute bottom-16 right-3">
+              <Slider.NextButton
+                class={"btn btn-circle btn-sm"}
+              >
+                <Icon
+                  class="text-base-content"
+                  size={28}
+                  id="ChevronRight"
+                  strokeWidth={2}
+                />
+              </Slider.NextButton>
+            </div>
 
+            <ul
+              class={`carousel grid grid-cols-${list.length} mt-[-80px] items-end col-span-full z-10 row-start-4 w-[calc(100%-100px)] m-auto bg-secondary-neutral-600`}
+            >
+              {list?.map((_, index) => (
+                <li class="carousel-item w-full">
+                  <Slider.Dot index={index} classes="w-full">
+                    <div class="w-full h-[0.20rem] group-disabled:bg-dark-blue bg-transparent" />
+                  </Slider.Dot>
+                </li>
+              ))}
+            </ul>
+            <Slider.JS
+              rootId={id}
+              interval={interval && interval * 1e3}
+              infinite
+            />
+          </div>
+        )
+        : (
+          <div
+            class={`grid ${
+              isBannerRowList ? "md:grid-cols-3" : "md:grid-cols-2"
+            } grid-cols-1 mt-6 gap-4`}
+          >
+            {list?.map((
+              { href, image, label, buttonText, video },
+            ) => (
+              <div>
+                <a
+                  href={href}
+                  class={`relative h-[100%] flex ${
+                    layout.categoryCard?.textAlignment === "left"
+                      ? "justify-start"
+                      : "justify-start items-center"
+                  } ${
+                    layout.categoryCard?.textPosition === "bottom"
+                      ? "flex-col-reverse"
+                      : "flex-col"
+                  }`}
+                >
+                  {video
+                    ? (
+                      <Video
+                        src={video}
+                        width={720}
+                        height={480}
+                        muted
+                        autoPlay
+                        loop
+                        class={`h-full object-cover w-full ${
+                          device === "mobile" ? "aspect-[3/3]" : ""
+                        }`}
+                      />
+                    )
+                    : image
+                    ? (
+                      <figure>
+                        <Image
+                          class={`w-full ${
+                            device === "mobile" ? "aspect-[3/3]" : ""
+                          }`}
+                          src={image}
+                          alt={label}
+                          width={isBannerRowList ? 960 : 720}
+                          height={isBannerRowList ? 1440 : 480}
+                          loading="lazy"
+                        />
+                      </figure>
+                    )
+                    : null}
 
+                  {!isBannerRowList && (
+                    <div class="absolute inset-0 bg-gradient-to-b from-transparent to-[#21212191]">
+                    </div>
+                  )}
+
+                  <div class="absolute flex flex-col items-center gap-4 uppercase m-6">
+                    <h3 class="text-secondary-neutral-100 text-2xl lg:text-[32px]">
+                      {label}
+                    </h3>
+                    <ButtonBanner
+                      class="font-normal text-xs lg:text-sm bg-transparent border-secondary-neutral-100 text-secondary-neutral-100 uppercase py-3 px-6"
+                      aria-label={label}
+                    >
+                      {buttonText}
+                    </ButtonBanner>
+                  </div>
+                </a>
+              </div>
+            ))}
+          </div>
+        )}
     </div>
   );
 }
@@ -253,7 +299,7 @@ function CategoryGrid(props: SectionProps<typeof loader>) {
 export const loader = (props: Props, req: Request, ctx: AppContext) => {
   return {
     ...props,
-    device: ctx.device
+    device: ctx.device,
   };
 };
 

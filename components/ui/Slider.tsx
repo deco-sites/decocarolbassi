@@ -99,7 +99,6 @@ const setup = ({ rootId, scroll, interval, infinite }: Props) => {
     return;
   }
 
-
   let isMouseDown = false;
   let startX = 0;
   let scrollLeft = 0;
@@ -126,7 +125,7 @@ const setup = ({ rootId, scroll, interval, infinite }: Props) => {
 
     setTimeout(() => {
       isMouseDown = false;
-    }, 500)
+    }, 500);
   };
 
   slider.addEventListener("mousedown", onMouseDown);

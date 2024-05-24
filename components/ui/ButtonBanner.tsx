@@ -22,10 +22,11 @@ const ButtonBanner = forwardRef<HTMLButtonElement, Props>(({
   <button
     {...props}
     className={`btn no-animation rounded-none
-    ${negative ?
-        "bg-primary-600 text-secondary-neutral-100 text-sm font-normal border-transparent py-3 px-6 w-fit uppercase hover:bg-base-100 hover:text-primary-600 hover:border-secondary-neutral-100" :
-        "bg-base-100 text-sm font-normal border-primary-600 py-3 px-6 w-fit uppercase hover:bg-primary-600 hover:text-secondary-neutral-100 hover:border-transparent"
-      } ${_class} `}
+    ${
+      negative
+        ? "bg-primary-600 text-secondary-neutral-100 text-sm font-normal border-transparent py-3 px-6 w-fit uppercase hover:bg-base-100 hover:text-primary-600 hover:border-secondary-neutral-100"
+        : "bg-base-100 text-sm font-normal border-primary-600 py-3 px-6 w-fit uppercase hover:bg-primary-600 hover:text-secondary-neutral-100 hover:border-transparent"
+    } ${_class} `}
     disabled={disabled || loading}
     aria-label={ariaLabel || props["aria-label"]}
     type={type}

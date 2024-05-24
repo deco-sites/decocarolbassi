@@ -117,7 +117,7 @@ function BannerItem(
     mobile,
     desktop,
     action,
-    video
+    video,
   } = element;
 
   return (
@@ -145,31 +145,43 @@ function BannerItem(
           </ButtonBanner>
         </div>
       )}
-      {video ? <Video src={video} width={1440} height={500} controls={false} autoPlay loop muted class="w-full h-full object-cover" /> : (
-        <Picture preload={lcp}>
-          <Source
-            media="(max-width: 767px)"
-            fetchPriority={lcp ? "high" : "auto"}
-            src={mobile!}
-            width={430}
-            height={590}
-          />
-          <Source
-            media="(min-width: 768px)"
-            fetchPriority={lcp ? "high" : "auto"}
-            src={desktop!}
+      {video
+        ? (
+          <Video
+            src={video}
             width={1440}
-            height={600}
+            height={500}
+            controls={false}
+            autoPlay
+            loop
+            muted
+            class="w-full h-full object-cover"
           />
-          <img
-            class="object-cover w-full h-full"
-            loading={lcp ? "eager" : "lazy"}
-            src={desktop}
-            alt={alt}
-          />
-        </Picture>
-      )}
-
+        )
+        : (
+          <Picture preload={lcp}>
+            <Source
+              media="(max-width: 767px)"
+              fetchPriority={lcp ? "high" : "auto"}
+              src={mobile!}
+              width={430}
+              height={590}
+            />
+            <Source
+              media="(min-width: 768px)"
+              fetchPriority={lcp ? "high" : "auto"}
+              src={desktop!}
+              width={1440}
+              height={600}
+            />
+            <img
+              class="object-cover w-full h-full"
+              loading={lcp ? "eager" : "lazy"}
+              src={desktop}
+              alt={alt}
+            />
+          </Picture>
+        )}
     </a>
   );
 }
