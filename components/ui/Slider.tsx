@@ -200,32 +200,6 @@ const setup = ({ rootId, scroll, interval, infinite }: Props) => {
     dots?.item(it).addEventListener("click", () => goToItem(it));
   }
 
-  // let mouseDown = false;
-  // let startX: any, scrollLeft: any;
-
-  // const startDragging = (e: any) => {
-  //   mouseDown = true;
-  //   startX = e.pageX - slider.clientLeft;
-  //   scrollLeft = slider.scrollLeft;
-  // }
-
-  // const stopDragging = (e: any) => {
-  //   mouseDown = false;
-  // }
-
-  // const move = (e: any) => {
-  //   e.preventDefault();
-  //   if (!mouseDown) { return; }
-  //   const x = e.pageX - slider.clientLeft;
-  //   const scroll = x - startX;
-  //   slider.scrollLeft = scrollLeft - scroll;
-  // }
-
-  // slider.addEventListener('mousemove', move, false);
-  // slider.addEventListener('mousedown', startDragging, false);
-  // slider.addEventListener('mouseup', stopDragging, false);
-  // slider.addEventListener('mouseleave', stopDragging, false);
-
   prev?.addEventListener("click", onClickPrev);
   next?.addEventListener("click", onClickNext);
 
@@ -236,11 +210,6 @@ const setup = ({ rootId, scroll, interval, infinite }: Props) => {
     for (let it = 0; it < (dots?.length ?? 0); it++) {
       dots?.item(it).removeEventListener("click", () => goToItem(it));
     }
-
-    // slider.removeEventListener('mousemove', move, false);
-    // slider.removeEventListener('mousedown', startDragging, false);
-    // slider.removeEventListener('mouseup', stopDragging, false);
-    // slider.removeEventListener('mouseleave', stopDragging, false);
 
     prev?.removeEventListener("click", onClickPrev);
     next?.removeEventListener("click", onClickNext);
