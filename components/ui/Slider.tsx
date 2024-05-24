@@ -99,6 +99,41 @@ const setup = ({ rootId, scroll, interval, infinite }: Props) => {
     return;
   }
 
+
+  let isMouseDown = false;
+  let startX = 0;
+  let scrollLeft = 0;
+
+  const onMouseDown = (e: any) => {
+    const event = e as MouseEvent;
+    isMouseDown = true;
+    if (!isHTMLElement(slider)) return;
+    startX = event.pageX - slider.offsetLeft;
+    scrollLeft = slider.scrollLeft;
+  };
+
+  const onMouseUp = () => {
+    isMouseDown = false;
+  };
+
+  const onMouseMove = (e: any) => {
+    const event = e as MouseEvent;
+    event.preventDefault();
+    if (!isHTMLElement(slider) || !isMouseDown) return;
+    const x = event.pageX - slider.offsetLeft;
+    const walk = (x - startX) * 2;
+    slider.scrollLeft = scrollLeft - walk;
+
+    setTimeout(() => {
+      isMouseDown = false;
+    }, 500)
+  };
+
+  slider.addEventListener("mousedown", onMouseDown);
+  slider.addEventListener("mouseup", onMouseUp);
+  slider.addEventListener("mouseleave", onMouseUp);
+  slider.addEventListener("mousemove", onMouseMove);
+
   const getElementsInsideContainer = () => {
     const indices: number[] = [];
     const sliderRect = slider.getBoundingClientRect();
@@ -213,6 +248,11 @@ const setup = ({ rootId, scroll, interval, infinite }: Props) => {
 
     prev?.removeEventListener("click", onClickPrev);
     next?.removeEventListener("click", onClickNext);
+
+    slider.removeEventListener("mousedown", onMouseDown);
+    slider.removeEventListener("mouseup", onMouseUp);
+    slider.removeEventListener("mouseleave", onMouseUp);
+    slider.removeEventListener("mousemove", onMouseMove);
 
     observer.disconnect();
 
