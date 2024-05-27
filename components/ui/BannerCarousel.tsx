@@ -222,22 +222,22 @@ function Buttons() {
   return (
     <>
       <div class="flex items-center justify-center z-10 col-start-1 row-start-2">
-        <Slider.PrevButton class="btn btn-circle glass">
+        <Slider.PrevButton class="btn bg-transparent border-0 btn-circle group hover:bg-secondary-neutral-600">
           <Icon
-            class="text-base-100"
+            class="text-base-100 group-hover:text-primary-900"
             size={24}
             id="ChevronLeft"
-            strokeWidth={3}
+            strokeWidth={1}
           />
         </Slider.PrevButton>
       </div>
       <div class="flex items-center justify-center z-10 col-start-3 row-start-2">
-        <Slider.NextButton class="btn btn-circle glass">
+        <Slider.NextButton class="btn bg-transparent border-0 btn-circle group hover:bg-secondary-neutral-600">
           <Icon
-            class="text-base-100"
+            class="text-base-100 group-hover:text-primary-900"
             size={24}
             id="ChevronRight"
-            strokeWidth={3}
+            strokeWidth={1}
           />
         </Slider.NextButton>
       </div>

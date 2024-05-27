@@ -21,8 +21,8 @@ interface Props {
   platform?: Platform;
 }
 
-const WIDTH = 100;
-const HEIGHT = 90;
+const WIDTH = 70;
+const HEIGHT = 100;
 
 function ProductCardHeader({
   product,
@@ -64,9 +64,9 @@ function ProductCardHeader({
       <a href={relativeUrl}
         aria-label="view product"
       >
-        <div class="flex items-center gap-2 lg:group-hover:-translate-y-1">
+        <div class="flex items-center gap-2">
           <figure
-            class="relative overflow-hidden w-[100px] h-[90px]"
+            class="relative overflow-hidden w-[70px] h-[100px]"
             style={{ aspectRatio }}
           >
 
@@ -83,30 +83,27 @@ function ProductCardHeader({
               <Image
                 src={front.url!}
                 alt={front.alternateName}
-                width={WIDTH}
-                height={HEIGHT}
+                width={70}
+                height={100}
                 style={{ aspectRatio }}
                 class={clx(
                   "bg-base-100",
-                  "object-cover",
-                  "rounded w-full",
+                  "object-contain",
                   "col-span-full row-span-full",
                 )}
                 sizes="(max-width: 640px) 50vw, 20vw"
-                preload={preload}
                 loading={preload ? "eager" : "lazy"}
                 decoding="async"
               />
               <Image
                 src={back?.url ?? front.url!}
                 alt={back?.alternateName ?? front.alternateName}
-                width={WIDTH}
-                height={HEIGHT}
+                width={70}
+                height={100}
                 style={{ aspectRatio }}
                 class={clx(
                   "bg-base-100",
-                  "object-cover",
-                  "rounded w-full",
+                  "object-contain",
                   "col-span-full row-span-full",
                   "transition-opacity opacity-0 lg:group-hover:opacity-100",
                 )}

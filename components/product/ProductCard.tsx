@@ -89,7 +89,7 @@ function ProductCard({
               class={clx(
                 "bg-base-100",
                 "object-cover",
-                "rounded w-full",
+                "w-full",
                 "col-span-full row-span-full",
               )}
               sizes="(max-width: 640px) 50vw, 20vw"
@@ -106,7 +106,7 @@ function ProductCard({
               class={clx(
                 "bg-base-100",
                 "object-cover",
-                "rounded w-full",
+                "w-full",
                 "col-span-full row-span-full",
                 "transition-opacity opacity-0 lg:group-hover:opacity-100",
               )}

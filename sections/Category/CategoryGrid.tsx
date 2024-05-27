@@ -105,9 +105,13 @@ function CategoryGrid(props: SectionProps<typeof loader>) {
   return (
     <div
       id={id}
-      class={`mb-0 mt-16 ${isBannerRowList && "px-8 pb-8"}`}
+      class={`mb-0 lg:mt-20 ${isBannerRowList ? "lg:px-8 pb-8 mt-12" : "mt-36"} `}
     >
-      <div class={`${!isBannerRowList && "ml-8"}`}>
+      <div class={
+        `${device == "mobile" && "ml-8"}
+          ${isBannerRowList && device !== "mobile" && "ml-0"}
+          ${!isBannerRowList && "ml-8"}
+        `}>
         <Header
           title={header.title}
           description={header.description || ""}
@@ -119,9 +123,9 @@ function CategoryGrid(props: SectionProps<typeof loader>) {
         ? (
           <div
             id={id}
-            class={"relative grid grid-cols-[30px_1fr_30px] sm:grid-cols-[48px_1fr_48px] mt-6"}
+            class={"relative grid grid-cols-[0px_1fr_0px] sm:grid-cols-[48px_1fr_48px] mt-6"}
           >
-            <Slider class="relative carousel carousel-center col-start-2 col-end-2 row-start-1 row-end-4">
+            <Slider class="relative carousel carousel-center col-start-2 col-end-2 row-start-1 row-end-4 ">
               {list?.map(({ href, image, label, buttonText, video }, index) => (
                 <Slider.Item
                   index={index}
@@ -149,16 +153,15 @@ function CategoryGrid(props: SectionProps<typeof loader>) {
                           <img
                             src={image!}
                             height={550}
-                            width={400}
+                            width={300}
                             alt={label}
                             loading="lazy"
-                            class="h-4/5"
-                            style={{ aspectRatio }}
+                            class="h-full"
                           />
                         )
                         : null}
 
-                      <div class="absolute left-0 right-0 flex flex-col items-center gap-4 uppercase m-6 bottom-[100px]">
+                      <div class="absolute left-0 right-0 flex flex-col items-center gap-4 uppercase m-6 bottom-0 lg:bottom-[100px]">
                         <h3 class="text-secondary-neutral-100 text-[32px]">
                           {label}
                         </h3>
@@ -175,7 +178,7 @@ function CategoryGrid(props: SectionProps<typeof loader>) {
               ))}
             </Slider>
 
-            <div class="flex items-center justify-start z-10 col-start-1 row-start-2 absolute bottom-16 left-3">
+            <div class="flex items-center justify-start z-10 col-start-1 row-start-2 absolute bottom-[-15px] lg:bottom-16 left-3">
               <Slider.PrevButton
                 class={"btn btn-circle btn-sm"}
               >
@@ -183,30 +186,30 @@ function CategoryGrid(props: SectionProps<typeof loader>) {
                   class="text-base-content"
                   size={24}
                   id="ChevronLeft"
-                  strokeWidth={2}
+                  strokeWidth={0.01}
                 />
               </Slider.PrevButton>
             </div>
-            <div class="flex items-center justify-end z-10 col-start-3 row-start-2 absolute bottom-16 right-3">
+            <div class="flex items-center justify-end z-10 col-start-3 row-start-2 absolute bottom-[-15px] lg:bottom-16 right-3">
               <Slider.NextButton
                 class={"btn btn-circle btn-sm"}
               >
                 <Icon
                   class="text-base-content"
-                  size={28}
+                  size={24}
                   id="ChevronRight"
-                  strokeWidth={2}
+                  strokeWidth={0.01}
                 />
               </Slider.NextButton>
             </div>
 
             <ul
-              class={`carousel grid grid-cols-${list.length} mt-[-80px] items-end col-span-full z-10 row-start-4 w-[calc(100%-100px)] m-auto bg-secondary-neutral-600`}
+              class={`carousel grid grid-cols-${list.length} mt-[40px] lg:mt-[-80px] items-end col-span-full z-10 row-start-4 w-[calc(100%-100px)] m-auto bg-secondary-neutral-600`}
             >
               {list?.map((_, index) => (
                 <li class="carousel-item w-full">
                   <Slider.Dot index={index} classes="w-full">
-                    <div class="w-full h-[0.20rem] group-disabled:bg-dark-blue bg-transparent" />
+                    <div class="w-full h-[0.10rem] group-disabled:bg-dark-blue bg-transparent" />
                   </Slider.Dot>
                 </li>
               ))}
@@ -220,7 +223,7 @@ function CategoryGrid(props: SectionProps<typeof loader>) {
         )
         : (
           <div
-            class={`grid ${
+            class={`grid px-8 lg:px-0 ${
               isBannerRowList ? "md:grid-cols-3" : "md:grid-cols-2"
             } grid-cols-1 mt-6 gap-4`}
           >

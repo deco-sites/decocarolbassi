@@ -44,7 +44,7 @@ function Header(props: Props) {
                     "leading-6 lg:leading-8 font-light text-[18px]",
                     props.colorReverse
                       ? "text-primary-content"
-                      : "text-base-content",
+                      : "text-paragraph-color",
                   )}
                 >
                   {props.description}

@@ -68,6 +68,7 @@ function Searchbar({
   const { products = [] } = payload.value ?? {};
   const hasProducts = Boolean(products.length);
   const userSearches = useSignal<string[]>([]);
+  const searchInputLength = searchInputRef?.current?.value?.length ?? 0;
 
   if (IS_BROWSER) {
     const getUserSearches = localStorage.getItem('userSearches') ?? "";
@@ -91,6 +92,8 @@ function Searchbar({
       return localStorage.setItem('userSearches', JSON.stringify(searches));
     }
   }
+
+  console.log(searchInputLength)
 
   return (
     <div
@@ -124,7 +127,7 @@ function Searchbar({
         />
         <Button
           type="submit"
-          class="join-item btn-square shadow-none border-0 border-b border-dark-blue bg-secondary-neutral-200"
+          class="join-item btn-square shadow-none border-0 border-b border-dark-blue bg-secondary-neutral-200 mr-4"
           aria-label="Search"
           for={id}
           tabIndex={-1}
@@ -132,7 +135,7 @@ function Searchbar({
         >
           {loading.value
             ? <span class="loading loading-spinner loading-xs" />
-            : <Icon id="MagnifyingGlass" size={24} strokeWidth={0.01} />}
+            : <Icon id="MagnifyingGlass" size={20} strokeWidth={0.01} />}
         </Button>
         <Button
           type="button"
@@ -178,13 +181,13 @@ function Searchbar({
           </div>
           <div class={`${!hasProducts ? 'hidden' : ''} flex flex-col pt-6 md:pt-0 gap-6 overflow-x-hidden`}>
             <span
-              class="font-light text-xl text-paragraph-color ml-4"
+              class="font-light text-xl text-paragraph-color"
               role="heading"
               aria-level={3}
             >
               Sugestões para você
             </span>
-            <Slider class="carousel flex-col gap-4">
+            <Slider class="carousel flex-col gap-4 lg:gap-0">
               {products.map((product: Product, index: number) => (
                 <Slider.Item
                   index={index}

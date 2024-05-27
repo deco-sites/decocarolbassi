@@ -9,6 +9,7 @@ import { clx } from "../../sdk/clx.ts";
 import { useId } from "../../sdk/useId.ts";
 import { useOffer } from "../../sdk/useOffer.ts";
 import { usePlatform } from "../../sdk/usePlatform.tsx";
+import ButtonBanner from "../ui/ButtonBanner.tsx";
 
 export interface Props {
   products: Product[] | null;
@@ -23,6 +24,13 @@ export interface Props {
     headerfontSize?: "Normal" | "Large" | "Small";
     showArrows?: boolean;
     showDots?: boolean;
+    colletionButton?: {
+      show?: boolean;
+      action?: {
+        text: string;
+        href: string;
+      }
+    }
   };
 }
 
@@ -47,7 +55,7 @@ function ProductShelf({
   };
 
   const slideMobile = {
-    1: "w-full",
+    1: "w-[90%]",
     2: "w-1/2",
     3: "w-1/3",
     4: "w-1/4",
@@ -68,11 +76,11 @@ function ProductShelf({
         id={id}
         class={clx(
           "relative grid",
-          layout?.showArrows && "grid-cols-[48px_1fr_48px] lg:grid-cols-[0px_1fr_0px]",
+          layout?.showArrows && "grid-cols-[0px_1fr_0px] lg:grid-cols-[0px_1fr_0px]",
           "px-0 ml-8",
         )}
       >
-        <Slider class="relative carousel carousel-center col-start-2 col-end-2 row-start-1 row-end-4">
+        <Slider class="relative carousel carousel-center col-start-2 col-end-2 row-start-1 row-end-4 gap-1">
           {products?.map((product, index) => (
             <Slider.Item
               index={index}
@@ -95,27 +103,39 @@ function ProductShelf({
         {layout?.showArrows && (
           <>
             <div class="relative block z-10 col-start-1 row-start-3">
-              <Slider.PrevButton class="absolute w-12 h-12 flex justify-center items-center">
-                <Icon size={24} id="ChevronLeft" strokeWidth={3} class="w-5" />
+              <Slider.PrevButton class="absolute w-12 h-12 flex justify-center items-center top-3 lg:top-[27px]">
+                <Icon size={24} id="ChevronLeft" strokeWidth={0.01} class="w-5" />
               </Slider.PrevButton>
             </div>
-            <div class="absolute col-start-3 lg:col-start-auto lg:left-[265px] block z-10 row-start-3">
+            <div class="absolute col-start-3 right-20 lg:col-start-auto lg:left-[255px] lg:right-auto top-3 lg:top-[26px] block z-10 row-start-3">
               <Slider.NextButton class="absolute w-12 h-12 flex justify-center items-center">
-                <Icon size={24} id="ChevronRight" strokeWidth={3} />
+                <Icon size={24} id="ChevronRight" strokeWidth={0.01} />
               </Slider.NextButton>
             </div>
           </>
         )}
         {layout?.showDots && (
-          <ul class={`absolute left-[50px] carousel grid grid-cols-${products.length} mt-[22px] items-end col-span-full z-10 row-start-4 w-[calc(100%-100px)] lg:w-[200px] m-auto bg-secondary-neutral-600`}>
+          <ul class={`absolute left-[50px] carousel grid grid-cols-${products.length} mt-[35px] lg:mt-[50px] items-end col-span-full z-10 row-start-4 w-[calc(100%-130px)] lg:w-[200px] m-auto bg-secondary-neutral-600`}>
             {products?.map((_, index) => (
               <li class="carousel-item w-full">
                 <Slider.Dot index={index} classes="w-full">
-                  <div class="w-full h-[0.20rem] group-disabled:bg-dark-blue bg-transparent" />
+                  <div class="w-full h-[0.15rem] group-disabled:bg-dark-blue bg-transparent" />
                 </Slider.Dot>
               </li>
             ))}
           </ul>
+        )}
+
+        {layout?.colletionButton?.show && (
+          <div class="absolute left-24 bottom-[-120px] lg:right-12 lg:left-auto lg:bottom-[-80px]">
+            <a
+              href={layout?.colletionButton.action?.href}
+            >
+              <ButtonBanner aria-label={layout.colletionButton.action?.text}>
+                {layout?.colletionButton.action?.text}
+              </ButtonBanner>
+            </a>
+          </div>
         )}
 
         <Slider.JS rootId={id} />

@@ -40,7 +40,7 @@ export default function Benefits({ items = defaultValues }: Props) {
   return (
     <div
       id={id}
-      class="lg:container mx-6 lg:mx-auto mb-4 lg:my-4 grid gap-8 lg:gap-4 grid-cols-1 place-items-center lg:grid-cols-3 text-center px-4"
+      class="mt-4 lg:container mx-6 lg:mx-auto mb-4 lg:my-4 grid gap-8 lg:gap-4 grid-cols-1 place-items-center lg:grid-cols-3 text-center px-4"
     >
       {items.map((item) => (
         <div class="flex flex-col items-center justify-center max-w-72">
