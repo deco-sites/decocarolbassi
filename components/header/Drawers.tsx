@@ -70,11 +70,14 @@ function Drawers({ menu, searchbar, children, platform }: Props) {
               displayMenu.value = false;
               displaySearchDrawer.value = false;
             }}
-            title={displayMenu.value ? "CAROL BASSI" : "Buscar"}
+            title={displayMenu.value ? "CAROL BASSI" : ""}
           >
             {displayMenu.value && <Menu {...menu} />}
             {searchbar && displaySearchDrawer.value && (
-              <div class="w-screen">
+              <div
+                class="w-screen"
+                style={!displayMenu.value ? { border: "0" } : {}}
+              >
                 <Searchbar {...searchbar} />
               </div>
             )}
