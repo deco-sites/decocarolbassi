@@ -268,7 +268,7 @@ function Footer({
         LAYOUT[layout?.backgroundColor ?? "Primary"],
       )}
     >
-      <div class="lg:container mx-6 lg:mx-auto">
+      <div class="lg:mx-auto">
         {(!layout?.variation || layout?.variation == "Variation 1") && (
           <div class="flex flex-col gap-10">
             <div class="flex flex-col md:flex-row md:justify-between md:flex-wrap lg:flex-nowrap gap-8 lg:gap-12">
@@ -334,7 +334,7 @@ function Footer({
               </div>
             </div>
             <Divider />
-            <div class="flex flex-col-reverse md:flex-row md:justify-between gap-10">
+            <div class="flex flex-col-reverse md:flex-row md:justify-between gap-10 lg:px-24">
               <PoweredByDeco />
               {_links}
             </div>
@@ -343,7 +343,7 @@ function Footer({
         {layout?.variation == "Variation 4" && (
           <div class="flex flex-col gap-10">
             {_newsletter}
-            <div class="flex flex-col lg:flex-row gap-10 lg:gap-20">
+            <div class="flex flex-col lg:flex-row gap-10 lg:gap-20 lg:px-20  mx-8">
               <div class="lg:w-3/5">
                 <h3 class="text-center sm:text-left text-xl uppercase text-black">
                   {seoTexts.title}
@@ -352,7 +352,7 @@ function Footer({
                   {seoTexts.description}
                 </p>
               </div>
-              <div class="flex flex-col md:flex-row lg:flex-col gap-10 lg:gap-10 lg:w-full lg:pl-10">
+              <div class="flex flex-col md:flex-row lg:flex-col gap-10 lg:gap-10 lg:w-full">
                 {_sectionLinks}
               </div>
             </div>

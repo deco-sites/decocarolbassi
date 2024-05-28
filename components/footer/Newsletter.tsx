@@ -8,8 +8,6 @@ import { clx } from "../../sdk/clx.ts";
 export interface Banner {
   /** @description desktop otimized image */
   desktop?: ImageWidget;
-  /** @description mobile otimized image */
-  mobile?: ImageWidget;
   /** @description Image's alt text */
   alt?: string;
   action?: {
@@ -81,10 +79,10 @@ function Newsletter(
       class={clx(
         "flex flex-col gap-4",
         tiled &&
-          "lg:flex-row lg:w-full lg:justify-between lg:flex-1 lg:items-center",
+        "lg:flex-row lg:w-full lg:justify-between lg:flex-1 lg:items-center",
       )}
     >
-      <div class="flex flex-col w-full gap-4 py-5 px-5 lg:pl-[26px] lg:pr-[80px] xl:pl-[120px]">
+      <div class="flex lg:flex-2 flex-col w-full gap-4 py-5 px-5 lg:pl-[26px] lg:pr-[80px] xl:pl-[120px]">
         {content?.title && (
           <h3
             style={{
@@ -117,7 +115,7 @@ function Newsletter(
           <div class="flex flex-wrap gap-3 relative w-full">
             <input
               name="email"
-              class="flex-auto input input-bordered md:w-80 text-base-content pr-0"
+              class="flex-auto input input-bordered w-full text-base-content pr-0"
               placeholder={content?.form?.placeholder || "Digite seu email"}
             />
             <button
@@ -135,19 +133,7 @@ function Newsletter(
         </form>
       </div>
 
-      <Picture>
-        {images?.mobile
-          ? (
-            <Source
-              media="(max-width: 767px)"
-              fetchPriority={"low"}
-              src={images?.mobile ?? ""}
-              width={430}
-              height={590}
-            />
-          )
-          : null}
-
+      <Picture class="lg:flex-4">
         <Source
           media="(min-width: 768px)"
           fetchPriority={"low"}
@@ -156,7 +142,7 @@ function Newsletter(
           height={600}
         />
         <img
-          class="object-contain w-full h-full"
+          class="hidden lg:block object-contain w-full h-full"
           loading={"lazy"}
           src={images?.desktop}
           alt={images?.alt}

@@ -1,38 +1,45 @@
-import type { ImageWidget } from "apps/admin/widgets.ts";
+import type { ImageWidget, VideoWidget } from "apps/admin/widgets.ts";
 import { Picture, Source } from "apps/website/components/Picture.tsx";
+import Video from "apps/website/components/Video.tsx";
 import {
   SendEventOnClick,
   SendEventOnView,
 } from "../../components/Analytics.tsx";
-import Button from "../../components/ui/Button.tsx";
 import Icon from "../../components/ui/Icon.tsx";
 import Slider from "../../components/ui/Slider.tsx";
 import { useId } from "../../sdk/useId.ts";
+import ButtonBanner from "./ButtonBanner.tsx";
 
 /**
  * @titleBy alt
  */
-export interface Banner {
+export interface Element {
+  video?: VideoWidget;
   /** @description desktop otimized image */
-  desktop: ImageWidget;
+  desktop?: ImageWidget;
   /** @description mobile otimized image */
-  mobile: ImageWidget;
+  mobile?: ImageWidget;
   /** @description Image's alt text */
-  alt: string;
+  alt?: string;
   action?: {
+    /** @description active to turn the button negative */
+    buttonNegative?: boolean;
+    /** @description button position */
+    buttonPositionDesktop?: "Center" | "Right";
+    buttonPositionMobile?: "Center" | "Left";
     /** @description when user clicks on the image, go to this link */
     href: string;
     /** @description Image text title */
-    title: string;
+    title?: string;
     /** @description Image text subtitle */
-    subTitle: string;
+    subTitle?: string;
     /** @description Button label */
     label: string;
   };
 }
 
 export interface Props {
-  images?: Banner[];
+  elements?: Element[];
   /**
    * @description Check this option when this banner is the biggest image on the screen for image optimizations
    */
@@ -55,10 +62,11 @@ export interface Props {
 }
 
 const DEFAULT_PROPS = {
-  images: [
+  elements: [
     {
       alt: "/feminino",
       action: {
+        buttonNegative: false,
         title: "New collection",
         subTitle: "Main title",
         label: "Explore collection",
@@ -72,6 +80,7 @@ const DEFAULT_PROPS = {
     {
       alt: "/feminino",
       action: {
+        buttonNegative: false,
         title: "New collection",
         subTitle: "Main title",
         label: "Explore collection",
@@ -85,6 +94,7 @@ const DEFAULT_PROPS = {
     {
       alt: "/feminino",
       action: {
+        buttonNegative: false,
         title: "New collection",
         subTitle: "Main title",
         label: "Explore collection",
@@ -100,14 +110,15 @@ const DEFAULT_PROPS = {
 };
 
 function BannerItem(
-  { image, lcp, id }: { image: Banner; lcp?: boolean; id: string },
+  { element, lcp, id }: { element: Element; lcp?: boolean; id: string },
 ) {
   const {
     alt,
     mobile,
     desktop,
     action,
-  } = image;
+    video,
+  } = element;
 
   return (
     <a
@@ -117,48 +128,65 @@ function BannerItem(
       class="relative overflow-y-hidden w-full"
     >
       {action && (
-        <div class="absolute top-0 md:bottom-0 bottom-1/2 left-0 right-0 sm:right-auto max-w-[407px] flex flex-col justify-end gap-4 px-8 py-12">
+        // <div class="absolute bottom-6 right-8 top-0 md:bottom-0 lg:right-20 max-w-full flex flex-col justify-end items-end gap-4 px-12 py-24">
+        <div class="absolute z-10 bottom-0 translate-x-[50%] translate-y-[calc(100%-80px)]  lg:right-12 lg:px-12 lg:py-12 lg:translate-x-0 lg:translate-y-0">
           <span class="text-2xl font-light text-base-100">
             {action.title}
           </span>
           <span class="font-normal text-4xl text-base-100">
             {action.subTitle}
           </span>
-          <Button
-            class="bg-base-100 text-sm font-light py-4 px-6 w-fit"
+
+          <ButtonBanner
             aria-label={action.label}
+            negative={element.action?.buttonNegative}
           >
             {action.label}
-          </Button>
+          </ButtonBanner>
         </div>
       )}
-      <Picture preload={lcp}>
-        <Source
-          media="(max-width: 767px)"
-          fetchPriority={lcp ? "high" : "auto"}
-          src={mobile}
-          width={430}
-          height={590}
-        />
-        <Source
-          media="(min-width: 768px)"
-          fetchPriority={lcp ? "high" : "auto"}
-          src={desktop}
-          width={1440}
-          height={600}
-        />
-        <img
-          class="object-cover w-full h-full"
-          loading={lcp ? "eager" : "lazy"}
-          src={desktop}
-          alt={alt}
-        />
-      </Picture>
+      {video
+        ? (
+          <Video
+            src={video}
+            width={1440}
+            height={500}
+            controls={false}
+            autoPlay
+            loop
+            muted
+            class="w-full h-full object-cover"
+          />
+        )
+        : (
+          <Picture preload={lcp}>
+            <Source
+              media="(max-width: 767px)"
+              fetchPriority={lcp ? "high" : "auto"}
+              src={mobile!}
+              width={430}
+              height={590}
+            />
+            <Source
+              media="(min-width: 768px)"
+              fetchPriority={lcp ? "high" : "auto"}
+              src={desktop!}
+              width={1440}
+              height={600}
+            />
+            <img
+              class="object-cover w-full h-full"
+              loading={lcp ? "eager" : "lazy"}
+              src={desktop}
+              alt={alt}
+            />
+          </Picture>
+        )}
     </a>
   );
 }
 
-function Dots({ images, interval = 0 }: Props) {
+function Dots({ elements, interval = 0 }: Props) {
   return (
     <>
       <style
@@ -173,7 +201,7 @@ function Dots({ images, interval = 0 }: Props) {
         }}
       />
       <ul class="carousel justify-center col-span-full gap-6 z-10 row-start-4">
-        {images?.map((_, index) => (
+        {elements?.map((_, index) => (
           <li class="carousel-item">
             <Slider.Dot index={index}>
               <div class="py-5">
@@ -194,22 +222,22 @@ function Buttons() {
   return (
     <>
       <div class="flex items-center justify-center z-10 col-start-1 row-start-2">
-        <Slider.PrevButton class="btn btn-circle glass">
+        <Slider.PrevButton class="btn bg-transparent border-0 btn-circle group hover:bg-secondary-neutral-600">
           <Icon
-            class="text-base-100"
+            class="text-base-100 group-hover:text-primary-900"
             size={24}
             id="ChevronLeft"
-            strokeWidth={3}
+            strokeWidth={1}
           />
         </Slider.PrevButton>
       </div>
       <div class="flex items-center justify-center z-10 col-start-3 row-start-2">
-        <Slider.NextButton class="btn btn-circle glass">
+        <Slider.NextButton class="btn bg-transparent border-0 btn-circle group hover:bg-secondary-neutral-600">
           <Icon
-            class="text-base-100"
+            class="text-base-100 group-hover:text-primary-900"
             size={24}
             id="ChevronRight"
-            strokeWidth={3}
+            strokeWidth={1}
           />
         </Slider.NextButton>
       </div>
@@ -219,20 +247,20 @@ function Buttons() {
 
 function BannerCarousel(props: Props) {
   const id = useId();
-  const { images, preload, interval } = { ...DEFAULT_PROPS, ...props };
+  const { elements, preload, interval } = props;
 
   return (
     <div
       id={id}
       class="grid grid-cols-[48px_1fr_48px] sm:grid-cols-[120px_1fr_120px] grid-rows-[1fr_48px_1fr_64px] sm:min-h-min min-h-[660px]"
     >
-      <Slider class="carousel carousel-center w-full col-span-full row-span-full gap-6">
-        {images?.map((image, index) => {
-          const params = { promotion_name: image.alt };
+      <Slider class="carousel carousel-center w-full col-span-full row-span-full gap-6 max-h-[85dvh] md:max-h-[700px]">
+        {elements?.map((element, index) => {
+          const params = { promotion_name: element.alt };
           return (
             <Slider.Item index={index} class="carousel-item w-full">
               <BannerItem
-                image={image}
+                element={element}
                 lcp={index === 0 && preload}
                 id={`${id}::${index}`}
               />
@@ -251,7 +279,7 @@ function BannerCarousel(props: Props) {
 
       {props.arrows && <Buttons />}
 
-      {props.dots && <Dots images={images} interval={interval} />}
+      {props.dots && <Dots elements={elements} interval={interval} />}
 
       <Slider.JS rootId={id} interval={interval && interval * 1e3} infinite />
     </div>

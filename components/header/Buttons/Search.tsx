@@ -14,11 +14,11 @@ export default function SearchButton() {
           displaySearchPopup.value = !displaySearchPopup.value;
         }}
       >
-        <span class="font-light text-paragraph-color mr-8">Procurando por algo?</span>
-        <Icon id="MagnifyingGlass" size={20} strokeWidth={0.1} />
+        <span class="font-light text-paragraph-color mr-8">O que você procura?</span>
+        <Icon id="MagnifyingGlass" size={17} strokeWidth={0.1} />
       </Button>
       <Button
-        class="btn-circle btn-sm btn-ghost sm:hidden"
+        class="btn-circle btn-sm btn-ghost sm:hidden mt-[5px]"
         aria-label="search icon button"
         onClick={() => {
           displaySearchDrawer.value = !displaySearchDrawer.value;

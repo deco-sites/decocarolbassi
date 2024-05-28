@@ -21,8 +21,8 @@ interface Props {
   platform?: Platform;
 }
 
-const WIDTH = 100;
-const HEIGHT = 90;
+const WIDTH = 70;
+const HEIGHT = 100;
 
 function ProductCardHeader({
   product,
@@ -30,7 +30,7 @@ function ProductCardHeader({
   itemListName,
   index,
 }: Props) {
-  const { url, productID, name, image: images, offers } = product;
+  const { url, productID, name, image: images, offers, isVariantOf } = product;
   const id = `product-card-${productID}`;
   const [front, back] = images ?? [];
   const { listPrice, price } = useOffer(offers);
@@ -61,15 +61,12 @@ function ProductCardHeader({
           },
         }}
       />
-      <a href={relativeUrl}
-        aria-label="view product"
-      >
-        <div class="flex items-center gap-2 lg:group-hover:-translate-y-1">
+      <a href={relativeUrl} aria-label="view product">
+        <div class="flex items-center gap-2">
           <figure
-            class="relative overflow-hidden w-[100px] h-[90px]"
+            class="relative overflow-hidden w-[70px] h-[100px]"
             style={{ aspectRatio }}
           >
-
             {/* Product Images */}
             <a
               href={relativeUrl}
@@ -88,12 +85,10 @@ function ProductCardHeader({
                 style={{ aspectRatio }}
                 class={clx(
                   "bg-base-100",
-                  "object-cover",
-                  "rounded w-full",
+                  "object-contain",
                   "col-span-full row-span-full",
                 )}
                 sizes="(max-width: 640px) 50vw, 20vw"
-                preload={preload}
                 loading={preload ? "eager" : "lazy"}
                 decoding="async"
               />
@@ -105,8 +100,7 @@ function ProductCardHeader({
                 style={{ aspectRatio }}
                 class={clx(
                   "bg-base-100",
-                  "object-cover",
-                  "rounded w-full",
+                  "object-contain",
                   "col-span-full row-span-full",
                   "transition-opacity opacity-0 lg:group-hover:opacity-100",
                 )}
@@ -121,7 +115,7 @@ function ProductCardHeader({
           <div class="flex flex-col">
             <h2
               class="truncate text-base capitalize font-light"
-              dangerouslySetInnerHTML={{ __html: name ?? "" }}
+              dangerouslySetInnerHTML={{ __html: isVariantOf?.name ?? "" }}
             />
           </div>
         </div>
