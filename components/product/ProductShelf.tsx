@@ -29,8 +29,8 @@ export interface Props {
       action?: {
         text: string;
         href: string;
-      }
-    }
+      };
+    };
   };
 }
 
@@ -76,7 +76,8 @@ function ProductShelf({
         id={id}
         class={clx(
           "relative grid",
-          layout?.showArrows && "grid-cols-[0px_1fr_0px] lg:grid-cols-[0px_1fr_0px]",
+          layout?.showArrows &&
+            "grid-cols-[0px_1fr_0px] lg:grid-cols-[0px_1fr_0px]",
           "px-0 ml-8",
         )}
       >
@@ -104,7 +105,12 @@ function ProductShelf({
           <>
             <div class="relative block z-10 col-start-1 row-start-3">
               <Slider.PrevButton class="absolute w-12 h-12 flex justify-center items-center top-3 lg:top-[27px]">
-                <Icon size={24} id="ChevronLeft" strokeWidth={0.01} class="w-5" />
+                <Icon
+                  size={24}
+                  id="ChevronLeft"
+                  strokeWidth={0.01}
+                  class="w-5"
+                />
               </Slider.PrevButton>
             </div>
             <div class="absolute col-start-3 right-20 lg:col-start-auto lg:left-[255px] lg:right-auto top-3 lg:top-[26px] block z-10 row-start-3">
@@ -115,10 +121,12 @@ function ProductShelf({
           </>
         )}
         {layout?.showDots && (
-          <ul class={`absolute left-[50px] carousel grid grid-cols-${products.length} mt-[35px] lg:mt-[50px] items-end col-span-full z-10 row-start-4 w-[calc(100%-130px)] lg:w-[200px] m-auto bg-secondary-neutral-600`}>
+          <ul
+            class={`absolute left-[50px] carousel grid grid-cols-${products.length} mt-[35px] lg:mt-[50px] items-end col-span-full z-10 row-start-4 w-[calc(100%-130px)] lg:w-[200px] m-auto bg-secondary-neutral-600`}
+          >
             {products?.map((_, index) => (
               <li class="carousel-item w-full">
-                <Slider.Dot index={index} classes="w-full">
+                <Slider.Dot index={index} class="w-full">
                   <div class="w-full h-[0.15rem] group-disabled:bg-dark-blue bg-transparent" />
                 </Slider.Dot>
               </li>

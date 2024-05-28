@@ -105,13 +105,16 @@ function CategoryGrid(props: SectionProps<typeof loader>) {
   return (
     <div
       id={id}
-      class={`mb-0 lg:mt-20 ${isBannerRowList ? "lg:px-8 pb-8 mt-12" : "mt-36"} `}
+      class={`mb-0 lg:mt-20 ${
+        isBannerRowList ? "lg:px-8 pb-8 mt-12" : "mt-36"
+      } `}
     >
-      <div class={
-        `${device == "mobile" && "ml-8"}
+      <div
+        class={`${device == "mobile" && "ml-8"}
           ${isBannerRowList && device !== "mobile" && "ml-0"}
           ${!isBannerRowList && "ml-8"}
-        `}>
+        `}
+      >
         <Header
           title={header.title}
           description={header.description || ""}
@@ -208,7 +211,7 @@ function CategoryGrid(props: SectionProps<typeof loader>) {
             >
               {list?.map((_, index) => (
                 <li class="carousel-item w-full">
-                  <Slider.Dot index={index} classes="w-full">
+                  <Slider.Dot index={index} class="w-full">
                     <div class="w-full h-[0.10rem] group-disabled:bg-dark-blue bg-transparent" />
                   </Slider.Dot>
                 </li>

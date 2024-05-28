@@ -1,16 +1,16 @@
 import { scriptAsDataURI } from "apps/utils/dataURI.ts";
 import type { ComponentChildren, JSX } from "preact";
 
-function Dot({ index, children, classes }: {
+function Dot({ index, children, class: _class = "" }: {
   index: number;
-  classes?: string;
+  class?: string;
   children: ComponentChildren;
 }) {
   return (
     <button
       data-dot={index}
       aria-label={`go to slider item ${index}`}
-      class={`${classes} focus:outline-none group`}
+      className={` focus:outline-none group ${_class}`}
     >
       {children}
     </button>
