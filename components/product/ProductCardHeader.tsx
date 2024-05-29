@@ -61,15 +61,12 @@ function ProductCardHeader({
           },
         }}
       />
-      <a href={relativeUrl}
-        aria-label="view product"
-      >
+      <a href={relativeUrl} aria-label="view product">
         <div class="flex items-center gap-2">
           <figure
             class="relative overflow-hidden w-[70px] h-[100px]"
             style={{ aspectRatio }}
           >
-
             {/* Product Images */}
             <a
               href={relativeUrl}
@@ -83,8 +80,8 @@ function ProductCardHeader({
               <Image
                 src={front.url!}
                 alt={front.alternateName}
-                width={70}
-                height={100}
+                width={WIDTH}
+                height={HEIGHT}
                 style={{ aspectRatio }}
                 class={clx(
                   "bg-base-100",
@@ -98,8 +95,8 @@ function ProductCardHeader({
               <Image
                 src={back?.url ?? front.url!}
                 alt={back?.alternateName ?? front.alternateName}
-                width={70}
-                height={100}
+                width={WIDTH}
+                height={HEIGHT}
                 style={{ aspectRatio }}
                 class={clx(
                   "bg-base-100",
