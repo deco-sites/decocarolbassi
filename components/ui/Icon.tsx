@@ -25,6 +25,7 @@ export type AvailableIcons =
   | "Frete1"
   | "Frete2"
   | "FilterList"
+  | "FilterOptions"
   | "Heart"
   | "Instagram"
   | "Linkedin"

@@ -17,7 +17,7 @@ import * as $$$$$$5 from "./sections/Cards/ImageCardsCarouselWithImage.tsx";
 import * as $$$$$$6 from "./sections/Category/CategoryBanner.tsx";
 import * as $$$$$$7 from "./sections/Category/CategoryGrid.tsx";
 import * as $$$$$$8 from "./sections/Category/CategoryList.tsx";
-import * as $$$$$$9 from "./sections/Category/SeoText.tsx";
+import * as $$$$$$9 from "./sections/Category/CategorySeoText.tsx";
 import * as $$$$$$10 from "./sections/Content/Benefits.tsx";
 import * as $$$$$$11 from "./sections/Content/BlogPosts.tsx";
 import * as $$$$$$12 from "./sections/Content/CallToAction.tsx";
@@ -77,7 +77,7 @@ const manifest = {
     "site/sections/Category/CategoryBanner.tsx": $$$$$$6,
     "site/sections/Category/CategoryGrid.tsx": $$$$$$7,
     "site/sections/Category/CategoryList.tsx": $$$$$$8,
-    "site/sections/Category/SeoText.tsx": $$$$$$9,
+    "site/sections/Category/CategorySeoText.tsx": $$$$$$9,
     "site/sections/Content/Benefits.tsx": $$$$$$10,
     "site/sections/Content/BlogPosts.tsx": $$$$$$11,
     "site/sections/Content/CallToAction.tsx": $$$$$$12,

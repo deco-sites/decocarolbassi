@@ -1,4 +1,5 @@
 import { Head } from "$fresh/runtime.ts";
+import { ImageWidget, VideoWidget } from "apps/admin/widgets.ts";
 import { PageInfo, Product } from "apps/commerce/types.ts";
 import { usePartialSection } from "deco/hooks/usePartialSection.ts";
 import ProductCard from "../../components/product/ProductCard.tsx";
@@ -6,11 +7,21 @@ import { Format } from "../../components/search/SearchResult.tsx";
 import Spinner from "../../components/ui/Spinner.tsx";
 import ShowMore from "../../islands/ShowMore.tsx";
 import { usePlatform } from "../../sdk/usePlatform.tsx";
+import ProductCardWithBanner from "./ProductCardWithBanner.tsx";
 
 export interface Columns {
   mobile?: 1 | 2;
   desktop?: 2 | 3 | 4 | 5;
 }
+
+export type MediaSource = {
+  image?: ImageWidget;
+  video?: VideoWidget;
+  type?: "image" | "video";
+  action?: {
+    href: string;
+  };
+}[];
 
 export interface Props {
   products: Product[] | null;
@@ -21,6 +32,7 @@ export interface Props {
     format?: Format;
   };
   url: URL;
+  mediaSources: MediaSource;
 }
 
 const MOBILE_COLUMNS = {
@@ -36,8 +48,16 @@ const DESKTOP_COLUMNS = {
 };
 
 function ProductGallery(
-  { products, pageInfo, layout, offset, url }: Props,
+  {
+    products,
+    pageInfo,
+    layout,
+    offset,
+    url,
+    mediaSources,
+  }: Props,
 ) {
+  console.log({ pageInfo });
   const platform = usePlatform();
   const mobile = MOBILE_COLUMNS[layout?.columns?.mobile ?? 2];
   const desktop = DESKTOP_COLUMNS[layout?.columns?.desktop ?? 4];
@@ -52,7 +72,10 @@ function ProductGallery(
 
   return (
     <div
-      class={`grid ${mobile} gap-2 items-center ${desktop} sm:gap-10`}
+      class={`${
+        !mediaSources.length &&
+        `grid ${mobile} gap-2 items-center ${desktop} sm:gap-2`
+      }`}
     >
       {layout?.format == "Show More" && (
         <Head>
@@ -62,16 +85,32 @@ function ProductGallery(
           )}
         </Head>
       )}
-
-      {products?.map((product, index) => (
-        <ProductCard
-          key={`product-card-${product.productID}`}
-          product={product}
-          preload={index === 0}
-          index={offset + index}
-          platform={platform}
-        />
-      ))}
+      {mediaSources.length > 0 && products && products.length > 0
+        ? (
+          <>
+            <ProductCardWithBanner
+              products={products}
+              desktopColumns={desktop}
+              mobileColumns={mobile}
+              offset={offset}
+              platform={platform}
+              mediaSources={mediaSources}
+            />
+          </>
+        )
+        : (
+          <>
+            {products?.map((product, index) => (
+              <ProductCard
+                key={`product-card-${product.productID}`}
+                product={product}
+                preload={index === 0}
+                index={offset + index}
+                platform={platform}
+              />
+            ))}
+          </>
+        )}
 
       {(layout && layout?.format === "Show More") && (
         <>

@@ -1,6 +1,7 @@
 import { PageInfo } from "apps/commerce/types.ts";
 import type { ComponentChildren } from "preact";
 import { useEffect, useMemo } from "preact/hooks";
+import ButtonBanner from "../components/ui/ButtonBanner.tsx";
 import { useShowMore } from "../sdk/useShowMore.ts";
 
 export interface Props {
@@ -33,7 +34,7 @@ export default function ShowMore(
         : "hidden"}
     >
       {children}
-      <button
+      <ButtonBanner
         class={`btn cursor-pointer absolute ${loading.value ? "hidden" : ""}`}
         onClick={() => {
           loading.value = true;
@@ -50,8 +51,8 @@ export default function ShowMore(
           }
         }}
       >
-        Show More
-      </button>
+        VER MAIS PRODUTOS
+      </ButtonBanner>
     </div>
   );
 }

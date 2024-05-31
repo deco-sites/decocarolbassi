@@ -1,1 +1,72 @@
-{"name":"Category","path":"/*","default":{"possiblePaths":[]},"sections":[{"__resolveType":"commerce/sections/Seo/SeoPLP.tsx","jsonLD":{"__resolveType":"PLP Loader"}},{"__resolveType":"Header - 03"},{"__resolveType":"site/sections/Product/SearchResult.tsx","page":{"__resolveType":"PLP Loader"},"layout":{"columns":{"mobile":2,"desktop":4},"pagination":"show-more","variant":"drawer"},"cardLayout":{"__resolveType":"Product Card Layout - 01"},"startingPage":1},{"__resolveType":"site/sections/Category/SeoText.tsx","title":"TEXTO","description":"<p>Lorem ipsum dolor sit amet. Vel quis illum est iusto voluptates a fuga omnis 33 consequuntur eligendi ut itaque sequi hic aliquam quasi. Sed quae nobis ut recusandae iusto et magni quia quo doloribus itaque ut inventore quia et laudantium fugit qui fuga officiis. Est maxime dicta hic Quis saepe hic odio enim. Non nulla voluptas est commodi dicta qui dignissimos dicta. Non nihil quos id sapiente laborum vel velit velit quo odio tenetur ut voluptatem illum a quidem natus. Ea totam possimus non maiores dolores a autem corporis ad veritatis harum. Aut quas provident qui sint neque sed quibusdam unde et quia consequuntur. Eos illo exercitationem sit harum consectetur id asperiores fugit sed similique velit non delectus ipsum. Ea laboriosam deserunt et pariatur facere At ipsa inventore ut aperiam provident non voluptatum maiores rem veniam minima!</p>"},{"__resolveType":"Footer - 02"}],"__resolveType":"website/pages/Page.tsx"}
+{
+  "name": "Category",
+  "path": "/*",
+  "default": {
+    "possiblePaths": []
+  },
+  "sections": [
+    {
+      "__resolveType": "commerce/sections/Seo/SeoPLP.tsx",
+      "jsonLD": {
+        "__resolveType": "PLP Loader"
+      }
+    },
+    {
+      "__resolveType": "Header - 03"
+    },
+    {
+      "__resolveType": "site/sections/Product/SearchResult.tsx",
+      "page": {
+        "__resolveType": "commerce/loaders/product/extensions/listingPage.ts",
+        "data": {
+          "sort": "price:desc",
+          "fuzzy": "automatic",
+          "pageOffset": 1,
+          "__resolveType": "vtex/loaders/intelligentSearch/productListingPage.ts",
+          "selectedFacets": [],
+          "count": 22
+        },
+        "extensions": [
+          {
+            "__resolveType": "vtex/loaders/product/extensions/listingPage.ts"
+          }
+        ]
+      },
+      "layout": {
+        "columns": {
+          "mobile": 2,
+          "desktop": 4
+        },
+        "pagination": "show-more",
+        "variant": "drawer"
+      },
+      "cardLayout": {
+        "__resolveType": "Product Card Layout - 01"
+      },
+      "startingPage": 1,
+      "mediaSources": [
+        {
+          "type": "image",
+          "image": "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/9166/647c6d87-7fc3-46f3-9538-d08f6505c312",
+          "action": {
+            "href": "/"
+          }
+        }
+      ]
+    },
+    {
+      "__resolveType": "site/sections/Category/CategorySeoText.tsx",
+      "seoTexts": [
+        {
+          "matcher": "/sapatos",
+          "title": "Texto SEO",
+          "description": "<p>Lorem ipsum dolor sit amet. Vel quis illum est iusto voluptates a fuga omnis 33 consequuntur eligendi ut itaque sequi hic aliquam quasi. Sed quae nobis ut recusandae iusto et magni quia quo doloribus itaque ut inventore quia et laudantium fugit qui fuga officiis. Est maxime dicta hic Quis saepe hic odio enim. Non nulla voluptas est commodi dicta qui dignissimos dicta. Non nihil quos id sapiente laborum vel velit velit quo odio tenetur ut voluptatem illum a quidem natus. Ea totam possimus non maiores dolores a autem corporis ad veritatis harum. Aut quas provident qui sint neque sed quibusdam unde et quia consequuntur. Eos illo exercitationem sit harum consectetur id asperiores fugit sed similique velit non delectus ipsum. Ea laboriosam deserunt et pariatur facere At ipsa inventore ut aperiam provident non voluptatum maiores rem veniam minima!</p>"
+        }
+      ]
+    },
+    {
+      "__resolveType": "Footer - 02"
+    }
+  ],
+  "__resolveType": "website/pages/Page.tsx"
+}

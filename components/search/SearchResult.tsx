@@ -6,7 +6,11 @@ import Icon from "../../components/ui/Icon.tsx";
 import SearchControls from "../../islands/SearchControls.tsx";
 import { useId } from "../../sdk/useId.ts";
 import { useOffer } from "../../sdk/useOffer.ts";
-import ProductGallery, { Columns } from "../product/ProductGallery.tsx";
+import ProductGallery, {
+  Columns,
+  MediaSource,
+} from "../product/ProductGallery.tsx";
+import SearchTitle from "./SearchTitle.tsx";
 
 export type Format = "Show More" | "Pagination";
 
@@ -32,6 +36,7 @@ export interface Props {
 
   /** @description 0 for ?page=0 as your first page */
   startingPage?: 0 | 1;
+  mediaSources?: MediaSource;
 }
 
 function NotFound() {
@@ -47,6 +52,7 @@ function Result({
   layout,
   startingPage = 0,
   url: _url,
+  mediaSources,
 }: Omit<Props, "page"> & {
   page: ProductListingPage;
   url: string;
@@ -59,6 +65,8 @@ function Result({
 
   const id = useId();
 
+  const currentBreadCrumb = breadcrumb.itemListElement.at(-1)?.name ?? "";
+  const galleryMediaSources = mediaSources ?? [];
   const zeroIndexedOffsetPage = pageInfo.currentPage - startingPage;
   const offset = zeroIndexedOffsetPage * perPage;
 
@@ -69,12 +77,15 @@ function Result({
     <>
       <div class="container px-4 sm:py-10">
         {(isFirstPage || !isPartial) && (
-          <SearchControls
-            sortOptions={sortOptions}
-            filters={filters}
-            breadcrumb={breadcrumb}
-            displayFilter={layout?.variant === "drawer"}
-          />
+          <>
+            <SearchTitle title={currentBreadCrumb} />
+            <SearchControls
+              sortOptions={sortOptions}
+              filters={filters}
+              breadcrumb={breadcrumb}
+              displayFilter={layout?.variant === "drawer"}
+            />
+          </>
         )}
 
         <div class="flex flex-row">
@@ -91,6 +102,7 @@ function Result({
               layout={{ columns: layout?.columns, format }}
               pageInfo={pageInfo}
               url={url}
+              mediaSources={galleryMediaSources}
             />
           </div>
         </div>
