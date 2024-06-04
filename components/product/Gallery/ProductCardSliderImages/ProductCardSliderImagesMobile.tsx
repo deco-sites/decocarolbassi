@@ -1,15 +1,13 @@
-import { useSignal } from "@preact/signals";
 import type { Product } from "apps/commerce/types.ts";
 import { mapProductToAnalyticsItem } from "apps/commerce/utils/productToAnalyticsItem.ts";
 import Image from "apps/website/components/Image.tsx";
-import { useEffect } from "preact/hooks";
-import type { Platform } from "../../../apps/site.ts";
-import { clx } from "../../../sdk/clx.ts";
-import { formatPrice } from "../../../sdk/format.ts";
-import { relative } from "../../../sdk/url.ts";
-import { useOffer } from "../../../sdk/useOffer.ts";
-import { SendEventOnClick } from "../../Analytics.tsx";
-import Slider from "../../ui/Slider.tsx";
+import type { Platform } from "../../../../apps/site.ts";
+import { clx } from "../../../../sdk/clx.ts";
+import { formatPrice } from "../../../../sdk/format.ts";
+import { relative } from "../../../../sdk/url.ts";
+import { useOffer } from "../../../../sdk/useOffer.ts";
+import { SendEventOnClick } from "../../../Analytics.tsx";
+import Slider from "../../../ui/Slider.tsx";
 
 export interface Props {
   product: Product;
@@ -28,7 +26,7 @@ export interface Props {
 const WIDTH = 200;
 const HEIGHT = 279;
 
-function ProductCardSliderImages({
+function ProductCardSliderImagesMobile({
   product,
   preload,
   itemListName,
@@ -40,37 +38,11 @@ function ProductCardSliderImages({
   const relativeUrl = relative(url);
   const aspectRatio = `${WIDTH} / ${HEIGHT}`;
 
-  const currentIndex = useSignal(1);
-  const intervalId = useSignal<number | null>(null);
-
-  const handleMouseOver = () => {
-    if (!images) return;
-    const id = setInterval(() => {
-      currentIndex.value = (currentIndex.value + 1) % images.length;
-    }, 1500);
-    intervalId.value = id;
-  };
-
-  const handleMouseOut = () => {
-    if (intervalId.value !== null) {
-      clearInterval(intervalId.value);
-      intervalId.value = null;
-    }
-  };
-
-  useEffect(() => {
-    return () => {
-      if (intervalId.value !== null) {
-        clearInterval(intervalId.value);
-      }
-    };
-  }, []);
-
   return (
     <div
       id={id}
       data-deco="view-product"
-      class="card card-compact group w-full lg:border lg:border-transparent lg:hover:border-inherit"
+      class="card card-compact group w-full lg:border lg:border-transparent lg:hover:border-inherit mb-4"
     >
       {/* Add click event to dataLayer */}
       <SendEventOnClick
@@ -106,19 +78,13 @@ function ProductCardSliderImages({
               "w-full",
             )}
           >
-            <Slider
-              onMouseOver={handleMouseOver}
-              onMouseOut={handleMouseOut}
-              class="carousel carousel-center"
-            >
+            <Slider class="carousel carousel-center">
               {images?.map(({ url, alternateName }, index) => {
-                const isActive = index === currentIndex.value;
                 return (
                   <Slider.Item
                     key={index}
                     className={"carousel-item group first:ml-6 sm:first:ml-0 last:mr-6 sm:last:mr-0 min-w-[190px]"}
                     index={index}
-                    style={{ display: isActive ? "block" : "none" }} // Hide inactive images
                   >
                     <Image
                       src={url!}
@@ -142,6 +108,19 @@ function ProductCardSliderImages({
               })}
             </Slider>
           </a>
+
+          <ul
+            class={`absolute bottom-0 carousel grid grid-cols-${images
+              ?.length!} items-end col-span-full z-10 row-start-4 w-full m-auto bg-secondary-neutral-600`}
+          >
+            {images?.map((_, index) => (
+              <li class="carousel-item w-full">
+                <Slider.Dot index={index} class="w-full">
+                  <div class="w-full h-[2px] group-disabled:bg-dark-blue bg-transparent" />
+                </Slider.Dot>
+              </li>
+            ))}
+          </ul>
         </figure>
 
         {/* Name/Description */}
@@ -159,9 +138,9 @@ function ProductCardSliderImages({
           </span>
         </div>
       </div>
-      <Slider.JS rootId={id} interval={true && 1 * 1e3} infinite />
+      <Slider.JS rootId={id} infinite />
     </div>
   );
 }
 
-export default ProductCardSliderImages;
+export default ProductCardSliderImagesMobile;

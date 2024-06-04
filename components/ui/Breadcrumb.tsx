@@ -8,12 +8,12 @@ function Breadcrumb({ itemListElement = [] }: Props) {
   const items = [{ name: "Home", item: "/" }, ...itemListElement];
 
   return (
-    <div class="breadcrumbs">
+    <div class="hidden md:block breadcrumbs">
       <ul>
         {items
           .filter(({ name, item }) => name && item)
           .map(({ name, item }) => (
-            <li class="text-secondary-neutral-700 uppercase text-xs last:text-dark-blue">
+            <li class="text-secondary-neutral-700 uppercase text-xs last:text-dark-blue last:font-light">
               <a href={item}>{name}</a>
             </li>
           ))}

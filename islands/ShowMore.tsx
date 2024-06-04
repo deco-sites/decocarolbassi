@@ -30,7 +30,7 @@ export default function ShowMore(
   return (
     <div
       class={(isAtPage && pageInfo.nextPage)
-        ? "flex justify-center col-span-full"
+        ? "flex justify-center col-span-full mt-16"
         : "hidden"}
     >
       {children}
@@ -53,6 +53,9 @@ export default function ShowMore(
       >
         VER MAIS PRODUTOS
       </ButtonBanner>
+      <p class="font-light text-xs mt-[-1.5rem] mr-4">
+        Total de {pageInfo.records} Produtos
+      </p>
     </div>
   );
 }

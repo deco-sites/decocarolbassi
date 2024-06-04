@@ -1,5 +1,4 @@
-import Avatar from "../../components/ui/Avatar.tsx";
-import { formatPrice } from "../../sdk/format.ts";
+import { useSignal } from "@preact/signals";
 import type {
   Filter,
   FilterToggle,
@@ -7,6 +6,9 @@ import type {
   ProductListingPage,
 } from "apps/commerce/types.ts";
 import { parseRange } from "apps/commerce/utils/filters.ts";
+import Avatar from "../../components/ui/Avatar.tsx";
+import { formatPrice } from "../../sdk/format.ts";
+import Icon from "../ui/Icon.tsx";
 
 interface Props {
   filters: ProductListingPage["filters"];
@@ -27,7 +29,10 @@ function ValueItem(
   );
 }
 
-function FilterValues({ key, values }: FilterToggle) {
+function FilterValues(
+  { key, values }: FilterToggle,
+  { isOpen }: { isOpen: boolean },
+) {
   const flexDirection = key === "tamanho" || key === "cor"
     ? "flex-row"
     : "flex-col";
@@ -65,17 +70,35 @@ function FilterValues({ key, values }: FilterToggle) {
   );
 }
 
+function FilterItem(item: FilterToggle) {
+  const isOpen = useSignal<boolean>(false);
+
+  const handleClick = () => isOpen.value = !isOpen.value;
+
+  return (
+    <li class="flex flex-col gap-4">
+      <button onClick={handleClick} class="flex" aria-label="open filter item">
+        <span class="flex items-center">
+          {item.label} {!isOpen.value
+            ? <Icon id="ArrowDown" size={26} />
+            : <Icon id="ArrowDown" size={26} class={"rotate-180"} />}
+        </span>
+      </button>
+      <div class={`${!isOpen.value ? "hidden" : ""}`}>
+        <FilterValues {...item} />
+      </div>
+    </li>
+  );
+}
+
 function Filters({ filters }: Props) {
+  console.log({ filters });
+
   return (
     <ul class="flex flex-col gap-6 p-4">
       {filters
         .filter(isToggle)
-        .map((filter) => (
-          <li class="flex flex-col gap-4">
-            <span>{filter.label}</span>
-            <FilterValues {...filter} />
-          </li>
-        ))}
+        .map((filter) => <FilterItem {...filter} />)}
     </ul>
   );
 }
