@@ -101,6 +101,11 @@
           "matcher": "/sapatos",
           "title": "Texto SEO",
           "description": "<p>Lorem ipsum dolor sit amet. Vel quis illum est iusto voluptates a fuga omnis 33 consequuntur eligendi ut itaque sequi hic aliquam quasi. Sed quae nobis ut recusandae iusto et magni quia quo doloribus itaque ut inventore quia et laudantium fugit qui fuga officiis. Est maxime dicta hic Quis saepe hic odio enim. Non nulla voluptas est commodi dicta qui dignissimos dicta. Non nihil quos id sapiente laborum vel velit velit quo odio tenetur ut voluptatem illum a quidem natus. Ea totam possimus non maiores dolores a autem corporis ad veritatis harum. Aut quas provident qui sint neque sed quibusdam unde et quia consequuntur. Eos illo exercitationem sit harum consectetur id asperiores fugit sed similique velit non delectus ipsum. Ea laboriosam deserunt et pariatur facere At ipsa inventore ut aperiam provident non voluptatum maiores rem veniam minima!</p>"
+        },
+        {
+          "matcher": "/roupas",
+          "title": "gustavo",
+          "description": "<p>teste</p>"
         }
       ]
     },

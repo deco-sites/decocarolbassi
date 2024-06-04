@@ -83,7 +83,7 @@ function ProductCardSliderImagesMobile({
                 return (
                   <Slider.Item
                     key={index}
-                    className={"carousel-item group first:ml-6 sm:first:ml-0 last:mr-6 sm:last:mr-0 min-w-[190px]"}
+                    className={"carousel-item group first:ml-6 sm:first:ml-0 last:mr-6 sm:last:mr-0 min-w-[190px] w-full"}
                     index={index}
                   >
                     <Image

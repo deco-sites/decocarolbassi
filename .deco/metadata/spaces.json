@@ -25,65 +25,7 @@
       "name": "Pages",
       "pinned": true,
       "icon": "files",
-      "layout": {
-        "settings": {
-          "hasHeaders": true,
-          "constrainDragToContainer": true,
-          "reorderEnabled": true,
-          "selectionEnabled": false,
-          "popoutWholeStack": false,
-          "blockedPopoutsThrowError": true,
-          "closePopoutsOnUnload": true,
-          "showPopoutIcon": false,
-          "showMaximiseIcon": false,
-          "showCloseIcon": false,
-          "responsiveMode": "onload"
-        },
-        "dimensions": {
-          "borderWidth": 8,
-          "minItemHeight": 10,
-          "minItemWidth": 10,
-          "headerHeight": 40,
-          "dragProxyWidth": 300,
-          "dragProxyHeight": 200
-        },
-        "labels": {
-          "close": "close",
-          "maximise": "maximise",
-          "minimise": "minimise",
-          "popout": "open in new window",
-          "popin": "pop in",
-          "tabDropdown": "additional tabs"
-        },
-        "content": [
-          {
-            "type": "stack",
-            "width": 100,
-            "isClosable": true,
-            "reorderEnabled": true,
-            "title": "",
-            "activeItemIndex": 0,
-            "content": [
-              {
-                "id": "pages::List::list::List::%7B%7D",
-                "title": "<div class=\"contents text-base-700\" id=\"header-pages::List::list::List::%7B%7D\" />",
-                "type": "component",
-                "componentName": "component",
-                "componentState": {
-                  "id": "pages::List::list::List::%7B%7D"
-                },
-                "isClosable": true,
-                "reorderEnabled": true
-              }
-            ]
-          }
-        ],
-        "isClosable": true,
-        "reorderEnabled": true,
-        "title": "",
-        "openPopouts": [],
-        "maximisedItemId": null
-      },
+      "layout": [],
       "tabs": {
         "pages::List::list::List::%7B%7D": {
           "name": "List",
@@ -143,65 +85,7 @@
       "name": "Releases",
       "pinned": true,
       "icon": "rocket",
-      "layout": {
-        "settings": {
-          "hasHeaders": true,
-          "constrainDragToContainer": true,
-          "reorderEnabled": true,
-          "selectionEnabled": false,
-          "popoutWholeStack": false,
-          "blockedPopoutsThrowError": true,
-          "closePopoutsOnUnload": true,
-          "showPopoutIcon": false,
-          "showMaximiseIcon": false,
-          "showCloseIcon": false,
-          "responsiveMode": "onload"
-        },
-        "dimensions": {
-          "borderWidth": 8,
-          "minItemHeight": 10,
-          "minItemWidth": 10,
-          "headerHeight": 40,
-          "dragProxyWidth": 300,
-          "dragProxyHeight": 200
-        },
-        "labels": {
-          "close": "close",
-          "maximise": "maximise",
-          "minimise": "minimise",
-          "popout": "open in new window",
-          "popin": "pop in",
-          "tabDropdown": "additional tabs"
-        },
-        "content": [
-          {
-            "type": "stack",
-            "width": 100,
-            "isClosable": true,
-            "reorderEnabled": true,
-            "title": "",
-            "activeItemIndex": 0,
-            "content": [
-              {
-                "id": "releases::releases::rocket::releases::%7B%7D",
-                "title": "<div class=\"contents text-base-700\" id=\"header-releases::releases::rocket::releases::%7B%7D\" />",
-                "type": "component",
-                "componentName": "component",
-                "componentState": {
-                  "id": "releases::releases::rocket::releases::%7B%7D"
-                },
-                "isClosable": true,
-                "reorderEnabled": true
-              }
-            ]
-          }
-        ],
-        "isClosable": true,
-        "reorderEnabled": true,
-        "title": "",
-        "openPopouts": [],
-        "maximisedItemId": null
-      },
+      "layout": [],
       "tabs": {
         "releases::releases::rocket::releases::%7B%7D": {
           "name": "releases",
@@ -1871,7 +1755,7 @@
             "content": [
               {
                 "type": "stack",
-                "width": 50,
+                "width": 33.333333333333336,
                 "isClosable": true,
                 "reorderEnabled": true,
                 "title": "",
@@ -1892,7 +1776,7 @@
               },
               {
                 "type": "stack",
-                "width": 50,
+                "width": 33.333333333333336,
                 "isClosable": true,
                 "reorderEnabled": true,
                 "title": "",
@@ -1905,6 +1789,27 @@
                     "componentName": "component",
                     "componentState": {
                       "id": "%2F.deco%2Fblocks%2Fpages-category-7493d4326022.json::Preview::world::Preview::%7B%7D"
+                    },
+                    "isClosable": true,
+                    "reorderEnabled": true
+                  }
+                ]
+              },
+              {
+                "type": "stack",
+                "width": 33.33333333333333,
+                "isClosable": true,
+                "reorderEnabled": true,
+                "title": "",
+                "activeItemIndex": 0,
+                "content": [
+                  {
+                    "id": "%2F.deco%2Fblocks%2Fpages-category-7493d4326022.json::Performance::performance::Performance::%7B%7D",
+                    "title": "<div class=\"contents text-base-700\" id=\"header-%2F.deco%2Fblocks%2Fpages-category-7493d4326022.json::Performance::performance::Performance::%7B%7D\" />",
+                    "type": "component",
+                    "componentName": "component",
+                    "componentState": {
+                      "id": "%2F.deco%2Fblocks%2Fpages-category-7493d4326022.json::Performance::performance::Performance::%7B%7D"
                     },
                     "isClosable": true,
                     "reorderEnabled": true
@@ -1939,6 +1844,17 @@
           "render": "function",
           "viewId": "Preview",
           "id": "%2F.deco%2Fblocks%2Fpages-category-7493d4326022.json::Preview::world::Preview::%7B%7D",
+          "state": {
+            "__signal": null
+          }
+        },
+        "%2F.deco%2Fblocks%2Fpages-category-7493d4326022.json::Performance::performance::Performance::%7B%7D": {
+          "name": "Performance",
+          "icon": "performance",
+          "accepts": "function",
+          "render": "function",
+          "viewId": "Performance",
+          "id": "%2F.deco%2Fblocks%2Fpages-category-7493d4326022.json::Performance::performance::Performance::%7B%7D",
           "state": {
             "__signal": null
           }

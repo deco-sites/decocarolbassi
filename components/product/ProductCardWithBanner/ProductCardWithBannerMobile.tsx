@@ -4,10 +4,20 @@ import Video from "apps/website/components/Video.tsx";
 import { Platform } from "../../../apps/site.ts";
 import ProductCardSliderImagesMobile from "../Gallery/ProductCardSliderImages/ProductCardSliderImagesMobile.tsx";
 import { CategoryBannersMediaSource } from "../ProductGalleryWithBanner.tsx";
+import { useUI } from "../../../sdk/useUI.ts";
 
 const WIDTH = 613;
 const HEIGHT = 930;
 const ASPECT_RATIO = `${WIDTH} / ${HEIGHT}`;
+
+export interface Props {
+  products: Product[];
+  categoryBanners: CategoryBannersMediaSource;
+  offset: number;
+  platform: Platform;
+  mobileColumns: string;
+  desktopColumns: string;
+}
 
 export default function ProductCardWithBannerMobile(
   {
@@ -17,14 +27,7 @@ export default function ProductCardWithBannerMobile(
     platform,
     mobileColumns,
     desktopColumns,
-  }: {
-    products: Product[];
-    categoryBanners: CategoryBannersMediaSource;
-    offset: number;
-    platform: Platform;
-    mobileColumns: string;
-    desktopColumns: string;
-  },
+  }: Props,
 ) {
   const productsGrid1 = products.length > 4 ? products.slice(0, 4) : [];
   const productsGrid2 = products.length > 8 ? products.slice(4, 8) : [];
@@ -32,11 +35,12 @@ export default function ProductCardWithBannerMobile(
   const productsGrid4 = products.length > 14 ? products.slice(10, 14) : [];
   const productsGrid5 = products.length > 18 ? products.slice(14, 18) : [];
   const productsGrid6 = products.length > 22 ? products.slice(18, 22) : [];
+  const { displayGridLayout } = useUI();
 
   return (
     <>
       <div class="grid grid-cols-1 gap-8">
-        <div class="grid grid-cols-2 gap-2 w-full">
+        <div class={`grid grid-cols-${displayGridLayout.value} gap-2 w-full`}>
           {productsGrid1.map((product, index) => (
             <ProductCardSliderImagesMobile
               key={`product-card-${product.productID}`}
@@ -73,7 +77,7 @@ export default function ProductCardWithBannerMobile(
       </div>
 
       <div
-        class={`grid ${mobileColumns} gap-2 items-center ${desktopColumns} sm:gap-2 my-8`}
+        class={`grid grid-cols-${displayGridLayout.value} gap-2 items-center ${desktopColumns} sm:gap-2 my-8`}
       >
         {productsGrid2.map((product: Product, index) => (
           <ProductCardSliderImagesMobile
@@ -89,7 +93,7 @@ export default function ProductCardWithBannerMobile(
       <div
         class={`grid gap-4 items-center grid-cols-1 my-8`}
       >
-        <div class="grid gap-2 items-center grid-cols-2">
+        <div class={`grid grid-cols-${displayGridLayout.value} gap-2 w-full`}>
           {productsGrid3.map((product: Product, index) => (
             <ProductCardSliderImagesMobile
               key={`product-card-${product.productID}`}
@@ -131,7 +135,7 @@ export default function ProductCardWithBannerMobile(
       </div>
 
       <div
-        class={`grid ${mobileColumns} gap-2 items-center ${desktopColumns} sm:gap-2 my-8`}
+        class={`grid grid-cols-${displayGridLayout.value} gap-2 items-center ${desktopColumns} sm:gap-2 my-8`}
       >
         {productsGrid4.map((product: Product, index) => (
           <ProductCardSliderImagesMobile
@@ -145,7 +149,7 @@ export default function ProductCardWithBannerMobile(
       </div>
 
       <div class="grid grid-cols-1 gap-8 mb-8">
-        <div class="grid grid-cols-2 gap-2 w-full">
+        <div class={`grid grid-cols-${displayGridLayout.value} gap-2 w-full`}>
           {productsGrid5.map((product, index) => (
             <ProductCardSliderImagesMobile
               key={`product-card-${product.productID}`}
@@ -181,7 +185,7 @@ export default function ProductCardWithBannerMobile(
       </div>
 
       <div
-        class={`grid ${mobileColumns} gap-2 items-center ${desktopColumns} sm:gap-2 my-8`}
+        class={`grid grid-cols-${displayGridLayout.value} gap-2 items-center ${desktopColumns} sm:gap-2 my-8`}
       >
         {productsGrid6.map((product: Product, index) => (
           <ProductCardSliderImagesMobile

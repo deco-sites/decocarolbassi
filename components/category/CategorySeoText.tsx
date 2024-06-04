@@ -3,7 +3,10 @@ import { SectionProps } from "deco/types.ts";
 import Icon from "../ui/Icon.tsx";
 
 interface SeoTextProps {
-  /** @description Use /sapatos to display this banner on sapatos category  */
+  /**
+   * @title
+   * @description How product title will be displayed. Concat to concatenate product and sku names.
+   */
   matcher: string;
   title?: string;
   /** @format html */

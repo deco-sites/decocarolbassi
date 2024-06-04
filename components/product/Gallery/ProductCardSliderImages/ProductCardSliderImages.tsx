@@ -103,7 +103,7 @@ function ProductCardSliderImages({
             href={relativeUrl}
             aria-label="view product"
             class={clx(
-              "absolute top-0 left-0",
+              "relative top-0 left-0",
               "grid grid-cols-1 grid-rows-1",
               "w-full",
             )}
@@ -111,7 +111,7 @@ function ProductCardSliderImages({
             <Slider
               onMouseOver={handleMouseOver}
               onMouseOut={handleMouseOut}
-              class="carousel relative carousel-center"
+              class="relative carousel-center"
             >
               {images?.map(({ url, alternateName }, index) => {
                 const isActive = index === currentIndex.value;
@@ -144,31 +144,31 @@ function ProductCardSliderImages({
                 );
               })}
             </Slider>
+            <ul
+              class={`absolute bottom-0 carousel grid grid-cols-${images
+                ?.length!} items-end col-span-full z-10 row-start-4 w-full m-auto bg-secondary-neutral-600`}
+            >
+              {images?.map((_, index) => (
+                <li class="carousel-item w-full">
+                  <Slider.Dot index={index} class="w-full">
+                    <div class="w-full h-[2px] group-disabled:bg-dark-blue bg-transparent" />
+                  </Slider.Dot>
+                </li>
+              ))}
+            </ul>
           </a>
-          <ul
-            class={`absolute bottom-0 carousel grid grid-cols-${images
-              ?.length!} items-end col-span-full z-10 row-start-4 w-[calc(100%-30px)] m-auto bg-secondary-neutral-600`}
-          >
-            {images?.map((_, index) => (
-              <li class="carousel-item w-full">
-                <Slider.Dot index={index} class="w-full">
-                  <div class="w-full h-[2px] group-disabled:bg-dark-blue bg-transparent" />
-                </Slider.Dot>
-              </li>
-            ))}
-          </ul>
         </figure>
 
         {/* Name/Description */}
         <div class="flex flex-col">
           <h2
-            class="truncate text-base lg:text-base font-light text-paragraph-color ml-4"
+            class="truncate text-base lg:text-base font-light text-paragraph-color ml-2 mt-3"
             dangerouslySetInnerHTML={{ __html: isVariantOf?.name ?? "" }}
           />
         </div>
 
         {/* Price from/to */}
-        <div class="flex gap-2 items-center justify-start text-dark-blue ml-4 font-light">
+        <div class="flex gap-2 items-center justify-start text-dark-blue ml-2 font-light">
           <span>
             {formatPrice(price, offers?.priceCurrency)}
           </span>

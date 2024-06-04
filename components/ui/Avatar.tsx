@@ -24,6 +24,7 @@ const colors: Record<string, string> = {
 interface Props {
   variant?: "active" | "disabled" | "default";
   content: string;
+  label?: string;
 }
 
 const variants = {
@@ -32,7 +33,7 @@ const variants = {
   default: "text-base-content bg-base-100",
 };
 
-function Avatar({ content, variant = "default" }: Props) {
+function Avatar({ content, variant = "default", label }: Props) {
   return (
     <div class="avatar placeholder text-sm font-light h-6">
       <div

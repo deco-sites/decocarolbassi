@@ -80,7 +80,7 @@ function Result({
 
   return (
     <>
-      <div class="container px-4 sm:py-10">
+      <div class="max-w-[1750px] m-auto px-4 sm:py-10 sm:px-8">
         {(isFirstPage || !isPartial) && (
           <>
             <SearchTitle title={currentBreadCrumb} />
@@ -97,7 +97,7 @@ function Result({
           {layout?.variant === "aside" && filters.length > 0 &&
             (isFirstPage || !isPartial) && (
             <aside class="hidden sm:block w-min min-w-[250px]">
-              <Filters filters={filters} />
+              <Filters filters={filters} sortOptions={sortOptions} />
             </aside>
           )}
           <div class="flex-grow" id={id}>

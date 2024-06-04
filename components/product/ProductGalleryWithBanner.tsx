@@ -8,7 +8,7 @@ import { usePlatform } from "../../sdk/usePlatform.tsx";
 import { Format } from "../search/SearchResult.tsx";
 import Spinner from "../ui/Spinner.tsx";
 import ProductCardWithBannerDesktop from "./ProductCardWithBanner/ProductCardWithBannerDesktop.tsx";
-import ProductCardWithBannerMobile from "./ProductCardWithBanner/ProductCardWithBannerMobile.tsx";
+import ProductCardWithBannerMobile from "../../islands/ProductCardWithBannerMobile.tsx";
 
 export interface Columns {
   mobile?: 1 | 2;
@@ -25,6 +25,10 @@ export type MediaSource = {
 };
 
 export type CategoryBannersMediaSource = {
+  /**
+   * @title
+   * @description How product title will be displayed. Concat to concatenate product and sku names.
+   */
   matcher: string;
   banner1: MediaSource;
   banner2: MediaSource;
