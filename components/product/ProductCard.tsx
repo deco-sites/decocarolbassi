@@ -37,7 +37,6 @@ function ProductCard({
   const { listPrice, price } = useOffer(offers);
   const relativeUrl = relative(url);
   const aspectRatio = `${WIDTH} / ${HEIGHT}`;
-  // console.log({ product })
 
   return (
     <div
@@ -69,7 +68,6 @@ function ProductCard({
           class="relative overflow-hidden"
           style={{ aspectRatio }}
         >
-
           {/* Product Images */}
           <a
             href={relativeUrl}

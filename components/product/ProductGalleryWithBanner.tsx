@@ -1,18 +1,39 @@
 import { Head } from "$fresh/runtime.ts";
+import { ImageWidget, VideoWidget } from "apps/admin/widgets.ts";
 import { PageInfo, Product } from "apps/commerce/types.ts";
 import { Device } from "apps/website/matchers/device.ts";
 import { usePartialSection } from "deco/hooks/usePartialSection.ts";
-import { Format } from "../../components/search/SearchResult.tsx";
-import Spinner from "../../components/ui/Spinner.tsx";
-import ProductCardSliderImages from "../../islands/ProductCardSliderImages.tsx";
 import ShowMore from "../../islands/ShowMore.tsx";
 import { usePlatform } from "../../sdk/usePlatform.tsx";
-import ProductCardSliderImagesMobile from "./Gallery/ProductCardSliderImages/ProductCardSliderImagesMobile.tsx";
+import { Format } from "../search/SearchResult.tsx";
+import Spinner from "../ui/Spinner.tsx";
+import ProductCardWithBannerDesktop from "./ProductCardWithBanner/ProductCardWithBannerDesktop.tsx";
+import ProductCardWithBannerMobile from "../../islands/ProductCardWithBannerMobile.tsx";
 
 export interface Columns {
   mobile?: 1 | 2;
   desktop?: 2 | 3 | 4 | 5;
 }
+
+export type MediaSource = {
+  image?: ImageWidget;
+  video?: VideoWidget;
+  type?: "image" | "video";
+  action?: {
+    href: string;
+  };
+};
+
+export type CategoryBannersMediaSource = {
+  /**
+   * @title
+   * @description How product title will be displayed. Concat to concatenate product and sku names.
+   */
+  matcher: string;
+  banner1: MediaSource;
+  banner2: MediaSource;
+  banner3: MediaSource;
+};
 
 export interface Props {
   products: Product[] | null;
@@ -23,6 +44,7 @@ export interface Props {
     format?: Format;
   };
   url: URL;
+  categoryBanners: CategoryBannersMediaSource;
   device: Device;
 }
 
@@ -38,8 +60,16 @@ const DESKTOP_COLUMNS = {
   5: "sm:grid-cols-5",
 };
 
-function ProductGallery(
-  { products, pageInfo, layout, offset, url, device }: Props,
+function ProductGalleryWithBanner(
+  {
+    products,
+    pageInfo,
+    layout,
+    offset,
+    url,
+    categoryBanners,
+    device,
+  }: Props,
 ) {
   const platform = usePlatform();
   const mobile = MOBILE_COLUMNS[layout?.columns?.mobile ?? 2];
@@ -55,7 +85,10 @@ function ProductGallery(
 
   return (
     <div
-      class={`grid ${mobile} gap-2 items-center ${desktop} sm:gap-10`}
+      class={`${
+        !categoryBanners &&
+        `grid ${mobile} gap-2 items-center ${desktop} sm:gap-2`
+      }`}
     >
       {layout?.format == "Show More" && (
         <Head>
@@ -65,26 +98,27 @@ function ProductGallery(
           )}
         </Head>
       )}
-
-      {device === "desktop"
-        ? products?.map((product, index) => (
-          <ProductCardSliderImages
-            key={`product-card-${product.productID}`}
-            product={product}
-            preload={index === 0}
-            index={offset + index}
+      {products && products.length > 0 && device === "desktop"
+        ? (
+          <ProductCardWithBannerDesktop
+            products={products}
+            desktopColumns={desktop}
+            mobileColumns={mobile}
+            offset={offset}
             platform={platform}
+            categoryBanners={categoryBanners}
           />
-        ))
-        : products?.map((product, index) => (
-          <ProductCardSliderImagesMobile
-            key={`product-card-${product.productID}`}
-            product={product}
-            preload={index === 0}
-            index={offset + index}
+        )
+        : products && products.length > 0 && (
+          <ProductCardWithBannerMobile
+            products={products}
+            desktopColumns={desktop}
+            mobileColumns={mobile}
+            offset={offset}
             platform={platform}
+            categoryBanners={categoryBanners}
           />
-        ))}
+        )}
 
       {(layout && layout?.format === "Show More") && (
         <>
@@ -115,4 +149,4 @@ function ProductGallery(
   );
 }
 
-export default ProductGallery;
+export default ProductGalleryWithBanner;

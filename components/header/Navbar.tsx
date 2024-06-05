@@ -17,7 +17,15 @@ import { navbarHeight } from "./constants.ts";
 
 // Make it sure to render it on the server only. DO NOT render it on an island
 function Navbar(
-  { items, searchbar, logo, buttons, logoPosition = "left", device, itemsPerColumn = 7 }: {
+  {
+    items,
+    searchbar,
+    logo,
+    buttons,
+    logoPosition = "left",
+    device,
+    itemsPerColumn = 7,
+  }: {
     items: SiteNavigationElement[];
     searchbar?: SearchbarProps;
     logo?: Logo;
@@ -34,7 +42,7 @@ function Navbar(
     return (
       <div
         style={{ height: navbarHeight }}
-        class="lg:hidden grid grid-cols-2 justify-between items-center border-b border-base-200 w-full px-6 pb-6 gap-2"
+        class="lg:hidden grid grid-cols-2 justify-between items-center border-b border-solid border-[#e9e9e9] w-full px-6 pb-6 gap-2"
       >
         {logo && (
           <a
@@ -71,14 +79,20 @@ function Navbar(
     <div class="hidden sm:flex sm:justify-between 2xl:grid 2xl:grid-cols-2 items-center border-b border-base-200 w-full px-6 xl:px-[3.5rem] 2xl:px-[5.5rem]  shadow-header">
       <div class="flex items-center gap-10">
         <ul
-          class={`flex gap-6 col-span-1 ${logoPosition === "left" ? "justify-center" : "justify-start"
-            }`}
+          class={`flex gap-6 col-span-1 ${
+            logoPosition === "left" ? "justify-center" : "justify-start"
+          }`}
         >
-          {items.map((item) => <NavItem item={item} itemsPerColumn={itemsPerColumn} />)}
+          {items.map((item) => (
+            <NavItem item={item} itemsPerColumn={itemsPerColumn} />
+          ))}
         </ul>
         <div
-          class={`flex ${logoPosition === "left" ? "justify-start -order-1" : "justify-center"
-            }`}
+          class={`flex ${
+            logoPosition === "left"
+              ? "justify-start -order-1"
+              : "justify-center"
+          }`}
         >
           {logo && (
             <a
@@ -117,7 +131,6 @@ function Navbar(
               >
                 <Icon id="Heart" size={25} strokeWidth={0.2} />
               </button>
-
             </a>
           )}
 
@@ -141,7 +154,6 @@ function Navbar(
               <div class="flex btn btn-circle btn-sm btn-ghost gap-1">
                 <UserIcon />
               </div>
-
             </a>
           )}
         </div>
@@ -151,7 +163,6 @@ function Navbar(
 }
 
 export default Navbar;
-
 
 const UserIcon = () => (
   <svg

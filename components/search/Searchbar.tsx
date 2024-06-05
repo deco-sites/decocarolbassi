@@ -72,10 +72,13 @@ function Searchbar({
 
   if (IS_BROWSER) {
     const getUserSearches = localStorage.getItem("userSearches") ?? "";
-    const parsedSearches = getUserSearches
+    const getParsedSearches = getUserSearches
       ? JSON.parse(getUserSearches) as string[]
       : null;
-    if (parsedSearches) userSearches.value = parsedSearches;
+    const filteredSearches = getParsedSearches?.filter(Boolean);
+    if (filteredSearches?.filter(Boolean)) {
+      userSearches.value = filteredSearches;
+    }
   }
 
   useEffect(() => {
@@ -89,7 +92,7 @@ function Searchbar({
     const getUserSearches = localStorage.getItem("userSearches");
     const searches = getUserSearches ? JSON.parse(getUserSearches) : [];
 
-    if (!searches.includes(productName)) {
+    if (productName && !searches.includes(productName)) {
       searches.push(productName);
       return localStorage.setItem("userSearches", JSON.stringify(searches));
     }

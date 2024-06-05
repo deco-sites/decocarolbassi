@@ -1,5 +1,7 @@
 import type { ProductListingPage } from "apps/commerce/types.ts";
 import { mapProductToAnalyticsItem } from "apps/commerce/utils/productToAnalyticsItem.ts";
+import { Device } from "apps/website/matchers/device.ts";
+import { AppContext } from "../../apps/site.ts";
 import { SendEventOnView } from "../../components/Analytics.tsx";
 import Filters from "../../components/search/Filters.tsx";
 import Icon from "../../components/ui/Icon.tsx";
@@ -7,6 +9,10 @@ import SearchControls from "../../islands/SearchControls.tsx";
 import { useId } from "../../sdk/useId.ts";
 import { useOffer } from "../../sdk/useOffer.ts";
 import ProductGallery, { Columns } from "../product/ProductGallery.tsx";
+import ProductGalleryWithBanner, {
+  CategoryBannersMediaSource,
+} from "../product/ProductGalleryWithBanner.tsx";
+import SearchTitle from "./SearchTitle.tsx";
 
 export type Format = "Show More" | "Pagination";
 
@@ -32,6 +38,7 @@ export interface Props {
 
   /** @description 0 for ?page=0 as your first page */
   startingPage?: 0 | 1;
+  categoryBannersMediaSources?: CategoryBannersMediaSource[];
 }
 
 function NotFound() {
@@ -47,9 +54,13 @@ function Result({
   layout,
   startingPage = 0,
   url: _url,
+  categoryBanners,
+  device,
 }: Omit<Props, "page"> & {
   page: ProductListingPage;
   url: string;
+  device: Device;
+  categoryBanners?: CategoryBannersMediaSource;
 }) {
   const { products, filters, breadcrumb, pageInfo, sortOptions } = page;
   const perPage = pageInfo?.recordPerPage || products.length;
@@ -59,39 +70,59 @@ function Result({
 
   const id = useId();
 
+  const currentBreadCrumb = breadcrumb.itemListElement.at(-1)?.name ?? "";
   const zeroIndexedOffsetPage = pageInfo.currentPage - startingPage;
   const offset = zeroIndexedOffsetPage * perPage;
 
   const isPartial = url.searchParams.get("partial") === "true";
   const isFirstPage = !pageInfo.previousPage;
+  const isSearchPage = url.search.includes("?q");
 
   return (
     <>
-      <div class="container px-4 sm:py-10">
+      <div class="max-w-[1750px] m-auto px-4 sm:py-10 sm:px-8">
         {(isFirstPage || !isPartial) && (
-          <SearchControls
-            sortOptions={sortOptions}
-            filters={filters}
-            breadcrumb={breadcrumb}
-            displayFilter={layout?.variant === "drawer"}
-          />
+          <>
+            <SearchTitle title={currentBreadCrumb} />
+            <SearchControls
+              sortOptions={sortOptions}
+              filters={filters}
+              breadcrumb={breadcrumb}
+              displayFilter={layout?.variant === "drawer"}
+            />
+          </>
         )}
 
         <div class="flex flex-row">
           {layout?.variant === "aside" && filters.length > 0 &&
             (isFirstPage || !isPartial) && (
             <aside class="hidden sm:block w-min min-w-[250px]">
-              <Filters filters={filters} />
+              <Filters filters={filters} sortOptions={sortOptions} />
             </aside>
           )}
           <div class="flex-grow" id={id}>
-            <ProductGallery
-              products={products}
-              offset={offset}
-              layout={{ columns: layout?.columns, format }}
-              pageInfo={pageInfo}
-              url={url}
-            />
+            {categoryBanners && !isSearchPage
+              ? (
+                <ProductGalleryWithBanner
+                  products={products}
+                  offset={offset}
+                  layout={{ columns: layout?.columns, format }}
+                  pageInfo={pageInfo}
+                  url={url}
+                  categoryBanners={categoryBanners}
+                  device={device}
+                />
+              )
+              : (
+                <ProductGallery
+                  products={products}
+                  offset={offset}
+                  layout={{ columns: layout?.columns, format }}
+                  pageInfo={pageInfo}
+                  url={url}
+                  device={device}
+                />
+              )}
           </div>
         </div>
 
@@ -154,10 +185,18 @@ function SearchResult(
   return <Result {...props} page={page} />;
 }
 
-export const loader = (props: Props, req: Request) => {
+export const loader = (props: Props, req: Request, ctx: AppContext) => {
+  const { categoryBannersMediaSources } = props;
+
+  const categoryBanners = categoryBannersMediaSources?.find((
+    { matcher },
+  ) => new URLPattern({ pathname: matcher }).test(req.url));
+
   return {
     ...props,
     url: req.url,
+    categoryBanners: categoryBanners,
+    device: ctx.device,
   };
 };
 
