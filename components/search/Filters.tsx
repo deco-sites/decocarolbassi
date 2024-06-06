@@ -1,6 +1,4 @@
 import { useSignal } from "@preact/signals";
-import { useMemo } from "preact/hooks";
-import type { JSX } from "preact";
 import type {
   Filter,
   FilterToggle,
@@ -9,12 +7,14 @@ import type {
   SortOption,
 } from "apps/commerce/types.ts";
 import { parseRange } from "apps/commerce/utils/filters.ts";
+import type { JSX } from "preact";
+import { useMemo } from "preact/hooks";
 import Avatar from "../../components/ui/Avatar.tsx";
 import { formatPrice } from "../../sdk/format.ts";
 import Icon from "../ui/Icon.tsx";
 
 export type Props = Pick<ProductListingPage, "filters" | "sortOptions">;
-export type OrderProps = {
+export type OrderByProps = {
   item: SortOption;
   sort: string;
 };
@@ -112,7 +112,7 @@ function FilterValues(
   );
 }
 
-function OrderItem(props: OrderProps) {
+function OrderItem(props: OrderByProps) {
   const { item: { label, value }, sort } = props;
 
   return (

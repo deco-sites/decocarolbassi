@@ -1,1 +1,58 @@
-{"name":"Product Page","path":"/:slug/p","default":{"possiblePaths":[]},"sections":[{"jsonLD":{"__resolveType":"PDP Loader"},"jsonLDs":[{}],"__resolveType":"commerce/sections/Seo/SeoPDP.tsx"},{"__resolveType":"Header"},{"__resolveType":"site/sections/Product/ProductDetails.tsx","page":{"__resolveType":"PDP Loader"}},{"__resolveType":"site/sections/Product/ProductShelf.tsx","title":"You may also like","products":{"slug":{"param":"slug","__resolveType":"website/functions/requestToParam.ts"},"crossSelling":"whosawalsosaw","__resolveType":"vtex/loaders/legacy/relatedProductsLoader.ts"}},{"__resolveType":"Footer - 01"}],"__resolveType":"website/pages/Page.tsx"}
+{
+  "name": "Product Page",
+  "path": "/:slug/p",
+  "default": {
+    "possiblePaths": []
+  },
+  "sections": [
+    {
+      "jsonLD": {
+        "__resolveType": "PDP Loader"
+      },
+      "jsonLDs": [
+        {}
+      ],
+      "__resolveType": "commerce/sections/Seo/SeoPDP.tsx"
+    },
+    {
+      "__resolveType": "Header"
+    },
+    {
+      "__resolveType": "site/sections/Product/ProductDetails.tsx",
+      "page": {
+        "__resolveType": "PDP Loader"
+      }
+    },
+    {
+      "__resolveType": "site/sections/Product/ProductShelf.tsx",
+      "title": "COMPLETE SEU LOOK",
+      "products": {
+        "slug": {
+          "param": "slug",
+          "__resolveType": "website/functions/requestToParam.ts"
+        },
+        "crossSelling": "whoboughtalsobought",
+        "__resolveType": "vtex/loaders/legacy/relatedProductsLoader.ts"
+      },
+      "layout": {
+        "showDots": true,
+        "showArrows": true,
+        "headerAlignment": "left",
+        "colletionButton": {
+          "show": false,
+          "action": {
+            "text": "teste",
+            "href": "/"
+          }
+        }
+      }
+    },
+    {
+      "__resolveType": "Benefits - 01"
+    },
+    {
+      "__resolveType": "Footer - 02"
+    }
+  ],
+  "__resolveType": "website/pages/Page.tsx"
+}

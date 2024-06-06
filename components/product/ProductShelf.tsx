@@ -1,5 +1,7 @@
 import type { Product } from "apps/commerce/types.ts";
 import { mapProductToAnalyticsItem } from "apps/commerce/utils/productToAnalyticsItem.ts";
+import { SectionProps } from "deco/types.ts";
+import { AppContext } from "../../apps/site.ts";
 import { SendEventOnView } from "../../components/Analytics.tsx";
 import ProductCard from "../../components/product/ProductCard.tsx";
 import Icon from "../../components/ui/Icon.tsx";
@@ -39,9 +41,12 @@ function ProductShelf({
   title,
   description,
   layout,
-}: Props) {
+  url,
+}: SectionProps<typeof loader>) {
   const id = useId();
   const platform = usePlatform();
+  const isProductPage = url.searchParams.has("skuId");
+  console.log(isProductPage);
 
   if (!products || products.length === 0) {
     return null;
@@ -62,7 +67,7 @@ function ProductShelf({
     5: "w-1/5",
   };
   return (
-    <div class="w-full py-8 flex flex-col gap-6 lg:py-10">
+    <div class={"w-full py-8 flex flex-col gap-6 lg:py-10"}>
       <div class="ml-8">
         <Header
           title={title || ""}
@@ -101,7 +106,40 @@ function ProductShelf({
           ))}
         </Slider>
 
-        {layout?.showArrows && (
+        {layout?.showArrows && !layout?.colletionButton?.show && (
+          <div class="absolute bottom-[-20px] lg:bottom-0 right-20 w-full lg:w-[250px]">
+            <div class="relative left-[70px] lg:left-auto block z-10">
+              <Slider.PrevButton class="absolute w-12 h-12 flex justify-center items-center top-3 lg:top-[27px]">
+                <Icon
+                  size={24}
+                  id="ChevronLeft"
+                  strokeWidth={0.01}
+                  class="w-5"
+                />
+              </Slider.PrevButton>
+            </div>
+
+            <ul
+              class={`absolute left-[130px] lg:left-[50px] carousel grid grid-cols-${products.length} mt-[35px] lg:mt-[50px] items-end col-span-full z-10 row-start-4 w-[calc(100%-110px)] lg:w-[200px] m-auto bg-secondary-neutral-600`}
+            >
+              {products?.map((_, index) => (
+                <li class="carousel-item w-full">
+                  <Slider.Dot index={index} class="w-full">
+                    <div class="w-full h-[0.15rem] group-disabled:bg-dark-blue bg-transparent" />
+                  </Slider.Dot>
+                </li>
+              ))}
+            </ul>
+
+            <div class="absolute right-[-20px] lg:right-0 block z-10">
+              <Slider.NextButton class="absolute w-12 h-12 flex justify-center items-center top-3 lg:top-[27px]">
+                <Icon size={24} id="ChevronRight" strokeWidth={0.01} />
+              </Slider.NextButton>
+            </div>
+          </div>
+        )}
+
+        {layout?.showArrows && layout?.colletionButton?.show && (
           <>
             <div class="relative block z-10 col-start-1 row-start-3">
               <Slider.PrevButton class="absolute w-12 h-12 flex justify-center items-center top-3 lg:top-[27px]">
@@ -120,7 +158,7 @@ function ProductShelf({
             </div>
           </>
         )}
-        {layout?.showDots && (
+        {layout?.showDots && layout?.colletionButton?.show && (
           <ul
             class={`absolute left-[50px] carousel grid grid-cols-${products.length} mt-[35px] lg:mt-[50px] items-end col-span-full z-10 row-start-4 w-[calc(100%-130px)] lg:w-[200px] m-auto bg-secondary-neutral-600`}
           >
@@ -167,5 +205,13 @@ function ProductShelf({
     </div>
   );
 }
+
+export const loader = (props: Props, req: Request, _ctx: AppContext) => {
+  const url = new URL(req.url);
+  return {
+    ...props,
+    url,
+  };
+};
 
 export default ProductShelf;

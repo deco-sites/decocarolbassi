@@ -1,11 +1,12 @@
+import { ProductDetailsPage } from "apps/commerce/types.ts";
+import { mapProductToAnalyticsItem } from "apps/commerce/utils/productToAnalyticsItem.ts";
 import { SendEventOnView } from "../../components/Analytics.tsx";
-import Breadcrumb from "../../components/ui/Breadcrumb.tsx";
 import AddToCartButtonLinx from "../../islands/AddToCartButton/linx.tsx";
+import AddToCartButtonNuvemshop from "../../islands/AddToCartButton/nuvemshop.tsx";
 import AddToCartButtonShopify from "../../islands/AddToCartButton/shopify.tsx";
 import AddToCartButtonVNDA from "../../islands/AddToCartButton/vnda.tsx";
 import AddToCartButtonVTEX from "../../islands/AddToCartButton/vtex.tsx";
 import AddToCartButtonWake from "../../islands/AddToCartButton/wake.tsx";
-import AddToCartButtonNuvemshop from "../../islands/AddToCartButton/nuvemshop.tsx";
 import OutOfStock from "../../islands/OutOfStock.tsx";
 import ShippingSimulation from "../../islands/ShippingSimulation.tsx";
 import WishlistButtonVtex from "../../islands/WishlistButton/vtex.tsx";
@@ -14,8 +15,7 @@ import { formatPrice } from "../../sdk/format.ts";
 import { useId } from "../../sdk/useId.ts";
 import { useOffer } from "../../sdk/useOffer.ts";
 import { usePlatform } from "../../sdk/usePlatform.tsx";
-import { ProductDetailsPage } from "apps/commerce/types.ts";
-import { mapProductToAnalyticsItem } from "apps/commerce/utils/productToAnalyticsItem.ts";
+import ProductAccordionInfo from "../../sections/Product/ProductAccordionInfo.tsx";
 import ProductSelector from "./ProductVariantSelector.tsx";
 
 interface Props {
@@ -30,7 +30,7 @@ interface Props {
   };
 }
 
-function ProductInfo({ page, layout }: Props) {
+function ProductInfo({ page }: Props) {
   const platform = usePlatform();
   const id = useId();
 
@@ -42,12 +42,12 @@ function ProductInfo({ page, layout }: Props) {
   const {
     productID,
     offers,
-    name = "",
     gtin,
     isVariantOf,
     additionalProperty = [],
   } = product;
   const description = product.description || isVariantOf?.description;
+  const productName = product.isVariantOf?.name;
   const {
     price = 0,
     listPrice,
@@ -71,7 +71,6 @@ function ProductInfo({ page, layout }: Props) {
 
   return (
     <div class="flex flex-col px-4" id={id}>
-      <Breadcrumb itemListElement={breadcrumb.itemListElement} />
       {/* Code and name */}
       <div class="mt-4 sm:mt-8">
         <div>
@@ -79,11 +78,7 @@ function ProductInfo({ page, layout }: Props) {
         </div>
         <h1>
           <span class="font-medium text-xl capitalize">
-            {layout?.name === "concat"
-              ? `${isVariantOf?.name} ${name}`
-              : layout?.name === "productGroup"
-              ? isVariantOf?.name
-              : name}
+            {productName}
           </span>
         </h1>
       </div>
@@ -183,18 +178,19 @@ function ProductInfo({ page, layout }: Props) {
         )}
       </div>
       {/* Description card */}
-      <div class="mt-4 sm:mt-6">
-        <span class="text-sm">
-          {description && (
-            <details>
-              <summary class="cursor-pointer">Descrição</summary>
-              <div
-                class="ml-2 mt-2"
-                dangerouslySetInnerHTML={{ __html: description }}
-              />
-            </details>
-          )}
-        </span>
+      <div class="mt-4 sm:mt-6 max-w-[350px]">
+        <ProductAccordionInfo
+          title="descrição do produto"
+          description={description}
+        />
+        <ProductAccordionInfo
+          title="características"
+          description={description}
+        />
+        <ProductAccordionInfo
+          title="trocas e devoluções"
+          description={description}
+        />
       </div>
       {/* Analytics Event */}
       <SendEventOnView
