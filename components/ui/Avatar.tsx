@@ -11,7 +11,7 @@ const colors: Record<string, string> = {
   "cinza-escura": "bg-[#A9A9A9] ring-[#A9A9A9]",
   "laranja": "bg-[#FFA500] ring-[#FFA500]",
   "marrom": "bg-[#A52A2A] ring-[#A52A2A]",
-  "preta": "bg-[#161616] ring-[#161616]",
+  "Preto": "bg-[#161616] ring-[#161616]",
   "verde-clara": "bg-[#90EE90] ring-[#90EE90]",
   "vermelha": "bg-[#FF0000] ring-[#FF0000]",
 
@@ -28,7 +28,8 @@ interface Props {
 }
 
 const variants = {
-  active: "text-base-content ring-1 ring-black rounded-full",
+  active:
+    "text-base-content ring-1 ring-black rounded-full border-solid border-[#e9e9e9] border",
   disabled: "line-through text-neutral-content",
   default: "text-base-content bg-base-100",
 };

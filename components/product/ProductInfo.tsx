@@ -8,18 +8,20 @@ import AddToCartButtonVNDA from "../../islands/AddToCartButton/vnda.tsx";
 import AddToCartButtonVTEX from "../../islands/AddToCartButton/vtex.tsx";
 import AddToCartButtonWake from "../../islands/AddToCartButton/wake.tsx";
 import OutOfStock from "../../islands/OutOfStock.tsx";
-import ShippingSimulation from "../../islands/ShippingSimulation.tsx";
+import ProductAccordionInfo from "../../islands/ProductAccordionInfo.tsx";
 import WishlistButtonVtex from "../../islands/WishlistButton/vtex.tsx";
 import WishlistButtonWake from "../../islands/WishlistButton/wake.tsx";
 import { formatPrice } from "../../sdk/format.ts";
 import { useId } from "../../sdk/useId.ts";
 import { useOffer } from "../../sdk/useOffer.ts";
+import { usePercentualDiscount } from "../../sdk/usePercentualPrice.ts";
 import { usePlatform } from "../../sdk/usePlatform.tsx";
-import ProductAccordionInfo from "../../sections/Product/ProductAccordionInfo.tsx";
+import { ProductPolicy } from "../../sections/Product/ProductDetails.tsx";
 import ProductSelector from "./ProductVariantSelector.tsx";
 
-interface Props {
+export interface Props {
   page: ProductDetailsPage | null;
+  productExchangesReturnsPolicy?: ProductPolicy;
   layout?: {
     /**
      * @title Product Name
@@ -30,7 +32,7 @@ interface Props {
   };
 }
 
-function ProductInfo({ page }: Props) {
+function ProductInfo({ page, productExchangesReturnsPolicy }: Props) {
   const platform = usePlatform();
   const id = useId();
 
@@ -48,11 +50,13 @@ function ProductInfo({ page }: Props) {
   } = product;
   const description = product.description || isVariantOf?.description;
   const productName = product.isVariantOf?.name;
+  const productSpecification = product.isVariantOf?.additionalProperty.find((
+    spec,
+  ) => spec.name === "Especificação")?.value?.split("\r\n");
   const {
     price = 0,
     listPrice,
     seller = "1",
-    installments,
     availability,
   } = useOffer(offers);
   const productGroupID = isVariantOf?.productGroupID ?? "";
@@ -69,32 +73,52 @@ function ProductInfo({ page }: Props) {
     listPrice,
   });
 
+  const hasDiscount = (listPrice ?? 0) > (price ?? 0);
+  const productPercentualOff = hasDiscount &&
+    usePercentualDiscount(listPrice!, price!);
+
   return (
-    <div class="flex flex-col px-4" id={id}>
+    <div class="flex flex-col px-4 max-w-[420px] w-full" id={id}>
       {/* Code and name */}
-      <div class="mt-4 sm:mt-8">
+      <div class="border-secondary-neutral-200 border-solid border-b">
         <div>
-          {gtin && <span class="text-sm text-base-300">Cod. {gtin}</span>}
-        </div>
-        <h1>
-          <span class="font-medium text-xl capitalize">
-            {productName}
-          </span>
-        </h1>
-      </div>
-      {/* Prices */}
-      <div class="mt-4">
-        <div class="flex flex-row gap-2 items-center">
-          {(listPrice ?? 0) > price && (
-            <span class="line-through text-base-300 text-xs">
-              {formatPrice(listPrice, offers?.priceCurrency)}
+          <div class="w-full flex justify-end">
+            <WishlistButtonVtex
+              variant="icon"
+              productID={productID}
+              productGroupID={productGroupID}
+              class="w-auto"
+            />
+          </div>
+          <div>
+            {gtin && <span class="text-sm text-base-300">Cod. {gtin}</span>}
+          </div>
+          <h1>
+            <span class="font-medium text-xl capitalize">
+              {productName}
             </span>
-          )}
-          <span class="font-medium text-xl text-secondary">
-            {formatPrice(price, offers?.priceCurrency)}
-          </span>
+          </h1>
         </div>
-        <span class="text-sm text-base-300">{installments}</span>
+        {/* Prices */}
+        <div class="mt-4">
+          <div class="flex flex-row gap-2 items-center">
+            <>
+              {hasDiscount && (
+                <span class="line-through text-sm text-[#9AA4B2]">
+                  {formatPrice(listPrice, offers?.priceCurrency)}
+                </span>
+              )}
+              <span class="font-light text-dark-blue">
+                {formatPrice(price, offers?.priceCurrency)}
+              </span>
+              {hasDiscount && (
+                <span class="text-sm text-[#9AA4B2] font-bold">
+                  {!!productPercentualOff && productPercentualOff}
+                </span>
+              )}
+            </>
+          </div>
+        </div>
       </div>
       {/* Sku Selector */}
       <div class="mt-4 sm:mt-6">
@@ -105,17 +129,18 @@ function ProductInfo({ page }: Props) {
         {availability === "https://schema.org/InStock"
           ? (
             <>
+              <AddToCartButtonVTEX
+                eventParams={{ items: [eventItem] }}
+                productID={productID}
+                seller={seller}
+                gotoCheckout
+              />
               {platform === "vtex" && (
                 <>
                   <AddToCartButtonVTEX
                     eventParams={{ items: [eventItem] }}
                     productID={productID}
                     seller={seller}
-                  />
-                  <WishlistButtonVtex
-                    variant="full"
-                    productID={productID}
-                    productGroupID={productGroupID}
                   />
                 </>
               )}
@@ -163,33 +188,19 @@ function ProductInfo({ page }: Props) {
           )
           : <OutOfStock productID={productID} />}
       </div>
-      {/* Shipping Simulation */}
-      <div class="mt-8">
-        {platform === "vtex" && (
-          <ShippingSimulation
-            items={[
-              {
-                id: Number(product.sku),
-                quantity: 1,
-                seller: seller,
-              },
-            ]}
-          />
-        )}
-      </div>
       {/* Description card */}
-      <div class="mt-4 sm:mt-6 max-w-[350px]">
+      <div class="mt-4 sm:mt-6 max-w-[373px]">
         <ProductAccordionInfo
           title="descrição do produto"
           description={description}
         />
         <ProductAccordionInfo
           title="características"
-          description={description}
+          description={productSpecification ?? ""}
         />
         <ProductAccordionInfo
-          title="trocas e devoluções"
-          description={description}
+          title={productExchangesReturnsPolicy?.title ?? "trocas e devoluções"}
+          description={productExchangesReturnsPolicy?.description ?? ""}
         />
       </div>
       {/* Analytics Event */}

@@ -8,6 +8,8 @@ import { clx } from "../../../../sdk/clx.ts";
 import { formatPrice } from "../../../../sdk/format.ts";
 import { relative } from "../../../../sdk/url.ts";
 import { useOffer } from "../../../../sdk/useOffer.ts";
+import { useVariantOfferAvailability } from "../../../../sdk/useOfferAvailability.ts";
+import { usePercentualDiscount } from "../../../../sdk/usePercentualPrice.ts";
 import { SendEventOnClick } from "../../../Analytics.tsx";
 import Slider from "../../../ui/Slider.tsx";
 
@@ -35,8 +37,16 @@ function ProductCardSliderImages({
   index,
 }: Props) {
   const { url, productID, image: images, offers, isVariantOf } = product;
+
   const id = `product-card-${productID}`;
+
   const { listPrice, price } = useOffer(offers);
+  const { hasOfferAvailable } = useVariantOfferAvailability(isVariantOf);
+
+  const hasDiscount = (listPrice ?? 0) > (price ?? 0);
+  const productPercentualOff = hasDiscount &&
+    usePercentualDiscount(listPrice!, price!);
+
   const relativeUrl = relative(url);
   const aspectRatio = `${WIDTH} / ${HEIGHT}`;
 
@@ -169,9 +179,25 @@ function ProductCardSliderImages({
 
         {/* Price from/to */}
         <div class="flex gap-2 items-center justify-start text-dark-blue ml-2 font-light">
-          <span>
-            {formatPrice(price, offers?.priceCurrency)}
-          </span>
+          {hasOfferAvailable
+            ? (
+              <>
+                {hasDiscount && (
+                  <span class="line-through text-sm text-[#9AA4B2]">
+                    {formatPrice(listPrice, offers?.priceCurrency)}
+                  </span>
+                )}
+                <span>
+                  {formatPrice(price, offers?.priceCurrency)}
+                </span>
+                {hasDiscount && (
+                  <span class="text-sm text-[#9AA4B2] font-bold">
+                    {!!productPercentualOff && productPercentualOff}
+                  </span>
+                )}
+              </>
+            )
+            : <span>Indisponível</span>}
         </div>
       </div>
       <Slider.JS rootId={id} infinite />

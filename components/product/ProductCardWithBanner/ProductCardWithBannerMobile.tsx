@@ -2,9 +2,9 @@ import { Product } from "apps/commerce/types.ts";
 import Image from "apps/website/components/Image.tsx";
 import Video from "apps/website/components/Video.tsx";
 import { Platform } from "../../../apps/site.ts";
+import { useUI } from "../../../sdk/useUI.ts";
 import ProductCardSliderImagesMobile from "../Gallery/ProductCardSliderImages/ProductCardSliderImagesMobile.tsx";
 import { CategoryBannersMediaSource } from "../ProductGalleryWithBanner.tsx";
-import { useUI } from "../../../sdk/useUI.ts";
 
 const WIDTH = 613;
 const HEIGHT = 930;
@@ -55,7 +55,10 @@ export default function ProductCardWithBannerMobile(
         <a href={categoryBanners.banner1.action?.href}>
           {categoryBanners.banner1.type === "image"
             ? (
-              <figure style={{ ASPECT_RATIO }} class="w-full h-full">
+              <figure
+                style={{ aspectRatio: ASPECT_RATIO }}
+                class="w-full h-full"
+              >
                 <Image
                   src={categoryBanners.banner1.image!}
                   width={WIDTH}
@@ -69,7 +72,7 @@ export default function ProductCardWithBannerMobile(
                 src={categoryBanners.banner1.video!}
                 width={WIDTH}
                 height={HEIGHT}
-                style={{ ASPECT_RATIO }}
+                style={{ aspectRatio: ASPECT_RATIO }}
                 class="w-full h-full"
               />
             )}
@@ -121,7 +124,7 @@ export default function ProductCardWithBannerMobile(
             : (
               <Video
                 src={categoryBanners.banner2.video!}
-                style={{ ASPECT_RATIO }}
+                style={{ aspectRatio: ASPECT_RATIO }}
                 width={WIDTH}
                 height={HEIGHT}
                 controls={false}
@@ -163,7 +166,10 @@ export default function ProductCardWithBannerMobile(
         <a href={categoryBanners.banner3.action?.href}>
           {categoryBanners.banner3.type === "image"
             ? (
-              <figure style={{ ASPECT_RATIO }} class="w-full h-full">
+              <figure
+                style={{ aspectRatio: ASPECT_RATIO }}
+                class="w-full h-full"
+              >
                 <Image
                   src={categoryBanners.banner3.image!}
                   width={WIDTH}
@@ -177,7 +183,7 @@ export default function ProductCardWithBannerMobile(
                 src={categoryBanners.banner3.video!}
                 width={WIDTH}
                 height={HEIGHT}
-                style={{ ASPECT_RATIO }}
+                style={{ aspectRatio: ASPECT_RATIO }}
                 class="w-full h-full"
               />
             )}

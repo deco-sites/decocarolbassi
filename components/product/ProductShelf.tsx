@@ -1,7 +1,5 @@
 import type { Product } from "apps/commerce/types.ts";
 import { mapProductToAnalyticsItem } from "apps/commerce/utils/productToAnalyticsItem.ts";
-import { SectionProps } from "deco/types.ts";
-import { AppContext } from "../../apps/site.ts";
 import { SendEventOnView } from "../../components/Analytics.tsx";
 import ProductCard from "../../components/product/ProductCard.tsx";
 import Icon from "../../components/ui/Icon.tsx";
@@ -41,12 +39,9 @@ function ProductShelf({
   title,
   description,
   layout,
-  url,
-}: SectionProps<typeof loader>) {
+}: Props) {
   const id = useId();
   const platform = usePlatform();
-  const isProductPage = url.searchParams.has("skuId");
-  console.log(isProductPage);
 
   if (!products || products.length === 0) {
     return null;
@@ -108,7 +103,7 @@ function ProductShelf({
 
         {layout?.showArrows && !layout?.colletionButton?.show && (
           <div class="absolute bottom-[-20px] lg:bottom-0 right-20 w-full lg:w-[250px]">
-            <div class="relative left-[70px] lg:left-auto block z-10">
+            <div class="relative left-[80px] lg:left-auto block z-10">
               <Slider.PrevButton class="absolute w-12 h-12 flex justify-center items-center top-3 lg:top-[27px]">
                 <Icon
                   size={24}
@@ -205,13 +200,5 @@ function ProductShelf({
     </div>
   );
 }
-
-export const loader = (props: Props, req: Request, _ctx: AppContext) => {
-  const url = new URL(req.url);
-  return {
-    ...props,
-    url,
-  };
-};
 
 export default ProductShelf;

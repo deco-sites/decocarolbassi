@@ -1,15 +1,24 @@
+import { HTMLWidget as HTML } from "apps/admin/widgets.ts";
 import { ProductDetailsPage } from "apps/commerce/types.ts";
-import ProductGridImages from "../../components/product/Gallery/ProductGridImages.tsx";
 import ProductInfo from "../../components/product/ProductInfo.tsx";
 import Breadcrumb from "../../components/ui/Breadcrumb.tsx";
+import ProductGridImages from "../../islands/ProductImages.tsx";
 import NotFound from "../../sections/Product/NotFound.tsx";
+
+export type ProductPolicy = {
+  title: string;
+  description: HTML;
+};
 
 export interface Props {
   /** @title Integration */
   page: ProductDetailsPage | null;
+  productExchangesReturnsPolicy?: ProductPolicy;
 }
 
-export default function ProductDetails({ page }: Props) {
+export default function ProductDetails(
+  { page, productExchangesReturnsPolicy }: Props,
+) {
   if (!page?.seo) {
     return <NotFound />;
   }
@@ -21,19 +30,22 @@ export default function ProductDetails({ page }: Props) {
     numberOfItems: breadcrumbList.numberOfItems - 1,
   };
 
-  console.log(breadcrumb);
-
   return (
     <div class="w-full flex flex-col gap-6 lg:py-10 lg:pl-8">
       <Breadcrumb itemListElement={breadcrumb.itemListElement} />
 
-      <div class="flex flex-col gap-6 lg:flex-row ">
-        <ProductGridImages
-          page={page}
-        />
-        <ProductInfo
-          page={page}
-        />
+      <div className="flex flex-col gap-6 lg:flex-row">
+        <div className="w-full lg:w-auto">
+          <ProductGridImages page={page} />
+        </div>
+        <div className="w-full lg:w-2/6">
+          <div className="sticky top-32">
+            <ProductInfo
+              page={page}
+              productExchangesReturnsPolicy={productExchangesReturnsPolicy}
+            />
+          </div>
+        </div>
       </div>
     </div>
   );

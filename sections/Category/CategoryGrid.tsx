@@ -157,7 +157,7 @@ function CategoryGrid(props: SectionProps<typeof loader>) {
                             src={image!}
                             height={550}
                             width={300}
-                            alt={label}
+                            alt={"banner image"}
                             loading="lazy"
                             class="h-full"
                           />
