@@ -48,6 +48,7 @@ export default function ProductCardWithBannerDesktop(
                   width={WIDTH}
                   height={HEIGHT}
                   class="w-full h-full"
+                  loading={"lazy"}
                 />
               </figure>
             )
@@ -103,6 +104,7 @@ export default function ProductCardWithBannerDesktop(
                 width={WIDTH}
                 height={HEIGHT}
                 class="w-full h-full object-cover"
+                loading={"lazy"}
               />
             )
             : (
@@ -158,6 +160,7 @@ export default function ProductCardWithBannerDesktop(
                   width={WIDTH}
                   height={HEIGHT}
                   class="w-full h-full"
+                  loading={"lazy"}
                 />
               </figure>
             )

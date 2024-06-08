@@ -10,6 +10,7 @@ export default {
       animation: {
         sliding: "sliding 30s linear ",
         'sliding-down': 'sliding-down 0.2s ease-in-out',
+        'fade-in': 'fade-in 0.5s ease-in-out',
       },
       keyframes: {
         sliding: {
@@ -19,7 +20,11 @@ export default {
         'sliding-down': {
           "0%": { transform: "translateY(-50%)" },
           "100%": { transform: "translateY(0%)" },
-        }
+        },
+        'fade-in': {
+          '0%': { opacity: 0 },
+          '100%': { opacity: 1 },
+        },
       },
     },
     colors: {

@@ -44,9 +44,12 @@ export default function ProductGridImages(props: Props) {
   const aspectRatio = `${width} / ${height}`;
   const productVideo = videos[0];
 
-  const { displayProductZoomModal } = useUI();
+  const { displayProductZoomModal, productZoomIndex } = useUI();
 
-  const handleClick = () => displayProductZoomModal.value = true;
+  const handleClick = (index: number) => {
+    displayProductZoomModal.value = true;
+    productZoomIndex.value = index;
+  };
 
   return (
     <div id={id} class="">
@@ -57,7 +60,7 @@ export default function ProductGridImages(props: Props) {
             <Slider.Item
               index={index}
               class="carousel-item w-11/12"
-              onClick={handleClick}
+              onClick={() => handleClick(index)}
             >
               <Image
                 class="w-full"
@@ -89,7 +92,7 @@ export default function ProductGridImages(props: Props) {
             <figure
               style={{ aspectRatio: ASPECT_RATIO }}
               class="hover:cursor-pointer"
-              onClick={handleClick}
+              onClick={() => handleClick(index)}
             >
               <Image
                 src={image.url!}
@@ -111,10 +114,10 @@ export default function ProductGridImages(props: Props) {
               maxHeightheight: HEIGHT,
             }}
             class="relative hover:cursor-pointer"
-            onClick={handleClick}
+            onClick={() => handleClick(2)}
           >
             <Video
-              src={"https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/9166/78876eef-6b31-4d5b-b34f-bd6a4cf75910"}
+              src={productVideo.contentUrl!}
               width={WIDTH}
               height={HEIGHT}
               muted
@@ -131,7 +134,7 @@ export default function ProductGridImages(props: Props) {
             <figure
               style={{ aspectRatio: ASPECT_RATIO }}
               class="hover:cursor-pointer"
-              onClick={handleClick}
+              onClick={() => handleClick(1 + index)}
             >
               <Image
                 src={image.url!}

@@ -14,7 +14,6 @@ const colors: Record<string, string> = {
   "Preto": "bg-[#161616] ring-[#161616]",
   "verde-clara": "bg-[#90EE90] ring-[#90EE90]",
   "vermelha": "bg-[#FF0000] ring-[#FF0000]",
-
   // Color variants - only applied when no color as content is passed
   "active": "text-base-content ring-1 ring-black rounded-full",
   "disabled": "line-through text-neutral-content",
@@ -27,25 +26,45 @@ interface Props {
   label?: string;
 }
 
-const variants = {
+const colorVariantsClasses = {
   active:
-    "text-base-content ring-1 ring-black rounded-full border-solid border-[#e9e9e9] border",
+    "text-base-content ring-1 ring-black rounded-full border-solid border-[#e9e9e9] border-[3px]",
   disabled: "line-through text-neutral-content",
   default: "text-base-content bg-base-100",
 };
 
+const sizeVariantsClasses: Record<string, string> = {
+  active: "text-base-content  border-solid border-primary-600 border",
+  disabled: "text-[#C9CACB]",
+  default: "text-base-content bg-base-100",
+};
+
 function Avatar({ content, variant = "default", label }: Props) {
-  return (
-    <div class="avatar placeholder text-sm font-light h-6">
-      <div
-        class={`${colors[content] ?? colors[variant]} ${variants[variant]}`}
-      >
-        <span class="uppercase ">
-          {colors[content] ? "" : content.substring(0, 2)}
-        </span>
+  return label === "Cores"
+    ? (
+      <div class="avatar placeholder text-base font-light h-6">
+        <div
+          class={`${colors[content] ?? colors[variant]} ${
+            colorVariantsClasses[variant]
+          }`}
+        >
+          <span class="uppercase ">
+            {colors[content] ? "" : content.substring(0, 2)}
+          </span>
+        </div>
       </div>
-    </div>
-  );
+    )
+    : (
+      <div class="avatar placeholder text-base font-light h-8">
+        <div
+          class={`${sizeVariantsClasses[variant]}`}
+        >
+          <span class="uppercase ">
+            {sizeVariantsClasses[content] ? "" : content.substring(0, 2)}
+          </span>
+        </div>
+      </div>
+    );
 }
 
 export default Avatar;

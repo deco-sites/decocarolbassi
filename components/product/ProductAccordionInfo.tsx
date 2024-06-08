@@ -25,7 +25,11 @@ function AccordionProductInfo({ title, description }: Props) {
       </button>
 
       {isOpen.value && (
-        <div class="font-light text-paragraph-color mt-2">
+        <div
+          class={`font-light text-paragraph-color mt-2 fade-in ${
+            isOpen ? "animate-fade-in" : "opacity-0"
+          }`}
+        >
           {Array.isArray(description)
             ? (
               description.map((line, index) => (

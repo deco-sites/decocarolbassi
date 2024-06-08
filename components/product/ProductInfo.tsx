@@ -1,5 +1,6 @@
 import { ProductDetailsPage } from "apps/commerce/types.ts";
 import { mapProductToAnalyticsItem } from "apps/commerce/utils/productToAnalyticsItem.ts";
+import { Device } from "apps/website/matchers/device.ts";
 import { SendEventOnView } from "../../components/Analytics.tsx";
 import AddToCartButtonLinx from "../../islands/AddToCartButton/linx.tsx";
 import AddToCartButtonNuvemshop from "../../islands/AddToCartButton/nuvemshop.tsx";
@@ -9,6 +10,7 @@ import AddToCartButtonVTEX from "../../islands/AddToCartButton/vtex.tsx";
 import AddToCartButtonWake from "../../islands/AddToCartButton/wake.tsx";
 import OutOfStock from "../../islands/OutOfStock.tsx";
 import ProductAccordionInfo from "../../islands/ProductAccordionInfo.tsx";
+import ShareProduct from "../../islands/Share/ShareProduct.tsx";
 import WishlistButtonVtex from "../../islands/WishlistButton/vtex.tsx";
 import WishlistButtonWake from "../../islands/WishlistButton/wake.tsx";
 import { formatPrice } from "../../sdk/format.ts";
@@ -22,6 +24,7 @@ import ProductSelector from "./ProductVariantSelector.tsx";
 export interface Props {
   page: ProductDetailsPage | null;
   productExchangesReturnsPolicy?: ProductPolicy;
+  device: Device;
   layout?: {
     /**
      * @title Product Name
@@ -32,7 +35,9 @@ export interface Props {
   };
 }
 
-function ProductInfo({ page, productExchangesReturnsPolicy }: Props) {
+function ProductInfo(
+  { page, productExchangesReturnsPolicy, device }: Props,
+) {
   const platform = usePlatform();
   const id = useId();
 
@@ -80,14 +85,15 @@ function ProductInfo({ page, productExchangesReturnsPolicy }: Props) {
   return (
     <div class="flex flex-col px-4 max-w-[420px] w-full" id={id}>
       {/* Code and name */}
-      <div class="border-secondary-neutral-200 border-solid border-b">
+      <div class="border-secondary-neutral-300 border-solid border-b">
         <div>
-          <div class="w-full flex justify-end">
+          <div class="w-full flex justify-end items-center">
+            <ShareProduct product={product} device={device} />
             <WishlistButtonVtex
               variant="icon"
               productID={productID}
               productGroupID={productGroupID}
-              class="w-auto"
+              class="btn btn-circle"
             />
           </div>
           <div>
@@ -101,7 +107,7 @@ function ProductInfo({ page, productExchangesReturnsPolicy }: Props) {
         </div>
         {/* Prices */}
         <div class="mt-4">
-          <div class="flex flex-row gap-2 items-center">
+          <div class="flex flex-row gap-2 items-center lg:pb-2">
             <>
               {hasDiscount && (
                 <span class="line-through text-sm text-[#9AA4B2]">

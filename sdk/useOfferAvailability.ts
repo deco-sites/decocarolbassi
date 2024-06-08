@@ -10,3 +10,9 @@ export const useVariantOfferAvailability = (isVariantOf?: ProductGroup) => {
   return { hasOfferAvailable: someOfferIsAvailable }
 }
 
+
+export const useSizeVariantOfferAvailability = (index: number, isVariantOf?: ProductGroup) => {
+  const sizeOfferIsAvailable = isVariantOf?.hasVariant[index].offers?.offers[0]?.availability === "https://schema.org/InStock";
+
+  return { sizeOfferIsAvailable }
+}

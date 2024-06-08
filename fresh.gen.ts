@@ -26,6 +26,7 @@ import * as $ProductCardWithBannerMobile from "./islands/ProductCardWithBannerMo
 import * as $ProductImageZoom from "./islands/ProductImageZoom.tsx";
 import * as $ProductImages from "./islands/ProductImages.tsx";
 import * as $SearchControls from "./islands/SearchControls.tsx";
+import * as $Share_ShareProduct from "./islands/Share/ShareProduct.tsx";
 import * as $ShippingSimulation from "./islands/ShippingSimulation.tsx";
 import * as $ShowMore from "./islands/ShowMore.tsx";
 import * as $WishlistButton_vtex from "./islands/WishlistButton/vtex.tsx";
@@ -60,6 +61,7 @@ const manifest = {
     "./islands/ProductImageZoom.tsx": $ProductImageZoom,
     "./islands/ProductImages.tsx": $ProductImages,
     "./islands/SearchControls.tsx": $SearchControls,
+    "./islands/Share/ShareProduct.tsx": $Share_ShareProduct,
     "./islands/ShippingSimulation.tsx": $ShippingSimulation,
     "./islands/ShowMore.tsx": $ShowMore,
     "./islands/WishlistButton/vtex.tsx": $WishlistButton_vtex,
