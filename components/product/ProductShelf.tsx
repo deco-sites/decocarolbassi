@@ -24,7 +24,7 @@ export interface Props {
     headerfontSize?: "Normal" | "Large" | "Small";
     showArrows?: boolean;
     showDots?: boolean;
-    colletionButton?: {
+    collectionButton?: {
       show?: boolean;
       action?: {
         text: string;
@@ -101,7 +101,7 @@ function ProductShelf({
           ))}
         </Slider>
 
-        {layout?.showArrows && !layout?.colletionButton?.show && (
+        {layout?.showArrows && !layout?.collectionButton?.show && (
           <div class="absolute bottom-[-20px] lg:bottom-0 right-20 w-full lg:w-[250px]">
             <div class="relative left-[80px] lg:left-auto block z-10">
               <Slider.PrevButton class="absolute w-12 h-12 flex justify-center items-center top-3 lg:top-[27px]">
@@ -134,7 +134,7 @@ function ProductShelf({
           </div>
         )}
 
-        {layout?.showArrows && layout?.colletionButton?.show && (
+        {layout?.showArrows && layout?.collectionButton?.show && (
           <>
             <div class="relative block z-10 col-start-1 row-start-3">
               <Slider.PrevButton class="absolute w-12 h-12 flex justify-center items-center top-3 lg:top-[27px]">
@@ -153,7 +153,7 @@ function ProductShelf({
             </div>
           </>
         )}
-        {layout?.showDots && layout?.colletionButton?.show && (
+        {layout?.showDots && layout?.collectionButton?.show && (
           <ul
             class={`absolute left-[50px] carousel grid grid-cols-${products.length} mt-[35px] lg:mt-[50px] items-end col-span-full z-10 row-start-4 w-[calc(100%-130px)] lg:w-[200px] m-auto bg-secondary-neutral-600`}
           >
@@ -167,13 +167,13 @@ function ProductShelf({
           </ul>
         )}
 
-        {layout?.colletionButton?.show && (
+        {layout?.collectionButton?.show && (
           <div class="absolute left-24 bottom-[-120px] lg:right-12 lg:left-auto lg:bottom-[-80px]">
             <a
-              href={layout?.colletionButton.action?.href}
+              href={layout?.collectionButton.action?.href}
             >
-              <ButtonBanner aria-label={layout.colletionButton.action?.text}>
-                {layout?.colletionButton.action?.text}
+              <ButtonBanner aria-label={layout.collectionButton.action?.text}>
+                {layout?.collectionButton.action?.text}
               </ButtonBanner>
             </a>
           </div>

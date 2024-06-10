@@ -19,12 +19,14 @@ import { useOffer } from "../../sdk/useOffer.ts";
 import { usePercentualDiscount } from "../../sdk/usePercentualPrice.ts";
 import { usePlatform } from "../../sdk/usePlatform.tsx";
 import { ProductPolicy } from "../../sections/Product/ProductDetails.tsx";
+import { MediaOptionProps } from "../share/ShareProduct.tsx";
 import ProductSelector from "./ProductVariantSelector.tsx";
 
 export interface Props {
   page: ProductDetailsPage | null;
   productExchangesReturnsPolicy?: ProductPolicy;
   device: Device;
+  socialOptions?: MediaOptionProps[];
   layout?: {
     /**
      * @title Product Name
@@ -36,7 +38,7 @@ export interface Props {
 }
 
 function ProductInfo(
-  { page, productExchangesReturnsPolicy, device }: Props,
+  { page, productExchangesReturnsPolicy, device, socialOptions }: Props,
 ) {
   const platform = usePlatform();
   const id = useId();
@@ -88,7 +90,11 @@ function ProductInfo(
       <div class="border-secondary-neutral-300 border-solid border-b">
         <div>
           <div class="w-full flex justify-end items-center">
-            <ShareProduct product={product} device={device} />
+            <ShareProduct
+              product={product}
+              device={device}
+              options={socialOptions ?? []}
+            />
             <WishlistButtonVtex
               variant="icon"
               productID={productID}

@@ -17,6 +17,22 @@ function Dot({ index, children, class: _class = "" }: {
   );
 }
 
+function DotImage({ index, children, class: _class = "" }: {
+  index: number;
+  class?: string;
+  children: ComponentChildren;
+}) {
+  return (
+    <button
+      data-dot-image={index}
+      aria-label={`go to slider item ${index}`}
+      className={` focus:outline-none group ${_class}`}
+    >
+      {children}
+    </button>
+  );
+}
+
 function Slider(props: JSX.IntrinsicElements["ul"]) {
   return <ul data-slider {...props} />;
 }
@@ -50,6 +66,7 @@ const setup = ({ rootId, scroll, interval, infinite }: Props) => {
     'data-slide="prev"': 'data-slide="prev"',
     'data-slide="next"': 'data-slide="next"',
     "data-dot": "data-dot",
+    "data-dot-image": "data-dot-image",
   };
 
   // Percentage of the item that has to be inside the container
@@ -89,6 +106,7 @@ const setup = ({ rootId, scroll, interval, infinite }: Props) => {
   const prev = root?.querySelector(`[${ATTRIBUTES['data-slide="prev"']}]`);
   const next = root?.querySelector(`[${ATTRIBUTES['data-slide="next"']}]`);
   const dots = root?.querySelectorAll(`[${ATTRIBUTES["data-dot"]}]`);
+  const dotsImage = root?.querySelectorAll(`[${ATTRIBUTES["data-dot-image"]}]`);
 
   if (!root || !slider || !items || items.length === 0) {
     console.warn(
@@ -201,11 +219,14 @@ const setup = ({ rootId, scroll, interval, infinite }: Props) => {
       elements.forEach((item) => {
         const index = Number(item.target.getAttribute("data-slider-item")) || 0;
         const dot = dots?.item(index);
+        const dotImage = dotsImage?.item(index);
 
         if (item.isIntersecting) {
           dot?.setAttribute("disabled", "");
+          dotImage?.setAttribute("disabled", "");
         } else {
           dot?.removeAttribute("disabled");
+          dotImage?.removeAttribute("disabled");
         }
 
         if (!infinite) {
@@ -232,6 +253,7 @@ const setup = ({ rootId, scroll, interval, infinite }: Props) => {
 
   for (let it = 0; it < (dots?.length ?? 0); it++) {
     dots?.item(it).addEventListener("click", () => goToItem(it));
+    dotsImage?.item(it).addEventListener("click", () => goToItem(it));
   }
 
   prev?.addEventListener("click", onClickPrev);
@@ -243,6 +265,7 @@ const setup = ({ rootId, scroll, interval, infinite }: Props) => {
   return () => {
     for (let it = 0; it < (dots?.length ?? 0); it++) {
       dots?.item(it).removeEventListener("click", () => goToItem(it));
+      dotsImage?.item(it).removeEventListener("click", () => goToItem(it));
     }
 
     prev?.removeEventListener("click", onClickPrev);
@@ -274,6 +297,7 @@ function JS({
 }
 
 Slider.Dot = Dot;
+Slider.DotImage = DotImage;
 Slider.Item = Item;
 Slider.NextButton = NextButton;
 Slider.PrevButton = PrevButton;

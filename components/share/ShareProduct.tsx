@@ -1,4 +1,5 @@
 import { useSignal } from "@preact/signals";
+import { ImageWidget } from "apps/admin/widgets.ts";
 import { Product } from "apps/commerce/types.ts";
 import Image from "apps/website/components/Image.tsx";
 import { Device } from "apps/website/matchers/device.ts";
@@ -8,16 +9,17 @@ import Modal from "../ui/Modal.tsx";
 
 export type MediaOptionProps = {
   title: string;
-  icon: string;
+  icon: ImageWidget | string;
   href: string;
 };
 
 export type Props = {
   product: Product;
   device: Device;
+  options: MediaOptionProps[];
 };
 
-const mediaOptions: MediaOptionProps[] = [
+const defaultOptions: MediaOptionProps[] = [
   {
     title: "Facebook",
     icon:
@@ -38,8 +40,9 @@ const mediaOptions: MediaOptionProps[] = [
   },
 ];
 
-function ShareProduct({ product, device }: Props) {
+function ShareProduct({ product, device, options }: Props) {
   const isOpen = useSignal<boolean>(false);
+  const socialOptions = options ?? defaultOptions;
 
   const renderOption = useCallback(
     (option: MediaOptionProps, _index: number) => {
@@ -83,15 +86,13 @@ function ShareProduct({ product, device }: Props) {
       .share({
         title: "",
         url: pageUrl,
-      })
-      .then((data) => console.log(data))
-      .catch((err) => console.error(err));
+      });
   };
 
   return (
     <>
       <div
-        className="btn  btn-circle"
+        className="btn btn-circle"
         onClick={productSharingControl}
       >
         <ShareIcon />
@@ -117,7 +118,7 @@ function ShareProduct({ product, device }: Props) {
                 Compartilhe esse produto nas redes sociais!
               </h1>
               <div className="flex items-center justify-center gap-4">
-                {mediaOptions.map(renderOption)}
+                {socialOptions.map(renderOption)}
               </div>
             </div>
           </div>

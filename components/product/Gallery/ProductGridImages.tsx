@@ -44,11 +44,10 @@ export default function ProductGridImages(props: Props) {
   const aspectRatio = `${width} / ${height}`;
   const productVideo = videos[0];
 
-  const { displayProductZoomModal, productZoomIndex } = useUI();
+  const { displayProductZoomModal } = useUI();
 
-  const handleClick = (index: number) => {
+  const handleClick = () => {
     displayProductZoomModal.value = true;
-    productZoomIndex.value = index;
   };
 
   return (
@@ -60,7 +59,7 @@ export default function ProductGridImages(props: Props) {
             <Slider.Item
               index={index}
               class="carousel-item w-11/12"
-              onClick={() => handleClick(index)}
+              onClick={handleClick}
             >
               <Image
                 class="w-full"
@@ -92,7 +91,7 @@ export default function ProductGridImages(props: Props) {
             <figure
               style={{ aspectRatio: ASPECT_RATIO }}
               class="hover:cursor-pointer"
-              onClick={() => handleClick(index)}
+              onClick={handleClick}
             >
               <Image
                 src={image.url!}
@@ -114,7 +113,7 @@ export default function ProductGridImages(props: Props) {
               maxHeightheight: HEIGHT,
             }}
             class="relative hover:cursor-pointer"
-            onClick={() => handleClick(2)}
+            onClick={handleClick}
           >
             <Video
               src={productVideo.contentUrl!}
@@ -134,7 +133,7 @@ export default function ProductGridImages(props: Props) {
             <figure
               style={{ aspectRatio: ASPECT_RATIO }}
               class="hover:cursor-pointer"
-              onClick={() => handleClick(1 + index)}
+              onClick={handleClick}
             >
               <Image
                 src={image.url!}

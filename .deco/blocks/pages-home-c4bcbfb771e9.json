@@ -46,7 +46,7 @@
           "desktop": 3
         },
         "showDots": true,
-        "colletionButton": {
+        "collectionButton": {
           "show": true,
           "action": {
             "text": "Ver Nova Coleção",
