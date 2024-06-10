@@ -28,7 +28,7 @@ function ProductImageZoom({ images, height, width }: Props) {
     const y = e.clientY - rect.top;
 
     const img = container.querySelector("img");
-    const zoomFactor = 2; // Adjust the zoom factor as needed
+    const zoomFactor = 2;
     const offsetX = ((x / rect.width) * 100) * (zoomFactor - 1);
     const offsetY = ((y / rect.height) * 100) * (zoomFactor - 1);
 
@@ -122,8 +122,6 @@ function ProductImageZoom({ images, height, width }: Props) {
 
           <ul class="absolute left-0 bottom-[168px] md:bottom-auto carousel carousel-center gap-1 px-0 sm:flex-col order-2 sm:order-1">
             {images.map((img, index) => {
-              const isActive = productZoomIndex.value === index;
-
               return (
                 <li
                   class="carousel-item min-w-[63px] sm:min-w-[100px]"
@@ -132,9 +130,7 @@ function ProductImageZoom({ images, height, width }: Props) {
                   <Slider.DotImage index={index}>
                     <Image
                       style={{ aspectRatio: "200/246" }}
-                      class={`border ${
-                        isActive ? "border-primary-700" : "border-none"
-                      }`}
+                      class={`group-disabled:border-base-700 group-disabled:border group-disabled:rounded `}
                       width={100}
                       height={123}
                       src={img.url!}
