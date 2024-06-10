@@ -39,12 +39,16 @@ export default function ProductCardWithBannerDesktop(
         <a href={categoryBanners.banner1.action?.href}>
           {categoryBanners.banner1.type === "image"
             ? (
-              <figure style={{ ASPECT_RATIO }} class="w-full h-full">
+              <figure
+                style={{ aspectRatio: ASPECT_RATIO }}
+                class="w-full h-full"
+              >
                 <Image
                   src={categoryBanners.banner1.image!}
                   width={WIDTH}
                   height={HEIGHT}
                   class="w-full h-full"
+                  loading={"lazy"}
                 />
               </figure>
             )
@@ -53,7 +57,7 @@ export default function ProductCardWithBannerDesktop(
                 src={categoryBanners.banner1.video!}
                 width={WIDTH}
                 height={HEIGHT}
-                style={{ ASPECT_RATIO }}
+                style={{ aspectRatio: ASPECT_RATIO }}
                 class="w-full h-full"
               />
             )}
@@ -100,6 +104,7 @@ export default function ProductCardWithBannerDesktop(
                 width={WIDTH}
                 height={HEIGHT}
                 class="w-full h-full object-cover"
+                loading={"lazy"}
               />
             )
             : (
@@ -146,12 +151,16 @@ export default function ProductCardWithBannerDesktop(
         <a href={categoryBanners.banner3.action?.href}>
           {categoryBanners.banner3.type === "image"
             ? (
-              <figure style={{ ASPECT_RATIO }} class="w-full h-full">
+              <figure
+                style={{ aspectRatio: ASPECT_RATIO }}
+                class="w-full h-full"
+              >
                 <Image
                   src={categoryBanners.banner3.image!}
                   width={WIDTH}
                   height={HEIGHT}
                   class="w-full h-full"
+                  loading={"lazy"}
                 />
               </figure>
             )
@@ -160,7 +169,7 @@ export default function ProductCardWithBannerDesktop(
                 src={categoryBanners.banner3.video!}
                 width={WIDTH}
                 height={HEIGHT}
-                style={{ ASPECT_RATIO }}
+                style={{ aspectRatio: ASPECT_RATIO }}
                 class="w-full h-full"
               />
             )}

@@ -1,1 +1,20 @@
-{"title":"Take a look at our benefits","benefits":[{"icon":"Truck","label":"Free Shipping Worldwide","description":"Shop online with no additional fees!"},{"icon":"Phone","label":"24/7 Online Support","description":"Instant assistance anytime"},{"icon":"Discount","label":"15% on the first purchase","description":"Discount for new customers"},{"icon":"ArrowsPointingOut","label":"Hassle-Free Returns","description":"Easy and Convenient Return Policy"}],"__resolveType":"site/sections/Content/Benefits.tsx"}
+{
+  "__resolveType": "site/sections/Benefits.tsx",
+  "items": [
+    {
+      "icon": "BenefitShoppingCart",
+      "title": "1° Compra",
+      "description": "<p>Ganhe <strong>10% Off </strong>na sua primeira compra no site. Já aplicado no carrinho</p>"
+    },
+    {
+      "icon": "BenefitCreditCard",
+      "title": "ATÉ 6x sem juros",
+      "description": "<p>Em cartões selecionados. Parcela mínima de <strong>R$400</strong></p>"
+    },
+    {
+      "icon": "BenefitShipping",
+      "title": "Frete Grátis",
+      "description": "<p>Nas compras acima de <strong>R$ 3.000</strong></p>"
+    }
+  ]
+}

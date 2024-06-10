@@ -52,6 +52,16 @@
     top: 30px;
     right: 5px;
   }
+
+  .zoom-container {
+    position: relative;
+    overflow: hidden;
+  }
+
+  .zoom-container img {
+    transition: transform 0.1s ease;
+    transform-origin: center center;
+  }
 }
 
 .group:disabled .group-disabled\:animate-progress {

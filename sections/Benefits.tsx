@@ -1,3 +1,5 @@
+import { SectionProps } from "deco/types.ts";
+import { AppContext } from "../apps/site.ts";
 import Icon from "../components/ui/Icon.tsx";
 import { useId } from "../sdk/useId.ts";
 
@@ -35,12 +37,26 @@ export interface Props {
   items: Benefit[];
 }
 
-export default function Benefits({ items = defaultValues }: Props) {
+export const loader = (props: Props, req: Request, _ctx: AppContext) => {
+  const url = new URL(req.url);
+  return {
+    ...props,
+    url,
+  };
+};
+
+export default function Benefits(
+  { url, items = defaultValues }: SectionProps<typeof loader>,
+) {
   const id = useId();
+  const isProductPage = url.searchParams.has("skuId");
+
   return (
     <div
       id={id}
-      class="mt-4 lg:container mx-6 lg:mx-auto mb-4 lg:my-4 grid gap-8 lg:gap-4 grid-cols-1 place-items-center lg:grid-cols-3 text-center px-4"
+      class={`lg:container mx-6 lg:mx-auto mb-4 lg:mb-20 grid gap-8 lg:gap-4 grid-cols-1 place-items-center lg:grid-cols-3 text-center px-4 ${
+        isProductPage ? "mt-28 lg:mt-28" : "mt-[55px]"
+      }`}
     >
       {items.map((item) => (
         <div class="flex flex-col items-center justify-center max-w-72">

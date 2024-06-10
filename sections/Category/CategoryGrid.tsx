@@ -157,7 +157,7 @@ function CategoryGrid(props: SectionProps<typeof loader>) {
                             src={image!}
                             height={550}
                             width={300}
-                            alt={label}
+                            alt={"banner image"}
                             loading="lazy"
                             class="h-full"
                           />
@@ -226,7 +226,7 @@ function CategoryGrid(props: SectionProps<typeof loader>) {
         )
         : (
           <div
-            class={`grid px-8 lg:px-0 ${
+            class={`grid px-4 lg:px-0 ${
               isBannerRowList ? "md:grid-cols-3" : "md:grid-cols-2"
             } grid-cols-1 mt-6 gap-4`}
           >
@@ -302,7 +302,7 @@ function CategoryGrid(props: SectionProps<typeof loader>) {
   );
 }
 
-export const loader = (props: Props, req: Request, ctx: AppContext) => {
+export const loader = (props: Props, _req: Request, ctx: AppContext) => {
   return {
     ...props,
     device: ctx.device,

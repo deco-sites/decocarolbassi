@@ -7,6 +7,7 @@ import { clx } from "../../sdk/clx.ts";
 import { formatPrice } from "../../sdk/format.ts";
 import { relative } from "../../sdk/url.ts";
 import { useOffer } from "../../sdk/useOffer.ts";
+import { usePercentualDiscount } from "../../sdk/usePercentualPrice.ts";
 
 interface Props {
   product: Product;
@@ -37,6 +38,10 @@ function ProductCard({
   const { listPrice, price } = useOffer(offers);
   const relativeUrl = relative(url);
   const aspectRatio = `${WIDTH} / ${HEIGHT}`;
+
+  const hasDiscount = (listPrice ?? 0) > (price ?? 0);
+  const productPercentualOff = hasDiscount &&
+    usePercentualDiscount(listPrice!, price!);
 
   return (
     <div
@@ -125,9 +130,21 @@ function ProductCard({
 
         {/* Price from/to */}
         <div class="flex gap-2 items-center justify-start text-dark-blue ml-4 font-light">
-          <span>
-            {formatPrice(price, offers?.priceCurrency)}
-          </span>
+          <>
+            {hasDiscount && (
+              <span class="line-through text-sm text-[#9AA4B2]">
+                {formatPrice(listPrice, offers?.priceCurrency)}
+              </span>
+            )}
+            <span class="font-light text-dark-blue">
+              {formatPrice(price, offers?.priceCurrency)}
+            </span>
+            {hasDiscount && (
+              <span class="text-sm text-[#9AA4B2] font-bold">
+                {!!productPercentualOff && productPercentualOff}
+              </span>
+            )}
+          </>
         </div>
       </div>
     </div>

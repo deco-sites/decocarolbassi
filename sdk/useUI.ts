@@ -10,13 +10,17 @@ const displayMenu = signal(false);
 const displaySearchPopup = signal(false);
 const displaySearchDrawer = signal(false);
 const displayGridLayout = signal<number>(2);
+const displayProductZoomModal = signal(false);
+const productZoomIndex = signal<number>(0);
 
 const state = {
   displayCart,
   displayMenu,
   displaySearchPopup,
   displaySearchDrawer,
-  displayGridLayout
+  displayGridLayout,
+  displayProductZoomModal,
+  productZoomIndex
 };
 
 // Keyboard event listeners
