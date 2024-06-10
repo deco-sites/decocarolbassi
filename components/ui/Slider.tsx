@@ -219,14 +219,14 @@ const setup = ({ rootId, scroll, interval, infinite }: Props) => {
       elements.forEach((item) => {
         const index = Number(item.target.getAttribute("data-slider-item")) || 0;
         const dot = dots?.item(index);
-        const dotImage = dotsImage?.item(index);
+        const dotImage = dotsImage ? dotsImage?.item(index) : null;
 
         if (item.isIntersecting) {
           dot?.setAttribute("disabled", "");
-          dotImage?.setAttribute("disabled", "");
+          dotImage ? dotImage?.setAttribute("disabled", "") : null;
         } else {
           dot?.removeAttribute("disabled");
-          dotImage?.removeAttribute("disabled");
+          dotImage ? dotImage?.removeAttribute("disabled") : null;
         }
 
         if (!infinite) {
@@ -253,7 +253,12 @@ const setup = ({ rootId, scroll, interval, infinite }: Props) => {
 
   for (let it = 0; it < (dots?.length ?? 0); it++) {
     dots?.item(it).addEventListener("click", () => goToItem(it));
-    dotsImage?.item(it).addEventListener("click", () => goToItem(it));
+    if (dotsImage) {
+      const item = dotsImage.item(it);
+      if (item) {
+        item.addEventListener("click", () => goToItem(it));
+      }
+    }
   }
 
   prev?.addEventListener("click", onClickPrev);
@@ -265,7 +270,12 @@ const setup = ({ rootId, scroll, interval, infinite }: Props) => {
   return () => {
     for (let it = 0; it < (dots?.length ?? 0); it++) {
       dots?.item(it).removeEventListener("click", () => goToItem(it));
-      dotsImage?.item(it).removeEventListener("click", () => goToItem(it));
+      if (dotsImage) {
+        const item = dotsImage.item(it);
+        if (item) {
+          item.removeEventListener("click", () => goToItem(it));
+        }
+      }
     }
 
     prev?.removeEventListener("click", onClickPrev);
