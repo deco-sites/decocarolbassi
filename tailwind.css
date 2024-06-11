@@ -62,6 +62,12 @@
     transition: transform 0.1s ease;
     transform-origin: center center;
   }
+
+  .institutional ul,
+  li {
+    list-style: inherit;
+    margin-left: 1rem !important;
+  }
 }
 
 .group:disabled .group-disabled\:animate-progress {
