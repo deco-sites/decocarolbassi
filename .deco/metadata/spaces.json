@@ -25,7 +25,73 @@
       "name": "Pages",
       "pinned": true,
       "icon": "files",
-      "layout": [],
+      "layout": {
+        "settings": {
+          "hasHeaders": true,
+          "constrainDragToContainer": true,
+          "reorderEnabled": true,
+          "selectionEnabled": false,
+          "popoutWholeStack": false,
+          "blockedPopoutsThrowError": true,
+          "closePopoutsOnUnload": true,
+          "showPopoutIcon": false,
+          "showMaximiseIcon": false,
+          "showCloseIcon": false,
+          "responsiveMode": "onload"
+        },
+        "dimensions": {
+          "borderWidth": 8,
+          "minItemHeight": 10,
+          "minItemWidth": 10,
+          "headerHeight": 40,
+          "dragProxyWidth": 300,
+          "dragProxyHeight": 200
+        },
+        "labels": {
+          "close": "close",
+          "maximise": "maximise",
+          "minimise": "minimise",
+          "popout": "open in new window",
+          "popin": "pop in",
+          "tabDropdown": "additional tabs"
+        },
+        "content": [
+          {
+            "type": "row",
+            "isClosable": true,
+            "reorderEnabled": true,
+            "title": "",
+            "content": [
+              {
+                "type": "stack",
+                "width": 100,
+                "isClosable": true,
+                "reorderEnabled": true,
+                "title": "",
+                "activeItemIndex": 0,
+                "content": [
+                  {
+                    "id": "pages::List::list::List::%7B%7D",
+                    "title": "<div class=\"contents text-base-700\" id=\"header-pages::List::list::List::%7B%7D\" />",
+                    "type": "component",
+                    "componentName": "component",
+                    "componentState": {
+                      "id": "pages::List::list::List::%7B%7D"
+                    },
+                    "isClosable": true,
+                    "reorderEnabled": true
+                  }
+                ]
+              }
+            ]
+          }
+        ],
+        "isClosable": true,
+        "reorderEnabled": true,
+        "title": "",
+        "openPopouts": [],
+        "maximisedItemId": null
+      },
       "tabs": {
         "pages::List::list::List::%7B%7D": {
           "name": "List",
@@ -717,7 +783,7 @@
             "content": [
               {
                 "type": "stack",
-                "width": 41.7189460476788,
+                "width": 41.66666666666667,
                 "isClosable": true,
                 "reorderEnabled": true,
                 "title": "",
@@ -739,7 +805,7 @@
               },
               {
                 "type": "stack",
-                "width": 58.2810539523212,
+                "width": 58.333333333333336,
                 "isClosable": true,
                 "reorderEnabled": true,
                 "title": "",
@@ -1841,7 +1907,7 @@
             "content": [
               {
                 "type": "stack",
-                "width": 30.708104444847034,
+                "width": 31.02191524589397,
                 "isClosable": true,
                 "reorderEnabled": true,
                 "title": "",
@@ -1863,7 +1929,7 @@
               },
               {
                 "type": "stack",
-                "width": 69.29189555515296,
+                "width": 68.97808475410602,
                 "isClosable": true,
                 "reorderEnabled": true,
                 "title": "",
@@ -2695,26 +2761,56 @@
         },
         "content": [
           {
-            "type": "stack",
+            "type": "row",
             "isClosable": true,
             "reorderEnabled": true,
             "title": "",
             "content": [
               {
-                "type": "component",
-                "width": 70,
+                "type": "stack",
+                "width": 41.66666666666667,
                 "isClosable": true,
                 "reorderEnabled": true,
-                "title": "<div class=\"contents text-base-700\" id=\"header-%2F.deco%2Fblocks%2Fvtex.json::Preview::world::Preview::%7B%7D\" />",
-                "id": "%2F.deco%2Fblocks%2Fvtex.json::Preview::world::Preview::%7B%7D",
-                "componentName": "component",
-                "componentState": {
-                  "id": "%2F.deco%2Fblocks%2Fvtex.json::Preview::world::Preview::%7B%7D"
-                }
+                "title": "",
+                "activeItemIndex": 0,
+                "content": [
+                  {
+                    "id": "%2F.deco%2Fblocks%2Fvtex.json::Properties::list::Properties::%7B%7D",
+                    "title": "<div class=\"contents text-base-700\" id=\"header-%2F.deco%2Fblocks%2Fvtex.json::Properties::list::Properties::%7B%7D\" />",
+                    "type": "component",
+                    "componentName": "component",
+                    "componentState": {
+                      "id": "%2F.deco%2Fblocks%2Fvtex.json::Properties::list::Properties::%7B%7D"
+                    },
+                    "width": 30,
+                    "isClosable": true,
+                    "reorderEnabled": true
+                  }
+                ]
+              },
+              {
+                "type": "stack",
+                "width": 58.333333333333336,
+                "isClosable": true,
+                "reorderEnabled": true,
+                "title": "",
+                "activeItemIndex": 0,
+                "content": [
+                  {
+                    "id": "%2F.deco%2Fblocks%2Fvtex.json::Preview::world::Preview::%7B%7D",
+                    "title": "<div class=\"contents text-base-700\" id=\"header-%2F.deco%2Fblocks%2Fvtex.json::Preview::world::Preview::%7B%7D\" />",
+                    "type": "component",
+                    "componentName": "component",
+                    "componentState": {
+                      "id": "%2F.deco%2Fblocks%2Fvtex.json::Preview::world::Preview::%7B%7D"
+                    },
+                    "width": 70,
+                    "isClosable": true,
+                    "reorderEnabled": true
+                  }
+                ]
               }
-            ],
-            "width": 100,
-            "activeItemIndex": 0
+            ]
           }
         ],
         "isClosable": true,
@@ -2732,6 +2828,18 @@
           "viewId": "Preview",
           "width": 70,
           "id": "%2F.deco%2Fblocks%2Fvtex.json::Preview::world::Preview::%7B%7D",
+          "state": {
+            "__signal": null
+          }
+        },
+        "%2F.deco%2Fblocks%2Fvtex.json::Properties::list::Properties::%7B%7D": {
+          "name": "Properties",
+          "icon": "list",
+          "accepts": "function",
+          "render": "function",
+          "viewId": "Properties",
+          "width": 30,
+          "id": "%2F.deco%2Fblocks%2Fvtex.json::Properties::list::Properties::%7B%7D",
           "state": {
             "__signal": null
           }
