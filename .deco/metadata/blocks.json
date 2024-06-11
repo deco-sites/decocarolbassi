@@ -352,5 +352,11 @@
     "path": "/politica-de-privacidade",
     "blockType": "pages",
     "__resolveType": "website/pages/Page.tsx"
+  },
+  "/.deco/blocks/pages-Nossas%2520Lojas-931564.json": {
+    "name": "Nossas Lojas",
+    "path": "/nossas-lojas",
+    "blockType": "pages",
+    "__resolveType": "website/pages/Page.tsx"
   }
 }

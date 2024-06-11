@@ -1,0 +1,20 @@
+{
+  "name": "Nossas Lojas",
+  "path": "/nossas-lojas",
+  "sections": [
+    {
+      "__resolveType": "Header - 03"
+    },
+    {
+      "__resolveType": "site/sections/Institutional/OurStores.tsx",
+      "apiKey": {
+        "__resolveType": "website/loaders/secret.ts",
+        "encrypted": "7d33e950cacde7bd29a2ef85201992d721eaa9aff366881a736d9c5d90378873a45242a3fad4c95c4c9c68966eedad45"
+      }
+    }
+  ],
+  "seo": {
+    "__resolveType": "website/sections/Seo/SeoV2.tsx"
+  },
+  "__resolveType": "website/pages/Page.tsx"
+}

@@ -1,1 +1,322 @@
-{"__resolveType":"site/sections/Header/Header.tsx","cart":{"freeShippingObjectiveQuantity":600},"logo":{"alt":"Glamour logo by deco","src":"https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/9166/cdf6dc48-e5ff-4876-b830-42da67fd3f19","width":219,"height":23},"alerts":[{"0":"E","1":"n","2":"j","3":"o","4":"y","5":" ","6":"C","7":"o","8":"m","9":"p","10":"l","11":"i","12":"m","13":"e","14":"n","15":"t","16":"a","17":"r","18":"y","19":" ","20":"S","21":"h","22":"i","23":"p","24":"p","25":"i","26":"n","27":"g","label":"Enjoy Complimentary Shipping","icon":"Desconto"}],"navItems":{"__resolveType":"commerce/loaders/navbar.ts","items":[{"url":"/new-in","name":"New in","@type":"SiteNavigationElement","image":[{"url":"https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/239/575c3b0f-1a2e-4ecb-aaad-532671dc553d","@type":"ImageObject"},{"url":"https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/9166/b0524cd2-6658-4174-bc96-71332a9ad96f","contentUrl":"Sapatos","thumbnailUrl":"/sapatos"}],"children":[{"url":"/masculino","name":"Novidades","@type":"SiteNavigationElement","children":[]},{"image":[],"children":[],"name":"lorem1","url":"/masculino/lorem1"},{"image":[],"children":[],"name":"lorem2","url":"/masculino/lorem2"},{"image":[],"children":[],"name":"lorem3","url":"/masculino/lorem3"},{"image":[],"children":[],"name":"lorem4","url":"/masculino/lorem4"},{"image":[],"children":[],"name":"lorem5","url":"/masculino/lorem5"},{"image":[],"children":[],"name":"lorem6","url":"/masculino/lorem6"},{"image":[],"children":[],"name":"lorem7","url":"/masculino/lorem7"},{"image":[],"children":[],"name":"lorem8","url":"/masculino/lorem8"},{"image":[],"children":[],"name":"lorem9","url":"/masculino/lorem9"},{"image":[],"children":[],"name":"lorem","url":"/masculino/lorem"},{"image":[],"children":[],"name":"lorem","url":"/masculino/lorem"}]},{"url":"/roupa","name":"Roupa","@type":"SiteNavigationElement","image":[{"url":"https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/239/575c3b0f-1a2e-4ecb-aaad-532671dc553d","@type":"ImageObject"},{"url":"https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/9166/b0524cd2-6658-4174-bc96-71332a9ad96f","contentUrl":"Sapatos","thumbnailUrl":"/sapatos"}],"children":[{"url":"/masculino","name":"Novidades","@type":"SiteNavigationElement","children":[]},{"image":[],"children":[],"name":"lorem1","url":"/masculino/lorem1"},{"image":[],"children":[],"name":"lorem2","url":"/masculino/lorem2"},{"image":[],"children":[],"name":"lorem3","url":"/masculino/lorem3"},{"image":[],"children":[],"name":"lorem4","url":"/masculino/lorem4"},{"image":[],"children":[],"name":"lorem5","url":"/masculino/lorem5"},{"image":[],"children":[],"name":"lorem6","url":"/masculino/lorem6"},{"image":[],"children":[],"name":"lorem7","url":"/masculino/lorem7"},{"image":[],"children":[],"name":"lorem8","url":"/masculino/lorem8"},{"image":[],"children":[],"name":"lorem9","url":"/masculino/lorem9"}]},{"url":"/sapatos","name":"Sapatos","@type":"SiteNavigationElement","image":[{"url":"https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/239/575c3b0f-1a2e-4ecb-aaad-532671dc553d","@type":"ImageObject"},{"url":"https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/9166/b0524cd2-6658-4174-bc96-71332a9ad96f","contentUrl":"Sapatos","thumbnailUrl":"/sapatos"}],"children":[{"url":"/masculino","name":"Novidades","@type":"SiteNavigationElement","children":[]},{"url":"/masculino/lorem1","name":"lorem1","children":[],"image":[]},{"image":[],"children":[],"name":"lorem2","url":"/masculino/lorem2"},{"image":[],"children":[],"name":"lorem3","url":"/masculino/lorem3"},{"image":[],"children":[],"name":"lorem4","url":"/masculino/lorem4"},{"image":[],"children":[],"name":"lorem5","url":"/masculino/lorem5"},{"image":[],"children":[],"name":"lorem6","url":"/masculino/lorem6"},{"image":[],"children":[],"name":"lorem7","url":"/masculino/lorem7"},{"image":[],"children":[],"name":"lorem8","url":"/masculino/lorem8"},{"image":[],"children":[],"name":"lorem9","url":"/masculino/lorem9"}]},{"url":"/outlet","name":"Outlet","@type":"SiteNavigationElement"}]},"products":[],"searchbar":{"name":"q","action":"/s","loader":{"data":{"count":4,"__resolveType":"vtex/loaders/intelligentSearch/suggestions.ts"},"__resolveType":"resolved"},"placeholder":"O que você procura?"},"suggestions":{"products":[],"searches":[]},"logoPosition":"left","itemsPerColumn":6,"lightThemeBar":false}
+{
+  "__resolveType": "site/sections/Header/Header.tsx",
+  "cart": {
+    "freeShippingObjectiveQuantity": 600
+  },
+  "logo": {
+    "alt": "Glamour logo by deco",
+    "src": "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/9166/cdf6dc48-e5ff-4876-b830-42da67fd3f19",
+    "width": 219,
+    "height": 23
+  },
+  "alerts": [
+    {
+      "0": "E",
+      "1": "n",
+      "2": "j",
+      "3": "o",
+      "4": "y",
+      "5": " ",
+      "6": "C",
+      "7": "o",
+      "8": "m",
+      "9": "p",
+      "10": "l",
+      "11": "i",
+      "12": "m",
+      "13": "e",
+      "14": "n",
+      "15": "t",
+      "16": "a",
+      "17": "r",
+      "18": "y",
+      "19": " ",
+      "20": "S",
+      "21": "h",
+      "22": "i",
+      "23": "p",
+      "24": "p",
+      "25": "i",
+      "26": "n",
+      "27": "g",
+      "label": "Enjoy Complimentary Shipping",
+      "icon": "Desconto"
+    }
+  ],
+  "navItems": {
+    "__resolveType": "commerce/loaders/navbar.ts",
+    "items": [
+      {
+        "url": "/new-in",
+        "name": "New in",
+        "@type": "SiteNavigationElement",
+        "image": [
+          {
+            "url": "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/239/575c3b0f-1a2e-4ecb-aaad-532671dc553d",
+            "@type": "ImageObject"
+          },
+          {
+            "url": "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/9166/b0524cd2-6658-4174-bc96-71332a9ad96f",
+            "contentUrl": "Sapatos",
+            "thumbnailUrl": "/sapatos"
+          }
+        ],
+        "children": [
+          {
+            "url": "/masculino",
+            "name": "Novidades",
+            "@type": "SiteNavigationElement",
+            "children": []
+          },
+          {
+            "image": [],
+            "children": [],
+            "name": "lorem1",
+            "url": "/masculino/lorem1"
+          },
+          {
+            "image": [],
+            "children": [],
+            "name": "lorem2",
+            "url": "/masculino/lorem2"
+          },
+          {
+            "image": [],
+            "children": [],
+            "name": "lorem3",
+            "url": "/masculino/lorem3"
+          },
+          {
+            "image": [],
+            "children": [],
+            "name": "lorem4",
+            "url": "/masculino/lorem4"
+          },
+          {
+            "image": [],
+            "children": [],
+            "name": "lorem5",
+            "url": "/masculino/lorem5"
+          },
+          {
+            "image": [],
+            "children": [],
+            "name": "lorem6",
+            "url": "/masculino/lorem6"
+          },
+          {
+            "image": [],
+            "children": [],
+            "name": "lorem7",
+            "url": "/masculino/lorem7"
+          },
+          {
+            "image": [],
+            "children": [],
+            "name": "lorem8",
+            "url": "/masculino/lorem8"
+          },
+          {
+            "image": [],
+            "children": [],
+            "name": "lorem9",
+            "url": "/masculino/lorem9"
+          },
+          {
+            "image": [],
+            "children": [],
+            "name": "lorem",
+            "url": "/masculino/lorem"
+          },
+          {
+            "image": [],
+            "children": [],
+            "name": "lorem",
+            "url": "/masculino/lorem"
+          }
+        ]
+      },
+      {
+        "url": "/roupa",
+        "name": "Roupa",
+        "@type": "SiteNavigationElement",
+        "image": [
+          {
+            "url": "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/239/575c3b0f-1a2e-4ecb-aaad-532671dc553d",
+            "@type": "ImageObject"
+          },
+          {
+            "url": "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/9166/b0524cd2-6658-4174-bc96-71332a9ad96f",
+            "contentUrl": "Sapatos",
+            "thumbnailUrl": "/sapatos"
+          }
+        ],
+        "children": [
+          {
+            "url": "/masculino",
+            "name": "Novidades",
+            "@type": "SiteNavigationElement",
+            "children": []
+          },
+          {
+            "image": [],
+            "children": [],
+            "name": "lorem1",
+            "url": "/masculino/lorem1"
+          },
+          {
+            "image": [],
+            "children": [],
+            "name": "lorem2",
+            "url": "/masculino/lorem2"
+          },
+          {
+            "image": [],
+            "children": [],
+            "name": "lorem3",
+            "url": "/masculino/lorem3"
+          },
+          {
+            "image": [],
+            "children": [],
+            "name": "lorem4",
+            "url": "/masculino/lorem4"
+          },
+          {
+            "image": [],
+            "children": [],
+            "name": "lorem5",
+            "url": "/masculino/lorem5"
+          },
+          {
+            "image": [],
+            "children": [],
+            "name": "lorem6",
+            "url": "/masculino/lorem6"
+          },
+          {
+            "image": [],
+            "children": [],
+            "name": "lorem7",
+            "url": "/masculino/lorem7"
+          },
+          {
+            "image": [],
+            "children": [],
+            "name": "lorem8",
+            "url": "/masculino/lorem8"
+          },
+          {
+            "image": [],
+            "children": [],
+            "name": "lorem9",
+            "url": "/masculino/lorem9"
+          }
+        ]
+      },
+      {
+        "url": "/sapatos",
+        "name": "Sapatos",
+        "@type": "SiteNavigationElement",
+        "image": [
+          {
+            "url": "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/239/575c3b0f-1a2e-4ecb-aaad-532671dc553d",
+            "@type": "ImageObject"
+          },
+          {
+            "url": "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/9166/b0524cd2-6658-4174-bc96-71332a9ad96f",
+            "contentUrl": "Sapatos",
+            "thumbnailUrl": "/sapatos"
+          }
+        ],
+        "children": [
+          {
+            "url": "/masculino",
+            "name": "Novidades",
+            "@type": "SiteNavigationElement",
+            "children": []
+          },
+          {
+            "url": "/masculino/lorem1",
+            "name": "lorem1",
+            "children": [],
+            "image": []
+          },
+          {
+            "image": [],
+            "children": [],
+            "name": "lorem2",
+            "url": "/masculino/lorem2"
+          },
+          {
+            "image": [],
+            "children": [],
+            "name": "lorem3",
+            "url": "/masculino/lorem3"
+          },
+          {
+            "image": [],
+            "children": [],
+            "name": "lorem4",
+            "url": "/masculino/lorem4"
+          },
+          {
+            "image": [],
+            "children": [],
+            "name": "lorem5",
+            "url": "/masculino/lorem5"
+          },
+          {
+            "image": [],
+            "children": [],
+            "name": "lorem6",
+            "url": "/masculino/lorem6"
+          },
+          {
+            "image": [],
+            "children": [],
+            "name": "lorem7",
+            "url": "/masculino/lorem7"
+          },
+          {
+            "image": [],
+            "children": [],
+            "name": "lorem8",
+            "url": "/masculino/lorem8"
+          },
+          {
+            "image": [],
+            "children": [],
+            "name": "lorem9",
+            "url": "/masculino/lorem9"
+          }
+        ]
+      },
+      {
+        "url": "/outlet",
+        "name": "Outlet",
+        "@type": "SiteNavigationElement"
+      }
+    ]
+  },
+  "products": [],
+  "searchbar": {
+    "name": "q",
+    "action": "/s",
+    "loader": {
+      "data": {
+        "count": 4,
+        "__resolveType": "vtex/loaders/intelligentSearch/suggestions.ts"
+      },
+      "__resolveType": "resolved"
+    },
+    "placeholder": "O que você procura?"
+  },
+  "suggestions": {
+    "products": [],
+    "searches": []
+  },
+  "logoPosition": "left",
+  "itemsPerColumn": 6,
+  "lightThemeBar": false
+}
