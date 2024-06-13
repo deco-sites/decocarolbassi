@@ -1,1 +1,194 @@
-{"logo":{"image":"https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/9166/8c20e955-8287-4b73-9410-6e57d88ad18d","description":"O estilo pensado para você"},"layout":{"hide":{"logo":false,"mobileApps":true,"newsletter":false,"socialLinks":false,"regionOptions":true,"paymentMethods":true,"backToTheTop":true},"variation":"Variation 4","backgroundColor":"Base 100"},"social":{"items":[{"link":"http://deco.cx/","label":"Facebook"},{"link":"http://deco.cx/","label":"Instagram"},{"link":"http://deco.cx/","label":"Tiktok"}],"title":"Siga Carol Bassi nas redes"},"payments":{"items":[{"label":"Elo"},{"label":"Mastercard"},{"label":"Pix"},{"label":"Visa"}],"title":"Formas de pagamento"},"sections":[{"items":[{"href":"/central-de-atendimento","label":"Fale conosco"},{"href":"/fale-whatsapp","label":"Fale com nossas consultoras"},{"href":"/troca-e-devolucao","label":"Compras internacionais"}],"label":"Atendimento","children":[{"href":"/centraldeatendimento","label":"Central de atendimento"},{"href":"/whatsapp","label":"Fale conosco pelo WhatsApp"},{"href":"/trocaedevolucao","label":"Troca e devolução"}]},{"items":[{"href":"/quem-somos","label":"Quem somos"},{"href":"/privacidade","label":"Nossas lojas"}],"label":"Sobre Nós","children":[{"href":"/quemsomos","label":"Quem somos"},{"href":"/privacidadeeseguranca","label":"Privacidade e segurança"},{"href":"/termosdeuso","label":"Termos de uso"},{"href":"/trabalheconosco","label":"Trabalhe conosco"}]},{"items":[{"href":"/login","label":"Termos e Condições"},{"href":"/meus-pedidos","label":"Política de Privacidade"}],"label":"Termos legais e Cookies","children":[{"href":"/loginecadastro","label":"Login e cadastro"},{"href":"/meuspedidos","label":"Meus pedidos"}]}],"extraLinks":[{"href":"http://www.google.com","link":"http://www.google.com/","label":"Política de privacidade"},{"href":"http://www.google.com","link":"http://www.google.com","label":"Termos de serviço"}],"mobileApps":{"apple":"http://www.google.com","android":"http://www.google.com"},"newsletter":{"form":{"helpText":"<p>Ao se inscrever, você está aceitando nossa <a href=\"/\" class=\"link\">Política de Privacidade</a>.</p>","backgroundColor":"#000000"},"title":"Assine nossa newsletter","description":"Participe e ganhe 10% de desconto na primeira compra","images":{"mobile":"https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/9166/afc0962c-38fe-474e-aa26-a6fffcfcad04","desktop":"https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/9166/0f6087a0-3e21-4ece-a885-89367a1f2ff8"}},"backToTheTop":{"text":"Voltar ao topo"},"__resolveType":"site/sections/Footer/Footer.tsx","regionOptions":{"currency":[{"href":"/","label":"Brasil BRL"},{"href":"/","label":"United Stated USD"}],"language":[{"href":"/","label":"PT"},{"href":"/","label":"EN"}]}}
+{
+  "logo": {
+    "image": "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/9166/8c20e955-8287-4b73-9410-6e57d88ad18d",
+    "description": "O estilo pensado para você"
+  },
+  "layout": {
+    "hide": {
+      "logo": false,
+      "mobileApps": true,
+      "newsletter": false,
+      "socialLinks": false,
+      "regionOptions": true,
+      "paymentMethods": true,
+      "backToTheTop": true
+    },
+    "variation": "Variation 4",
+    "backgroundColor": "Base 100"
+  },
+  "social": {
+    "items": [
+      {
+        "link": "http://deco.cx/",
+        "label": "Facebook"
+      },
+      {
+        "link": "http://deco.cx/",
+        "label": "Instagram"
+      },
+      {
+        "link": "http://deco.cx/",
+        "label": "Tiktok"
+      }
+    ],
+    "title": "Siga Carol Bassi nas redes"
+  },
+  "payments": {
+    "items": [
+      {
+        "label": "Elo"
+      },
+      {
+        "label": "Mastercard"
+      },
+      {
+        "label": "Pix"
+      },
+      {
+        "label": "Visa"
+      }
+    ],
+    "title": "Formas de pagamento"
+  },
+  "sections": [
+    {
+      "items": [
+        {
+          "href": "/central-de-atendimento",
+          "label": "Fale conosco"
+        },
+        {
+          "href": "/fale-whatsapp",
+          "label": "Fale com nossas consultoras"
+        },
+        {
+          "href": "/troca-e-devolucao",
+          "label": "Compras internacionais"
+        }
+      ],
+      "label": "Atendimento",
+      "children": [
+        {
+          "href": "/centraldeatendimento",
+          "label": "Central de atendimento"
+        },
+        {
+          "href": "/whatsapp",
+          "label": "Fale conosco pelo WhatsApp"
+        },
+        {
+          "href": "/trocaedevolucao",
+          "label": "Troca e devolução"
+        }
+      ]
+    },
+    {
+      "items": [
+        {
+          "href": "/quem-somos",
+          "label": "Quem somos"
+        },
+        {
+          "href": "/privacidade",
+          "label": "Nossas lojas"
+        }
+      ],
+      "label": "Sobre Nós",
+      "children": [
+        {
+          "href": "/quemsomos",
+          "label": "Quem somos"
+        },
+        {
+          "href": "/privacidadeeseguranca",
+          "label": "Privacidade e segurança"
+        },
+        {
+          "href": "/termosdeuso",
+          "label": "Termos de uso"
+        },
+        {
+          "href": "/trabalheconosco",
+          "label": "Trabalhe conosco"
+        }
+      ]
+    },
+    {
+      "items": [
+        {
+          "href": "/termos-e-condicoes",
+          "label": "Termos e Condições"
+        },
+        {
+          "label": "Política de Privacidade",
+          "href": "/politica-de-privacidade"
+        }
+      ],
+      "label": "Termos legais e Cookies",
+      "children": [
+        {
+          "href": "/loginecadastro",
+          "label": "Login e cadastro"
+        },
+        {
+          "href": "/meuspedidos",
+          "label": "Meus pedidos"
+        }
+      ]
+    }
+  ],
+  "extraLinks": [
+    {
+      "href": "http://www.google.com",
+      "link": "http://www.google.com/",
+      "label": "Política de privacidade"
+    },
+    {
+      "href": "http://www.google.com",
+      "link": "http://www.google.com",
+      "label": "Termos de serviço"
+    }
+  ],
+  "mobileApps": {
+    "apple": "http://www.google.com",
+    "android": "http://www.google.com"
+  },
+  "newsletter": {
+    "form": {
+      "helpText": "<p>Ao se inscrever, você está aceitando nossa <a href=\"/\" class=\"link\">Política de Privacidade</a>.</p>",
+      "backgroundColor": "#000000"
+    },
+    "title": "Assine nossa newsletter",
+    "description": "Participe e ganhe 10% de desconto na primeira compra",
+    "images": {
+      "mobile": "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/9166/afc0962c-38fe-474e-aa26-a6fffcfcad04",
+      "desktop": "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/9166/0f6087a0-3e21-4ece-a885-89367a1f2ff8"
+    }
+  },
+  "backToTheTop": {
+    "text": "Voltar ao topo"
+  },
+  "__resolveType": "site/sections/Footer/Footer.tsx",
+  "regionOptions": {
+    "currency": [
+      {
+        "href": "/",
+        "label": "Brasil BRL"
+      },
+      {
+        "href": "/",
+        "label": "United Stated USD"
+      }
+    ],
+    "language": [
+      {
+        "href": "/",
+        "label": "PT"
+      },
+      {
+        "href": "/",
+        "label": "EN"
+      }
+    ]
+  }
+}

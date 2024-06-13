@@ -3,7 +3,6 @@
 @tailwind utilities;
 
 @layer base {
-
   /* Allow changing font family via CMS */
   html {
     font-family: var(--font-family);
@@ -14,8 +13,8 @@
   }
 
   /** Remove default styles from input[type=number] */
-  input[type=number]::-webkit-inner-spin-button,
-  input[type=number]::-webkit-outer-spin-button {
+  input[type="number"]::-webkit-inner-spin-button,
+  input[type="number"]::-webkit-outer-spin-button {
     -webkit-appearance: none;
     margin: 0;
   }
@@ -40,12 +39,14 @@
     @apply flex flex-col items-center justify-start gap-8 py-10 px-8 lg:px-12;
   }
 
-  .collapse-plus>.collapse-title.menu:after {
+  .collapse-plus > .collapse-title.menu:after {
     content: url("https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/9166/a1cc43ae-3e77-4973-87a9-7e1896ea1041");
     transition-duration: 200ms;
   }
 
-  .collapse-plus:not(.collapse-close)>input[type="checkbox"]:checked~.collapse-title.menu:after {
+  .collapse-plus:not(.collapse-close)
+    > input[type="checkbox"]:checked
+    ~ .collapse-title.menu:after {
     content: url("https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/9166/a1cc43ae-3e77-4973-87a9-7e1896ea1041");
     transform: rotate(180deg);
     position: absolute;
@@ -62,20 +63,24 @@
     transition: transform 0.1s ease;
     transform-origin: center center;
   }
+
+  .institutional ul,
+  .institutional li {
+    list-style: inherit;
+    margin-left: 1rem !important;
+  }
 }
 
 .group:disabled .group-disabled\:animate-progress {
-  animation: progress-frame ease normal
+  animation: progress-frame ease normal;
 }
-
-
 
 @keyframes progress-frame {
   0% {
-    --dot-progress: 0%
+    --dot-progress: 0%;
   }
 
   to {
-    --dot-progress: 100%
+    --dot-progress: 100%;
   }
 }

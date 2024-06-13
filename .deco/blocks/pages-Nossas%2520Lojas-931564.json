@@ -1,0 +1,38 @@
+{
+  "name": "Nossas Lojas",
+  "path": "/nossas-lojas",
+  "sections": [
+    {
+      "__resolveType": "Header - 03"
+    },
+    {
+      "__resolveType": "site/sections/Institutional/OurStores.tsx",
+      "apiKey": {
+        "__resolveType": "website/loaders/secret.ts",
+        "encrypted": "1cdb846af03428cea979dda9b728832720da3f8a0f042069d3c97b04567ae20e5f9b047832c548511cab38c6d23cd202"
+      },
+      "stores": [
+        {
+          "storeInfo": [
+            {
+              "map": {
+                "latitude": -23.597,
+                "longitude": -46.697
+              },
+              "info": "<p>Loja Cidade Jardim<br>Endereço: Avenida Magalhães De Castro, 12000 2º Piso <br>Cidade Jardim, São Paulo - SP, 05502-001<br><br>Telefone: (11) 99202-6141<br><br>Horário de funcionamento: <br>De segunda à sábado das 10h às 22h<br>Domingos e feriados das 14h às 20h</p>",
+              "coordinates": {
+                "latitude": -23.597,
+                "longitude": -46.697
+              }
+            }
+          ],
+          "city": "São Paulo"
+        }
+      ]
+    }
+  ],
+  "seo": {
+    "__resolveType": "website/sections/Seo/SeoV2.tsx"
+  },
+  "__resolveType": "website/pages/Page.tsx"
+}

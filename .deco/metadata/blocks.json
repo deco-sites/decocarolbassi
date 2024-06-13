@@ -340,5 +340,23 @@
   "/.deco/blocks/Header%20-%2003.json": {
     "blockType": "sections",
     "__resolveType": "site/sections/Header/Header.tsx"
+  },
+  "/.deco/blocks/pages-Termos%2520e%2520Condi%25C3%25A7%25C3%25B5es-268199.json": {
+    "name": "Termos e Condições",
+    "path": "/termos-e-condicoes",
+    "blockType": "pages",
+    "__resolveType": "website/pages/Page.tsx"
+  },
+  "/.deco/blocks/pages-Politica%2520de%2520Privacidade-953460.json": {
+    "name": "Politica de Privacidade",
+    "path": "/politica-de-privacidade",
+    "blockType": "pages",
+    "__resolveType": "website/pages/Page.tsx"
+  },
+  "/.deco/blocks/pages-Nossas%2520Lojas-931564.json": {
+    "name": "Nossas Lojas",
+    "path": "/nossas-lojas",
+    "blockType": "pages",
+    "__resolveType": "website/pages/Page.tsx"
   }
 }
