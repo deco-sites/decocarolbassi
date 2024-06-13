@@ -79,7 +79,7 @@ function Newsletter(
       class={clx(
         "flex flex-col gap-4",
         tiled &&
-        "lg:flex-row lg:w-full lg:justify-between lg:flex-1 lg:items-center",
+          "lg:flex-row lg:w-full lg:justify-between lg:flex-1 lg:items-center",
       )}
     >
       <div class="flex lg:flex-2 flex-col w-full gap-4 py-5 px-5 lg:pl-[26px] lg:pr-[80px] xl:pl-[120px]">
@@ -145,7 +145,7 @@ function Newsletter(
           class="hidden lg:block object-contain w-full h-full"
           loading={"lazy"}
           src={images?.desktop}
-          alt={images?.alt}
+          alt={images?.alt ?? "footer banner"}
         />
       </Picture>
     </div>

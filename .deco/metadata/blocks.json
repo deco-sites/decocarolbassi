@@ -358,5 +358,11 @@
     "path": "/nossas-lojas",
     "blockType": "pages",
     "__resolveType": "website/pages/Page.tsx"
+  },
+  "/.deco/blocks/pages-Quem%2520Somos-239972.json": {
+    "name": "Quem Somos",
+    "path": "/quem-somos",
+    "blockType": "pages",
+    "__resolveType": "website/pages/Page.tsx"
   }
 }

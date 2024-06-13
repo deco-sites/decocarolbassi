@@ -1,0 +1,35 @@
+{
+  "name": "Quem Somos",
+  "path": "/quem-somos",
+  "sections": [
+    {
+      "__resolveType": "Header - 03"
+    },
+    {
+      "__resolveType": "site/sections/Content/Banner.tsx",
+      "image": {
+        "desktop": "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/9166/ad0fab59-2f1a-4c7b-866f-44b3391b97a8",
+        "mobile": "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/9166/63defdb3-5b50-49b1-9414-cb6da36ceb7e"
+      }
+    },
+    {
+      "__resolveType": "site/sections/Content/Text.tsx",
+      "title": "Welcome to Carol Bassi",
+      "text": "<p>A Carol Bassi foi fundada em 2014 por Anna Carolina Bassi, empresária que cresceu ao redor da moda: seus pais foram os proprietários de uma marca de roupas que marcou os anos 90. A estilista então decidiu criar sua própria label, que une seu DNA, seu espírito, sua alegria de viver e seu estilo pessoal.</p>"
+    },
+    {
+      "__resolveType": "site/sections/Content/ImageSection.tsx",
+      "title": "A marca",
+      "description": "A marca é referência em criar uma moda cool, com peças atemporais e de qualidade premium. A marca homônima de Carol conquistou um espaço desejável no mercado nacional e é queridinha entre fashionistas e personalidades influentes no universo da moda. Sua expertise é transformar suas inspirações e criatividade em peças exclusivas, que transbordam referências adquiridas no universo da arte, cultura e moda, além de suas viagens pelo mundo.",
+      "image": "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/9166/f4b8b8ff-15a8-4e0c-a3a8-0ea281f75946",
+      "placement": "right"
+    },
+    {
+      "__resolveType": "Footer - 02"
+    }
+  ],
+  "seo": {
+    "__resolveType": "website/sections/Seo/SeoV2.tsx"
+  },
+  "__resolveType": "website/pages/Page.tsx"
+}

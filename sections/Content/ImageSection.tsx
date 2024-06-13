@@ -1,6 +1,6 @@
 import type { ImageWidget } from "apps/admin/widgets.ts";
-import Icon from "../../components/ui/Icon.tsx";
 import Image from "apps/website/components/Image.tsx";
+import Icon from "../../components/ui/Icon.tsx";
 
 export interface Props {
   title: string;
@@ -39,26 +39,27 @@ export default function ImageSection({
   return (
     <div class="w-full">
       <div
-        class={`flex lg:container lg:max-w-6xl lg:mx-auto mx-5 md:mx-10 ${
+        class={`flex items-center lg:max-w-7xl lg:mx-auto mx-8 md:mx-10 ${
           PLACEMENT[placement]
         } gap-12 md:gap-20 text-left items-center z-10 ${
           disableSpacing?.top ? "" : "pt-12 lg:pt-28"
         } ${disableSpacing?.bottom ? "" : "pb-12 lg:pb-28"}`}
       >
         <Image
-          width={640}
-          class="w-full lg:w-1/2 object-fit z-10"
-          sizes="(max-width: 640px) 100vw, 30vw"
+          width={908}
+          height={681}
+          class="w-full object-fit z-10"
+          sizes="(max-width: 908px) 100vw, 30vw"
           src={image}
           alt={image}
           decoding="async"
           loading="lazy"
         />
         <div class="w-full lg:w-1/2 space-y-2 lg:space-y-4 lg:max-w-xl gap-4 z-10">
-          <p class="text-[40px] leading-[110%] font-semibold">
+          <p class="text-2xl text-center lg:text-left lg:text-[40px] leading-[110%] font-normal uppercase text-dark-blue">
             {title}
           </p>
-          <p class="text-zinc-400 text-[16px] md:text-[18px] leading-[150%]">
+          <p class="text-center lg:text-left font-light text-[16px] md:text-[18px] leading-[150%] text-[#4B5565] lg:text-[18px] ">
             {description}
           </p>
           {cta?.href && cta?.text && (
