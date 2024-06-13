@@ -13,8 +13,8 @@ const displayGridLayout = signal<number>(2);
 const displayProductZoomModal = signal(false);
 const productZoomIndex = signal<number>(0);
 const storeLocal = signal({
-  lat: -23.5207,
-  lng: -46.4187
+  lat: -23.597981704745184,
+  lng: -46.69755666525704
 })
 
 const state = {
