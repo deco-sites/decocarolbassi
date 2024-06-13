@@ -9,7 +9,7 @@
       "__resolveType": "site/sections/Institutional/OurStores.tsx",
       "apiKey": {
         "__resolveType": "website/loaders/secret.ts",
-        "encrypted": "1cdb846af03428cea979dda9b728832720da3f8a0f042069d3c97b04567ae20e5f9b047832c548511cab38c6d23cd202"
+        "encrypted": "fc45cb18a43f94c25dac737b6e496582ac6061b019178298ddd07810b2a5d056b0f2ce63782e65090e937fd08bb025c3"
       },
       "stores": [
         {
@@ -21,12 +21,72 @@
               },
               "info": "<p>Loja Cidade Jardim<br>Endereço: Avenida Magalhães De Castro, 12000 2º Piso <br>Cidade Jardim, São Paulo - SP, 05502-001<br><br>Telefone: (11) 99202-6141<br><br>Horário de funcionamento: <br>De segunda à sábado das 10h às 22h<br>Domingos e feriados das 14h às 20h</p>",
               "coordinates": {
-                "latitude": -23.597,
-                "longitude": -46.697
-              }
+                "longitude": -46.69755666525704,
+                "latitude": -23.597981704745184
+              },
+              "storeTitle": "Loja Cidade Jardim"
             }
           ],
           "city": "São Paulo"
+        },
+        {
+          "storeInfo": [
+            {
+              "map": {
+                "latitude": -23.597,
+                "longitude": -46.697
+              },
+              "info": "<p>Loja Village Mall<br>Endereço: Avenida das Américas, 3900 1º Piso Barra da Tijuca<br>Barra da Tijuca, Rio de Janeiro - RJ, 22640-102<br><br>Telefone: (11) 96619-5318<br><br>Horário de funcionamento: <br>De segunda à sábado das 10h às 22h<br>Domingos e feriados das 14h às 20h</p>",
+              "coordinates": {
+                "latitude": -22.99933327288209,
+                "longitude": -43.351549083547766
+              },
+              "storeTitle": "Loja Village Mall"
+            },
+            {
+              "coordinates": {
+                "longitude": -43.21552874728318,
+                "latitude": -22.982531137614284
+              },
+              "storeTitle": "Shopping Leblon",
+              "info": "<p>Shopping Leblon<br>Endereço: Av. Afrânio de Melo Franco, 290<br>Lebron, Rio de Janeiro - RJ, 22430-060<br><br>Telefone: (11) 99370-9243<br><br>Horário de funcionamento: <br>De segunda à sábado das 10h às 22h<br>Domingos e feriados das 12h às 22h</p>"
+            }
+          ],
+          "city": "Rio de Janeiro"
+        },
+        {
+          "storeInfo": [
+            {
+              "map": {
+                "latitude": -23.597,
+                "longitude": -46.697
+              },
+              "info": "<p>Loja Belo Horizonte<br>Endereço: Rua João Antônio Azeredo, 309<br>Belvedere, Belo Horizonte - MG, 30320-610<br><br>Telefone: (11) 96619-6636<br><br>Horário de funcionamento: <br>De segunda à sexta das 09h às 20h<br>Sábados das 09h às 18h<br>Domingo e feriados: fechados<br></p>",
+              "coordinates": {
+                "latitude": -19.970704058127147,
+                "longitude": -43.941703662182036
+              },
+              "storeTitle": "Loja Belo Horizonte"
+            }
+          ],
+          "city": "Minas Gerais"
+        },
+        {
+          "storeInfo": [
+            {
+              "map": {
+                "latitude": -23.597,
+                "longitude": -46.697
+              },
+              "info": "<p>Shopping Pátio Batel<br>Endereço: Av. do Batel, 1868 - Loja 01 Andar SS1<br>Curitiba - PR, 80420-090<br><br>Telefone: (11) 99362-7801<br><br>Horário de funcionamento: <br>De segunda à sábado das 10h às 22h<br>Domingos e feriados das 12h às 22h</p>",
+              "coordinates": {
+                "latitude": -25.443015097842704,
+                "longitude": -49.290850313965166
+              },
+              "storeTitle": "Shopping Pátio Batel"
+            }
+          ],
+          "city": "Paraná"
         }
       ]
     }
