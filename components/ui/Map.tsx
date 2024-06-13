@@ -26,8 +26,7 @@ export type StoreProps = {
   storeInfo: StoreInfo[];
 };
 
-function Store({ index, store }: { store: StoreProps; index: number }) {
-  const isOpen = useSignal<boolean>(index === 0);
+function Store({ store }: { store: StoreProps; index: number }) {
   const { storeLocal } = useUI();
 
   const storeSelected = store.storeInfo.some((store) => {
@@ -35,8 +34,16 @@ function Store({ index, store }: { store: StoreProps; index: number }) {
       lat: store.coordinates.latitude,
       lng: store.coordinates.longitude,
     };
-    return coordinates === storeLocal.value;
+    console.log(
+      coordinates,
+      storeLocal.value,
+      coordinates === storeLocal.value,
+    );
+
+    return JSON.stringify(coordinates) === JSON.stringify(storeLocal.value);
   });
+
+  const isOpen = useSignal<boolean>(storeSelected ?? false);
 
   return (
     <div>
@@ -50,7 +57,7 @@ function Store({ index, store }: { store: StoreProps; index: number }) {
           : <Icon id="ArrowDown" size={24} />}
       </button>
       {store.storeInfo.map((storeInfo) => {
-        return storeSelected && (
+        return isOpen.value && (
           <div>
             <p dangerouslySetInnerHTML={{ __html: storeInfo.info }} />
             <button
