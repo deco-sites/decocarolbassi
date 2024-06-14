@@ -27,6 +27,16 @@
           },
           "desktop": "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/9166/7575d7d7-f1a8-41c3-8ddc-26d6d9bb6345",
           "mobile": "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/9166/dc21d517-173d-4aba-9c69-ed9ad24e8772"
+        },
+        {
+          "action": {
+            "buttonPositionDesktop": "Center",
+            "buttonPositionMobile": "Center",
+            "href": "/",
+            "buttonNegative": false,
+            "label": "teste"
+          },
+          "video": "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/9166/c49f63c3-1a88-41f1-98e7-b5a7a13a9006"
         }
       ],
       "arrows": true,
@@ -95,6 +105,13 @@
     },
     {
       "__resolveType": "site/sections/Category/CategoryGrid.tsx",
+      "layout": {
+        "headerAlignment": "left",
+        "categoryCard": {
+          "textPosition": "bottom",
+          "textAlignment": "center"
+        }
+      },
       "list": [
         {
           "href": "/",
@@ -246,13 +263,6 @@
       ],
       "header": {
         "title": "New Arrivals"
-      },
-      "layout": {
-        "categoryCard": {
-          "textPosition": "bottom",
-          "textAlignment": "center"
-        },
-        "headerAlignment": "left"
       },
       "isThreeImages": false,
       "isBannerRowList": false
