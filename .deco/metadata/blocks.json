@@ -51,10 +51,6 @@
     "blockType": "sections",
     "__resolveType": "site/sections/Miscellaneous/CookieConsent.tsx"
   },
-  "/.deco/blocks/Deco%20HUB.json": {
-    "blockType": "apps",
-    "__resolveType": "site/apps/decohub.ts"
-  },
   "/.deco/blocks/Desktop.json": {
     "blockType": "matchers",
     "__resolveType": "website/matchers/device.ts"
@@ -227,22 +223,6 @@
     "blockType": "sections",
     "__resolveType": "site/sections/Content/Testimonials.tsx"
   },
-  "/.deco/blocks/Workflows.json": {
-    "blockType": "apps",
-    "__resolveType": "decohub/apps/workflows.ts"
-  },
-  "/.deco/blocks/algolia.json": {
-    "blockType": "apps",
-    "__resolveType": "decohub/apps/algolia.ts"
-  },
-  "/.deco/blocks/files.json": {
-    "blockType": "apps",
-    "__resolveType": "decohub/apps/files.ts"
-  },
-  "/.deco/blocks/implementation.json": {
-    "blockType": "apps",
-    "__resolveType": "decohub/apps/implementation.ts"
-  },
   "/.deco/blocks/navbar.json": {
     "blockType": "loaders",
     "__resolveType": "commerce/loaders/navbar.ts"
@@ -283,10 +263,6 @@
     "blockType": "pages",
     "__resolveType": "website/pages/Page.tsx"
   },
-  "/.deco/blocks/plausible.json": {
-    "blockType": "apps",
-    "__resolveType": "decohub/apps/analytics.ts"
-  },
   "/.deco/blocks/site.json": {
     "blockType": "apps",
     "__resolveType": "site/apps/site.ts"
@@ -295,21 +271,9 @@
     "blockType": "workflows",
     "__resolveType": "vtex/workflows/events.ts"
   },
-  "/.deco/blocks/vtex.json": {
-    "blockType": "apps",
-    "__resolveType": "decohub/apps/vtex.ts"
-  },
-  "/.deco/blocks/weather.json": {
-    "blockType": "apps",
-    "__resolveType": "decohub/apps/weather.ts"
-  },
   "/.deco/blocks/Teste%20AB.json": {
     "blockType": "matchers",
     "__resolveType": "website/matchers/random.ts"
-  },
-  "/.deco/blocks/htmx.json": {
-    "blockType": "apps",
-    "__resolveType": "decohub/apps/htmx.ts"
   },
   "/.deco/blocks/pages-Home%2520for%2520Mobile%2520App-906989.json": {
     "name": "Home for Mobile App",
@@ -364,5 +328,37 @@
     "path": "/quem-somos",
     "blockType": "pages",
     "__resolveType": "website/pages/Page.tsx"
+  },
+  "/.deco/blocks/deco-workflows.json": {
+    "blockType": "apps",
+    "__resolveType": "site/apps/deco/workflows.ts"
+  },
+  "/.deco/blocks/deco-algolia.json": {
+    "blockType": "apps",
+    "__resolveType": "site/apps/deco/algolia.ts"
+  },
+  "/.deco/blocks/deco-brand-assistant.json": {
+    "blockType": "apps",
+    "__resolveType": "site/apps/deco/brand-assistant.ts"
+  },
+  "/.deco/blocks/deco-htmx.json": {
+    "blockType": "apps",
+    "__resolveType": "site/apps/deco/htmx.ts"
+  },
+  "/.deco/blocks/deco-implementation.json": {
+    "blockType": "apps",
+    "__resolveType": "site/apps/deco/implementation.ts"
+  },
+  "/.deco/blocks/deco-analytics.json": {
+    "blockType": "apps",
+    "__resolveType": "site/apps/deco/analytics.ts"
+  },
+  "/.deco/blocks/deco-vtex.json": {
+    "blockType": "apps",
+    "__resolveType": "site/apps/deco/vtex.ts"
+  },
+  "/.deco/blocks/deco-weather.json": {
+    "blockType": "apps",
+    "__resolveType": "site/apps/deco/weather.ts"
   }
 }
