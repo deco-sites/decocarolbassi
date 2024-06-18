@@ -60,7 +60,7 @@ function ValueItem(
     <a href={url} rel="nofollow" class="flex items-center gap-2">
       <div
         aria-checked={selected}
-        class="checkbox-sm border-primary-700 rounded-none h-4 w-4"
+        class="checkbox border-primary-700 rounded-none h-4 w-4"
       />
       <span class="text-sm font-light text-paragraph-color capitalize">
         {label}
@@ -132,7 +132,7 @@ function OrderItem(props: OrderByProps) {
     <button onClick={applySort} value={value} class="flex items-center gap-2">
       <div
         aria-checked={sort === value}
-        class=" border-primary-700 rounded-full"
+        class=" checkbox border-primary-700 rounded-full"
       />
       <span class="text-sm font-light text-paragraph-color capitalize">
         {label}
