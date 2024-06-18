@@ -11,6 +11,7 @@ import type { JSX } from "preact";
 import { useMemo } from "preact/hooks";
 import Avatar from "../../components/ui/Avatar.tsx";
 import { formatPrice } from "../../sdk/format.ts";
+import ColorAvatarFilter from "../ui/ColorAvatarFilter.tsx";
 import Icon from "../ui/Icon.tsx";
 
 export type Props = Pick<ProductListingPage, "filters" | "sortOptions">;
@@ -61,7 +62,7 @@ function ValueItem(
     <a href={url} rel="nofollow" class="flex items-center gap-2">
       <div
         aria-checked={selected}
-        class="checkbox border-primary-900 rounded-none"
+        class="checkbox border-primary-900 rounded-none h-4 w-4"
       />
       <span class="text-sm font-light text-paragraph-color capitalize">
         {label}
@@ -78,12 +79,28 @@ function FilterValues(
     ? "flex-row"
     : "flex-col";
 
+  console.log({ key, values });
+
   return (
     <ul class={`flex flex-wrap gap-8 ${flexDirection} my-4`}>
       {values.map((item) => {
         const { url, selected, value, quantity, label }: FilterToggleValue =
           item;
-        if (key === "cor" || key === "tamanho") {
+
+        if (key === "cores") {
+          const capitalizeValue = value[0].toUpperCase() + value.slice(1);
+          return (
+            <div class="flex items-center justify-between">
+              <ValueItem {...item} />
+              <ColorAvatarFilter
+                content={capitalizeValue}
+                variant={selected ? "active" : "default"}
+              />
+            </div>
+          );
+        }
+
+        if (key === "tamanho") {
           return (
             <a href={url} rel="nofollow">
               <Avatar
@@ -131,6 +148,8 @@ function OrderItem(props: OrderByProps) {
 function FilterItem(item: FilterToggle) {
   const isChildrenChecked = item.values.some((value) => value.selected);
   const isOpen = useSignal<boolean>(isChildrenChecked);
+
+  console.log({ item });
 
   const handleClick = () => isOpen.value = !isOpen.value;
 

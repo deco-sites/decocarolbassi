@@ -24,6 +24,7 @@ import ProductSelector from "./ProductVariantSelector.tsx";
 
 export interface Props {
   page: ProductDetailsPage | null;
+  /** @title Politica de Privacidade */
   productExchangesReturnsPolicy?: ProductPolicy;
   device: Device;
   socialOptions?: MediaOptionProps[];
@@ -38,7 +39,12 @@ export interface Props {
 }
 
 function ProductInfo(
-  { page, productExchangesReturnsPolicy, device, socialOptions }: Props,
+  {
+    page,
+    productExchangesReturnsPolicy,
+    device,
+    socialOptions,
+  }: Props,
 ) {
   const platform = usePlatform();
   const id = useId();
