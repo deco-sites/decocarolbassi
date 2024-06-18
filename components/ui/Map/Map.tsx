@@ -28,61 +28,6 @@ export interface Props {
   stores: StoreProps[];
 }
 
-function StoreMobile({ index, store }: { store: StoreProps; index: number }) {
-  const { storeLocal } = useUI();
-
-  const storeSelected = store.storeInfo.some((store) => {
-    const coordinates = {
-      lat: store.coordinates.latitude,
-      lng: store.coordinates.longitude,
-    };
-    return JSON.stringify(coordinates) === JSON.stringify(storeLocal.value);
-  });
-
-  const isOpen = useSignal<boolean>((storeSelected || index === 0) ?? false);
-
-  return (
-    <div class="my-8">
-      <button
-        class="flex justify-between w-full"
-        onClick={() => isOpen.value = !isOpen.value}
-      >
-        <h3 class="uppercase font-light text-dark-blue">{store.city}</h3>
-        {isOpen.value
-          ? <Icon id="ArrowDown" class="rotate-180" size={24} />
-          : <Icon id="ArrowDown" size={24} />}
-      </button>
-      <div class="max-h-96 overflow-y-auto">
-        {store.storeInfo.map((storeInfo) => {
-          return isOpen.value && (
-            <div
-              class={`my-8 fade-in ${isOpen ? "animate-fade-in" : "opacity-0"}`}
-            >
-              <div class="text-[#4B5565] font-light">
-                <p dangerouslySetInnerHTML={{ __html: storeInfo.info }} />
-              </div>
-              <button
-                class="uppercase btn hover:bg-primary-600 hover:text-secondary-neutral-100 mt-6 mb- flex justify-center items-center border border-solid border-primary-600 w-full gap-2 p-2 text-base font-normal"
-                onClick={() => {
-                  storeLocal.value = {
-                    lat: storeInfo.coordinates.latitude,
-                    lng: storeInfo.coordinates.longitude,
-                  };
-
-                  isOpen.value = false;
-                }}
-              >
-                <LocatorIcon />
-                Ver No mapa
-              </button>
-            </div>
-          );
-        })}
-      </div>
-    </div>
-  );
-}
-
 function Store({ index, store }: { store: StoreProps; index: number }) {
   const { storeLocal } = useUI();
 

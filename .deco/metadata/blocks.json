@@ -360,5 +360,9 @@
   "/.deco/blocks/deco-weather.json": {
     "blockType": "apps",
     "__resolveType": "site/apps/deco/weather.ts"
+  },
+  "/.deco/blocks/Preview%20vtex%2Factions%2Fcart%2FupdateGifts.ts.json": {
+    "blockType": "actions",
+    "__resolveType": "vtex/actions/cart/updateGifts.ts"
   }
 }

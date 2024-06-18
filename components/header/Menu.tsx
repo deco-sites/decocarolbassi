@@ -5,20 +5,38 @@ export interface Props {
   items: SiteNavigationElement[];
 }
 
-function MenuItem({ item, childNode }: { item: SiteNavigationElement, childNode?: boolean }) {
+function MenuItem(
+  { item, childNode }: { item: SiteNavigationElement; childNode?: boolean },
+) {
   const notHasChildren = childNode || !item.children;
   return (
     <div class="collapse collapse-plus">
       <input type="checkbox" class={`${notHasChildren ? "hidden" : ""}`} />
-      {
-        notHasChildren ? (
-          <div class={`${!item.children ? "m-4 text-base" : ""} text-sm font-light m-2 text-primary-900`}>{item.name}</div>
-        ) : (
-          <div class="collapse-title text-base font-light text-primary-900 menu">{item.name}</div>
+      {notHasChildren
+        ? (
+          <div
+            class={`${
+              !item.children ? "m-4 text-base" : ""
+            } text-sm font-light m-2 text-primary-900`}
+          >
+            {item.name}
+          </div>
         )
-      }
+        : (
+          <div class="collapse-title text-base font-light text-primary-900 menu">
+            {item.name}
+          </div>
+        )}
       <div class="collapse-content">
         <ul>
+          <li>
+            <a
+              class="underline text-sm font-light m-2 text-primary-900 h-5"
+              href={item.url}
+            >
+              Ver todos
+            </a>
+          </li>
           {item.children?.map((node) => (
             <li>
               <a href={node.url}>
@@ -68,7 +86,6 @@ function Menu({ items }: Props) {
 }
 
 export default Menu;
-
 
 const UserIcon = () => (
   <svg

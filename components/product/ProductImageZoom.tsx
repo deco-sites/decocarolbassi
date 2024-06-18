@@ -105,7 +105,7 @@ function ProductImageZoom({ images, height, width }: Props) {
               {images?.map((_, index) => (
                 <li class="carousel-item w-full">
                   <Slider.Dot index={index} class="w-full">
-                    <div class="w-full h-[0.15rem] group-disabled:bg-dark-blue bg-transparent" />
+                    <div class="w-full h-[2px] group-disabled:bg-dark-blue bg-transparent" />
                   </Slider.Dot>
                 </li>
               ))}

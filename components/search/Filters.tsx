@@ -43,13 +43,11 @@ const applySort = (e: JSX.TargetedMouseEvent<HTMLButtonElement>) => {
 // TODO: move this to the loader
 const portugueseMappings = {
   "relevance:desc": "Relevância",
+  "orders:desc": "Mais vendidos",
+  "release:desc": "Mais recentes",
+  "discount:desc": "Descontos",
   "price:desc": "Maior Preço",
   "price:asc": "Menor Preço",
-  "orders:desc": "Mais vendidos",
-  "name:desc": "Nome - de Z a A",
-  "name:asc": "Nome - de A a Z",
-  // "release:desc": "Relevância - Decrescente",
-  "discount:desc": "Maior desconto",
 };
 
 const isToggle = (filter: Filter): filter is FilterToggle =>
@@ -62,7 +60,7 @@ function ValueItem(
     <a href={url} rel="nofollow" class="flex items-center gap-2">
       <div
         aria-checked={selected}
-        class="checkbox border-primary-900 rounded-none h-4 w-4"
+        class="checkbox-sm border-primary-700 rounded-none h-4 w-4"
       />
       <span class="text-sm font-light text-paragraph-color capitalize">
         {label}
@@ -78,8 +76,6 @@ function FilterValues(
   const flexDirection = key === "tamanho" || key === "cor"
     ? "flex-row"
     : "flex-col";
-
-  console.log({ key, values });
 
   return (
     <ul class={`flex flex-wrap gap-8 ${flexDirection} my-4`}>
@@ -136,7 +132,7 @@ function OrderItem(props: OrderByProps) {
     <button onClick={applySort} value={value} class="flex items-center gap-2">
       <div
         aria-checked={sort === value}
-        class="checkbox border-primary-900 rounded-full"
+        class=" border-primary-700 rounded-full"
       />
       <span class="text-sm font-light text-paragraph-color capitalize">
         {label}
@@ -148,8 +144,6 @@ function OrderItem(props: OrderByProps) {
 function FilterItem(item: FilterToggle) {
   const isChildrenChecked = item.values.some((value) => value.selected);
   const isOpen = useSignal<boolean>(isChildrenChecked);
-
-  console.log({ item });
 
   const handleClick = () => isOpen.value = !isOpen.value;
 
@@ -201,7 +195,7 @@ function Filters({ filters, sortOptions }: Props) {
             value,
             label:
               portugueseMappings[label as keyof typeof portugueseMappings] ??
-                label,
+                "",
           })).filter(({ label }) => label).map((item) => (
             <OrderItem item={item} sort={sort} />
           ))}

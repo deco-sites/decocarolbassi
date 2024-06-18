@@ -82,7 +82,7 @@ function Newsletter(
           "lg:flex-row lg:w-full lg:justify-between lg:flex-1 lg:items-center",
       )}
     >
-      <div class="flex lg:flex-2 flex-col w-full gap-4 py-5 px-5 lg:pl-[26px] lg:pr-[80px] xl:pl-[120px]">
+      <div class="flex lg:flex-1.5 flex-col w-full py-5 px-5 lg:px-[26px] 2xl:px-[80px]">
         {content?.title && (
           <h3
             style={{
@@ -90,7 +90,7 @@ function Newsletter(
                 ? content?.form?.color
                 : undefined,
             }}
-            class="text-[20px] lg:text-[28px] text-neutral-200 font-light"
+            class="text-[20px] lg:text-[28px] text-neutral-200 font-medium"
           >
             {content.title}
           </h3>
@@ -103,7 +103,7 @@ function Newsletter(
                 ? content?.form?.color
                 : undefined,
             }}
-            class="text-[14px] text-neutral-200 font-light"
+            class="text-[14px] text-neutral-200 font-light max-w-[390px] mt-1 mb-4"
           >
             {content.description}
           </p>

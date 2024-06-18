@@ -49,10 +49,10 @@ interface Props {
 
 const colorVariantsClasses = {
   active:
-    "text-base-content border-solid border-[1px] border-primary-500 rounded",
+    "text-base-content rounded border-solid border-[1px] border-[#e9e9e9]",
   disabled: "line-through text-neutral-content",
   default:
-    "text-base-content bg-base-100 border-solid border-[1px] border-primary-500 rounded",
+    "text-base-content bg-base-100 rounded border-solid border-[1px] border-[#e9e9e9]",
 };
 
 function ColorAvatarFilter({ content, variant = "default" }: Props) {
@@ -65,7 +65,7 @@ function ColorAvatarFilter({ content, variant = "default" }: Props) {
       <div
         class={`${
           colors[content] ??
-            "border-solid border-[1px] border-primary-500 rounded"
+            "border-solid border-[1px] border-[#e9e9e9] rounded"
         } rounded`}
       >
       </div>

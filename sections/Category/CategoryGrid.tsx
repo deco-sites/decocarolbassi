@@ -105,8 +105,8 @@ function CategoryGrid(props: SectionProps<typeof loader>) {
   return (
     <div
       id={id}
-      class={`mb-0 lg:mt-20 ${
-        isBannerRowList ? "lg:px-8 pb-8 mt-12" : "mt-36"
+      class={`mb-0 ${
+        isBannerRowList ? "lg:px-8 pb-8 mt-12 lg:mt-20" : "lg:mt-28"
       } `}
     >
       <div
@@ -269,8 +269,8 @@ function CategoryGrid(props: SectionProps<typeof loader>) {
                           }`}
                           src={image}
                           alt={label}
-                          width={isBannerRowList ? 960 : 720}
-                          height={isBannerRowList ? 1440 : 480}
+                          width={isBannerRowList ? 960 : 770}
+                          height={isBannerRowList ? 1440 : 721}
                           loading="lazy"
                         />
                       </figure>
