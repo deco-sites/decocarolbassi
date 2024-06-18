@@ -13,10 +13,11 @@ import * as $$$$$$$$$$$7 from "./apps/deco/workflows.ts";
 import * as $$$$$$$$$$$8 from "./apps/decohub.ts";
 import * as $$$$$$$$$$$9 from "./apps/site.ts";
 import * as $$$2 from "./loaders/availableIcons.ts";
-import * as $$$3 from "./loaders/icons.ts";
+import * as $$$3 from "./loaders/extensions/ProductColorSimilars.ts";
+import * as $$$4 from "./loaders/icons.ts";
 import * as $$$0 from "./loaders/Layouts/ProductCard.tsx";
 import * as $$$1 from "./loaders/List/Sections.tsx";
-import * as $$$4 from "./loaders/ourStores.ts";
+import * as $$$5 from "./loaders/ourStores.ts";
 import * as $$$$$$0 from "./sections/Animation/Animation.tsx";
 import * as $$$$$$1 from "./sections/Benefits.tsx";
 import * as $$$$$$2 from "./sections/Cards/IconCardsCarousel.tsx";
@@ -77,10 +78,11 @@ import * as $$$$$$55 from "./sections/Theme/Theme.tsx";
 const manifest = {
   "loaders": {
     "site/loaders/availableIcons.ts": $$$2,
-    "site/loaders/icons.ts": $$$3,
+    "site/loaders/extensions/ProductColorSimilars.ts": $$$3,
+    "site/loaders/icons.ts": $$$4,
     "site/loaders/Layouts/ProductCard.tsx": $$$0,
     "site/loaders/List/Sections.tsx": $$$1,
-    "site/loaders/ourStores.ts": $$$4,
+    "site/loaders/ourStores.ts": $$$5,
   },
   "sections": {
     "site/sections/Animation/Animation.tsx": $$$$$$0,

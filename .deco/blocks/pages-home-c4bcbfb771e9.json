@@ -304,6 +304,11 @@
     },
     {
       "__resolveType": "Footer - 02"
+    },
+    {
+      "__resolveType": "website/sections/Seo/SeoV2.tsx",
+      "title": "Home- carol",
+      "description": "Descricao"
     }
   ],
   "__resolveType": "website/pages/Page.tsx",

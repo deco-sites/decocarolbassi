@@ -90,7 +90,7 @@ export default function ProductGridImages(props: Props) {
           return (
             <figure
               style={{ aspectRatio: ASPECT_RATIO }}
-              class="hover:cursor-pointer"
+              class="hover:cursor-zoom-in"
               onClick={handleClick}
             >
               <Image
@@ -112,7 +112,7 @@ export default function ProductGridImages(props: Props) {
               maxWidth: WIDTH,
               maxHeightheight: HEIGHT,
             }}
-            class="relative hover:cursor-pointer"
+            class="relative hover:cursor-zoom-in"
             onClick={handleClick}
           >
             <Video
@@ -132,7 +132,7 @@ export default function ProductGridImages(props: Props) {
           return (
             <figure
               style={{ aspectRatio: ASPECT_RATIO }}
-              class="hover:cursor-pointer"
+              class="hover:cursor-zoom-in"
               onClick={handleClick}
             >
               <Image
