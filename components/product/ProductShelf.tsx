@@ -103,8 +103,8 @@ function ProductShelf({
 
         {layout?.showArrows && !layout?.collectionButton?.show && (
           <div class="absolute bottom-[-20px] lg:bottom-0 right-20 w-full lg:w-[250px]">
-            <div class="relative left-[80px] lg:left-auto block z-10">
-              <Slider.PrevButton class="absolute w-12 h-12 flex justify-center items-center top-3 lg:top-[27px]">
+            <div class="relative left-[80px] lg:left-auto lg:right-[187px] block z-10">
+              <Slider.PrevButton class="absolute h-12 flex justify-center items-center top-3 lg:top-[27px]">
                 <Icon
                   size={24}
                   id="ChevronLeft"
@@ -115,7 +115,7 @@ function ProductShelf({
             </div>
 
             <ul
-              class={`absolute left-[130px] lg:left-[50px] carousel grid grid-cols-${products.length} mt-[35px] lg:mt-[50px] items-end col-span-full z-10 row-start-4 w-[calc(100%-110px)] lg:w-[400px] m-auto bg-secondary-neutral-600`}
+              class={`absolute left-[116px] lg:left-auto lg:right-0 carousel grid grid-cols-${products.length} mt-[35px] lg:mt-[50px] items-end col-span-full z-10 row-start-4 w-[calc(100%-110px)] lg:w-[400px] m-auto bg-secondary-neutral-600`}
             >
               {products?.map((_, index) => (
                 <li class="carousel-item w-full">
@@ -127,7 +127,7 @@ function ProductShelf({
             </ul>
 
             <div class="absolute right-[-20px] lg:right-0 block z-10">
-              <Slider.NextButton class="absolute w-12 h-12 flex justify-center items-center top-3 lg:top-[27px]">
+              <Slider.NextButton class="absolute h-12 flex justify-center items-center top-3 lg:top-[27px] lg:left-[15px] ">
                 <Icon size={24} id="ChevronRight" strokeWidth={0.01} />
               </Slider.NextButton>
             </div>
