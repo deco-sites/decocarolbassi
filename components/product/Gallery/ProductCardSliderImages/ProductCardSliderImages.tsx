@@ -206,7 +206,7 @@ function ProductCardSliderImages({
 
           <ul
             class={`absolute bottom-0 carousel grid grid-cols-${sourcesMedia
-              ?.length!} items-end col-span-full z-50 row-start-4 w-full m-auto bg-transparent`}
+              ?.length!} items-end col-span-full z-10 row-start-4 w-full m-auto bg-transparent`}
           >
             {sourcesMedia?.map((_, index) => (
               <li
