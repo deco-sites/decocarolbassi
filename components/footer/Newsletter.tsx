@@ -138,11 +138,11 @@ function Newsletter(
           media="(min-width: 768px)"
           fetchPriority={"low"}
           src={images?.desktop ?? ""}
-          width={1440}
-          height={600}
+          width={888}
+          height={322}
         />
         <img
-          class="hidden lg:block object-contain w-full h-full"
+          class="hidden lg:block object-cover w-full h-full"
           loading={"lazy"}
           src={images?.desktop}
           alt={images?.alt ?? "footer banner"}

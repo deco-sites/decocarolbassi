@@ -269,8 +269,8 @@ function CategoryGrid(props: SectionProps<typeof loader>) {
                           }`}
                           src={image}
                           alt={label}
-                          width={isBannerRowList ? 960 : 770}
-                          height={isBannerRowList ? 1440 : 721}
+                          width={isBannerRowList ? 421 : 770}
+                          height={isBannerRowList ? 561 : 721}
                           loading="lazy"
                         />
                       </figure>
