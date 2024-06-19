@@ -2,10 +2,11 @@ import { usePartialSection } from "deco/hooks/usePartialSection.ts";
 import { SectionProps } from "deco/types.ts";
 import Icon from "../ui/Icon.tsx";
 
-interface SeoTextProps {
+/** @title {{{matcher}}} */
+export interface SeoTextProps {
   /**
-   * @title
-   * @description How product title will be displayed. Concat to concatenate product and sku names.
+   * @title Url da Página
+   * @description Coloque a url da página, por exemplo /sapatos
    */
   matcher: string;
   title?: string;
@@ -13,8 +14,10 @@ interface SeoTextProps {
   description: string;
 }
 
+/** @title Textos SEO */
 export interface Props {
   seoTexts: SeoTextProps[];
+  /** @readonly */
   showMore?: boolean;
 }
 

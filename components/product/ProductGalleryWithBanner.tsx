@@ -3,12 +3,12 @@ import { ImageWidget, VideoWidget } from "apps/admin/widgets.ts";
 import { PageInfo, Product } from "apps/commerce/types.ts";
 import { Device } from "apps/website/matchers/device.ts";
 import { usePartialSection } from "deco/hooks/usePartialSection.ts";
+import ProductCardWithBannerMobile from "../../islands/ProductCardWithBannerMobile.tsx";
 import ShowMore from "../../islands/ShowMore.tsx";
 import { usePlatform } from "../../sdk/usePlatform.tsx";
 import { Format } from "../search/SearchResult.tsx";
 import Spinner from "../ui/Spinner.tsx";
 import ProductCardWithBannerDesktop from "./ProductCardWithBanner/ProductCardWithBannerDesktop.tsx";
-import ProductCardWithBannerMobile from "../../islands/ProductCardWithBannerMobile.tsx";
 
 export interface Columns {
   mobile?: 1 | 2;
@@ -24,16 +24,17 @@ export type MediaSource = {
   };
 };
 
-export type CategoryBannersMediaSource = {
+/** @title {{{matcher}}} */
+export interface CategoryBannersMediaSource {
   /**
-   * @title
-   * @description How product title will be displayed. Concat to concatenate product and sku names.
+   * @title Url da Página
+   * @description Coloque a url da página, por exemplo /sapatos
    */
   matcher: string;
   banner1: MediaSource;
   banner2: MediaSource;
   banner3: MediaSource;
-};
+}
 
 export interface Props {
   products: Product[] | null;
@@ -44,6 +45,7 @@ export interface Props {
     format?: Format;
   };
   url: URL;
+  /** @title Banners da Categoria */
   categoryBanners: CategoryBannersMediaSource;
   device: Device;
 }
