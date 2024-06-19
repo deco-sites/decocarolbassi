@@ -6,13 +6,16 @@ import type {
   ProductListingPage,
   SortOption,
 } from "apps/commerce/types.ts";
-import { parseRange } from "apps/commerce/utils/filters.ts";
 import type { JSX } from "preact";
 import { useMemo } from "preact/hooks";
-import Avatar from "../../components/ui/Avatar.tsx";
-import { formatPrice } from "../../sdk/format.ts";
 import ColorAvatarFilter from "../ui/ColorAvatarFilter.tsx";
 import Icon from "../ui/Icon.tsx";
+
+export type FilterValuesProps = {
+  itemValue: FilterToggle;
+  filterSizesByNumber: FilterToggleValue[];
+  filterSizesByClothes: FilterToggleValue[];
+};
 
 export type Props = Pick<ProductListingPage, "filters" | "sortOptions">;
 export type OrderByProps = {
@@ -73,15 +76,12 @@ function ValueItem(
 function FilterValues(
   { key, values }: FilterToggle,
 ) {
-  const flexDirection = key === "tamanho" || key === "cor"
-    ? "flex-row"
-    : "flex-col";
+  if (key === "tamanho") return null;
 
   return (
-    <ul class={`flex flex-wrap gap-8 ${flexDirection} my-4`}>
+    <ul class={`flex flex-wrap gap-8 flex-col my-4`}>
       {values.map((item) => {
-        const { url, selected, value, quantity, label }: FilterToggleValue =
-          item;
+        const { selected, value }: FilterToggleValue = item;
 
         if (key === "cores") {
           const capitalizeValue = value[0].toUpperCase() + value.slice(1);
@@ -95,30 +95,6 @@ function FilterValues(
             </div>
           );
         }
-
-        if (key === "tamanho") {
-          return (
-            <a href={url} rel="nofollow">
-              <Avatar
-                content={value}
-                label={label}
-                variant={selected ? "active" : "default"}
-              />
-            </a>
-          );
-        }
-
-        if (key === "price") {
-          const range = parseRange(item.value);
-
-          return range && (
-            <ValueItem
-              {...item}
-              label={`${formatPrice(range.from)} - ${formatPrice(range.to)}`}
-            />
-          );
-        }
-
         return <ValueItem {...item} />;
       })}
     </ul>
@@ -145,7 +121,52 @@ function FilterItem(item: FilterToggle) {
   const isChildrenChecked = item.values.some((value) => value.selected);
   const isOpen = useSignal<boolean>(isChildrenChecked);
 
+  const filterNumberSizes = (item.key === "tamanho" &&
+    item.values.filter(({ value }) => !isNaN(Number(value)))) ?? [];
+
+  const filterClothesSizes = (item.key === "tamanho" &&
+    item.values.filter(({ value }) => isNaN(Number(value)))) ?? [];
+
   const handleClick = () => isOpen.value = !isOpen.value;
+
+  if (item.key === "price") return null;
+
+  if (item.key === "tamanho") {
+    return (
+      <li class="flex flex-col gap-4">
+        <button
+          onClick={handleClick}
+          class="flex"
+          aria-label="toggle filter item"
+        >
+          <span class="flex items-center uppercase text-dark-blue text-base font-light w-full justify-between mr-[2px]">
+            {item.label}{" "}
+            {!isOpen.value ? <Icon id="Plus" size={18} /> : <MinusIcon />}
+          </span>
+        </button>
+        <div class={`${!isOpen.value ? "hidden" : ""}`}>
+          {item.key === "tamanho"
+            ? (
+              <div class="grid grid-cols-2 gap-4 my-4">
+                <div>
+                  {!!filterNumberSizes &&
+                    filterNumberSizes.map((sizeItem, index) => (
+                      <ValueItem key={index} {...sizeItem} />
+                    ))}
+                </div>
+                <div>
+                  {!!filterClothesSizes &&
+                    filterClothesSizes.map((sizeItem, index) => (
+                      <ValueItem key={index} {...sizeItem} />
+                    ))}
+                </div>
+              </div>
+            )
+            : <FilterValues {...item} />}
+        </div>
+      </li>
+    );
+  }
 
   return (
     <li class="flex flex-col gap-4">

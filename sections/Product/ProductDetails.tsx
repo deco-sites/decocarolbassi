@@ -21,8 +21,12 @@ export interface Props {
 }
 
 export default function ProductDetails(
-  { page, productExchangesReturnsPolicy, device, shareSocialOptions }:
-    SectionProps<typeof loader>,
+  {
+    page,
+    productExchangesReturnsPolicy,
+    device,
+    shareSocialOptions,
+  }: SectionProps<typeof loader>,
 ) {
   if (!page?.seo) {
     return <NotFound />;

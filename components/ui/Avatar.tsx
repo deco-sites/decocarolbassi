@@ -49,6 +49,7 @@ interface Props {
   variant?: "active" | "disabled" | "default";
   content: string;
   label?: string;
+  class?: string;
 }
 
 const colorVariantsClasses = {
@@ -64,9 +65,7 @@ const sizeVariantsClasses: Record<string, string> = {
   default: "text-base-content bg-base-100",
 };
 
-function Avatar({ content, variant = "default", label }: Props) {
-  console.log({ content });
-  console.log(colors[content], label);
+function Avatar({ content, variant = "default", label, class: _class }: Props) {
   return label === "Cores"
     ? (
       <div
@@ -86,7 +85,7 @@ function Avatar({ content, variant = "default", label }: Props) {
     : (
       <div class="avatar placeholder text-base font-light h-8">
         <div
-          class={`${sizeVariantsClasses[variant]}`}
+          class={`${sizeVariantsClasses[variant]} ${_class}`}
         >
           <span class="uppercase ">
             {sizeVariantsClasses[content] ? "" : content.substring(0, 2)}

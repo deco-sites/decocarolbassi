@@ -4,11 +4,14 @@
     "slug": {
       "param": "slug",
       "__resolveType": "website/functions/requestToParam.ts"
-    }
+    },
+    "similars": true
   },
   "extensions": [
     {
-      "__resolveType": "vtex/loaders/product/extensions/detailsPage.ts"
+      "__resolveType": "vtex/loaders/product/extensions/detailsPage.ts",
+      "similars": true,
+      "variants": true
     },
     {
       "__resolveType": "site/loaders/extensions/ProductColorSimilars.ts"

@@ -55,7 +55,7 @@ export default function AddToCartButton(props: Props) {
       </Button>
     )
     : (
-      <Button {...btnProps} class="w-full">
+      <Button {...btnProps} class="w-full hover:bg-primary-700">
         Adicionar à Sacola
       </Button>
     );

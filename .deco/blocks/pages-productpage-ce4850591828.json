@@ -20,11 +20,15 @@
     {
       "__resolveType": "site/sections/Product/ProductDetails.tsx",
       "page": {
-        "__resolveType": "PDP Loader"
+        "__resolveType": "commerce/loaders/product/extensions/detailsPage.ts",
+        "data": {
+          "__resolveType": "PDP Loader"
+        },
+        "extensions": []
       },
       "productExchangesReturnsPolicy": {
         "title": "Trocas e Devoluções",
-        "description": "<p>* A CAROL BASSI possibilita a troca de itens comprados na loja online em lojas física, porém não é possível comprar em lojas físicas e realizar a troca pela loja online.</p><p><br>* As solicitações de trocas e ou devoluções de produtos devem ser realizadas pela cliente, diretamente no link https://carolbassi.geniusreturns.com.br/, onde a cliente poderá abrir a solicitação e acompanhar o status do andamento da mesma via e-mail</p><p><br>* De acordo com o decreto federal 7.962/13 – a lei do e-commerce, o cliente tem até 7 (sete) dias após o recebimento do produto para solicitar o cancelamento da compra. Após este processo, e, em prazo combinado com a equipe de SAC CAROL BASSI o cliente é responsável por fazer a postagem do produto nos correios. O mesmo fluxo deve ser seguido em caso de necessidade de trocas. O cliente não paga por nada nessa operação, nem mesmo o frete referente à devolução do produto indesejado.</p>"
+        "description": "<p>Na Carol Bassi, todas as compras realizadas online permitem a troca ou a devolução do produto comprado, com estorno do valor pago. Após receber o pedido, você tem até 7 dias para acessar o site e solicitar a tratativa desejada. A primeira troca / devolução é gratuita. Para saber mais detalhes acesse <a data-mce-href=\"../../../termos-e-condicoes\" href=\"../../../termos-e-condicoes\" data-mce-selected=\"inline-boundary\"><span style=\"text-decoration: underline;\" data-mce-style=\"text-decoration: underline;\">nossa FAQ.</span></a></p>"
       },
       "shareSocialOptions": [
         {

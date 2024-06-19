@@ -1,7 +1,8 @@
 import { useSignal } from "@preact/signals";
-import type { Product } from "apps/commerce/types.ts";
+import type { ImageObject, Product, VideoObject } from "apps/commerce/types.ts";
 import { mapProductToAnalyticsItem } from "apps/commerce/utils/productToAnalyticsItem.ts";
 import Image from "apps/website/components/Image.tsx";
+import Video from "apps/website/components/Video.tsx";
 import { useEffect } from "preact/hooks";
 import type { Platform } from "../../../../apps/site.ts";
 import { clx } from "../../../../sdk/clx.ts";
@@ -36,7 +37,8 @@ function ProductCardSliderImages({
   itemListName,
   index,
 }: Props) {
-  const { url, productID, image: images, offers, isVariantOf } = product;
+  const { url, productID, image: images, video: videos, offers, isVariantOf } =
+    product;
 
   const id = `product-card-${productID}`;
 
@@ -53,11 +55,27 @@ function ProductCardSliderImages({
   const currentIndex = useSignal(0);
   const intervalId = useSignal<number | null>(null);
 
+  const productImages = videos && videos.length > 0
+    ? images?.slice(0, 2) ?? []
+    : images?.slice(0, 3) ?? [];
+
+  const productVideo = videos && videos.length > 0
+    ? videos?.slice(0) ?? []
+    : [];
+
+  const sourcesMedia: (ImageObject | VideoObject)[] = [
+    ...productImages,
+    ...productVideo,
+  ];
+
+  const sourcesLength = (productImages?.length ?? 0) +
+    (productVideo?.length ?? 0);
+
   const handleMouseOver = () => {
     if (!images) return;
     const id = setInterval(() => {
-      currentIndex.value = (currentIndex.value + 1) % images.length;
-    }, 1500);
+      currentIndex.value = (currentIndex.value + 1) % sourcesLength;
+    }, 2000);
     intervalId.value = id;
   };
 
@@ -123,50 +141,89 @@ function ProductCardSliderImages({
               onMouseOut={handleMouseOut}
               class="relative carousel-center"
             >
-              {images?.map(({ url, alternateName }, index) => {
+              {sourcesMedia?.map((source, index) => {
                 const isActive = index === currentIndex.value;
-                return (
-                  <Slider.Item
-                    key={index}
-                    className={"carousel-item relative group first:ml-6 sm:first:ml-0 last:mr-6 sm:last:mr-0 min-w-[190px]"}
-                    index={index}
-                    style={{ display: isActive ? "block" : "none" }}
-                  >
-                    <Image
-                      src={url!}
-                      alt={alternateName}
-                      width={WIDTH}
-                      height={HEIGHT}
-                      style={{ aspectRatio }}
-                      className={clx(
-                        "relative",
-                        "bg-base-100",
-                        "object-cover",
-                        "w-full",
-                        "col-span-full row-span-full",
-                      )}
-                      sizes="(max-width: 640px) 50vw, 20vw"
-                      preload={preload}
-                      loading={preload ? "eager" : "lazy"}
-                      decoding="async"
-                    />
-                  </Slider.Item>
-                );
+                return source.encodingFormat === "image"
+                  ? (
+                    <Slider.Item
+                      key={index}
+                      className={"carousel-item relative group first:ml-6 sm:first:ml-0 last:mr-6 sm:last:mr-0 min-w-[190px]"}
+                      index={index}
+                      style={{ display: isActive ? "block" : "none" }}
+                    >
+                      <Image
+                        src={productImages[index].url!}
+                        alt={source.alternateName}
+                        width={WIDTH}
+                        height={HEIGHT}
+                        style={{ aspectRatio }}
+                        className={clx(
+                          "relative",
+                          "bg-base-100",
+                          "object-cover",
+                          "w-full",
+                          "col-span-full row-span-full",
+                        )}
+                        sizes="(max-width: 640px) 50vw, 20vw"
+                        preload={preload}
+                        loading={preload ? "eager" : "lazy"}
+                        decoding="async"
+                      />
+                    </Slider.Item>
+                  )
+                  : (
+                    <Slider.Item
+                      key={index}
+                      className={"carousel-item relative group first:ml-6 sm:first:ml-0 last:mr-6 sm:last:mr-0 min-w-[190px]"}
+                      index={index}
+                      style={{ display: isActive ? "block" : "none" }}
+                    >
+                      <Video
+                        src={source.contentUrl!}
+                        alt={source.alternateName}
+                        width={WIDTH}
+                        height={HEIGHT}
+                        style={{ aspectRatio }}
+                        className={clx(
+                          "relative",
+                          "bg-base-100",
+                          "object-cover",
+                          "w-full",
+                          "col-span-full row-span-full",
+                        )}
+                        sizes="(max-width: 640px) 50vw, 20vw"
+                        loading={preload ? "eager" : "lazy"}
+                        decoding="async"
+                        muted
+                        autoPlay
+                        loop
+                      />
+                    </Slider.Item>
+                  );
               })}
             </Slider>
-            <ul
-              class={`absolute bottom-0 carousel grid grid-cols-${images
-                ?.length!} items-end col-span-full z-10 row-start-4 w-full m-auto bg-secondary-neutral-600`}
-            >
-              {images?.map((_, index) => (
-                <li class="carousel-item w-full">
-                  <Slider.Dot index={index} class="w-full">
-                    <div class="w-full h-[2px] group-disabled:bg-dark-blue bg-transparent" />
-                  </Slider.Dot>
-                </li>
-              ))}
-            </ul>
           </a>
+
+          <ul
+            class={`absolute bottom-0 carousel grid grid-cols-${sourcesMedia
+              ?.length!} items-end col-span-full z-50 row-start-4 w-full m-auto bg-transparent`}
+          >
+            {sourcesMedia?.map((_, index) => (
+              <li
+                class="carousel-item w-full"
+                onClick={() => currentIndex.value = index}
+              >
+                <Slider.Dot
+                  index={index}
+                  class="w-full h-5 bg-transparent flex items-end"
+                >
+                  <div class="w-full h-[2px] group-disabled:bg-dark-blue bg-transparent" />
+                </Slider.Dot>
+              </li>
+            ))}
+          </ul>
+
+          <Slider.JS rootId={id} infinite />
         </figure>
 
         {/* Name/Description */}
@@ -200,7 +257,6 @@ function ProductCardSliderImages({
             : <span>Indisponível</span>}
         </div>
       </div>
-      <Slider.JS rootId={id} infinite />
     </div>
   );
 }

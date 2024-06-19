@@ -7,31 +7,32 @@ import { ExtensionOf } from "apps/website/loaders/extension.ts";
  * @title VTEX Integration - Color Similars
  * @description Add extra data to your loader. This may harm performance
  */
-const loader = (
+export default function productDetailsPage(
   _props: unknown,
   _req: Request,
   _ctx: AppContext,
-): ExtensionOf<ProductDetailsPage | null> =>
-  (page: ProductDetailsPage | null) => {
-    if (!page?.product) {
+): ExtensionOf<ProductDetailsPage | null> {
+  return (productDetailsPage: ProductDetailsPage | null) => {
+    if (!productDetailsPage?.product) {
       return null;
     }
 
-    console.log("banana", page.product.productID)
+    const { product } = productDetailsPage;
 
-    // const { product } = props;
+    const productNewImages = product.image?.map((image) => image.name?.toLocaleLowerCase() === "novas") ?? "";
 
-    // const response = await ctx.vcsDeprecated["GET /api/catalog_system/pub/products/crossselling/:type/:productId"]({
-    //   type: "similars",
-    //   productId: page.product.productID
-    // }).then(response => response.json())
-
-    // console.log({ response }, page.product.productID);
+    const productSimilars = product.isSimilarTo?.map((similar) => {
+      return {
+        url: similar.url,
+        sku: similar.sku,
+        color: similar.additionalProperty?.find((property) => property.name === "Cores")?.value
+      }
+    })
 
     return {
-      ...page,
-      banana: "teste",
+      ...productDetailsPage,
+      productSimilars,
+      productNewImages
     };
-
-  }
-export default loader;
+  };
+}

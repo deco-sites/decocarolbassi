@@ -21,7 +21,7 @@ const colors: Record<string, string> = {
   "Jeans": "bg-[#517998] ",
   "Jeans-claro": "bg-[#89adc1] ",
   "Jeans-escuro": "bg-[#343f51] ",
-  "Jeans-médio": "bg-[#2b4f70] ",
+  "Jeans-medio": "bg-[#2b4f70] ",
   "Laranja": "bg-[#ff8c00] ",
   "Lilás": "bg-[#c388ff] ",
   "Lima": "bg-[#d2e288] ",

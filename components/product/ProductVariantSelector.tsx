@@ -92,6 +92,10 @@ function VariantSelector({ product }: Props) {
                           : relativeLink === relativeUrl
                           ? "active"
                           : "default"}
+                        class={relativeLink === relativeUrl &&
+                            !sizeOfferIsAvailable
+                          ? "border-solid border-primary-600 border"
+                          : ""}
                       />
                     </button>
                   </li>
