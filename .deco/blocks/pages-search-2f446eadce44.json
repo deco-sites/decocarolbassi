@@ -9,9 +9,10 @@
       "descriptionTemplate": "%s | Deco.cx"
     },
     {
-      "__resolveType": "Header - 01"
+      "__resolveType": "Header - 03"
     },
     {
+      "__resolveType": "site/sections/Product/SearchResult.tsx",
       "page": {
         "__resolveType": "PLP Loader"
       },
@@ -22,10 +23,10 @@
         },
         "variant": "drawer"
       },
-      "__resolveType": "site/sections/Product/SearchResult.tsx"
+      "categoryBannersMediaSources": []
     },
     {
-      "__resolveType": "Footer - 01"
+      "__resolveType": "Footer - 02"
     }
   ],
   "__resolveType": "website/pages/Page.tsx"

@@ -145,9 +145,10 @@ function ProductCardSliderImages({
                 const isActive = index === currentIndex.value;
                 return source.encodingFormat === "image"
                   ? (
+                    // className={"carousel-item relative group first:ml-6 sm:first:ml-0 last:mr-6 sm:last:mr-0 min-w-[190px]"}
                     <Slider.Item
                       key={index}
-                      className={"carousel-item relative group first:ml-6 sm:first:ml-0 last:mr-6 sm:last:mr-0 min-w-[190px]"}
+                      className={"carousel-item relative group sm:first:ml-0 last:mr-6 sm:last:mr-0 min-w-[190px]"}
                       index={index}
                       style={{ display: isActive ? "block" : "none" }}
                     >
@@ -174,7 +175,7 @@ function ProductCardSliderImages({
                   : (
                     <Slider.Item
                       key={index}
-                      className={"carousel-item relative group first:ml-6 sm:first:ml-0 last:mr-6 sm:last:mr-0 min-w-[190px]"}
+                      className={"carousel-item relative group sm:first:ml-0 last:mr-6 sm:last:mr-0 min-w-[190px]"}
                       index={index}
                       style={{ display: isActive ? "block" : "none" }}
                     >

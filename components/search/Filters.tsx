@@ -147,14 +147,14 @@ function FilterItem(item: FilterToggle) {
         <div class={`${!isOpen.value ? "hidden" : ""}`}>
           {item.key === "tamanho"
             ? (
-              <div class="grid grid-cols-2 gap-4 my-4">
-                <div>
+              <div class="grid grid-cols-2 gap-4">
+                <div class="flex flex-col gap-4 my-4">
                   {!!filterNumberSizes &&
                     filterNumberSizes.map((sizeItem, index) => (
                       <ValueItem key={index} {...sizeItem} />
                     ))}
                 </div>
-                <div>
+                <div class="flex flex-col gap-4 my-4">
                   {!!filterClothesSizes &&
                     filterClothesSizes.map((sizeItem, index) => (
                       <ValueItem key={index} {...sizeItem} />

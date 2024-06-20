@@ -24,7 +24,7 @@ const ButtonBanner = forwardRef<HTMLButtonElement, Props>(({
     className={`btn no-animation rounded-none
     ${
       negative
-        ? "bg-primary-600 text-secondary-neutral-100 text-sm font-normal border-transparent py-3 px-6 w-fit uppercase hover:bg-base-100 hover:text-primary-600 hover:border-secondary-neutral-100"
+        ? "bg-primary-600 text-secondary-neutral-100 text-sm font-normal border-transparent py-3 px-6 w-fit uppercase hover:bg-base-100 hover:text-primary-600 hover:border-primary-600"
         : "bg-base-100 text-sm font-normal border-primary-600 py-3 px-6 w-fit uppercase hover:bg-primary-600 hover:text-secondary-neutral-100 hover:border-transparent"
     } ${_class} `}
     disabled={disabled || loading}

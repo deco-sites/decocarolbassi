@@ -8,6 +8,7 @@ import Icon from "../../components/ui/Icon.tsx";
 import SearchControls from "../../islands/SearchControls.tsx";
 import { useId } from "../../sdk/useId.ts";
 import { useOffer } from "../../sdk/useOffer.ts";
+import NotFound from "../../sections/Product/NotFound.tsx";
 import ProductGallery, { Columns } from "../product/ProductGallery.tsx";
 import ProductGalleryWithBanner, {
   CategoryBannersMediaSource,
@@ -41,14 +42,6 @@ export interface Props {
   categoryBannersMediaSources?: CategoryBannersMediaSource[];
 }
 
-function NotFound() {
-  return (
-    <div class="w-full flex justify-center items-center py-10">
-      <span>Not Found!</span>
-    </div>
-  );
-}
-
 function Result({
   page,
   layout,
@@ -80,7 +73,15 @@ function Result({
 
   return (
     <>
-      <div class="max-w-[1750px] m-auto px-4 sm:py-10 sm:px-8">
+      {isFirstPage && isSearchPage && (
+        <h2 class="max-w-[1750px] px-4 sm:px-8 pt-6 text-dark-blue font-light sm:font-normal text-base sm:text-[24px] m-auto leading-[150%]">
+          RESULTADO DA BUSCA POR:{" "}
+          <strong class="uppercase font-semibold text-dark-blue text-base sm:text-[24px]">
+            {page?.seo?.title !== "Category_Page_Title" && page?.seo?.title}
+          </strong>
+        </h2>
+      )}
+      <div class="max-w-[1750px] m-auto px-4 pb-4 sm:py-10 sm:px-8">
         {(isFirstPage || !isPartial) && (
           <>
             <SearchTitle title={currentBreadCrumb} />
@@ -92,7 +93,6 @@ function Result({
             />
           </>
         )}
-
         <div class="flex flex-row">
           {layout?.variant === "aside" && filters.length > 0 &&
             (isFirstPage || !isPartial) && (
@@ -178,8 +178,8 @@ function Result({
 function SearchResult(
   { page, ...props }: ReturnType<typeof loader>,
 ) {
-  if (!page) {
-    return <NotFound />;
+  if (!page || !page.products.length) {
+    return <NotFound page={page} />;
   }
 
   return <Result {...props} page={page} />;
