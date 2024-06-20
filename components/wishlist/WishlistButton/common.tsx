@@ -28,6 +28,7 @@ function ButtonCommon({
   class: _class,
 }: Props) {
   const fetching = useSignal(false);
+  const isOpen = useSignal(false);
 
   return (
     <Button
@@ -57,12 +58,12 @@ function ButtonCommon({
                   >
                     <Icon id="XMark" size={24} strokeWidth={1} />
                   </button>
-                  <h1 className="m-8 ">
-                    Compartilhe esse produto nas redes sociais!
+                  <h1 className="m-8">
+                    Para adicionar o item a sua wishlist,{" "}
+                    <a href="/login">
+                      <span class="underline">Faça seu Login.</span>
+                    </a>
                   </h1>
-                  <div className="flex items-center justify-center gap-4">
-                    {socialOptions.map(renderOption)}
-                  </div>
                 </div>
               </div>
             </Modal>
