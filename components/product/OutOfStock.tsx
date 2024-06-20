@@ -10,7 +10,7 @@ export interface Props {
 
 function Notify({ productID }: Props) {
   const loading = useSignal(false);
-  const buttonContent = useSignal("AVISA-ME");
+  const buttonContent = useSignal("AVISE-ME");
 
   const handleSubmit: JSX.GenericEventHandler<HTMLFormElement> = async (e) => {
     e.preventDefault();
