@@ -2,6 +2,7 @@ import { useSignal } from "@preact/signals";
 import Button from "../../../components/ui/Button.tsx";
 import Icon from "../../../components/ui/Icon.tsx";
 import { sendEvent } from "../../../sdk/analytics.tsx";
+import Modal from "../../ui/Modal.tsx";
 
 export interface Props {
   productID: string;
@@ -40,11 +41,32 @@ function ButtonCommon({
         e.preventDefault();
 
         if (!isUserLoggedIn) {
-          globalThis.window.alert(
-            "Please log in before adding to your wishlist",
+          return (
+            <Modal
+              open={isOpen.value}
+              class="flex items-center justify-center rounded-md"
+              onClose={() => isOpen.value = false}
+            >
+              <div className=" w-full h-full">
+                <div class="bg-secondary-neutral-100 p-8 w-[450px] m-auto relative">
+                  <button
+                    className="absolute btn-square top-[10px] right-0"
+                    onClick={() => {
+                      isOpen.value = false;
+                    }}
+                  >
+                    <Icon id="XMark" size={24} strokeWidth={1} />
+                  </button>
+                  <h1 className="m-8 ">
+                    Compartilhe esse produto nas redes sociais!
+                  </h1>
+                  <div className="flex items-center justify-center gap-4">
+                    {socialOptions.map(renderOption)}
+                  </div>
+                </div>
+              </div>
+            </Modal>
           );
-
-          return;
         }
 
         if (loading) {
