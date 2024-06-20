@@ -29,7 +29,7 @@ function MenuItem(
         )}
       <div class="collapse-content">
         <ul>
-          <li>
+          <li class="my-[5px]">
             <a
               class="underline text-sm font-light m-2 text-primary-900 h-5"
               href={item.url}

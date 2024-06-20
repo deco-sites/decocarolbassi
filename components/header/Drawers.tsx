@@ -92,7 +92,7 @@ function Drawers({ menu, searchbar, children, platform }: Props) {
         onClose={() => displayCart.value = false}
         aside={
           <Aside
-            title="Minha sacola"
+            title="CAROL BASSI"
             onClose={() => displayCart.value = false}
           >
             <Cart platform={platform} />
