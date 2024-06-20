@@ -91,8 +91,8 @@ function Cart({
               <div class="p-4">
                 <a class="inline-block w-full" href={checkoutHref}>
                   <Button
+                    negative
                     data-deco="buy-button"
-                    class="btn-primary btn-block"
                     disabled={loading || isEmtpy}
                     onClick={() => {
                       sendEvent({
