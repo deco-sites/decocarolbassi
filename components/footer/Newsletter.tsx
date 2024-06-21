@@ -63,7 +63,12 @@ function Newsletter(
       const email =
         (e.currentTarget.elements.namedItem("email") as RadioNodeList)?.value;
 
-      await invoke.vtex.actions.newsletter.subscribe({ email });
+      await invoke.vtex.actions.masterdata.createDocument({
+        data: { email },
+        acronym: "NL",
+      });
+
+      globalThis.window.alert("E-mail cadastrado com sucesso!");
     } finally {
       loading.value = false;
     }
