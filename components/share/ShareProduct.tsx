@@ -46,10 +46,8 @@ function ShareProduct({ product, device, options }: Props) {
 
   const renderOption = useCallback(
     (option: MediaOptionProps, _index: number) => {
-      const pageUrl = encodeURIComponent(window.location.href);
-      const imageUrl = encodeURIComponent(
-        String(product.image?.[0].url),
-      );
+      const pageUrl = window.location.href;
+      const imageUrl = String(product.image?.[0].url);
 
       const href = option.href
         .replace("{pageUrl}", pageUrl)

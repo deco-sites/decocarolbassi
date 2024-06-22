@@ -54,8 +54,8 @@ export default function Benefits(
   return (
     <div
       id={id}
-      class={`lg:container mx-6 lg:mx-auto mb-4 lg:mb-20 grid gap-8 lg:gap-4 grid-cols-1 place-items-center lg:grid-cols-3 text-center px-4 ${
-        isProductPage ? "mt-28 lg:mt-28" : "mt-[55px]"
+      class={`lg:container mx-6 lg:mx-auto lg:mb-20 grid gap-8 lg:gap-4 grid-cols-1 place-items-center lg:grid-cols-3 text-center px-4 ${
+        isProductPage ? "mt-28 lg:mt-28 mb-11" : "mb-11 mt-[55px]"
       }`}
     >
       {items.map((item) => (

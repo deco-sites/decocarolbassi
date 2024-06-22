@@ -1,5 +1,7 @@
 import type { Product } from "apps/commerce/types.ts";
 import { mapProductToAnalyticsItem } from "apps/commerce/utils/productToAnalyticsItem.ts";
+import { SectionProps } from "deco/types.ts";
+import { AppContext } from "../../apps/site.ts";
 import { SendEventOnView } from "../../components/Analytics.tsx";
 import ProductCard from "../../components/product/ProductCard.tsx";
 import Icon from "../../components/ui/Icon.tsx";
@@ -39,9 +41,11 @@ function ProductShelf({
   title,
   description,
   layout,
-}: Props) {
+  url,
+}: SectionProps<typeof loader>) {
   const id = useId();
   const platform = usePlatform();
+  const isProductPage = url?.searchParams.has("skuId");
 
   if (!products || products.length === 0) {
     return null;
@@ -62,8 +66,12 @@ function ProductShelf({
     5: "w-1/5",
   };
   return (
-    <div class={"w-full py-8 flex flex-col gap-6 lg:py-10"}>
-      <div class="ml-8">
+    <div
+      class={`w-full py-8 flex flex-col gap-6 lg:py-10  ${
+        isProductPage ? "lg:px-10 2xl:pl-20" : ""
+      }`}
+    >
+      <div class={isProductPage ? "ml-4 sm:ml-0" : "ml-4 md:ml-8"}>
         <Header
           title={title || ""}
           description={description || ""}
@@ -78,7 +86,7 @@ function ProductShelf({
           "relative grid",
           layout?.showArrows &&
             "grid-cols-[0px_1fr_0px] lg:grid-cols-[0px_1fr_0px]",
-          "px-0 ml-8",
+          isProductPage ? "ml-4 sm:ml-0" : "px-0 ml-4 md:ml-8",
         )}
       >
         <Slider class="relative carousel carousel-center col-start-2 col-end-2 row-start-1 row-end-4 gap-1">
@@ -115,7 +123,7 @@ function ProductShelf({
             </div>
 
             <ul
-              class={`absolute left-[116px] lg:left-auto lg:right-0 carousel grid grid-cols-${products.length} mt-[35px] lg:mt-[50px] items-end col-span-full z-10 row-start-4 w-[calc(100%-110px)] lg:w-[400px] m-auto bg-secondary-neutral-600`}
+              class={`absolute left-[110px] lg:left-auto lg:right-0 carousel grid grid-cols-${products.length} mt-[35px] lg:mt-[50px] items-end col-span-full z-10 row-start-4 w-[calc(100%-76px)] lg:w-[400px] m-auto bg-secondary-neutral-600`}
             >
               {products?.map((_, index) => (
                 <li class="carousel-item w-full">
@@ -126,8 +134,8 @@ function ProductShelf({
               ))}
             </ul>
 
-            <div class="absolute right-[-20px] lg:right-0 block z-10">
-              <Slider.NextButton class="absolute h-12 flex justify-center items-center top-3 lg:top-[27px] lg:left-[15px] ">
+            <div class="absolute right-[-42px] lg:right-0 block z-10">
+              <Slider.NextButton class="absolute h-12 flex justify-center items-center top-3 lg:top-[27px] lg:left-[15px]">
                 <Icon size={24} id="ChevronRight" strokeWidth={0.01} />
               </Slider.NextButton>
             </div>
@@ -136,7 +144,7 @@ function ProductShelf({
 
         {layout?.showArrows && layout?.collectionButton?.show && (
           <>
-            <div class="relative block z-10 col-start-1 row-start-3">
+            <div class="relative block z-10 col-start-1 row-start-3 left-[-13px] lg:left-auto">
               <Slider.PrevButton class="absolute w-12 h-12 flex justify-center items-center top-3 lg:top-[27px]">
                 <Icon
                   size={24}
@@ -146,16 +154,17 @@ function ProductShelf({
                 />
               </Slider.PrevButton>
             </div>
-            <div class="absolute col-start-3 right-20 lg:col-start-auto lg:left-[450px] lg:right-auto top-3 lg:top-[26px] block z-10 row-start-3">
+            <div class="absolute col-start-3 right-16 lg:col-start-auto lg:left-[450px] lg:right-auto top-3 lg:top-[26px] block z-10 row-start-3">
               <Slider.NextButton class="absolute w-12 h-12 flex justify-center items-center">
                 <Icon size={24} id="ChevronRight" strokeWidth={0.01} />
               </Slider.NextButton>
             </div>
           </>
         )}
+
         {layout?.showDots && layout?.collectionButton?.show && (
           <ul
-            class={`absolute left-[50px] carousel grid grid-cols-${products.length} mt-[35px] lg:mt-[50px] items-end col-span-full z-10 row-start-4 w-[calc(100%-130px)] lg:w-[400px] m-auto bg-secondary-neutral-600`}
+            class={`absolute left-[40px] carousel grid grid-cols-${products.length} mt-[35px] lg:mt-[50px] items-end col-span-full z-10 row-start-4 w-[calc(100%-110px)] lg:w-[400px] m-auto bg-secondary-neutral-600`}
           >
             {products?.map((_, index) => (
               <li class="carousel-item w-full">
@@ -168,13 +177,13 @@ function ProductShelf({
         )}
 
         {layout?.collectionButton?.show && (
-          <div class="absolute left-24 bottom-[-120px] lg:right-12 lg:left-auto lg:bottom-[-80px]">
-            <a
-              href={layout?.collectionButton.action?.href}
-            >
-              <ButtonBanner aria-label={layout.collectionButton.action?.text}>
-                {layout?.collectionButton.action?.text}
-              </ButtonBanner>
+          <div class="absolute left-1/2 transform -translate-x-1/2 bottom-[-120px] lg:right-12 lg:left-auto lg:bottom-[-80px] lg:transform-none">
+            <a href={layout?.collectionButton.action?.href}>
+              <div class="-ml-8 md:ml-auto">
+                <ButtonBanner aria-label={layout.collectionButton.action?.text}>
+                  {layout?.collectionButton.action?.text}
+                </ButtonBanner>
+              </div>
             </a>
           </div>
         )}
@@ -200,5 +209,14 @@ function ProductShelf({
     </div>
   );
 }
+
+export const loader = (props: Props, req: Request, ctx: AppContext) => {
+  const url = new URL(req.url);
+  return {
+    ...props,
+    device: ctx.device,
+    url: url,
+  };
+};
 
 export default ProductShelf;

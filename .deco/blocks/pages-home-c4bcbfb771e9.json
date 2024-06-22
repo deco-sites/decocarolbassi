@@ -9,8 +9,8 @@
       "elements": [
         {
           "action": {
-            "buttonPositionDesktop": "Center",
-            "buttonPositionMobile": "Center",
+            "buttonPositionDesktop": "Left",
+            "buttonPositionMobile": "Left",
             "href": "/teste",
             "label": "Ver nova coleção",
             "buttonNegative": false

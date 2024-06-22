@@ -93,9 +93,9 @@ function ProductInfo(
   return (
     <div class="flex flex-col px-4 max-w-[420px] w-full" id={id}>
       {/* Code and name */}
-      <div class="border-secondary-neutral-300 border-solid border-b">
-        <div>
-          <div class="w-full flex justify-end items-center">
+      <div>
+        <div class="flex flex-row-reverse items-baseline">
+          <div class="flex justify-end items-center">
             <ShareProduct
               product={product}
               device={device}
@@ -108,33 +108,32 @@ function ProductInfo(
               class="btn btn-circle"
             />
           </div>
-          <div>
-            {gtin && <span class="text-sm text-base-300">Cod. {gtin}</span>}
-          </div>
-          <h1>
-            <span class="font-medium text-xl capitalize">
-              {productName}
-            </span>
-          </h1>
-        </div>
-        {/* Prices */}
-        <div class="mt-4">
-          <div class="flex flex-row gap-2 items-center lg:pb-2">
-            <>
-              {hasDiscount && (
-                <span class="line-through text-sm text-[#9AA4B2]">
-                  {formatPrice(listPrice, offers?.priceCurrency)}
-                </span>
-              )}
-              <span class="font-light text-dark-blue">
-                {formatPrice(price, offers?.priceCurrency)}
+
+          <div class="w-full border-secondary-neutral-300 border-solid border-b">
+            <h1>
+              <span class="font-medium text-xl capitalize">
+                {productName}
               </span>
-              {hasDiscount && (
-                <span class="text-sm text-[#9AA4B2] font-bold">
-                  {!!productPercentualOff && productPercentualOff}
-                </span>
-              )}
-            </>
+            </h1>
+            <div class="mt-2">
+              <div class="flex flex-row gap-2 items-center lg:pb-2">
+                <>
+                  {hasDiscount && (
+                    <span class="line-through text-sm text-[#9AA4B2]">
+                      {formatPrice(listPrice, offers?.priceCurrency)}
+                    </span>
+                  )}
+                  <span class="font-light text-dark-blue">
+                    {formatPrice(price, offers?.priceCurrency)}
+                  </span>
+                  {hasDiscount && (
+                    <span class="text-sm text-[#9AA4B2] font-bold">
+                      {!!productPercentualOff && productPercentualOff}
+                    </span>
+                  )}
+                </>
+              </div>
+            </div>
           </div>
         </div>
       </div>

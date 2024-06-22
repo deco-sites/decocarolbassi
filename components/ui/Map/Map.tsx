@@ -83,7 +83,7 @@ function Store({ index, store }: { store: StoreProps; index: number }) {
 
 function Stores({ stores }: { stores: StoreProps[] }) {
   return (
-    <div class="absolute lg:top-[15%] bg-secondary-neutral-100 py-8 px-10 left-8 min-w-[525px]">
+    <div class="absolute lg:top-[15%] bg-secondary-neutral-100 py-8 px-10 left-8 min-w-[525px] border border-solid border-primary-300">
       <h2 class="text-dark-blue uppercase mb-8 text-2xl">
         Nossas Lojas
       </h2>

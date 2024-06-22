@@ -1,7 +1,7 @@
 import { HTMLWidget as HTML } from "apps/admin/widgets.ts";
 import { ProductDetailsPage } from "apps/commerce/types.ts";
+import { AppContext } from "apps/vtex/mod.ts";
 import { SectionProps } from "deco/types.ts";
-import { AppContext } from "../../apps/site.ts";
 import ProductInfo from "../../components/product/ProductInfo.tsx";
 import { MediaOptionProps } from "../../components/share/ShareProduct.tsx";
 import Breadcrumb from "../../components/ui/Breadcrumb.tsx";
@@ -62,10 +62,68 @@ export default function ProductDetails(
   );
 }
 
-export const loader = (props: Props, _req: Request, ctx: AppContext) => {
+export const loader = async (props: Props, _req: Request, ctx: AppContext) => {
+  async function getRecommendations() {
+    const productId = props?.page?.product?.inProductGroupWithID;
+
+    if (!productId) {
+      console.error("Product ID is missing.");
+      return null;
+    }
+
+    try {
+      const data = await ctx.io.query<
+        {
+          productRecommendations: {
+            productName: string;
+            linkText: string;
+            items: {
+              images: { imageUrl: string }[];
+              sellers: { commertialOffer: { Price: number } }[];
+            }[];
+          };
+        },
+        { productId: string }
+      >({
+        operationName: "productRecommendations",
+        variables: {
+          productId,
+        },
+        query: `
+          query productRecommendations($productId: ID!) {
+            productRecommendations(
+              identifier: { field: id, value: $productId }, 
+              type: accessories
+            ) @context(provider: "vtex.search-graphql") {
+              productName
+              linkText
+              items(filter: FIRST_AVAILABLE) {
+                images(quantity: 2) {
+                  imageUrl
+                }
+                sellers {
+                  commertialOffer {
+                    Price
+                  }
+                }
+              }
+            }
+          }
+        `,
+      });
+      return data.productRecommendations;
+    } catch (error) {
+      console.error("Error fetching product recommendations:", error);
+      return null;
+    }
+  }
+
+  const productRecommendations = await getRecommendations();
+
   return {
     ...props,
     device: ctx.device,
+    productRecommendations: productRecommendations,
   };
 };
 

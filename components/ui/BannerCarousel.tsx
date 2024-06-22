@@ -25,8 +25,8 @@ export interface Element {
     /** @description active to turn the button negative */
     buttonNegative?: boolean;
     /** @description button position */
-    buttonPositionDesktop?: "Center" | "Right";
-    buttonPositionMobile?: "Center" | "Left";
+    buttonPositionDesktop?: "Left" | "Center" | "Right";
+    buttonPositionMobile?: "Left" | "Center" | "Right";
     /** @description when user clicks on the image, go to this link */
     href: string;
     /** @description Image text title */
@@ -120,29 +120,44 @@ function BannerItem(
     video,
   } = element;
 
+  const alignDesktopButton = {
+    "Left": "justify-left",
+    "Center": "md:justify-center",
+    "Right": "md:justify-end",
+  };
+
+  const alignMobileButton = {
+    "Left": "justify-left",
+    "Center": "justify-center",
+    "Right": "md:justify-end",
+  };
   return (
     <a
       id={id}
       href={action?.href ?? "#"}
       aria-label={action?.label}
-      class="relative overflow-y-hidden w-full"
+      class="relative overflow-y-hidden w-full h-full"
     >
       {action && (
-        // <div class="absolute bottom-6 right-8 top-0 md:bottom-0 lg:right-20 max-w-full flex flex-col justify-end items-end gap-4 px-12 py-24">
-        <div class="absolute z-10 bottom-0 translate-x-[50%] translate-y-[calc(100%-80px)]  lg:right-12 lg:px-12 lg:py-12 lg:translate-x-0 lg:translate-y-0">
-          <span class="text-2xl font-light text-base-100">
-            {action.title}
-          </span>
-          <span class="font-normal text-4xl text-base-100">
-            {action.subTitle}
-          </span>
-
-          <ButtonBanner
-            aria-label={action.label}
-            negative={element.action?.buttonNegative}
-          >
-            {action.label}
-          </ButtonBanner>
+        <div
+          class={`w-full h-full absolute z-10 flex items-end ${
+            alignMobileButton[action?.buttonPositionMobile!]
+          } ${alignDesktopButton[action?.buttonPositionDesktop!]}`}
+        >
+          <div class="flex flex-col justify-center items-center gap-4 px-8 py-6">
+            <span class="text-2xl font-light text-base-100">
+              {action.title}
+            </span>
+            <span class="font-normal text-4xl text-base-100">
+              {action.subTitle}
+            </span>
+            <ButtonBanner
+              aria-label={action.label}
+              negative={element.action?.buttonNegative}
+            >
+              {action.label}
+            </ButtonBanner>
+          </div>
         </div>
       )}
       {video
@@ -252,7 +267,7 @@ function BannerCarousel(props: Props) {
   return (
     <div
       id={id}
-      class="grid grid-cols-[48px_1fr_48px] sm:grid-cols-[120px_1fr_120px] grid-rows-[1fr_48px_1fr_64px] sm:min-h-min min-h-[660px]"
+      class="grid grid-cols-[48px_1fr_48px] sm:grid-cols-[120px_1fr_120px] grid-rows-[1fr_48px_1fr_64px] sm:min-h-min"
     >
       <Slider class="carousel carousel-center w-full col-span-full row-span-full gap-6 max-h-[85dvh] md:max-h-[700px]">
         {elements?.map((element, index) => {

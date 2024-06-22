@@ -110,7 +110,7 @@ function CategoryGrid(props: SectionProps<typeof loader>) {
       } `}
     >
       <div
-        class={`${device == "mobile" && "ml-8"}
+        class={`${device == "mobile" && "ml-4"}
           ${isBannerRowList && device !== "mobile" && "ml-0"}
           ${!isBannerRowList && "ml-8"}
         `}
@@ -212,7 +212,7 @@ function CategoryGrid(props: SectionProps<typeof loader>) {
               {list?.map((_, index) => (
                 <li class="carousel-item w-full">
                   <Slider.Dot index={index} class="w-full">
-                    <div class="w-full h-[0.10rem] group-disabled:bg-dark-blue bg-transparent" />
+                    <div class="w-full h-[2px] group-disabled:bg-dark-blue bg-transparent" />
                   </Slider.Dot>
                 </li>
               ))}
