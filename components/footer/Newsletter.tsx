@@ -95,7 +95,7 @@ function Newsletter(
                 ? content?.form?.color
                 : undefined,
             }}
-            class="text-[20px] lg:text-[28px] text-neutral-200 font-medium"
+            class="text-[20px] lg:text-[28px] text-neutral-200 font-medium whitespace-pre"
           >
             {content.title}
           </h3>

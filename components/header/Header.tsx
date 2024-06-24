@@ -1,14 +1,14 @@
 import type { ImageWidget } from "apps/admin/widgets.ts";
 import type { SiteNavigationElement } from "apps/commerce/types.ts";
+import { allowCorsFor, FnContext } from "deco/mod.ts";
 import type { SectionProps } from "deco/types.ts";
-import { AppContext } from "../../apps/site.ts";
 import type { Props as SearchbarProps } from "../../components/search/Searchbar.tsx";
 import Drawers from "../../islands/Header/Drawers.tsx";
 import { usePlatform } from "../../sdk/usePlatform.tsx";
 import { AvailableIcons } from "../ui/Icon.tsx";
 import Alert from "./Alert.tsx";
-import Navbar from "./Navbar.tsx";
 import { headerHeight } from "./constants.ts";
+import Navbar from "./Navbar.tsx";
 
 export interface Logo {
   src: ImageWidget;
@@ -89,7 +89,7 @@ function Header({
   logoPosition = "center",
   buttons,
   device,
-  itemsPerColumn
+  itemsPerColumn,
 }: SectionProps<typeof loader>) {
   const platform = usePlatform();
   const items = navItems ?? [];
@@ -103,7 +103,9 @@ function Header({
           platform={platform}
         >
           <div class="bg-base-100 fixed w-full z-40">
-            {alerts && alerts.length > 0 && <Alert alerts={alerts} lightTheme={lightThemeBar} />}
+            {alerts && alerts.length > 0 && (
+              <Alert alerts={alerts} lightTheme={lightThemeBar} />
+            )}
             <Navbar
               device={device}
               items={items}
@@ -120,7 +122,11 @@ function Header({
   );
 }
 
-export const loader = (props: Props, _req: Request, ctx: AppContext) => {
+export const loader = (props: Props, req: Request, ctx: FnContext) => {
+  Object.entries(allowCorsFor(req)).map(([name, value]) => {
+    ctx.response.headers.set(name, value);
+  });
+
   return { ...props, device: ctx.device };
 };
 

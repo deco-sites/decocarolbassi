@@ -26,6 +26,7 @@ export default function ProductDetails(
     productExchangesReturnsPolicy,
     device,
     shareSocialOptions,
+    productRecommendations,
   }: SectionProps<typeof loader>,
 ) {
   if (!page?.seo) {
@@ -40,6 +41,8 @@ export default function ProductDetails(
   };
 
   // "to have sticky ProductInfo component put this class -> sticky top-32"
+
+  console.log({ productRecommendations, breadcrumbList });
 
   return (
     <div class="w-full flex flex-col gap-6 lg:py-10 lg:pl-8 2xl:pl-20">
@@ -65,6 +68,7 @@ export default function ProductDetails(
 export const loader = async (props: Props, _req: Request, ctx: AppContext) => {
   async function getRecommendations() {
     const productId = props?.page?.product?.inProductGroupWithID;
+    const { io } = await ctx.invoke.vtex.loaders.config();
 
     if (!productId) {
       console.error("Product ID is missing.");
@@ -72,7 +76,7 @@ export const loader = async (props: Props, _req: Request, ctx: AppContext) => {
     }
 
     try {
-      const response = (await ctx.invoke.vtex.loaders.config()).io.query<
+      const response = io.query<
         {
           productRecommendations: {
             productName: string;
@@ -111,18 +115,19 @@ export const loader = async (props: Props, _req: Request, ctx: AppContext) => {
           }
         `,
       });
+      console.log({ response });
+      return response;
     } catch (error) {
       console.error("Error fetching product recommendations:", error);
       return null;
     }
   }
-
-  const productRecommendations = await getRecommendations();
+  const data = await getRecommendations();
 
   return {
     ...props,
     device: ctx.device,
-    productRecommendations: productRecommendations,
+    productRecommendations: data?.productRecommendations,
   };
 };
 
