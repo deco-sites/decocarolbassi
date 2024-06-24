@@ -384,5 +384,11 @@
     "path": "/new-in",
     "blockType": "pages",
     "__resolveType": "website/pages/Page.tsx"
+  },
+  "/.deco/blocks/pages-Deco%2520Header-739323.json": {
+    "name": "Deco Header",
+    "path": "/deco-header",
+    "blockType": "pages",
+    "__resolveType": "website/pages/Page.tsx"
   }
 }

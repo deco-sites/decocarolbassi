@@ -1,0 +1,13 @@
+{
+  "name": "Deco Header",
+  "path": "/deco-header",
+  "sections": [
+    {
+      "__resolveType": "Header - 03"
+    }
+  ],
+  "seo": {
+    "__resolveType": "website/sections/Seo/SeoV2.tsx"
+  },
+  "__resolveType": "website/pages/Page.tsx"
+}
