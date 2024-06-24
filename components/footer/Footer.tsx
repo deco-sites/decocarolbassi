@@ -407,6 +407,9 @@ export const loader = (props: Props, req: Request, ctx: FnContext) => {
     ctx.response.headers.set(name, value);
   });
 
+  ctx.response.headers.set("Access-Control-Allow-Origin", "*");
+  ctx.response.headers.set("Access-Control-Allow-Headers", "*");
+
   return { ...props, device: ctx.device };
 };
 
