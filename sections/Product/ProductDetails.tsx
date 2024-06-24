@@ -72,7 +72,7 @@ export const loader = async (props: Props, _req: Request, ctx: AppContext) => {
     }
 
     try {
-      const data = await ctx.io.query<
+      const response = (await ctx.invoke.vtex.loaders.config()).io.query<
         {
           productRecommendations: {
             productName: string;
@@ -111,7 +111,6 @@ export const loader = async (props: Props, _req: Request, ctx: AppContext) => {
           }
         `,
       });
-      return data.productRecommendations;
     } catch (error) {
       console.error("Error fetching product recommendations:", error);
       return null;
