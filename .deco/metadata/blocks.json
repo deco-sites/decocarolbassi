@@ -390,5 +390,11 @@
     "path": "/deco-header",
     "blockType": "pages",
     "__resolveType": "website/pages/Page.tsx"
+  },
+  "/.deco/blocks/pages-Deco%2520Footer-723999.json": {
+    "name": "Deco Footer",
+    "path": "/deco-footer",
+    "blockType": "pages",
+    "__resolveType": "website/pages/Page.tsx"
   }
 }

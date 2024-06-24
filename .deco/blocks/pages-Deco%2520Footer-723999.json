@@ -1,0 +1,13 @@
+{
+  "name": "Deco Footer",
+  "path": "/deco-footer",
+  "sections": [
+    {
+      "__resolveType": "Footer - 02"
+    }
+  ],
+  "seo": {
+    "__resolveType": "website/sections/Seo/SeoV2.tsx"
+  },
+  "__resolveType": "website/pages/Page.tsx"
+}
