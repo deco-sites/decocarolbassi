@@ -364,5 +364,25 @@
   "/.deco/blocks/Preview%20vtex%2Factions%2Fcart%2FupdateGifts.ts.json": {
     "blockType": "actions",
     "__resolveType": "vtex/actions/cart/updateGifts.ts"
+  },
+  "/.deco/blocks/pages-Outlet-529914.json": {
+    "name": "Outlet",
+    "path": "/outlet",
+    "blockType": "pages",
+    "__resolveType": "website/pages/Page.tsx"
+  },
+  "/.deco/blocks/Preview%20website%2Fsections%2FAnalytics%2FAnalytics.tsx.json": {
+    "blockType": "sections",
+    "__resolveType": "website/sections/Analytics/Analytics.tsx"
+  },
+  "/.deco/blocks/Preview%20vtex%2Fsections%2FAnalytics%2FVtex.tsx.json": {
+    "blockType": "sections",
+    "__resolveType": "vtex/sections/Analytics/Vtex.tsx"
+  },
+  "/.deco/blocks/pages-New%2520in-393590.json": {
+    "name": "New in",
+    "path": "/new-in",
+    "blockType": "pages",
+    "__resolveType": "website/pages/Page.tsx"
   }
 }
