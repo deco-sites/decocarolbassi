@@ -101,7 +101,7 @@ function Result({
             </aside>
           )}
           <div class="flex-grow" id={id}>
-            {categoryBanners && !isSearchPage
+            {categoryBanners && !isSearchPage && (isFirstPage || !isPartial)
               ? (
                 <ProductGalleryWithBanner
                   products={products}

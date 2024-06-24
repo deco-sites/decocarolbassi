@@ -1,7 +1,7 @@
 import type { ImageWidget } from "apps/admin/widgets.ts";
 import PoweredByDeco from "apps/website/components/PoweredByDeco.tsx";
-import { allowCorsFor, FnContext } from "deco/mod.ts";
 import { SectionProps } from "deco/types.ts";
+import { AppContext } from "../../apps/site.ts";
 import BackToTop from "../../components/footer/BackToTop.tsx";
 import Divider from "../../components/footer/Divider.tsx";
 import ExtraLinks from "../../components/footer/ExtraLinks.tsx";
@@ -402,14 +402,7 @@ function Footer({
   );
 }
 
-export const loader = (props: Props, req: Request, ctx: FnContext) => {
-  Object.entries(allowCorsFor(req)).map(([name, value]) => {
-    ctx.response.headers.set(name, value);
-  });
-
-  ctx.response.headers.set("Access-Control-Allow-Origin", "*");
-  ctx.response.headers.set("Access-Control-Allow-Headers", "*");
-
+export const loader = (props: Props, _req: Request, ctx: AppContext) => {
   return { ...props, device: ctx.device };
 };
 

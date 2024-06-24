@@ -396,5 +396,11 @@
     "path": "/deco-footer",
     "blockType": "pages",
     "__resolveType": "website/pages/Page.tsx"
+  },
+  "/.deco/blocks/pages-Login-270248.json": {
+    "name": "Login",
+    "path": "/login",
+    "blockType": "pages",
+    "__resolveType": "website/pages/Page.tsx"
   }
 }

@@ -29,7 +29,7 @@ const useAddToCart = ({ eventParams, onAddItem, gotoCheckout }: Props) => {
         params: eventParams,
       });
 
-      displayCart.value = true;
+      gotoCheckout ? null : displayCart.value = true;
     } finally {
       setLoading(false);
       setTimeout(() => {

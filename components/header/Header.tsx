@@ -1,7 +1,7 @@
 import type { ImageWidget } from "apps/admin/widgets.ts";
 import type { SiteNavigationElement } from "apps/commerce/types.ts";
-import { allowCorsFor, FnContext } from "deco/mod.ts";
 import type { SectionProps } from "deco/types.ts";
+import { AppContext } from "../../apps/site.ts";
 import type { Props as SearchbarProps } from "../../components/search/Searchbar.tsx";
 import Drawers from "../../islands/Header/Drawers.tsx";
 import { usePlatform } from "../../sdk/usePlatform.tsx";
@@ -122,14 +122,7 @@ function Header({
   );
 }
 
-export const loader = (props: Props, req: Request, ctx: FnContext) => {
-  Object.entries(allowCorsFor(req)).map(([name, value]) => {
-    ctx.response.headers.set(name, value);
-  });
-
-  ctx.response.headers.set("Access-Control-Allow-Origin", "*");
-  ctx.response.headers.set("Access-Control-Allow-Headers", "*");
-
+export const loader = (props: Props, _req: Request, ctx: AppContext) => {
   return { ...props, device: ctx.device };
 };
 

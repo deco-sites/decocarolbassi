@@ -94,7 +94,7 @@ function ProductGallery(
             {partialUrl && (
               <div>
                 <div class="mt-2">
-                  <Spinner size={24} />
+                  <Spinner showMore size={24} />
                 </div>
                 <button
                   id={`show-more-button-${pageInfo.currentPage}`}

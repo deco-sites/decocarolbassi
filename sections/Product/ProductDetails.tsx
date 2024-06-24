@@ -42,7 +42,7 @@ export default function ProductDetails(
 
   // "to have sticky ProductInfo component put this class -> sticky top-32"
 
-  console.log({ productRecommendations, breadcrumbList });
+  console.log({ productRecommendations });
 
   return (
     <div class="w-full flex flex-col gap-6 lg:py-10 lg:pl-8 2xl:pl-20">
@@ -115,7 +115,6 @@ export const loader = async (props: Props, _req: Request, ctx: AppContext) => {
           }
         `,
       });
-      console.log({ response });
       return response;
     } catch (error) {
       console.error("Error fetching product recommendations:", error);
@@ -127,7 +126,7 @@ export const loader = async (props: Props, _req: Request, ctx: AppContext) => {
   return {
     ...props,
     device: ctx.device,
-    productRecommendations: data?.productRecommendations,
+    productRecommendations: data?.productRecommendations ?? [],
   };
 };
 

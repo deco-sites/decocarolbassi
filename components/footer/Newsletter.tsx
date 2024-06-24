@@ -53,6 +53,7 @@ function Newsletter(
 
   const { tiled = false } = layout;
   const loading = useSignal(false);
+  const successEmailMessage = useSignal("");
 
   const handleSubmit: JSX.GenericEventHandler<HTMLFormElement> = async (e) => {
     e.preventDefault();
@@ -68,9 +69,13 @@ function Newsletter(
         acronym: "NL",
       });
 
-      globalThis.window.alert("E-mail cadastrado com sucesso!");
+      successEmailMessage.value = "E-mail cadastrado com sucesso!";
     } finally {
       loading.value = false;
+      setTimeout(
+        () => successEmailMessage.value = "",
+        5000,
+      );
     }
   };
 
@@ -134,6 +139,13 @@ function Newsletter(
                 loading={"lazy"}
               />
             </button>
+            <span
+              class={`absolute -bottom-8 ${
+                successEmailMessage.value ? "block text-neutral-200" : "hidden"
+              }`}
+            >
+              {successEmailMessage.value}
+            </span>
           </div>
         </form>
       </div>
