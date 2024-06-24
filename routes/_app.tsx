@@ -21,12 +21,6 @@ export default defineApp(async (_req, ctx) => {
         {/* Enable View Transitions API */}
         <meta name="view-transition" content="same-origin" />
 
-        <meta
-          http-equiv="Content-Security-Policy"
-          content="default-src 'self'; frame-src 'self' https://testeiframe--carolbassi.myvtex.com;"
-        >
-        </meta>
-
         {/* Tailwind v3 CSS file */}
         <link
           href={asset(`/styles.css?revision=${revision}`)}
