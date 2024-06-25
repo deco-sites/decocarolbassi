@@ -402,6 +402,36 @@
       "name": "Settings",
       "pinned": true,
       "icon": "adjustments-horizontal",
+      "layout": [],
+      "tabs": {
+        "settings::settings::adjustments-horizontal::settings::%7B%7D": {
+          "name": "settings",
+          "icon": "adjustments-horizontal",
+          "render": "function",
+          "viewId": "settings",
+          "id": "settings::settings::adjustments-horizontal::settings::%7B%7D",
+          "state": {
+            "__signal": null
+          }
+        },
+        "settings::domains::adjustments-horizontal::domains::%7B%7D": {
+          "name": "domains",
+          "icon": "adjustments-horizontal",
+          "render": "function",
+          "viewId": "domains",
+          "id": "settings::domains::adjustments-horizontal::domains::%7B%7D",
+          "state": {
+            "__signal": null
+          }
+        }
+      },
+      "category": "Management"
+    },
+    {
+      "id": "assets",
+      "name": "Assets",
+      "pinned": true,
+      "icon": "photo",
       "layout": {
         "settings": {
           "hasHeaders": true,
@@ -441,40 +471,19 @@
             "content": [
               {
                 "type": "stack",
-                "width": 50,
+                "width": 100,
                 "isClosable": true,
                 "reorderEnabled": true,
                 "title": "",
                 "activeItemIndex": 0,
                 "content": [
                   {
-                    "id": "settings::settings::adjustments-horizontal::settings::%7B%7D",
-                    "title": "<div class=\"contents text-base-700\" id=\"header-settings::settings::adjustments-horizontal::settings::%7B%7D\" />",
+                    "id": "assets::Assets::photo::Assets::%7B%7D",
+                    "title": "<div class=\"contents text-base-700\" id=\"header-assets::Assets::photo::Assets::%7B%7D\" />",
                     "type": "component",
                     "componentName": "component",
                     "componentState": {
-                      "id": "settings::settings::adjustments-horizontal::settings::%7B%7D"
-                    },
-                    "isClosable": true,
-                    "reorderEnabled": true
-                  }
-                ]
-              },
-              {
-                "type": "stack",
-                "width": 50,
-                "isClosable": true,
-                "reorderEnabled": true,
-                "title": "",
-                "activeItemIndex": 0,
-                "content": [
-                  {
-                    "id": "settings::domains::adjustments-horizontal::domains::%7B%7D",
-                    "title": "<div class=\"contents text-base-700\" id=\"header-settings::domains::adjustments-horizontal::domains::%7B%7D\" />",
-                    "type": "component",
-                    "componentName": "component",
-                    "componentState": {
-                      "id": "settings::domains::adjustments-horizontal::domains::%7B%7D"
+                      "id": "assets::Assets::photo::Assets::%7B%7D"
                     },
                     "isClosable": true,
                     "reorderEnabled": true
@@ -490,36 +499,6 @@
         "openPopouts": [],
         "maximisedItemId": null
       },
-      "tabs": {
-        "settings::settings::adjustments-horizontal::settings::%7B%7D": {
-          "name": "settings",
-          "icon": "adjustments-horizontal",
-          "render": "function",
-          "viewId": "settings",
-          "id": "settings::settings::adjustments-horizontal::settings::%7B%7D",
-          "state": {
-            "__signal": null
-          }
-        },
-        "settings::domains::adjustments-horizontal::domains::%7B%7D": {
-          "name": "domains",
-          "icon": "adjustments-horizontal",
-          "render": "function",
-          "viewId": "domains",
-          "id": "settings::domains::adjustments-horizontal::domains::%7B%7D",
-          "state": {
-            "__signal": null
-          }
-        }
-      },
-      "category": "Management"
-    },
-    {
-      "id": "assets",
-      "name": "Assets",
-      "pinned": true,
-      "icon": "photo",
-      "layout": [],
       "tabs": {
         "assets::Assets::photo::Assets::%7B%7D": {
           "name": "Assets",
@@ -578,7 +557,7 @@
             "content": [
               {
                 "type": "stack",
-                "width": 41.66666666666667,
+                "width": 30,
                 "isClosable": true,
                 "reorderEnabled": true,
                 "title": "",
@@ -600,7 +579,7 @@
               },
               {
                 "type": "stack",
-                "width": 58.333333333333336,
+                "width": 70,
                 "isClosable": true,
                 "reorderEnabled": true,
                 "title": "",
@@ -639,7 +618,8 @@
           "width": 30,
           "id": "%2F.deco%2Fblocks%2Fpages-home-c4bcbfb771e9.json::Properties::list::Properties::%7B%7D",
           "state": {
-            "__signal": null
+            "__signal": null,
+            "value": null
           }
         },
         "%2F.deco%2Fblocks%2Fpages-home-c4bcbfb771e9.json::Preview::world::Preview::%7B%7D": {
