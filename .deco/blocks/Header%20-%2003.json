@@ -63,76 +63,28 @@
         ],
         "children": [
           {
-            "url": "/masculino",
-            "name": "Novidades",
+            "url": "/icones10anos",
+            "name": "Ícones 10 anos",
             "@type": "SiteNavigationElement",
             "children": []
           },
           {
             "image": [],
             "children": [],
-            "name": "lorem1",
-            "url": "/masculino/lorem1"
+            "name": "Carol Bassi + Maria Rudge",
+            "url": "/mria-rudge-23"
           },
           {
             "image": [],
             "children": [],
-            "name": "lorem2",
-            "url": "/masculino/lorem2"
+            "name": "Winter 24",
+            "url": "/winter24"
           },
           {
             "image": [],
             "children": [],
-            "name": "lorem3",
-            "url": "/masculino/lorem3"
-          },
-          {
-            "image": [],
-            "children": [],
-            "name": "lorem4",
-            "url": "/masculino/lorem4"
-          },
-          {
-            "image": [],
-            "children": [],
-            "name": "lorem5",
-            "url": "/masculino/lorem5"
-          },
-          {
-            "image": [],
-            "children": [],
-            "name": "lorem6",
-            "url": "/masculino/lorem6"
-          },
-          {
-            "image": [],
-            "children": [],
-            "name": "lorem7",
-            "url": "/masculino/lorem7"
-          },
-          {
-            "image": [],
-            "children": [],
-            "name": "lorem8",
-            "url": "/masculino/lorem8"
-          },
-          {
-            "image": [],
-            "children": [],
-            "name": "lorem9",
-            "url": "/masculino/lorem9"
-          },
-          {
-            "image": [],
-            "children": [],
-            "name": "lorem",
-            "url": "/masculino/lorem"
-          },
-          {
-            "image": [],
-            "children": [],
-            "name": "lorem",
-            "url": "/masculino/lorem"
+            "name": "Lifestyle CB",
+            "url": "/lifestyle-cb"
           }
         ]
       },
@@ -243,64 +195,22 @@
         ],
         "children": [
           {
-            "url": "/masculino",
-            "name": "Novidades",
+            "url": "/sapatos/bota",
+            "name": "Botas",
             "@type": "SiteNavigationElement",
             "children": []
           },
           {
-            "url": "/masculino/lorem1",
-            "name": "lorem1",
+            "url": "/sapatos/mule",
+            "name": "Mules",
             "children": [],
             "image": []
           },
           {
             "image": [],
             "children": [],
-            "name": "lorem2",
-            "url": "/masculino/lorem2"
-          },
-          {
-            "image": [],
-            "children": [],
-            "name": "lorem3",
-            "url": "/masculino/lorem3"
-          },
-          {
-            "image": [],
-            "children": [],
-            "name": "lorem4",
-            "url": "/masculino/lorem4"
-          },
-          {
-            "image": [],
-            "children": [],
-            "name": "lorem5",
-            "url": "/masculino/lorem5"
-          },
-          {
-            "image": [],
-            "children": [],
-            "name": "lorem6",
-            "url": "/masculino/lorem6"
-          },
-          {
-            "image": [],
-            "children": [],
-            "name": "lorem7",
-            "url": "/masculino/lorem7"
-          },
-          {
-            "image": [],
-            "children": [],
-            "name": "lorem8",
-            "url": "/masculino/lorem8"
-          },
-          {
-            "image": [],
-            "children": [],
-            "name": "lorem9",
-            "url": "/masculino/lorem9"
+            "name": "Sandálias",
+            "url": "/sapatos/sandalia"
           }
         ]
       },
