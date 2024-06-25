@@ -134,17 +134,6 @@ function Navbar(
             </a>
           )}
 
-          {!buttons?.hideCartButton && (
-            <div class="flex items-center text-xs font-thin">
-              {platform === "vtex" && <CartButtonVTEX />}
-              {platform === "vnda" && <CartButtonVDNA />}
-              {platform === "wake" && <CartButtonWake />}
-              {platform === "linx" && <CartButtonLinx />}
-              {platform === "shopify" && <CartButtonShopify />}
-              {platform === "nuvemshop" && <CartButtonNuvemshop />}
-            </div>
-          )}
-
           {!buttons?.hideAccountButton && (
             <a
               class="flex items-center text-xs font-thin"
@@ -155,6 +144,17 @@ function Navbar(
                 <UserIcon />
               </div>
             </a>
+          )}
+
+          {!buttons?.hideCartButton && (
+            <div class="flex items-center text-xs font-thin">
+              {platform === "vtex" && <CartButtonVTEX />}
+              {platform === "vnda" && <CartButtonVDNA />}
+              {platform === "wake" && <CartButtonWake />}
+              {platform === "linx" && <CartButtonLinx />}
+              {platform === "shopify" && <CartButtonShopify />}
+              {platform === "nuvemshop" && <CartButtonNuvemshop />}
+            </div>
           )}
         </div>
       </div>

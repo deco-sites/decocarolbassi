@@ -61,7 +61,7 @@ const colorVariantsClasses = {
 
 const sizeVariantsClasses: Record<string, string> = {
   active: "text-base-content border-solid border-primary-600 border",
-  disabled: "text-[#C9CACB]",
+  disabled: "text-[#C9CACB] line-through",
   default: "text-base-content bg-base-100",
 };
 
@@ -87,7 +87,7 @@ function Avatar({ content, variant = "default", label, class: _class }: Props) {
         <div
           class={`${sizeVariantsClasses[variant]} ${_class}`}
         >
-          <span class="uppercase ">
+          <span class="uppercase font-medium">
             {sizeVariantsClasses[content] ? "" : content.substring(0, 2)}
           </span>
         </div>
