@@ -116,13 +116,19 @@ function OrderItem(props: OrderByProps) {
     ${value === "price:asc" ? "order-5" : ""}
     `}
     >
-      <div
-        aria-checked={sort === value}
-        class={`h-6 w-6 border-primary-700 border-solid border rounded-full ${
-          sort === value ? "bg-primary-700" : ""
-        }`}
-      />
-      <span class="text-sm font-light text-paragraph-color capitalize">
+      <div class="border-primary-700 border-solid border rounded-full p-[1px]">
+        <div
+          aria-checked={sort === value}
+          class={`h-3 w-3 rounded-full ${
+            sort === value ? "bg-primary-500" : ""
+          }`}
+        />
+      </div>
+      <span
+        class={`text-sm ${
+          sort === value ? "font-medium" : "font-light"
+        }  text-paragraph-color capitalize`}
+      >
         {label}
       </span>
     </button>
