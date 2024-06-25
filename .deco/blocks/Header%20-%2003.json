@@ -137,7 +137,7 @@
         ]
       },
       {
-        "url": "/roupa",
+        "url": "/roupas",
         "name": "Roupas",
         "@type": "SiteNavigationElement",
         "image": [
@@ -153,7 +153,7 @@
         ],
         "children": [
           {
-            "url": "/blusa",
+            "url": "/roupas/blusa",
             "name": "Blusas",
             "@type": "SiteNavigationElement",
             "children": []
@@ -162,42 +162,42 @@
             "image": [],
             "children": [],
             "name": "Calças",
-            "url": "/calca"
+            "url": "/roupas/calca"
           },
           {
             "image": [],
             "children": [],
             "name": "Casacos",
-            "url": "/casaco"
+            "url": "/roupas/casaco"
           },
           {
             "image": [],
             "children": [],
             "name": "Vestidos",
-            "url": "/vestido"
+            "url": "/roupas/vestido"
           },
           {
             "image": [],
             "children": [],
             "name": "Saias",
-            "url": "/saia"
+            "url": "/roupas/saia"
           },
           {
             "image": [],
             "children": [],
             "name": "Shorts",
-            "url": "/shorts"
+            "url": "/roupas/shorts"
           },
           {
             "image": [],
             "children": [],
             "name": "Tops",
-            "url": "/top"
+            "url": "/roupas/top"
           },
           {
             "image": [],
             "children": [],
-            "url": "/blazer",
+            "url": "/roupas/blazer",
             "name": "Blazers"
           },
           {
