@@ -414,5 +414,11 @@
     "path": "/cashback",
     "blockType": "pages",
     "__resolveType": "website/pages/Page.tsx"
+  },
+  "/.deco/blocks/pages-Roupas-965393.json": {
+    "name": "Roupas",
+    "path": "/roupas",
+    "blockType": "pages",
+    "__resolveType": "website/pages/Page.tsx"
   }
 }
