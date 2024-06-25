@@ -1,8 +1,6 @@
 {
-  "name": "Category",
-  "default": {
-    "possiblePaths": []
-  },
+  "name": "Black Friday",
+  "path": "/black-friday",
   "sections": [
     {
       "__resolveType": "commerce/sections/Seo/SeoPLP.tsx",
@@ -22,7 +20,12 @@
           "fuzzy": "automatic",
           "pageOffset": 1,
           "__resolveType": "vtex/loaders/intelligentSearch/productListingPage.ts",
-          "selectedFacets": [],
+          "selectedFacets": [
+            {
+              "key": "productClusterIds",
+              "value": "139"
+            }
+          ],
           "count": 28
         },
         "extensions": [
@@ -90,19 +93,6 @@
             }
           },
           "matcher": "/sapatos"
-        },
-        {
-          "banner1": {
-            "type": "image",
-            "image": "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/9166/83f6a0d8-9ad6-4781-a3b8-e249d73313c5"
-          },
-          "banner2": {
-            "type": "image"
-          },
-          "banner3": {
-            "type": "image"
-          },
-          "matcher": "/roupas"
         }
       ]
     },
@@ -130,6 +120,8 @@
       "description": "Roupa e Vestidos"
     }
   ],
-  "__resolveType": "website/pages/Page.tsx",
-  "path": "/*"
+  "seo": {
+    "__resolveType": "website/sections/Seo/SeoV2.tsx"
+  },
+  "__resolveType": "website/pages/Page.tsx"
 }

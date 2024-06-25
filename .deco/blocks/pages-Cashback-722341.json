@@ -1,0 +1,106 @@
+{
+  "name": "Cashback",
+  "path": "/cashback",
+  "sections": [
+    {
+      "__resolveType": "website/sections/Seo/SeoV2.tsx"
+    },
+    {
+      "__resolveType": "Header - 03"
+    },
+    {
+      "__resolveType": "site/sections/Institutional/Institutional.tsx",
+      "institutionalTitle": "Política de privacidade",
+      "topics": [
+        {
+          "faq": [],
+          "topicTitle": "1. Política de privacidade",
+          "topicDescription": "<p>A Carol Bassi “marca” (Guaraná Brasil Difusão de Moda Ltda., com sede na Rua Ariosto Buller Souto, nº 134, Vila Progredior, São Paulo/SP, CEP sob o n.° 05.615-030, inscrito no CNPJ/M F sob n.º 54.877.063/0001-50), respeita a sua privacidade e os princípios de proteção de dados pessoais, conforme a Lei nº 13.709/2018 (Lei Geral de Proteção de Dados – LGPD). A presente Política de Privacidade (“Política”) visa que você, titular dos dados pessoais (\"Titular\"), tenha conhecimento de como a Carol Bassi trata seus dados pessoais coletados no site, aplicativo ou nas lojas da marca, que faz parte do Grupo Arezzo&amp;Co, você pode consultar as demais marcas em <span style=\"text-decoration: underline;\" data-mce-style=\"text-decoration: underline;\"><a data-mce-href=\"https://ri.arezzoco.com.br/a-companhia/nossas-marcas/carol-bassi/\" href=\"https://ri.arezzoco.com.br/a-companhia/nossas-marcas/carol-bassi/\" target=\"_blank\" rel=\"noopener\" data-mce-selected=\"inline-boundary\">https://ri.arezzoco.com.br/a-companhia/nossas-marcas/carol-bassi/</a></span>. <br>A Carol Bassi poderá alterar, rever e atualizar a presente Política de Privacidade a qualquer momento. Recomendamos que consulte esta Política sempre que necessário para se manter informado(a) sobre as formas como a Carol Bassi trata e protege seus Dados Pessoais. Essa Política foi atualizada pela última vez em 05 de julho de 2022.</p>"
+        },
+        {
+          "faq": [
+            {
+              "faqTitle": "Origem: Navegação no Site",
+              "faqDescription": "<p>Origem: Navegação no Site</p>"
+            },
+            {
+              "faqTitle": "Origem: Dados que você nos fornece em formulários nos Sites",
+              "faqDescription": "<p>Origem: Dados que você nos fornece em formulários nos Sites</p>"
+            },
+            {
+              "faqTitle": "Origem: Cadastro nas lojas físicas",
+              "faqDescription": "<p>Origem: Cadastro nas lojas físicas</p>"
+            },
+            {
+              "faqTitle": "Origem: Pagamento da compra",
+              "faqDescription": "<p>Origem: Pagamento da compra</p>"
+            },
+            {
+              "faqTitle": "Origem: Entrega dos produtos",
+              "faqDescription": "<p>Origem: Entrega dos produtos</p>"
+            },
+            {
+              "faqTitle": "Origem: Solicitação de troca ou devolução",
+              "faqDescription": "<p>Origem: Solicitação de troca ou devolução</p>"
+            },
+            {
+              "faqTitle": "Origem: Atendimento (chat, e-mail, telefone, WhatsApp, mídias sociais etc.)",
+              "faqDescription": "<p>Origem: Atendimento (chat, e-mail, telefone, WhatsApp, mídias sociais etc.)</p>"
+            },
+            {
+              "faqTitle": "Origem: Programa de fidelidade e cashback",
+              "faqDescription": "<p>Origem: Programa de fidelidade e cashback</p>"
+            },
+            {
+              "faqTitle": "Origem: Vale-Presente",
+              "faqDescription": "<p>Origem: Vale-Presente</p>"
+            },
+            {
+              "faqTitle": "Origem: Monitoramento das lojas físicas",
+              "faqDescription": "<p>Origem: Monitoramento das lojas físicas</p>"
+            }
+          ],
+          "topicTitle": "2. COLETA E USO DOS DADOS",
+          "topicDescription": "<p>Com o objetivo de oferecer nossos produtos, tornar a sua experiência melhor, cumprir com eventuais obrigações legais ou regulatórias, entre outras situações, a Carol Bassi pode coletar alguns dos seus dados pessoais caso você interaja conosco. Na tabela abaixo, você pode encontrar alguns exemplos de quais são os dados coletados e para quais finalidades os utilizamos. Veja que, a depender de sua relação e interação conosco, diferentes tratamentos poderão ser realizados.<br><br><strong>a) CLIENTE</strong>: Se você é um cliente, potencial ou efetivo, da marca, os seguintes dados sobre você poderão ser coletados, conforme o caso:</p>"
+        },
+        {
+          "faq": [],
+          "topicTitle": "3. COOKIES",
+          "topicDescription": "<p>Cookies são pequenos arquivos que são instalados e coletam informações sobre seu navegador ou dispositivo. Eles nos permitem saber como e quando o Site é visitado, bem como quantas pessoas o acessam. Eles podem ser úteis para, por exemplo, fazermos o Site encaixar na sua tela, entender melhor as suas preferências e lhe oferecer produtos por meio de campanhas segmentadas. <br><br> A Carol Bassi utiliza os cookies para algumas finalidades, conforme indicado abaixo:<br><br></p><ul><li>Cookies essenciais: são os cookies estritamente necessários para fornecer nossos produtos e serviços e para que o nosso Site funcione corretamente, garantindo a segurança da navegação, o correto dimensionamento do conteúdo no Site e o cumprimento de obrigações legais da marca.<br><br data-mce-bogus=\"1\"></li><li>Cookies de publicidade: usados para direcionamento de conteúdos e publicidade conforme o seu perfil e preferências. Eles servem para que você veja anúncios mais relevantes e mais interessantes durante a sua navegação.<br><br data-mce-bogus=\"1\"></li><li>Cookies estatísticos (analytics): fornecem informações sobre seu comportamento de navegação e como o Site está sendo usado. Os dados coletados são agregados, e nosso objetivo é entender melhor o nosso público, para que possamos oferecer conteúdo, serviços e produtos mais interessantes para quem acessa nosso Site.<br data-mce-bogus=\"1\"></li></ul><p><br>Se você quiser saber de forma geral quais cookies estão instalados no seu dispositivo, ou se deseja excluí-los ou restringi-los, use a configuração do seu navegador. Você encontrará mais explicações sobre como proceder clicando nos links abaixo. Para encontrar informações relacionadas a outros navegadores, visite o site do desenvolvedor do navegador.  <br><br>Firefox <br>Chrome <br>Safari <br>Internet Explorer ou Edge  <br><br>Lembre-se de que, se você bloquear o uso de cookies pelo nosso Site, não podemos garantir o correto funcionamento de todas as aplicações e talvez você não consiga acessar determinados produtos e serviços. Além disso, é provável que certas funções e páginas não funcionem da maneira adequada.</p>"
+        },
+        {
+          "faq": [],
+          "topicTitle": "4. COMPARTILHAMENTO DE DADOS",
+          "topicDescription": "<p>Para oferecermos nossos produtos e serviços da melhor forma possível, contamos com o apoio de outras empresas em nossas operações. Assim, em alguns casos, precisamos compartilhar dados com terceiros, como descrevemos abaixo:<br></p><ul><li>Carol Bassi. Suas informações podem ser compartilhadas entre as empresas pertencentes ao grupo que a marca faz parte, as quais estão de acordo com esta Política de Privacidade. Fazemos isso para, primordialmente, analisar dados e entender o seu perfil, de forma a lhe proporcionar experiências personalizadas e aderentes ao seu perfil, entre outros.<br><br></li><li>Fornecedores e parceiros. Contamos com a ajuda de fornecedores e parceiros que podem tratar dados pessoais. As informações são compartilhadas apenas para as finalidades dos serviços prestados. Sempre buscamos avaliar nossos fornecedores e parceiros e firmar com eles obrigações contratuais de proteção de dados pessoais, com o objetivo de minimizar riscos para os Titulares. Entre esses fornecedores e parceiros, estão, por exemplo, empresas de logística, gateways de pagamento, bem como empresas que nos auxiliam com o cadastro, criação e gestão.<br><br></li><li>Autoridades Públicas. Seus dados podem ser compartilhados com autoridades públicas para que cumpramos com a legislação vigente. Caso um juiz ou uma autoridade com competência legal exija que compartilhemos certos dados pessoais para, por exemplo, uma investigação, temos o dever de compartilhar. Somos contra qualquer abuso de autoridade e, caso entendamos que determinada ordem é abusiva, vamos sempre defender a privacidade dos Titulares.<br><br></li><li>Proteção de direitos. Reservamo-nos o direito de compartilhar quaisquer dados pessoais que acreditarmos serem necessários para cumprir uma obrigação legal ou proteger os nossos direitos, dos nossos colaboradores e de terceiros.<br><br></li><li>Outros países. A Carol Bassi poderá transferir seus dados para outros países como, por exemplo, para fins de armazenamento, no caso de servidores localizados no exterior. Firmamos com os terceiros que recebem esses dados obrigações contratuais robustas para proteger os dados pessoais e garantir a privacidade dos Titulares.</li></ul>"
+        },
+        {
+          "faq": [],
+          "topicTitle": "5. ARMAZENAMENTO DE DADOS",
+          "topicDescription": "<p>A Carol Bassi observa regras internas próprias de retenção e descarte de dados pessoais e tem um documento que define as diretrizes para determinar o período de retenção adequado para cada tipo de dado pessoal coletado, considerando a sua natureza, necessidade de coleta e finalidade para a qual ele será tratado. Dados pessoais são armazenados somente pelo tempo que for necessário para cumprir com as finalidades para as quais foram coletados, salvo se houver qualquer outra razão para sua manutenção como, por exemplo, cumprimento de quaisquer obrigações legais, regulatórias, contratuais, entre outras. O Titular tem o direito de solicitar a exclusão dos seus dados (conforme disposto no item 6 desta Política), solicitação que será atendida quando não houver motivo para mantê-los.</p>"
+        },
+        {
+          "faq": [],
+          "topicTitle": "6. SEGURANÇA DOS DADOS",
+          "topicDescription": "<p>A Carol Bassi respeita o sigilo e a segurança de suas informações. Por isso, conta com o certificado de segurança Secure Sockets Layer (“SSL”) Pro SGC emitido pela GMO GlobalSign, uma das maiores autoridades certificadoras do mundo. Por meio dele, todas as informações fornecidas pelo Titular em nosso Site são criptografadas e mantidas em sigilo em servidores seguros. Além isso, a Carol Bassi adota práticas de segurança e governança adequadas para garantir a sua privacidade e a proteção dos seus dados. <br><br>Ainda assim, você deve estar ciente de que as medidas de segurança relativas à internet não são infalíveis. Você pode nos ajudar a manter um ambiente seguro para todos adotando boas práticas de segurança em relação à sua conta e aos seus&nbsp;dados, como abaixo descrito. <br><br><strong>a) cuidados do Titular</strong> <br>Recomendamos que você sempre se mantenha atento para proteger as suas informações, de modo que não sejam utilizadas senhas fáceis e óbvias e que estas não sejam compartilhadas com terceiros. Ao utilizar o Site em dispositivos públicos, é sempre importante certificar-se de que a sua sessão foi encerrada. Além disso, é muito importante sempre utilizar softwares originais e mantê-los atualizados, principalmente, programas de antivírus – para evitar riscos de invasões nos dispositivos.  <br><br><strong>b) quedas do sistema do Titular</strong> A<br> Carol Bassi não se responsabiliza por compras que não forem efetuadas nos canais oficiais da Companhia ou por problemas ocasionados por queda em sua rede de navegação. A premissa para realizar uma compra pelo Site é ter uma conexão bem-sucedida com a internet.  <br><br><strong>c) fraudes em boleto<br></strong>Existe a possibilidade de um Titular ser impactado por um vírus instalado em seu dispositivo, vírus este que pode alterar os dados do boleto. Portanto, a Carol Bassi recomenda que o Titular sempre verifique os dados do boleto – especialmente, os valores e o código do banco. Caso fique com dúvidas, entre em contato conosco por meio de nossa Central de Atendimento, disponível no Site. A Carol Bassi não se responsabiliza por situações de fraudes causadas por terceiros.</p>"
+        },
+        {
+          "faq": [],
+          "topicTitle": "7. DIREITOS DOS TITULARES",
+          "topicDescription": "<p>Conforme dispõe a legislação você tem alguns direitos relativos aos dados que tratamos. Abaixo, trazemos uma lista contendo todos esses direitos, além de informações a respeito de como você pode exercê-los. Ao recebermos a sua solicitação, é possível que precisemos verificar sua identidade antes de atendermos a sua requisição. Esta verificação pode incluir a solicitação de dados adicionais para garantir sua correta identificação. Ainda, quando indicar algum terceiro para fazer solicitações em seu nome, tal terceiro deverá apresentar um documento indicando que pode agir em seu nome, como uma procuração assinada por você.<br><br> Para exercer quaisquer desses direitos, você pode entrar em contato conosco pelo e-mail informado no item 7 desta Política.<br><br><strong>Confirmação e Acesso</strong><br>Permite que você possa verificar se tratamos dados pessoais seus e, em caso positivo, requisitar uma cópia dos dados pessoais que nós temos sobre você.<br><br><strong>Correção</strong> <br>Permite que você solicite a correção dos seus dados pessoais incompletos, inexatos ou desatualizados.<br><br><strong>Anonimização, bloqueio ou eliminação</strong><br>Permite que você nos peça para (a) anonimizar seus dados, de forma que eles não possam mais ser relacionados a você e, portanto, deixem de ser dados pessoais; (b) bloquear seus dados, suspendendo temporariamente a possibilidade de os tratarmos; e (c) eliminar seus dados, caso em que apagaremos todos os seus dados sem possibilidade de reversão, salvo nos casos previstos em lei.<br><br><strong>Portabilidade </strong><br>Você tem o direito de solicitar, mediante requisição expressa, que seja fornecido a você ou a terceiro que você escolher, os seus dados pessoais em formato estruturado e interoperável, para transferência a outro fornecedor, desde que não viole a propriedade intelectual ou segredos de negócio das Carol Bassi.<br><br><strong>Informação sobre o compartilhamento</strong><br>Você tem o direito de saber quais são as entidades públicas e privadas com quem realizamos o uso compartilhado de dados. Manteremos nessa Política a lista, sempre atualizada, dos tipos de parceiros com que compartilhamos os dados. Em todo caso, se você tiver dúvidas ou quiser maiores detalhes, você tem o direito de nos solicitar essas informações.<br><br><strong>Informação sobre a possibilidade de não consentir</strong><br>Permite que você tenha informações claras e completas sobre a possibilidade e as consequências de não fornecer o consentimento. O seu consentimento, quando necessário, deve ser livre e informado. Portanto, sempre que pedirmos seu consentimento, você será livre para negá-lo – ainda que, nesses casos, seja possível que tenhamos que limitar nossas entregas para você.<br><br><strong>Revogação do consentimento<br></strong>Você tem o direito de retirar o seu consentimento em relação às atividades de tratamento que se baseiam o consentimento. No entanto, isso não afetará a legalidade de qualquer tratamento realizado anteriormente. Se você retirar o seu consentimento, talvez não possamos fornecer determinadas comunicações ou serviços para você, mas iremos avisá-lo quando isso ocorrer.<br><br><strong>Oposição</strong><br>A lei autoriza o tratamento de dados pessoais mesmo sem o seu consentimento. Caso você não concorde com esse tratamento, você poderá se opor a ele em alguns casos, solicitando a interrupção.<br></p>"
+        },
+        {
+          "faq": [],
+          "topicTitle": "8. INFORMAÇÕES GERAIS",
+          "topicDescription": "<p>Se você tiver qualquer dúvida, comentário ou solicitação em relação aos seus dados pessoais, por favor, entre em contato com o nosso Encarregado pelo tratamento de dados pessoais, abaixo identificado:<br> <br>Encarregado: Baptista Luz Advogados <br>Endereço para correspondências: Rua Ramos Batista, 444, 2° Andar, Vila Olímpia,<br>São Paulo/SP, Brasil, CEP 04552-020. <br>E-mail para contato: privacidade@arezzo.com.br</p>"
+        }
+      ]
+    },
+    {
+      "__resolveType": "Footer - 02"
+    }
+  ],
+  "seo": {
+    "__resolveType": "website/sections/Seo/SeoV2.tsx"
+  },
+  "__resolveType": "website/pages/Page.tsx"
+}
