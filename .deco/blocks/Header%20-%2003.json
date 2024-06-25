@@ -39,8 +39,8 @@
       "25": "i",
       "26": "n",
       "27": "g",
-      "label": "Enjoy Complimentary Shipping",
-      "icon": "Desconto"
+      "icon": "Desconto",
+      "label": "Enjoy Complimentary Shipping"
     }
   ],
   "navItems": {
@@ -137,8 +137,8 @@
         ]
       },
       {
-        "url": "/roupa",
-        "name": "Roupa",
+        "url": "/roupas",
+        "name": "Roupas",
         "@type": "SiteNavigationElement",
         "image": [
           {
@@ -153,64 +153,76 @@
         ],
         "children": [
           {
-            "url": "/masculinos",
-            "name": "Novidades",
+            "url": "/roupas/blusa",
+            "name": "Blusas",
             "@type": "SiteNavigationElement",
             "children": []
           },
           {
             "image": [],
             "children": [],
-            "name": "lorem1",
-            "url": "/masculino/lorem1"
+            "name": "Calças",
+            "url": "/roupas/calca"
           },
           {
             "image": [],
             "children": [],
-            "name": "lorem2",
-            "url": "/masculino/lorem2"
+            "name": "Casacos",
+            "url": "/roupas/casaco"
           },
           {
             "image": [],
             "children": [],
-            "name": "lorem3",
-            "url": "/masculino/lorem3"
+            "name": "Vestidos",
+            "url": "/roupas/vestido"
           },
           {
             "image": [],
             "children": [],
-            "name": "lorem4",
-            "url": "/masculino/lorem4"
+            "name": "Saias",
+            "url": "/roupas/saia"
           },
           {
             "image": [],
             "children": [],
-            "name": "lorem5",
-            "url": "/masculino/lorem5"
+            "name": "Shorts",
+            "url": "/roupas/shorts"
           },
           {
             "image": [],
             "children": [],
-            "name": "lorem6",
-            "url": "/masculino/lorem6"
+            "name": "Tops",
+            "url": "/roupas/top"
           },
           {
             "image": [],
             "children": [],
-            "name": "lorem7",
-            "url": "/masculino/lorem7"
+            "url": "/roupas/blazer",
+            "name": "Blazers"
           },
           {
             "image": [],
             "children": [],
-            "name": "lorem8",
-            "url": "/masculino/lorem8"
+            "name": "Jeans",
+            "url": "/jeans"
           },
           {
             "image": [],
             "children": [],
-            "name": "lorem9",
-            "url": "/masculino/lorem9"
+            "name": "Tricot",
+            "url": "/tricot"
+          },
+          {
+            "image": [],
+            "children": [],
+            "name": "Alfaiataria",
+            "url": "/alfaiataria"
+          },
+          {
+            "image": [],
+            "children": [],
+            "name": "Veludo",
+            "url": "/veludo"
           }
         ]
       },

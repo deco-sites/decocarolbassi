@@ -9,16 +9,6 @@
       "elements": [
         {
           "action": {
-            "buttonPositionDesktop": "Left",
-            "buttonPositionMobile": "Left",
-            "href": "/teste",
-            "label": "Ver nova coleção",
-            "buttonNegative": false
-          },
-          "video": "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/9166/5bd25767-42a6-4503-8ea9-1cc8bcaabc4b"
-        },
-        {
-          "action": {
             "buttonPositionDesktop": "Center",
             "buttonPositionMobile": "Center",
             "href": "/",
@@ -27,6 +17,16 @@
           },
           "desktop": "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/9166/7575d7d7-f1a8-41c3-8ddc-26d6d9bb6345",
           "mobile": "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/9166/dc21d517-173d-4aba-9c69-ed9ad24e8772"
+        },
+        {
+          "action": {
+            "buttonPositionDesktop": "Left",
+            "buttonPositionMobile": "Left",
+            "href": "/teste",
+            "label": "Ver nova coleção",
+            "buttonNegative": false
+          },
+          "video": "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/9166/5bd25767-42a6-4503-8ea9-1cc8bcaabc4b"
         },
         {
           "action": {

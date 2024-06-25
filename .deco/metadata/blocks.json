@@ -397,9 +397,21 @@
     "blockType": "pages",
     "__resolveType": "website/pages/Page.tsx"
   },
-  "/.deco/blocks/pages-Login-270248.json": {
-    "name": "Login",
-    "path": "/login",
+  "/.deco/blocks/pages-Login%2520Page-882528.json": {
+    "name": "Login Page",
+    "path": "/login-page",
+    "blockType": "pages",
+    "__resolveType": "website/pages/Page.tsx"
+  },
+  "/.deco/blocks/pages-Black%2520Friday-359157.json": {
+    "name": "Black Friday",
+    "path": "/black-friday",
+    "blockType": "pages",
+    "__resolveType": "website/pages/Page.tsx"
+  },
+  "/.deco/blocks/pages-Cashback-722341.json": {
+    "name": "Cashback",
+    "path": "/cashback",
     "blockType": "pages",
     "__resolveType": "website/pages/Page.tsx"
   }
