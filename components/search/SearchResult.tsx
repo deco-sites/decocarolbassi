@@ -81,7 +81,11 @@ function Result({
           </strong>
         </h2>
       )}
-      <div class="max-w-[1750px] m-auto px-4 pb-4 sm:py-10 sm:px-8">
+      <div
+        class={`max-w-[1750px] m-auto px-4 pb-4 sm:px-8 ${
+          isFirstPage || !isPartial ? "sm:py-10 " : ""
+        }  `}
+      >
         {(isFirstPage || !isPartial) && (
           <>
             <SearchTitle title={currentBreadCrumb} />

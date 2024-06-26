@@ -36,6 +36,8 @@ function Cart({
   const { displayCart } = useUI();
   const isEmtpy = items.length === 0;
 
+  console.log({ items });
+
   return (
     <div
       class="flex flex-col justify-center items-center overflow-hidden"
@@ -60,7 +62,7 @@ function Cart({
             {/* Cart Items */}
             <ul
               role="list"
-              class="mt-6 px-2 flex-grow overflow-y-auto flex flex-col gap-6 w-full"
+              class="my-6 px-2 flex-grow overflow-y-auto flex flex-col gap-6 w-full"
             >
               {items.map((item, index) => (
                 <li key={index}>
@@ -79,9 +81,11 @@ function Cart({
             {/* Cart Footer */}
             <footer class="w-full">
               {/* Total */}
-              <div class="border-t border-secondary-neutral-200 pt-4 flex flex-col justify-end items-end gap-2 mx-4">
+              <div class="border-t border-[#E3E8EF] pt-4 flex flex-col justify-end items-end gap-2 mx-4">
                 <div class="flex justify-between items-center w-full">
-                  <span class="text-paragraph-color text-2xl">Subtotal</span>
+                  <span class="text-paragraph-color text-2xl font-light">
+                    Subtotal
+                  </span>
                   <span class="font-semibold text-paragraph-color text-2xl">
                     {formatPrice(total, currency, locale)}
                   </span>
