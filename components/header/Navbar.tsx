@@ -122,7 +122,7 @@ function Navbar(
           {!buttons?.hideWishlistButton && (
             <a
               class="flex items-center text-xs font-thin"
-              href="/myaccount-page"
+              href="/user-myaccount"
               aria-label="Wishlist"
             >
               <button
@@ -137,7 +137,7 @@ function Navbar(
           {!buttons?.hideAccountButton && (
             <a
               class="flex items-center text-xs font-thin"
-              href="/account"
+              href="/user-myaccount"
               aria-label="Account"
             >
               <div class="flex btn btn-circle btn-sm btn-ghost gap-1">

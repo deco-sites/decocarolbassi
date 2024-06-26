@@ -1,4 +1,5 @@
 import { SectionProps } from "deco/mod.ts";
+import { AppContext } from "../../apps/site.ts";
 import SearchResult, {
   Props as SearchResultProps,
 } from "../../components/search/SearchResult.tsx";
@@ -22,13 +23,20 @@ function WishlistGallery(props: SectionProps<typeof loader>) {
     );
   }
 
-  return <SearchResult {...props} />;
+  return (
+    <SearchResult
+      {...props}
+      categoryBanners={undefined}
+      device={props.device}
+    />
+  );
 }
 
-export const loader = (props: Props, req: Request) => {
+export const loader = (props: Props, req: Request, ctx: AppContext) => {
   return {
     ...props,
     url: req.url,
+    device: ctx.device,
   };
 };
 
