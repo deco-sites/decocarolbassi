@@ -39,6 +39,7 @@ const colors: Record<string, string> = {
   "Verde": "bg-[#00913f]",
   "Vermelho": "bg-[#ff0000]",
   "Vinho": "bg-[#844955]",
+  "Lilas": "bg-[#c388ff]",
   // Color variants - only applied when no color as content is passed
   "active": "text-base-content ring-1 ring-black rounded-full",
   "disabled": "line-through text-neutral-content",
@@ -47,15 +48,17 @@ const colors: Record<string, string> = {
 
 const imageColors: Record<string, string> = {
   "Estampado":
-    "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/9166/f7cf9301-d7ec-4aa1-8543-052872c99601",
+    "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/9166/08e7d686-09f5-4952-bcd8-cc88b8c3b45d",
   "Floral":
-    "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/9166/e9c8b2fb-7a02-43e7-9526-02ef130ae12a",
+    "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/9166/3c39fe50-ab8c-4744-8745-b60b29fe8303",
   "Colorido":
-    "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/9166/e61aedfd-aaf7-4d9d-93a7-5075d7c64e20",
+    "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/9166/0f45b090-73cf-4cac-8cb3-20e89514ecc9",
   "Xadrez":
-    "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/9166/19d3dcb2-ccb8-45e8-9907-4960b945c557",
+    "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/9166/8179d00d-9d95-46a0-8f5a-c634a7508eda",
   "Onca":
-    "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/9166/ccac4206-eccb-4d83-bd96-7141ab6f9b64",
+    "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/9166/db436dac-0977-4d75-bb54-ce02e6118feb",
+  "Madrepérola":
+    "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/9166/69c9faf4-2572-4288-be8a-f55a78e345fa",
 };
 
 interface Props {
@@ -83,15 +86,12 @@ function Avatar({ content, variant = "default", label, class: _class }: Props) {
   if (avatarImage) {
     return (
       <div
-        class={`avatar placeholder text-base font-light h-4 ${
-          imageColors[content] && colorVariantsClasses[variant]
-        }`}
+        class={`avatar placeholder text-base font-light h-6 `}
       >
         <div
           class={`${
-            imageColors[content] ??
-              "border-solid border-[1px] border-[#e9e9e9] rounded"
-          } rounded`}
+            imageColors[content]
+          } border-solid border-primary-600 border rounded-full`}
         >
           <img src={avatarImage} alt={content} />
         </div>
