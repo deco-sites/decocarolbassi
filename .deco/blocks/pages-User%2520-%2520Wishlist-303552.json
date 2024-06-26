@@ -1,0 +1,20 @@
+{
+  "name": "User - Wishlist",
+  "path": "/user-wishlist",
+  "sections": [
+    {
+      "__resolveType": "Header - 03"
+    },
+    {
+      "__resolveType": "site/sections/ProxyIframe.tsx",
+      "src": "/account/#wishlist"
+    },
+    {
+      "__resolveType": "Footer - 02"
+    }
+  ],
+  "seo": {
+    "__resolveType": "website/sections/Seo/SeoV2.tsx"
+  },
+  "__resolveType": "website/pages/Page.tsx"
+}
