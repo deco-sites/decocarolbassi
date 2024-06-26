@@ -49,7 +49,7 @@ function ButtonCommon({
             </button>
             <h1 className="m-8">
               Para adicionar o item a sua wishlist,{" "}
-              <a href="/user-myaccount">
+              <a href="/user-wishlist">
                 <span class="underline">faça seu login.</span>
               </a>
             </h1>
