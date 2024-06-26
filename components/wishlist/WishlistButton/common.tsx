@@ -66,9 +66,9 @@ function ButtonCommon({
         onClick={async (e) => {
           e.stopPropagation();
           e.preventDefault();
-          isOpen.value = true;
 
           if (!isUserLoggedIn) {
+            isOpen.value = true;
             return;
           }
 
@@ -107,7 +107,6 @@ function ButtonCommon({
             id="Heart"
             size={24}
             strokeWidth={.4}
-            fill={inWishlist ? "black" : "none"}
           />
         )}
 
@@ -121,8 +120,8 @@ export default ButtonCommon;
 
 const BlackHeartIcon = () => (
   <svg
-    width="800px"
-    height="800px"
+    width="24px"
+    height="24px"
     viewBox="0 0 15 15"
     id="heart"
     xmlns="http://www.w3.org/2000/svg"
