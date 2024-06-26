@@ -164,7 +164,7 @@ function ProductShelf({
 
         {layout?.showDots && layout?.collectionButton?.show && (
           <ul
-            class={`absolute left-[40px] carousel grid grid-cols-${products.length} mt-[35px] lg:mt-[50px] items-end col-span-full z-10 row-start-4 w-[calc(100%-110px)] lg:w-[400px] m-auto bg-secondary-neutral-600`}
+            class={`absolute left-[40px] lg:left-[50px] carousel grid grid-cols-${products.length} mt-[35px] lg:mt-[50px] items-end col-span-full z-10 row-start-4 w-[calc(100%-110px)] lg:w-[400px] m-auto bg-secondary-neutral-600`}
           >
             {products?.map((_, index) => (
               <li class="carousel-item w-full">
