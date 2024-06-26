@@ -1,0 +1,26 @@
+{
+  "name": "Wishlist",
+  "path": "/wishlist",
+  "sections": [
+    {
+      "__resolveType": "Header - 03"
+    },
+    {
+      "__resolveType": "site/sections/Product/Wishlist.tsx",
+      "page": {
+        "__resolveType": "vtex/loaders/intelligentSearch/productListingPage.ts",
+        "count": 4,
+        "sort": "price:desc",
+        "fuzzy": "automatic",
+        "selectedFacets": []
+      }
+    },
+    {
+      "__resolveType": "Footer - 02"
+    }
+  ],
+  "seo": {
+    "__resolveType": "website/sections/Seo/SeoV2.tsx"
+  },
+  "__resolveType": "website/pages/Page.tsx"
+}
