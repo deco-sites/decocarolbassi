@@ -397,12 +397,6 @@
     "blockType": "pages",
     "__resolveType": "website/pages/Page.tsx"
   },
-  "/.deco/blocks/pages-Login%2520Page-882528.json": {
-    "name": "Usúario - Minha Conta",
-    "path": "/myaccount-page",
-    "blockType": "pages",
-    "__resolveType": "website/pages/Page.tsx"
-  },
   "/.deco/blocks/pages-Black%2520Friday-359157.json": {
     "name": "Black Friday",
     "path": "/black-friday",
@@ -418,6 +412,12 @@
   "/.deco/blocks/pages-Roupas-965393.json": {
     "name": "Roupas",
     "path": "/roupas",
+    "blockType": "pages",
+    "__resolveType": "website/pages/Page.tsx"
+  },
+  "/.deco/blocks/pages-My%2520Account-891171.json": {
+    "name": "My Account",
+    "path": "/user-myaccount",
     "blockType": "pages",
     "__resolveType": "website/pages/Page.tsx"
   }
