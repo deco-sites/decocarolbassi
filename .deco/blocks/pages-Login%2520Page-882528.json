@@ -1,6 +1,6 @@
 {
-  "name": "MyAccount",
-  "path": "/my-account",
+  "name": "Usúario - Minha Conta",
+  "path": "/myaccount-page",
   "sections": [
     {
       "__resolveType": "Header - 03"

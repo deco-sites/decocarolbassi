@@ -398,8 +398,8 @@
     "__resolveType": "website/pages/Page.tsx"
   },
   "/.deco/blocks/pages-Login%2520Page-882528.json": {
-    "name": "MyAccount",
-    "path": "/my-account",
+    "name": "Usúario - Minha Conta",
+    "path": "/myaccount-page",
     "blockType": "pages",
     "__resolveType": "website/pages/Page.tsx"
   },
