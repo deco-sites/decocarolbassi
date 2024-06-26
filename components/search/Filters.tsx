@@ -103,7 +103,6 @@ function FilterValues(
 
 function OrderItem(props: OrderByProps) {
   const { item: { label, value }, sort } = props;
-  console.log({ value });
   return (
     <button
       onClick={applySort}

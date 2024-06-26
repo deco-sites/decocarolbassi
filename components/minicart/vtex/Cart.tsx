@@ -11,8 +11,6 @@ function Cart() {
   const currency = cart.value?.storePreferencesData.currencyCode ?? "BRL";
   const coupon = cart.value?.marketingData?.coupon ?? undefined;
 
-  console.log({ items });
-
   return (
     <BaseCart
       items={items.map((item) => ({
