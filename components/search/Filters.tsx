@@ -103,14 +103,32 @@ function FilterValues(
 
 function OrderItem(props: OrderByProps) {
   const { item: { label, value }, sort } = props;
-
+  console.log({ value });
   return (
-    <button onClick={applySort} value={value} class="flex items-center gap-2">
-      <div
-        aria-checked={sort === value}
-        class=" checkbox border-primary-700 rounded-full"
-      />
-      <span class="text-sm font-light text-paragraph-color capitalize">
+    <button
+      onClick={applySort}
+      value={value}
+      class={`flex items-center gap-2 
+    ${value === "orders:desc" ? "order-1" : ""}
+    ${value === "release:desc" ? "order-2" : ""}
+    ${value === "discount:desc" ? "order-3" : ""}
+    ${value === "price:desc" ? "order-4" : ""}
+    ${value === "price:asc" ? "order-5" : ""}
+    `}
+    >
+      <div class="border-primary-700 border-solid border rounded-full p-[1px]">
+        <div
+          aria-checked={sort === value}
+          class={`h-3 w-3 rounded-full ${
+            sort === value ? "bg-primary-500" : ""
+          }`}
+        />
+      </div>
+      <span
+        class={`text-sm ${
+          sort === value ? "font-medium" : "font-light"
+        }  text-paragraph-color capitalize`}
+      >
         {label}
       </span>
     </button>

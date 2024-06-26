@@ -45,6 +45,19 @@ const colors: Record<string, string> = {
   "default": "text-base-content bg-base-100",
 };
 
+const imageColors: Record<string, string> = {
+  "Estampado":
+    "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/9166/f7cf9301-d7ec-4aa1-8543-052872c99601",
+  "Floral":
+    "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/9166/e9c8b2fb-7a02-43e7-9526-02ef130ae12a",
+  "Colorido":
+    "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/9166/e61aedfd-aaf7-4d9d-93a7-5075d7c64e20",
+  "Xadrez":
+    "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/9166/19d3dcb2-ccb8-45e8-9907-4960b945c557",
+  "Onca":
+    "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/9166/ccac4206-eccb-4d83-bd96-7141ab6f9b64",
+};
+
 interface Props {
   variant?: "active" | "disabled" | "default";
   content: string;
@@ -66,6 +79,26 @@ const sizeVariantsClasses: Record<string, string> = {
 };
 
 function Avatar({ content, variant = "default", label, class: _class }: Props) {
+  const avatarImage = imageColors[content];
+  if (avatarImage) {
+    return (
+      <div
+        class={`avatar placeholder text-base font-light h-4 ${
+          imageColors[content] && colorVariantsClasses[variant]
+        }`}
+      >
+        <div
+          class={`${
+            imageColors[content] ??
+              "border-solid border-[1px] border-[#e9e9e9] rounded"
+          } rounded`}
+        >
+          <img src={avatarImage} alt={content} />
+        </div>
+      </div>
+    );
+  }
+
   return label === "Cores"
     ? (
       <div
