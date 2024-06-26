@@ -36,8 +36,6 @@ function Cart({
   const { displayCart } = useUI();
   const isEmtpy = items.length === 0;
 
-  console.log({ items });
-
   return (
     <div
       class="flex flex-col justify-center items-center overflow-hidden"

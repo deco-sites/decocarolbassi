@@ -73,7 +73,6 @@ const colorVariantsClasses = {
 
 function ColorAvatarFilter({ content, variant = "default" }: Props) {
   const avatarImage = imageColors[content];
-  console.log({ content });
   if (avatarImage) {
     return (
       <div
