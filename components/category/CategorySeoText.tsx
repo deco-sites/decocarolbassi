@@ -29,7 +29,7 @@ function CategorySeoText(
   const shortDescription = description.substring(0, 600);
 
   return (
-    <div className="container flex flex-col items-center justify-center text-center py-20 px-4">
+    <div className="container flex flex-col items-center justify-center text-center pb-20 px-4">
       <h2 className="text-xl text-dark-blue">{title}</h2>
       <div className="text-paragraph-color text-sm font-light mt-2 mb-6">
         <p

@@ -30,7 +30,7 @@ export default function ShowMore(
   return (
     <div
       class={(isAtPage && pageInfo.nextPage)
-        ? "flex justify-center col-span-full mt-16"
+        ? "flex justify-center col-span-full mt-16 mb-28"
         : "hidden"}
     >
       {children}

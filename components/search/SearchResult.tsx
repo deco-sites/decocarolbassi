@@ -82,8 +82,8 @@ function Result({
         </h2>
       )}
       <div
-        class={`max-w-[1750px] m-auto px-4 pb-4 sm:px-8 ${
-          isFirstPage || !isPartial ? "sm:py-10 " : ""
+        class={`max-w-[1750px] m-auto px-4 sm:px-8 ${
+          isFirstPage || !isPartial ? "sm:pt-10" : ""
         }  `}
       >
         {(isFirstPage || !isPartial) && (
@@ -122,6 +122,7 @@ function Result({
                   products={products}
                   offset={offset}
                   layout={{ columns: layout?.columns, format }}
+                  categoryBanners={categoryBanners!}
                   pageInfo={pageInfo}
                   url={url}
                   device={device}

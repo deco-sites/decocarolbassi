@@ -8,6 +8,7 @@ import ProductCardSliderImages from "../../islands/ProductCardSliderImages.tsx";
 import ShowMore from "../../islands/ShowMore.tsx";
 import { usePlatform } from "../../sdk/usePlatform.tsx";
 import ProductCardSliderImagesMobile from "./Gallery/ProductCardSliderImages/ProductCardSliderImagesMobile.tsx";
+import { CategoryBannersMediaSource } from "./ProductGalleryWithBanner.tsx";
 
 export interface Columns {
   mobile?: 1 | 2;
@@ -23,6 +24,7 @@ export interface Props {
     format?: Format;
   };
   url: URL;
+  categoryBanners: CategoryBannersMediaSource;
   device: Device;
 }
 
@@ -39,7 +41,7 @@ const DESKTOP_COLUMNS = {
 };
 
 function ProductGallery(
-  { products, pageInfo, layout, offset, url, device }: Props,
+  { products, pageInfo, layout, offset, url, device, categoryBanners }: Props,
 ) {
   const platform = usePlatform();
   const mobile = MOBILE_COLUMNS[layout?.columns?.mobile ?? 2];
@@ -53,9 +55,17 @@ function ProductGallery(
     partialUrl?.searchParams.set("partial", "true");
   }
 
+  const isFirstPage = !pageInfo.previousPage;
+  const hasNextPage = pageInfo.nextPage;
+
+  console.log({ isFirstPage });
+
   return (
     <div
-      class={`grid ${mobile} gap-2 items-center ${desktop} sm:gap-10`}
+      class={`grid ${mobile} gap-2 items-center ${desktop} sm:gap-y-8 sm:gap-x-2
+      ${!categoryBanners && !isFirstPage ? "mt-2 sm:mt-8" : ""} ${
+        hasNextPage ? "" : "mb-24"
+      }`}
     >
       {layout?.format == "Show More" && (
         <Head>

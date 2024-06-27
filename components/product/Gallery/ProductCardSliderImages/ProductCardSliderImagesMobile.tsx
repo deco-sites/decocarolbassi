@@ -186,7 +186,7 @@ function ProductCardSliderImagesMobile({
         </div>
 
         {/* Price from/to */}
-        <div class="flex gap-2 items-center justify-start text-dark-blue ml-2 font-light">
+        <div class="flex gap-2 items-center justify-start text-dark-blue font-light">
           {hasOfferAvailable
             ? (
               <>
@@ -195,7 +195,7 @@ function ProductCardSliderImagesMobile({
                     {formatPrice(listPrice, offers?.priceCurrency)}
                   </span>
                 )}
-                <span>
+                <span class="text-sm">
                   {formatPrice(price, offers?.priceCurrency)}
                 </span>
                 {hasDiscount && (
