@@ -83,7 +83,7 @@ function Store({ index, store }: { store: StoreProps; index: number }) {
 
 function Stores({ stores }: { stores: StoreProps[] }) {
   return (
-    <div class="absolute lg:top-[15%] bg-secondary-neutral-100 py-8 px-10 left-8 min-w-[525px] border border-solid border-primary-300">
+    <div class="absolute lg:top-[15%] bg-secondary-neutral-100 py-8 px-10 left-8 min-w-[525px] border border-solid border-primary-300 lg:max-h-[800px] 2xl:max-h-[950px] overflow-y-auto">
       <h2 class="text-dark-blue uppercase mb-8 text-2xl">
         Nossas Lojas
       </h2>
@@ -170,7 +170,7 @@ export default function Map({ apiKey, stores }: Props) {
 
   return (
     <div class="relative">
-      <div id="map" class="w-full h-[100svh]"></div>
+      <div id="map" class="w-full lg:min-h-[130svh] 2xl:min-h-[120svh] "></div>
       <Stores stores={storesData} />
     </div>
   );

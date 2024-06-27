@@ -6,18 +6,33 @@ import Button from "../../components/ui/Button.tsx";
 import Drawer from "../../components/ui/Drawer.tsx";
 import Icon from "../../components/ui/Icon.tsx";
 import { useUI } from "../../sdk/useUI.ts";
+import BreadcrumbCollection from "../ui/BreadcrumbCollection.tsx";
 
 export type Props =
   & Pick<ProductListingPage, "filters" | "breadcrumb" | "sortOptions">
   & {
     displayFilter?: boolean;
+    isCollectionPage?: boolean;
+    collectionName: string;
   };
 
 function SearchControls(
-  { filters, breadcrumb, displayFilter, sortOptions }: Props,
+  {
+    filters,
+    breadcrumb,
+    displayFilter,
+    sortOptions,
+    isCollectionPage,
+    collectionName,
+  }: Props,
 ) {
   const open = useSignal(false);
   const { displayGridLayout } = useUI();
+
+  const collectionData = {
+    name: collectionName ?? "",
+    item: collectionName ?? "",
+  };
 
   return (
     <Drawer
@@ -45,7 +60,14 @@ function SearchControls(
     >
       <div class="flex flex-col justify-between px-4 mb-2 sm:p-0 sm:gap-4 sm:flex-row sm:h-[53px] sm:border-b sm:border-base-200">
         <div class="flex flex-row items-center sm:p-0 mb-2">
-          <Breadcrumb itemListElement={breadcrumb?.itemListElement} />
+          {isCollectionPage
+            ? (
+              <BreadcrumbCollection
+                itemListElement={breadcrumb?.itemListElement}
+                collectionBreadcrumb={collectionData}
+              />
+            )
+            : <Breadcrumb itemListElement={breadcrumb?.itemListElement} />}
         </div>
 
         <div class="flex flex-row items-center justify-between border-b border-base-200 sm:gap-4 sm:border-none">

@@ -54,6 +54,7 @@ function ProductInfo(
   }
 
   const { breadcrumbList, product } = page;
+
   const {
     productID,
     offers,
@@ -61,23 +62,39 @@ function ProductInfo(
     isVariantOf,
     additionalProperty = [],
   } = product;
-  const description = product.description || isVariantOf?.description;
+
   const productName = product.isVariantOf?.name;
+  const description = product.description || isVariantOf?.description;
+
   const productSpecification = product.isVariantOf?.additionalProperty.find((
     spec,
   ) => spec.name === "Especificação")?.value?.split("\r\n");
+
   const {
     price = 0,
     listPrice,
     seller = "1",
     availability,
   } = useOffer(offers);
+
   const productGroupID = isVariantOf?.productGroupID ?? "";
   const breadcrumb = {
     ...breadcrumbList,
     itemListElement: breadcrumbList?.itemListElement.slice(0, -1),
     numberOfItems: breadcrumbList.numberOfItems - 1,
   };
+
+  const productSimilars = product.isSimilarTo?.map((similar) => {
+    return {
+      url: similar.url ?? "",
+      sku: similar.sku ?? "",
+      color: similar.additionalProperty?.find((property) =>
+        property.name === "Cores"
+      )?.value ?? "",
+    };
+  });
+
+  console.log({ productSimilars });
 
   const eventItem = mapProductToAnalyticsItem({
     product,

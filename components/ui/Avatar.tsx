@@ -66,6 +66,7 @@ interface Props {
   content: string;
   label?: string;
   class?: string;
+  productExactColor?: string;
 }
 
 const colorVariantsClasses = {
@@ -81,7 +82,10 @@ const sizeVariantsClasses: Record<string, string> = {
   default: "text-base-content bg-base-100",
 };
 
-function Avatar({ content, variant = "default", label, class: _class }: Props) {
+function Avatar(
+  { content, variant = "default", label, class: _class, productExactColor }:
+    Props,
+) {
   const avatarImage = imageColors[content];
   if (avatarImage) {
     return (
@@ -107,9 +111,12 @@ function Avatar({ content, variant = "default", label, class: _class }: Props) {
         }`}
       >
         <div
-          class={`${colors[content] ?? colors[variant]} rounded-full`}
+          className={`${colors[content] ?? colors[variant]} rounded-full`}
+          style={productExactColor
+            ? { backgroundColor: productExactColor }
+            : {}}
         >
-          <span class="uppercase">
+          <span className="uppercase">
             {colors[content] ? "" : content.substring(0, 2)}
           </span>
         </div>

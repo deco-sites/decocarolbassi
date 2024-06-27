@@ -67,20 +67,18 @@ function Result({
   const zeroIndexedOffsetPage = pageInfo.currentPage - startingPage;
   const offset = zeroIndexedOffsetPage * perPage;
 
+  const isCollectionPage = pageInfo?.pageTypes?.some((type) =>
+    type === "Collection"
+  );
+
   const isPartial = url.searchParams.get("partial") === "true";
   const isFirstPage = !pageInfo.previousPage;
   const isSearchPage = url.search.includes("?q");
 
+  const collectionName = isCollectionPage ? url.pathname.split("/")[1] : "";
+
   return (
     <>
-      {isFirstPage && isSearchPage && (
-        <h2 class="max-w-[1750px] px-4 sm:px-8 pt-6 text-dark-blue font-light sm:font-normal text-base sm:text-[24px] m-auto leading-[150%]">
-          RESULTADO DA BUSCA POR:{" "}
-          <strong class="uppercase font-semibold text-dark-blue text-base sm:text-[24px]">
-            {page?.seo?.title !== "Category_Page_Title" && page?.seo?.title}
-          </strong>
-        </h2>
-      )}
       <div
         class={`max-w-[1750px] m-auto px-4 sm:px-8 ${
           isFirstPage || !isPartial ? "sm:pt-10" : ""
@@ -88,11 +86,26 @@ function Result({
       >
         {(isFirstPage || !isPartial) && (
           <>
-            <SearchTitle title={currentBreadCrumb} />
+            {isSearchPage
+              ? (
+                <h2 class="max-w-[1750px] mb-6 text-dark-blue font-light sm:font-normal text-base sm:text-[24px] m-auto leading-[150%]">
+                  RESULTADO DA BUSCA POR:{" "}
+                  <strong class="uppercase font-semibold text-dark-blue text-base sm:text-[24px]">
+                    {page?.seo?.title !== "Category_Page_Title" &&
+                      page?.seo?.title}
+                  </strong>
+                </h2>
+              )
+              : isCollectionPage
+              ? <SearchTitle title={collectionName} />
+              : <SearchTitle title={currentBreadCrumb} />}
+
             <SearchControls
               sortOptions={sortOptions}
               filters={filters}
               breadcrumb={breadcrumb}
+              isCollectionPage={isCollectionPage}
+              collectionName={collectionName}
               displayFilter={layout?.variant === "drawer"}
             />
           </>

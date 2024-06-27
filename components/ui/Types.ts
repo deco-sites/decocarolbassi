@@ -1,4 +1,5 @@
 import type { ImageWidget } from "apps/admin/widgets.ts";
+import { ImageObject, ProductDetailsPage } from "apps/commerce/types.ts";
 
 export interface Layout {
   sectionWidth?: "100%" | "Contained";
@@ -152,9 +153,13 @@ export const buttonClasses = {
 };
 
 export function getButtonClasses(style: ButtonType) {
-  const allButtonClasses = `btn ${buttonClasses[style?.color || "Default"]} ${
-    style?.outline ? "btn-outline" : ""
-  }`;
+  const allButtonClasses = `btn ${buttonClasses[style?.color || "Default"]} ${style?.outline ? "btn-outline" : ""
+    }`;
 
   return allButtonClasses;
+}
+
+export interface ProductDetailsExtended extends ProductDetailsPage {
+  productImages: ImageObject[];
+  productSimilars: any[];
 }

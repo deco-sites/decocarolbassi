@@ -10,6 +10,12 @@ interface Props {
 
 function VariantSelector({ product }: Props) {
   const { url, isVariantOf } = product;
+
+  const getProductExactColor = isVariantOf?.additionalProperty.find((
+    { name },
+  ) => name === "Cor exata")?.value;
+
+  console.log({ getProductExactColor });
   const hasVariant = isVariantOf?.hasVariant ?? [];
   const possibilities = useVariantPossibilities(hasVariant, product);
 
@@ -61,6 +67,7 @@ function VariantSelector({ product }: Props) {
                                 relativeLink === relativeUrl
                             ? "active"
                             : "default"}
+                          productExactColor={getProductExactColor!}
                         />
                       </button>
                     </li>

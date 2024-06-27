@@ -191,7 +191,7 @@ export default function ProductCardWithBannerMobile(
       </div>
 
       <div
-        class={`grid grid-cols-${displayGridLayout.value} gap-2 items-center ${desktopColumns} sm:gap-2 my-8`}
+        class={`grid grid-cols-${displayGridLayout.value} gap-2 items-center ${desktopColumns} sm:gap-2 my-4`}
       >
         {productsGrid6.map((product: Product, index) => (
           <ProductCardSliderImagesMobile

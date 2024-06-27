@@ -33,6 +33,7 @@ function ProductCard({
   index,
 }: Props) {
   const { url, productID, image: images, offers, isVariantOf } = product;
+
   const id = `product-card-${productID}`;
   const [front, back] = images ?? [];
   const { listPrice, price } = useOffer(offers);

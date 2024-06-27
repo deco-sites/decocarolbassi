@@ -58,12 +58,10 @@ function ProductGallery(
   const isFirstPage = !pageInfo.previousPage;
   const hasNextPage = pageInfo.nextPage;
 
-  console.log({ isFirstPage });
-
   return (
     <div
-      class={`grid ${mobile} gap-2 items-center ${desktop} sm:gap-y-8 sm:gap-x-2
-      ${!categoryBanners && !isFirstPage ? "mt-2 sm:mt-8" : ""} ${
+      class={`grid ${mobile} gap-2 items-center ${desktop} sm:gap-y-4 sm:gap-x-2
+      ${!categoryBanners && !isFirstPage ? "mt-2 sm:mt-4" : ""} ${
         hasNextPage ? "" : "mb-24"
       }`}
     >

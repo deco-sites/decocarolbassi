@@ -1,4 +1,5 @@
 import type { SiteNavigationElement } from "apps/commerce/types.ts";
+import { useCart } from "apps/vtex/hooks/useCart.ts";
 import Icon from "../../components/ui/Icon.tsx";
 
 export interface Props {
@@ -9,6 +10,7 @@ function MenuItem(
   { item, childNode }: { item: SiteNavigationElement; childNode?: boolean },
 ) {
   const notHasChildren = childNode || !item.children;
+
   return (
     <div class="collapse collapse-plus">
       <input type="checkbox" class={`${notHasChildren ? "hidden" : ""}`} />
@@ -51,6 +53,13 @@ function MenuItem(
 }
 
 function Menu({ items }: Props) {
+  const { cart } = useCart();
+  const {
+    items: cartItems = [],
+  } = cart.value ?? {};
+
+  const totalItems = cartItems.length;
+
   return (
     <div class="flex flex-col h-full w-[350px]">
       <ul class="px-4 flex-grow flex flex-col divide-y divide-base-200 mt-4">
@@ -65,7 +74,7 @@ function Menu({ items }: Props) {
         <li class="w-full">
           <a
             class="flex flex-col items-center px-4 py-4 m-3 border-2 border-dotted border-secondary-neutral-600"
-            href="https://www.deco.cx"
+            href="/user-myaccount"
           >
             <UserIcon />
             <span class="text-sm">Minha conta</span>
@@ -73,9 +82,15 @@ function Menu({ items }: Props) {
         </li>
         <li class="w-full">
           <a
-            class="flex flex-col items-center px-4 py-4 m-3 border-2 border-dotted border-secondary-neutral-600"
-            href="https://www.deco.cx"
+            class="flex flex-col relative items-center px-4 py-4 m-3 border-2 border-dotted border-secondary-neutral-600"
+            href="/checkout"
           >
+            <span
+              class={`indicator-item absolute badge badge-[#FD545F] w-[8px] h-[8px] bg-[#FD545F] border-[#FD545F] top-[31px] right-[63px] p-0 ${
+                totalItems === 0 ? "hidden" : ""
+              }`}
+            >
+            </span>
             <Icon id="ShoppingCart" size={26} strokeWidth={2} />
             <span class="text-sm">Sacola</span>
           </a>

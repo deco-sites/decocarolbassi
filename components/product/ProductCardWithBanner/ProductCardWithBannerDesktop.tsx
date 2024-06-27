@@ -189,7 +189,7 @@ export default function ProductCardWithBannerDesktop(
       </div>
 
       <div
-        class={`grid ${mobileColumns} gap-2 items-center ${desktopColumns} sm:gap-2 my-8`}
+        class={`grid ${mobileColumns} gap-2 items-center ${desktopColumns} sm:gap-2 my-4`}
       >
         {productsGrid6.map((product: Product, index) => (
           <ProductCardSliderImages

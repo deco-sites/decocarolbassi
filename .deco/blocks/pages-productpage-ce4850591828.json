@@ -20,11 +20,7 @@
     {
       "__resolveType": "site/sections/Product/ProductDetails.tsx",
       "page": {
-        "__resolveType": "commerce/loaders/product/extensions/detailsPage.ts",
-        "data": {
-          "__resolveType": "PDP Loader"
-        },
-        "extensions": []
+        "__resolveType": "PDP Loader"
       },
       "productExchangesReturnsPolicy": {
         "title": "Trocas e Devoluções",
