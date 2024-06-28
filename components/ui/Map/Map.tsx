@@ -28,33 +28,30 @@ export interface Props {
   stores: StoreProps[];
 }
 
-function Store({ index, store }: { store: StoreProps; index: number }) {
+function Store({
+  index,
+  store,
+  isOpen,
+  onToggle,
+}: {
+  store: StoreProps;
+  index: number;
+  isOpen: boolean;
+  onToggle: () => void;
+}) {
   const { storeLocal } = useUI();
-
-  const storeSelected = store.storeInfo.some((store) => {
-    const coordinates = {
-      lat: store.coordinates.latitude,
-      lng: store.coordinates.longitude,
-    };
-    return JSON.stringify(coordinates) === JSON.stringify(storeLocal.value);
-  });
-
-  const isOpen = useSignal<boolean>((storeSelected || index === 0) ?? false);
 
   return (
     <div class="my-8">
-      <button
-        class="flex justify-between w-full"
-        onClick={() => isOpen.value = !isOpen.value}
-      >
+      <button class="flex justify-between w-full" onClick={onToggle}>
         <h3 class="uppercase font-light text-dark-blue">{store.city}</h3>
-        {isOpen.value
+        {isOpen
           ? <Icon id="ArrowDown" class="rotate-180" size={24} />
           : <Icon id="ArrowDown" size={24} />}
       </button>
       <div class="max-h-96 overflow-y-auto">
         {store.storeInfo.map((storeInfo) => {
-          return isOpen.value && (
+          return isOpen && (
             <div
               class={`my-8 fade-in ${isOpen ? "animate-fade-in" : "opacity-0"}`}
             >
@@ -82,6 +79,8 @@ function Store({ index, store }: { store: StoreProps; index: number }) {
 }
 
 function Stores({ stores }: { stores: StoreProps[] }) {
+  const openStoreIndex = useSignal<number | null>(0);
+
   return (
     <div class="absolute lg:top-[15%] bg-secondary-neutral-100 py-8 px-10 left-8 min-w-[525px] border border-solid border-primary-300 lg:max-h-[800px] 2xl:max-h-[950px] overflow-y-auto">
       <h2 class="text-dark-blue uppercase mb-8 text-2xl">
@@ -89,7 +88,16 @@ function Stores({ stores }: { stores: StoreProps[] }) {
       </h2>
       <div>
         {stores.map((store, index) => (
-          <Store key={index} index={index} store={store} />
+          <Store
+            key={index}
+            index={index}
+            store={store}
+            isOpen={openStoreIndex.value === index}
+            onToggle={() =>
+              openStoreIndex.value === index
+                ? openStoreIndex.value = null
+                : openStoreIndex.value = index}
+          />
         ))}
       </div>
     </div>
