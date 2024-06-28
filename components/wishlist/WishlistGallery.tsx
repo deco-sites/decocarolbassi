@@ -1,13 +1,41 @@
 import { SectionProps } from "deco/mod.ts";
-import { AppContext } from "../../apps/site.ts";
 import SearchResult, {
   Props as SearchResultProps,
 } from "../../components/search/SearchResult.tsx";
+import { AppContext } from "deco/mod.ts";
 
 export type Props = SearchResultProps;
 
+export const loader = async (
+  props: Props,
+  req: Request,
+  ctx: AppContext<any>,
+) => {
+  if (!props.page || !props.page.products || props.page.products.length === 0) {
+    return {
+      ...props,
+      url: req.url,
+      device: ctx.device,
+    };
+  }
+
+  const products = await ctx.invoke.vtex.loaders.intelligentSearch.productList({
+    ids: props.page?.products.map((product) => product.productID),
+  });
+
+  return {
+    ...props,
+    url: req.url,
+    device: ctx.device,
+    page: {
+      ...props.page,
+      products,
+    },
+  };
+};
+
 function WishlistGallery(props: SectionProps<typeof loader>) {
-  const isEmpty = !props.page || props.page.products.length === 0;
+  const isEmpty = !props.page || props.page.products?.length === 0;
 
   if (isEmpty) {
     return (
@@ -31,13 +59,5 @@ function WishlistGallery(props: SectionProps<typeof loader>) {
     />
   );
 }
-
-export const loader = (props: Props, req: Request, ctx: AppContext) => {
-  return {
-    ...props,
-    url: req.url,
-    device: ctx.device,
-  };
-};
 
 export default WishlistGallery;

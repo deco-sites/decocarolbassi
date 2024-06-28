@@ -245,6 +245,12 @@
     "blockType": "pages",
     "__resolveType": "website/pages/Page.tsx"
   },
+  "pages-Wishlist-808280.json": {
+    "name": "Wishlist",
+    "path": "/wishlist",
+    "blockType": "pages",
+    "__resolveType": "website/pages/Page.tsx"
+  },
   "/.deco/blocks/pages-offline-b9c52de8c7b3.json": {
     "name": "Offline",
     "path": "/offline",

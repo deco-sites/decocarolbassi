@@ -8,11 +8,9 @@
     {
       "__resolveType": "site/sections/Product/Wishlist.tsx",
       "page": {
-        "__resolveType": "vtex/loaders/intelligentSearch/productListingPage.ts",
-        "count": 4,
-        "sort": "price:desc",
-        "fuzzy": "automatic",
-        "selectedFacets": []
+        "__resolveType": "vtex/loaders/product/wishlist.ts",
+        "count": 12,
+        "offset": 1
       }
     },
     {
