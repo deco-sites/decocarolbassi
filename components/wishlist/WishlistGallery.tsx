@@ -1,4 +1,3 @@
-import { useUser } from "apps/vtex/hooks/useUser.ts";
 import { AppContext, SectionProps } from "deco/mod.ts";
 import SearchResult, {
   Props as SearchResultProps,
@@ -35,11 +34,9 @@ export const loader = async (
 };
 
 function WishlistGallery(props: SectionProps<typeof loader>) {
-  const { user } = useUser();
-  const isUserLoggedIn = Boolean(user.value?.email);
   const isEmpty = !props.page || props.page.products?.length === 0;
 
-  if (!isUserLoggedIn) {
+  if (isEmpty) {
     return (
       <div class="container mx-4 sm:mx-auto">
         <div class="mx-10 my-20 flex flex-col gap-4 justify-center items-center">
@@ -52,21 +49,6 @@ function WishlistGallery(props: SectionProps<typeof loader>) {
               para visualização a lista de produtos de sua wishlist.
             </span>
           </p>
-        </div>
-      </div>
-    );
-  }
-
-  if (isUserLoggedIn && isEmpty) {
-    return (
-      <div class="container mx-4 sm:mx-auto">
-        <div class="mx-10 my-20 flex flex-col gap-4 justify-center items-center">
-          <span class="font-medium text-2xl">
-            Favoritos
-          </span>
-          <span>
-            Nenhum produto encontrado.
-          </span>
         </div>
       </div>
     );
