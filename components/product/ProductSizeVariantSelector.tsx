@@ -8,10 +8,8 @@ import { mapProductToAnalyticsItem } from "apps/commerce/utils/productToAnalytic
 import Avatar from "../../components/ui/Avatar.tsx";
 import AddToCartButtonVTEX from "../../islands/AddToCartButton/vtex.tsx";
 import OutOfStock from "../../islands/OutOfStock.tsx";
-import { relative } from "../../sdk/url.ts";
 import { useOffer } from "../../sdk/useOffer.ts";
 import { useSizeVariantOfferAvailability } from "../../sdk/useOfferAvailability.ts";
-import { useVariantPossibilities } from "../../sdk/useVariantPossiblities.ts";
 import Button from "../ui/ButtonBanner.tsx";
 
 interface Props {
@@ -21,6 +19,7 @@ interface Props {
 
 function SizeSelector({ product, breadcrumb }: Props) {
   const signalProduct = useSignal<ProductLeaf | null>(null);
+  const errorMessage = useSignal<boolean>(false);
 
   const selectedProduct = signalProduct.value ? signalProduct.value : product;
 
@@ -88,9 +87,27 @@ function SizeSelector({ product, breadcrumb }: Props) {
 
       {!hasProductSelected
         ? (
-          <div class="mt-4 sm:mt-10 flex flex-col gap-2">
-            <Button class="w-full" negative>COMPRAR</Button>
-            <Button class="w-full">ADICIONAR A SACOLA</Button>
+          <div class="mt-4 sm:mt-10 flex flex-col gap-2 relative">
+            <span
+              class={errorMessage.value
+                ? "block text-error-medium absolute -top-7"
+                : "hidden"}
+            >
+              Selecione um Tamanho para continuar!
+            </span>
+            <Button
+              class="w-full hover:bg-primary-700 hover:text-secondary-neutral-100"
+              negative
+              onClick={() => errorMessage.value = true}
+            >
+              COMPRAR
+            </Button>
+            <Button
+              class="w-full hover:bg-primary-700"
+              onClick={() => errorMessage.value = true}
+            >
+              ADICIONAR A SACOLA
+            </Button>
           </div>
         )
         : null}
@@ -122,92 +139,4 @@ function SizeSelector({ product, breadcrumb }: Props) {
   );
 }
 
-function VariantSelector({ product, breadcrumb }: Props) {
-  const { url, isVariantOf } = product;
-
-  const productSimilars = product.isSimilarTo?.map((similar) => {
-    return {
-      url: similar.url ?? "",
-      sku: similar.sku ?? "",
-      color: similar.additionalProperty?.find((property) =>
-        property.name === "Cores"
-      )?.value ?? "",
-    };
-  });
-
-  console.log({ productSimilars });
-
-  const getProductExactColor = isVariantOf?.additionalProperty.find((
-    { name },
-  ) => name === "Cor exata")?.value;
-
-  console.log({ getProductExactColor });
-  const hasVariant = isVariantOf?.hasVariant ?? [];
-  const possibilities = useVariantPossibilities(hasVariant, product);
-
-  const getActiveValue = (variantName: string) => {
-    const variants = possibilities[variantName];
-    const relativeUrl = relative(url);
-    for (const [value, link] of Object.entries(variants)) {
-      if (relative(link) === relativeUrl) {
-        return value;
-      }
-    }
-    return null;
-  };
-
-  return (
-    <ul className="flex flex-col gap-4">
-      {Object.keys(possibilities).map((name) => {
-        const activeValue = getActiveValue(name);
-        const variants = Object.entries(possibilities[name]);
-
-        if (name.startsWith("Cores")) {
-          return (
-            <li
-              key={name}
-              className="flex flex-col gap-2"
-              data-name={activeValue}
-            >
-              <span className="text-base text-dark-blue uppercase font-light">
-                Cor :{" "}
-                <span class="text-paragraph-color capitalize">
-                  {activeValue}
-                </span>
-              </span>
-              <ul className="flex flex-row gap-3">
-                {variants.map(([value, link], index) => {
-                  const { sizeOfferIsAvailable } =
-                    useSizeVariantOfferAvailability(index, isVariantOf);
-
-                  const relativeUrl = relative(url);
-                  const relativeLink = relative(link);
-                  return (
-                    <li key={value}>
-                      <button f-partial={relativeLink} f-client-nav>
-                        <Avatar
-                          label={name}
-                          content={value}
-                          variant={!sizeOfferIsAvailable && "disabled" ||
-                              sizeOfferIsAvailable &&
-                                relativeLink === relativeUrl
-                            ? "active"
-                            : "default"}
-                          productExactColor={getProductExactColor!}
-                        />
-                      </button>
-                    </li>
-                  );
-                })}
-              </ul>
-            </li>
-          );
-        }
-
-        return <SizeSelector product={product} breadcrumb={breadcrumb} />;
-      })}
-    </ul>
-  );
-}
-
-export default VariantSelector;
+export default SizeSelector;

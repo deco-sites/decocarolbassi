@@ -1,15 +1,17 @@
-import type { Product } from "apps/commerce/types.ts";
+import type { BreadcrumbList, Product } from "apps/commerce/types.ts";
 import Avatar from "../../components/ui/Avatar.tsx";
+import SizeSelector from "../../islands/ProductSizeVariantSelector.tsx";
 import { relative } from "../../sdk/url.ts";
 import { useSizeVariantOfferAvailability } from "../../sdk/useOfferAvailability.ts";
 import { useVariantPossibilities } from "../../sdk/useVariantPossiblities.ts";
 
 interface Props {
   product: Product;
+  breadcrumb?: BreadcrumbList;
 }
 
-function VariantSelector({ product }: Props) {
-  const { url, isVariantOf } = product;
+function VariantSelector({ product, breadcrumb }: Props) {
+  const { url, isVariantOf, isSimilarTo } = product;
 
   const productSimilars = product.isSimilarTo?.map((similar) => {
     return {
@@ -90,39 +92,7 @@ function VariantSelector({ product }: Props) {
           );
         }
 
-        return (
-          <li key={name} className="flex flex-col gap-2">
-            <span className="text-base text-dark-blue uppercase font-light">
-              {name}
-            </span>
-            <ul className="flex flex-row gap-3">
-              {variants.map(([value, link], index) => {
-                const relativeUrl = relative(url);
-                const relativeLink = relative(link);
-                const { sizeOfferIsAvailable } =
-                  useSizeVariantOfferAvailability(index, isVariantOf);
-                return (
-                  <li key={value}>
-                    <button f-partial={relativeLink} f-client-nav>
-                      <Avatar
-                        content={value}
-                        variant={!sizeOfferIsAvailable
-                          ? "disabled"
-                          : relativeLink === relativeUrl
-                          ? "active"
-                          : "default"}
-                        class={relativeLink === relativeUrl &&
-                            !sizeOfferIsAvailable
-                          ? "border-solid border-primary-600 border"
-                          : ""}
-                      />
-                    </button>
-                  </li>
-                );
-              })}
-            </ul>
-          </li>
-        );
+        return <SizeSelector product={product} breadcrumb={breadcrumb} />;
       })}
     </ul>
   );
