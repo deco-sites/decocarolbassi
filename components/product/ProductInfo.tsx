@@ -9,7 +9,6 @@ import { formatPrice } from "../../sdk/format.ts";
 import { useId } from "../../sdk/useId.ts";
 import { useOffer } from "../../sdk/useOffer.ts";
 import { usePercentualDiscount } from "../../sdk/usePercentualPrice.ts";
-import { usePlatform } from "../../sdk/usePlatform.tsx";
 import { ProductPolicy } from "../../sections/Product/ProductDetails.tsx";
 import ProductSelector from "../product/ProductVariantSelector.tsx";
 import { MediaOptionProps } from "../share/ShareProduct.tsx";
@@ -38,7 +37,6 @@ function ProductInfo(
     socialOptions,
   }: Props,
 ) {
-  const platform = usePlatform();
   const id = useId();
 
   if (page === null) {
@@ -50,9 +48,7 @@ function ProductInfo(
   const {
     productID,
     offers,
-    gtin,
     isVariantOf,
-    additionalProperty = [],
   } = product;
 
   const productName = product.isVariantOf?.name;
@@ -65,8 +61,6 @@ function ProductInfo(
   const {
     price = 0,
     listPrice,
-    seller = "1",
-    availability,
   } = useOffer(offers);
 
   const productGroupID = isVariantOf?.productGroupID ?? "";

@@ -13,7 +13,7 @@ interface Props {
 function VariantSelector({ product, breadcrumb }: Props) {
   const { url, isVariantOf, isSimilarTo } = product;
 
-  const productSimilars = product.isSimilarTo?.map((similar) => {
+  const productSimilars = isSimilarTo?.map((similar) => {
     return {
       url: similar.url ?? "",
       sku: similar.sku ?? "",
@@ -29,7 +29,6 @@ function VariantSelector({ product, breadcrumb }: Props) {
     { name },
   ) => name === "Cor exata")?.value;
 
-  console.log({ getProductExactColor });
   const hasVariant = isVariantOf?.hasVariant ?? [];
   const possibilities = useVariantPossibilities(hasVariant, product);
 

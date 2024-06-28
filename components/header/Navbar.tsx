@@ -122,7 +122,7 @@ function Navbar(
           {!buttons?.hideWishlistButton && (
             <a
               class="flex items-center text-xs font-thin"
-              href="/user-wishlist"
+              href="/wishlist"
               aria-label="Wishlist"
             >
               <button

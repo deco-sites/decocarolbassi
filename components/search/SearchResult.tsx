@@ -75,7 +75,7 @@ function Result({
   const isFirstPage = !pageInfo.previousPage;
   const isSearchPage = url.search.includes("?q");
 
-  const collectionName = isCollectionPage ? url.pathname.split("/")[1] : "";
+  const pageName = url.pathname.split("/")[1] ?? "";
 
   return (
     <>
@@ -96,8 +96,8 @@ function Result({
                   </strong>
                 </h2>
               )
-              : isCollectionPage
-              ? <SearchTitle title={collectionName} />
+              : !currentBreadCrumb
+              ? <SearchTitle title={pageName} />
               : <SearchTitle title={currentBreadCrumb} />}
 
             <SearchControls
@@ -105,7 +105,7 @@ function Result({
               filters={filters}
               breadcrumb={breadcrumb}
               isCollectionPage={isCollectionPage}
-              collectionName={collectionName}
+              collectionName={pageName}
               displayFilter={layout?.variant === "drawer"}
             />
           </>

@@ -87,10 +87,10 @@ function SizeSelector({ product, breadcrumb }: Props) {
 
       {!hasProductSelected
         ? (
-          <div class="mt-4 sm:mt-10 flex flex-col gap-2 relative">
+          <div class="mt-6 sm:mt-10 flex flex-col gap-2 relative">
             <span
               class={errorMessage.value
-                ? "block text-error-medium absolute -top-7"
+                ? "text-sm sm:text-base block text-error-medium absolute -top-7"
                 : "hidden"}
             >
               Selecione um Tamanho para continuar!
@@ -114,7 +114,7 @@ function SizeSelector({ product, breadcrumb }: Props) {
 
       {signalProduct.value
         ? (
-          <div class="mt-4 sm:mt-10 flex flex-col gap-2">
+          <div class="mt-6 sm:mt-10 flex flex-col gap-2">
             {availability === "https://schema.org/InStock"
               ? (
                 <>

@@ -207,7 +207,7 @@ function ProductCardSliderImagesMobile({
             ? (
               <>
                 {hasDiscount && (
-                  <span class="line-through text-[#9AA4B2] text-xs">
+                  <span class="line-through text-[#9AA4B2] text-[11px]">
                     {formatPrice(listPrice, offers?.priceCurrency)}
                   </span>
                 )}
@@ -215,7 +215,7 @@ function ProductCardSliderImagesMobile({
                   {formatPrice(price, offers?.priceCurrency)}
                 </span>
                 {hasDiscount && (
-                  <span class="text-[#9AA4B2] font-bold text-xs">
+                  <span class="text-[#9AA4B2] font-bold text-[11px]">
                     {!!productPercentualOff && productPercentualOff}
                   </span>
                 )}

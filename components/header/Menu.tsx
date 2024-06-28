@@ -16,13 +16,15 @@ function MenuItem(
       <input type="checkbox" class={`${notHasChildren ? "hidden" : ""}`} />
       {notHasChildren
         ? (
-          <div
-            class={`${
-              !item.children ? "m-4 text-base" : ""
-            } text-sm font-light m-2 text-primary-900`}
-          >
-            {item.name}
-          </div>
+          <a href={item.url}>
+            <div
+              class={`${
+                !item.children ? "m-4 text-base" : ""
+              } text-sm font-light m-2 text-primary-900`}
+            >
+              {item.name}
+            </div>
+          </a>
         )
         : (
           <div class="collapse-title text-base font-light text-primary-900 menu">

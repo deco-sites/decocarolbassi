@@ -5,9 +5,9 @@ import { usePartialSection } from "deco/hooks/usePartialSection.ts";
 import { Format } from "../../components/search/SearchResult.tsx";
 import Spinner from "../../components/ui/Spinner.tsx";
 import ProductCardSliderImages from "../../islands/ProductCardSliderImages.tsx";
+import ProductGalleryMobile from "../../islands/ProductGalleryMobile.tsx";
 import ShowMore from "../../islands/ShowMore.tsx";
 import { usePlatform } from "../../sdk/usePlatform.tsx";
-import ProductCardSliderImagesMobile from "./Gallery/ProductCardSliderImages/ProductCardSliderImagesMobile.tsx";
 import { CategoryBannersMediaSource } from "./ProductGalleryWithBanner.tsx";
 
 export interface Columns {
@@ -44,7 +44,7 @@ function ProductGallery(
   { products, pageInfo, layout, offset, url, device, categoryBanners }: Props,
 ) {
   const platform = usePlatform();
-  const mobile = MOBILE_COLUMNS[layout?.columns?.mobile ?? 2];
+  const mobile = MOBILE_COLUMNS[1];
   const desktop = DESKTOP_COLUMNS[layout?.columns?.desktop ?? 4];
 
   const nextPage = pageInfo.nextPage
@@ -84,15 +84,14 @@ function ProductGallery(
             platform={platform}
           />
         ))
-        : products?.map((product, index) => (
-          <ProductCardSliderImagesMobile
-            key={`product-card-${product.productID}`}
-            product={product}
-            preload={index === 0}
-            index={offset + index}
-            platform={platform}
-          />
-        ))}
+        : products &&
+          (
+            <ProductGalleryMobile
+              products={products}
+              offset={offset}
+              platform={platform}
+            />
+          )}
 
       {(layout && layout?.format === "Show More") && (
         <>
