@@ -1,8 +1,8 @@
-import { SectionProps } from "deco/mod.ts";
+import { useUser } from "apps/vtex/hooks/useUser.ts";
+import { AppContext, SectionProps } from "deco/mod.ts";
 import SearchResult, {
   Props as SearchResultProps,
 } from "../../components/search/SearchResult.tsx";
-import { AppContext } from "deco/mod.ts";
 
 export type Props = SearchResultProps;
 
@@ -35,16 +35,37 @@ export const loader = async (
 };
 
 function WishlistGallery(props: SectionProps<typeof loader>) {
+  const { user } = useUser();
+  const isUserLoggedIn = Boolean(user.value?.email);
   const isEmpty = !props.page || props.page.products?.length === 0;
 
-  if (isEmpty) {
+  if (!isUserLoggedIn) {
     return (
       <div class="container mx-4 sm:mx-auto">
         <div class="mx-10 my-20 flex flex-col gap-4 justify-center items-center">
-          <span class="font-medium text-2xl">Your wishlist is empty</span>
+          <span class="font-medium text-2xl">
+            Favoritos
+          </span>
+          <p>
+            <a href="/user-myaccount" class="underline">Faça seu login</a>{" "}
+            <span>
+              para visualização a lista de produtos de sua wishlist.
+            </span>
+          </p>
+        </div>
+      </div>
+    );
+  }
+
+  if (isUserLoggedIn && isEmpty) {
+    return (
+      <div class="container mx-4 sm:mx-auto">
+        <div class="mx-10 my-20 flex flex-col gap-4 justify-center items-center">
+          <span class="font-medium text-2xl">
+            Favoritos
+          </span>
           <span>
-            Log in and add items to your wishlist for later. They will show up
-            here
+            Nenhum produto encontrado.
           </span>
         </div>
       </div>

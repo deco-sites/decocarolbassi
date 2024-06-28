@@ -196,13 +196,13 @@ function ProductCardSliderImagesMobile({
         {/* Name/Description */}
         <div class="flex flex-col">
           <h2
-            class="truncate text-base lg:text-base font-light text-paragraph-color"
+            class="truncate text-sm font-light text-paragraph-color"
             dangerouslySetInnerHTML={{ __html: isVariantOf?.name ?? "" }}
           />
         </div>
 
         {/* Price from/to */}
-        <div class="flex gap-2 items-center justify-start text-dark-blue font-light">
+        <div class="flex items-center justify-between text-dark-blue font-light">
           {hasOfferAvailable
             ? (
               <>
@@ -211,7 +211,7 @@ function ProductCardSliderImagesMobile({
                     {formatPrice(listPrice, offers?.priceCurrency)}
                   </span>
                 )}
-                <span class="text-sm">
+                <span class="text-xs">
                   {formatPrice(price, offers?.priceCurrency)}
                 </span>
                 {hasDiscount && (
