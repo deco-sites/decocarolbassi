@@ -5,10 +5,11 @@ export interface Props extends Omit<BtnProps, "onAddItem"> {
   seller: string;
   productID: string;
   gotoCheckout?: boolean;
+  disabled?: boolean;
 }
 
 function AddToCartButton(
-  { seller, productID, eventParams, gotoCheckout }: Props,
+  { seller, productID, eventParams, gotoCheckout, disabled }: Props,
 ) {
   const { addItems } = useCart();
 
@@ -26,6 +27,7 @@ function AddToCartButton(
       onAddItem={onAddItem}
       eventParams={eventParams}
       gotoCheckout={gotoCheckout}
+      disabled={disabled}
     />
   );
 }

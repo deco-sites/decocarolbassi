@@ -11,6 +11,18 @@ interface Props {
 function VariantSelector({ product }: Props) {
   const { url, isVariantOf } = product;
 
+  const productSimilars = product.isSimilarTo?.map((similar) => {
+    return {
+      url: similar.url ?? "",
+      sku: similar.sku ?? "",
+      color: similar.additionalProperty?.find((property) =>
+        property.name === "Cores"
+      )?.value ?? "",
+    };
+  });
+
+  console.log({ productSimilars });
+
   const getProductExactColor = isVariantOf?.additionalProperty.find((
     { name },
   ) => name === "Cor exata")?.value;

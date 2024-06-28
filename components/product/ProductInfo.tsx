@@ -10,6 +10,7 @@ import AddToCartButtonVTEX from "../../islands/AddToCartButton/vtex.tsx";
 import AddToCartButtonWake from "../../islands/AddToCartButton/wake.tsx";
 import OutOfStock from "../../islands/OutOfStock.tsx";
 import ProductAccordionInfo from "../../islands/ProductAccordionInfo.tsx";
+import ProductSelector from "../../islands/ProductVariantSelector.tsx";
 import ShareProduct from "../../islands/Share/ShareProduct.tsx";
 import WishlistButtonVtex from "../../islands/WishlistButton/vtex.tsx";
 import WishlistButtonWake from "../../islands/WishlistButton/wake.tsx";
@@ -20,7 +21,6 @@ import { usePercentualDiscount } from "../../sdk/usePercentualPrice.ts";
 import { usePlatform } from "../../sdk/usePlatform.tsx";
 import { ProductPolicy } from "../../sections/Product/ProductDetails.tsx";
 import { MediaOptionProps } from "../share/ShareProduct.tsx";
-import ProductSelector from "./ProductVariantSelector.tsx";
 
 export interface Props {
   page: ProductDetailsPage | null;
@@ -84,18 +84,6 @@ function ProductInfo(
     numberOfItems: breadcrumbList.numberOfItems - 1,
   };
 
-  const productSimilars = product.isSimilarTo?.map((similar) => {
-    return {
-      url: similar.url ?? "",
-      sku: similar.sku ?? "",
-      color: similar.additionalProperty?.find((property) =>
-        property.name === "Cores"
-      )?.value ?? "",
-    };
-  });
-
-  console.log({ productSimilars });
-
   const eventItem = mapProductToAnalyticsItem({
     product,
     breadcrumbList: breadcrumb,
@@ -156,7 +144,7 @@ function ProductInfo(
       </div>
       {/* Sku Selector */}
       <div class="mt-4 sm:mt-6">
-        <ProductSelector product={product} />
+        <ProductSelector product={product} breadcrumb={breadcrumb} />
       </div>
       {/* Add to Cart and Favorites button */}
       <div class="mt-4 sm:mt-10 flex flex-col gap-2">

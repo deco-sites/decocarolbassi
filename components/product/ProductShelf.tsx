@@ -212,6 +212,8 @@ function ProductShelf({
 
 export const loader = (props: Props, req: Request, ctx: AppContext) => {
   const url = new URL(req.url);
+
+  console.log("banana", ctx.seo);
   return {
     ...props,
     device: ctx.device,
