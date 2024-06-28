@@ -20,20 +20,9 @@ export default function productDetailsPage(
 
     const { product } = productDetailsPage;
 
-
     const productNewImages = product.image?.filter((image) => image.name?.toLocaleLowerCase() === "novas") ?? [];
 
-
-    const productSimilars = product.isSimilarTo?.map((similar) => {
-      return {
-        url: similar.url ?? "",
-        sku: similar.sku ?? "",
-        color: similar.additionalProperty?.find((property) => property.name === "Cores")?.value ?? ""
-      }
-    })
-
     if (productNewImages.length > 0) product.image = productNewImages
-
 
     return productDetailsPage;
   };

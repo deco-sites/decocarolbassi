@@ -9,6 +9,7 @@ export interface Props {
   eventParams: AddToCartParams;
   onAddItem: () => Promise<void>;
   gotoCheckout?: boolean;
+  disabled?: boolean;
 }
 
 const useAddToCart = ({ eventParams, onAddItem, gotoCheckout }: Props) => {
@@ -48,14 +49,20 @@ export default function AddToCartButton(props: Props) {
     ? (
       <Button
         {...btnProps}
-        class="w-full hover:bg-primary-700 hover:text-secondary-neutral-100"
+        class="w-full hover:bg-primary-700 hover:text-secondary-neutral-100 \
+        disabled:bg-text-secondary-neutral-100 disabled:border disabled:border-bg-primary-700"
         negative
+        disabled={props.disabled}
       >
         comprar
       </Button>
     )
     : (
-      <Button {...btnProps} class="w-full hover:bg-primary-700">
+      <Button
+        {...btnProps}
+        class="w-full hover:bg-primary-700"
+        disabled={props.disabled}
+      >
         Adicionar à Sacola
       </Button>
     );

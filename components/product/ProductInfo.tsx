@@ -2,25 +2,17 @@ import { ProductDetailsPage } from "apps/commerce/types.ts";
 import { mapProductToAnalyticsItem } from "apps/commerce/utils/productToAnalyticsItem.ts";
 import { Device } from "apps/website/matchers/device.ts";
 import { SendEventOnView } from "../../components/Analytics.tsx";
-import AddToCartButtonLinx from "../../islands/AddToCartButton/linx.tsx";
-import AddToCartButtonNuvemshop from "../../islands/AddToCartButton/nuvemshop.tsx";
-import AddToCartButtonShopify from "../../islands/AddToCartButton/shopify.tsx";
-import AddToCartButtonVNDA from "../../islands/AddToCartButton/vnda.tsx";
-import AddToCartButtonVTEX from "../../islands/AddToCartButton/vtex.tsx";
-import AddToCartButtonWake from "../../islands/AddToCartButton/wake.tsx";
-import OutOfStock from "../../islands/OutOfStock.tsx";
 import ProductAccordionInfo from "../../islands/ProductAccordionInfo.tsx";
 import ShareProduct from "../../islands/Share/ShareProduct.tsx";
 import WishlistButtonVtex from "../../islands/WishlistButton/vtex.tsx";
-import WishlistButtonWake from "../../islands/WishlistButton/wake.tsx";
 import { formatPrice } from "../../sdk/format.ts";
 import { useId } from "../../sdk/useId.ts";
 import { useOffer } from "../../sdk/useOffer.ts";
 import { usePercentualDiscount } from "../../sdk/usePercentualPrice.ts";
 import { usePlatform } from "../../sdk/usePlatform.tsx";
 import { ProductPolicy } from "../../sections/Product/ProductDetails.tsx";
+import ProductSelector from "../product/ProductVariantSelector.tsx";
 import { MediaOptionProps } from "../share/ShareProduct.tsx";
-import ProductSelector from "./ProductVariantSelector.tsx";
 
 export interface Props {
   page: ProductDetailsPage | null;
@@ -84,18 +76,6 @@ function ProductInfo(
     numberOfItems: breadcrumbList.numberOfItems - 1,
   };
 
-  const productSimilars = product.isSimilarTo?.map((similar) => {
-    return {
-      url: similar.url ?? "",
-      sku: similar.sku ?? "",
-      color: similar.additionalProperty?.find((property) =>
-        property.name === "Cores"
-      )?.value ?? "",
-    };
-  });
-
-  console.log({ productSimilars });
-
   const eventItem = mapProductToAnalyticsItem({
     product,
     breadcrumbList: breadcrumb,
@@ -156,71 +136,7 @@ function ProductInfo(
       </div>
       {/* Sku Selector */}
       <div class="mt-4 sm:mt-6">
-        <ProductSelector product={product} />
-      </div>
-      {/* Add to Cart and Favorites button */}
-      <div class="mt-4 sm:mt-10 flex flex-col gap-2">
-        {availability === "https://schema.org/InStock"
-          ? (
-            <>
-              <AddToCartButtonVTEX
-                eventParams={{ items: [eventItem] }}
-                productID={productID}
-                seller={seller}
-                gotoCheckout
-              />
-              {platform === "vtex" && (
-                <>
-                  <AddToCartButtonVTEX
-                    eventParams={{ items: [eventItem] }}
-                    productID={productID}
-                    seller={seller}
-                  />
-                </>
-              )}
-              {platform === "wake" && (
-                <>
-                  <AddToCartButtonWake
-                    eventParams={{ items: [eventItem] }}
-                    productID={productID}
-                  />
-                  <WishlistButtonWake
-                    variant="full"
-                    productID={productID}
-                    productGroupID={productGroupID}
-                  />
-                </>
-              )}
-              {platform === "linx" && (
-                <AddToCartButtonLinx
-                  eventParams={{ items: [eventItem] }}
-                  productID={productID}
-                  productGroupID={productGroupID}
-                />
-              )}
-              {platform === "vnda" && (
-                <AddToCartButtonVNDA
-                  eventParams={{ items: [eventItem] }}
-                  productID={productID}
-                  additionalProperty={additionalProperty}
-                />
-              )}
-              {platform === "shopify" && (
-                <AddToCartButtonShopify
-                  eventParams={{ items: [eventItem] }}
-                  productID={productID}
-                />
-              )}
-              {platform === "nuvemshop" && (
-                <AddToCartButtonNuvemshop
-                  productGroupID={productGroupID}
-                  eventParams={{ items: [eventItem] }}
-                  additionalProperty={additionalProperty}
-                />
-              )}
-            </>
-          )
-          : <OutOfStock productID={productID} />}
+        <ProductSelector product={product} breadcrumb={breadcrumb} />
       </div>
       {/* Description card */}
       <div class="mt-4 sm:mt-6 max-w-[373px]">

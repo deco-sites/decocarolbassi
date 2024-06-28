@@ -28,6 +28,7 @@ import * as $ProductCardSliderImages from "./islands/ProductCardSliderImages.tsx
 import * as $ProductCardWithBannerMobile from "./islands/ProductCardWithBannerMobile.tsx";
 import * as $ProductImageZoom from "./islands/ProductImageZoom.tsx";
 import * as $ProductImages from "./islands/ProductImages.tsx";
+import * as $ProductSizeVariantSelector from "./islands/ProductSizeVariantSelector.tsx";
 import * as $ProxyIframe from "./islands/ProxyIframe.tsx";
 import * as $SearchControls from "./islands/SearchControls.tsx";
 import * as $Share_ShareProduct from "./islands/Share/ShareProduct.tsx";
@@ -67,6 +68,7 @@ const manifest = {
     "./islands/ProductCardWithBannerMobile.tsx": $ProductCardWithBannerMobile,
     "./islands/ProductImageZoom.tsx": $ProductImageZoom,
     "./islands/ProductImages.tsx": $ProductImages,
+    "./islands/ProductSizeVariantSelector.tsx": $ProductSizeVariantSelector,
     "./islands/ProxyIframe.tsx": $ProxyIframe,
     "./islands/SearchControls.tsx": $SearchControls,
     "./islands/Share/ShareProduct.tsx": $Share_ShareProduct,
