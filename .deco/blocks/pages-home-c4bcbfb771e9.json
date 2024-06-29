@@ -9,13 +9,13 @@
       "elements": [
         {
           "action": {
-            "buttonPositionDesktop": "Center",
-            "buttonPositionMobile": "Center",
+            "buttonPositionDesktop": "Right",
+            "buttonPositionMobile": "Right",
             "href": "/",
             "label": "VER NOVA COLEÇÃO",
-            "buttonNegative": true
+            "buttonNegative": false
           },
-          "desktop": "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/9166/7575d7d7-f1a8-41c3-8ddc-26d6d9bb6345",
+          "desktop": "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/9166/03e203de-ab50-4d8e-acb4-e919a2af8f8d",
           "mobile": "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/9166/dc21d517-173d-4aba-9c69-ed9ad24e8772"
         },
         {
