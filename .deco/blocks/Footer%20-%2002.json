@@ -58,12 +58,8 @@
           "label": "Fale conosco"
         },
         {
-          "href": "/fale-whatsapp",
+          "href": "https://api.whatsapp.com/send/?phone=5511976664900&text&app_absent=0",
           "label": "Fale com nossas consultoras"
-        },
-        {
-          "href": "/troca-e-devolucao",
-          "label": "Compras internacionais"
         }
       ],
       "label": "Atendimento",
