@@ -414,5 +414,15 @@
     "path": "/user-myaccount",
     "blockType": "pages",
     "__resolveType": "website/pages/Page.tsx"
+  },
+  "/.deco/blocks/Preview%20site%2Floaders%2Ficons.ts.json": {
+    "blockType": "loaders",
+    "__resolveType": "site/loaders/icons.ts"
+  },
+  "/.deco/blocks/pages-Jeans-213320.json": {
+    "name": "Jeans",
+    "path": "/jeans",
+    "blockType": "pages",
+    "__resolveType": "website/pages/Page.tsx"
   }
 }

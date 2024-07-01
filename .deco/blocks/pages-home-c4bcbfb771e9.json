@@ -66,9 +66,9 @@
       },
       "products": {
         "props": {
-          "sort": "price:desc",
+          "sort": "name:asc",
           "count": 6,
-          "collection": "139"
+          "collection": "270"
         },
         "crossSelling": "similars",
         "__resolveType": "vtex/loaders/intelligentSearch/productList.ts"
@@ -100,7 +100,7 @@
         },
         "__resolveType": "site/loaders/Layouts/ProductCard.tsx"
       },
-      "title": "PRE FALL 24",
+      "title": "hemisfério norte verão 24",
       "description": "Confira a nova coleção"
     },
     {
@@ -114,9 +114,9 @@
       },
       "list": [
         {
-          "href": "/",
-          "image": "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/9166/49043e54-c38d-49df-a4a7-ecc423a088ea",
-          "label": "Winter is",
+          "href": "/new-in",
+          "image": "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/9166/ac8a49e3-dbf4-49df-863e-71537e7e3425",
+          "label": "New In",
           "buttonText": "Ver todos os itens",
           "media": {
             "0": "h",
@@ -238,9 +238,9 @@
           }
         },
         {
-          "href": "/",
-          "image": "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/9166/deade892-9ded-442c-8ff6-beb21842a4b9",
-          "label": "Modern Icons",
+          "href": "/winter24",
+          "image": "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/9166/bb613e9d-f9d9-492c-a3fa-26c0b3d5208c",
+          "label": "Winter 24",
           "buttonText": "Ver todos os itens",
           "media": {
             "type": "image",
@@ -248,17 +248,16 @@
           }
         },
         {
-          "href": "/",
-          "image": "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/9166/5dfd637c-f3ee-48eb-9240-897360f9440f",
-          "label": "Boots",
+          "href": "/icones10anos",
+          "image": "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/9166/4edd7e45-5457-488d-88ed-4035495137a4",
+          "label": "Ícones 10 Anos",
           "buttonText": "Ver todos os itens"
         },
         {
-          "href": "/",
-          "image": "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/9166/740633f8-3aeb-4227-93ef-0933ca5ec8df",
-          "label": "New in ",
-          "buttonText": "Ver todos os itens",
-          "video": "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/9166/3c7bf9e1-74d0-4bb5-8877-9e5720919621"
+          "href": "/maria-rudge-23",
+          "image": "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/9166/3ac1ca58-48bc-43b1-8969-797832ef9343",
+          "label": "collab maria rudge",
+          "buttonText": "Ver todos os itens"
         }
       ],
       "header": {
