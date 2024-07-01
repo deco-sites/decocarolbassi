@@ -1,4 +1,3 @@
-import { useUser } from "apps/vtex/hooks/useUser.ts";
 import { AppContext, SectionProps } from "deco/mod.ts";
 import SearchResult, {
   Props as SearchResultProps,
@@ -38,9 +37,6 @@ export const loader = async (
 
 function WishlistGallery(props: SectionProps<typeof loader>) {
   const isEmpty = !props.page || props.page.products?.length === 0;
-
-  const { user } = useUser();
-  console.log("banana", user.value);
 
   return !isEmpty
     ? (

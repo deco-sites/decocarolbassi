@@ -23,6 +23,7 @@ function VariantSelector({ product, breadcrumb }: Props) {
     };
   });
 
+  //TODO: get similars colors from isSimilarTo
   console.log({ productSimilars });
 
   const getProductExactColor = isVariantOf?.additionalProperty.find((

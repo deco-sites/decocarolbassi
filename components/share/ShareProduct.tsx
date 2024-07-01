@@ -44,8 +44,6 @@ function ShareProduct({ product, device, options }: Props) {
   const isOpen = useSignal<boolean>(false);
   const socialOptions = options ?? defaultOptions;
 
-  console.log({ product });
-
   const renderOption = useCallback(
     (option: MediaOptionProps, _index: number) => {
       const pageUrl = encodeURIComponent(window.location.href);
