@@ -158,8 +158,8 @@
     "title": "Conteúdo exclusivo Carol Bassi",
     "description": "Inscreva-se para ser a primeira a saber das novidades, lançamentos, eventos e muito mais.",
     "images": {
-      "mobile": "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/9166/afc0962c-38fe-474e-aa26-a6fffcfcad04",
-      "desktop": "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/9166/0f6087a0-3e21-4ece-a885-89367a1f2ff8"
+      "desktop": "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/9166/0f6087a0-3e21-4ece-a885-89367a1f2ff8",
+      "mobile": "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/9166/afc0962c-38fe-474e-aa26-a6fffcfcad04"
     }
   },
   "backToTheTop": {

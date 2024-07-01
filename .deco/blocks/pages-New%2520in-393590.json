@@ -16,17 +16,17 @@
       "page": {
         "__resolveType": "commerce/loaders/product/extensions/listingPage.ts",
         "data": {
-          "sort": "price:desc",
+          "sort": "release:desc",
           "count": 24,
           "fuzzy": "automatic",
-          "pageOffset": 1,
           "__resolveType": "vtex/loaders/intelligentSearch/productListingPage.ts",
           "selectedFacets": [
             {
               "key": "productClusterIds",
               "value": "137"
             }
-          ]
+          ],
+          "pageOffset": 1
         },
         "extensions": [
           {
@@ -69,7 +69,29 @@
           }
         }
       ],
-      "categoryBannersMediaSources": []
+      "categoryBannersMediaSources": [
+        {
+          "banner1": {
+            "type": "image",
+            "image": "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/9166/e0a2b632-4abc-4fc8-8299-376b261bc5ae",
+            "action": {
+              "href": "/"
+            }
+          },
+          "banner2": {
+            "type": "image",
+            "image": "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/9166/94496afe-e904-4f74-b152-87568aa2725c",
+            "action": {
+              "href": "/"
+            }
+          },
+          "banner3": {
+            "type": "image",
+            "image": "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/9166/94496afe-e904-4f74-b152-87568aa2725c"
+          },
+          "matcher": "/new-in"
+        }
+      ]
     },
     {
       "__resolveType": "site/sections/Category/CategorySeoText.tsx",

@@ -10,13 +10,13 @@
         {
           "action": {
             "buttonPositionDesktop": "Right",
-            "buttonPositionMobile": "Right",
-            "href": "/",
+            "buttonPositionMobile": "Center",
+            "href": "/new-in",
             "label": "VER NOVA COLEÇÃO",
             "buttonNegative": false
           },
           "desktop": "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/9166/03e203de-ab50-4d8e-acb4-e919a2af8f8d",
-          "mobile": "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/9166/29feab7e-2f63-45f6-be6e-9d7f63569d43"
+          "mobile": "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/9166/61853b11-89f7-4bd2-9a85-fb48cad93b47"
         },
         {
           "action": {
@@ -60,13 +60,13 @@
           "show": true,
           "action": {
             "text": "Ver Nova Coleção",
-            "href": "/"
+            "href": "/new-in"
           }
         }
       },
       "products": {
         "props": {
-          "sort": "name:asc",
+          "sort": "release:desc",
           "count": 6,
           "collection": "270"
         },
