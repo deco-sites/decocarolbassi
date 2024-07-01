@@ -112,8 +112,8 @@ function ProductCardSliderImagesMobile({
             )}
           >
             {!!flagNewIn && (
-              <div class="bg-dark-blue w-fit absolute z-10 p-1 top-2 left-2">
-                <h4 class="text-[8px] text-[#F8FAFC] font-medium">
+              <div class="w-fit absolute z-10 p-1 top-2 left-2">
+                <h4 class="text-[8px] text-[#00000066] font-medium">
                   ÍCONES 10 ANOS
                 </h4>
               </div>

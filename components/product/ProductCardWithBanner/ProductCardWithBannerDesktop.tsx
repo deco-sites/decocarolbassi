@@ -26,12 +26,24 @@ export default function ProductCardWithBannerDesktop(
     desktopColumns: string;
   },
 ) {
-  const productsGrid1 = products.length > 4 ? products.slice(0, 4) : [];
-  const productsGrid2 = products.length > 8 ? products.slice(4, 8) : [];
-  const productsGrid3 = products.length > 10 ? products.slice(8, 10) : [];
-  const productsGrid4 = products.length > 14 ? products.slice(10, 14) : [];
-  const productsGrid5 = products.length > 18 ? products.slice(14, 18) : [];
-  const productsGrid6 = products.length > 22 ? products.slice(18, 22) : [];
+  const productsGrid1 = products.length > 4
+    ? products.slice(0, 4)
+    : products.slice(0);
+  const productsGrid2 = products.length > 8
+    ? products.slice(4, 8)
+    : products.slice(4);
+  const productsGrid3 = products.length > 12
+    ? products.slice(8, 12)
+    : products.slice(8);
+  const productsGrid4 = products.length > 16
+    ? products.slice(12, 16)
+    : products.slice(12);
+  const productsGrid5 = products.length > 20
+    ? products.slice(16, 20)
+    : products.slice(16);
+  const productsGrid6 = products.length > 24
+    ? products.slice(20, 24)
+    : products.slice(20);
 
   return (
     <>
@@ -47,7 +59,7 @@ export default function ProductCardWithBannerDesktop(
                   src={categoryBanners.banner1.image!}
                   width={WIDTH}
                   height={HEIGHT}
-                  class="w-full h-full"
+                  class="w-full h-full object-cover"
                   loading={"lazy"}
                 />
               </figure>
@@ -57,8 +69,11 @@ export default function ProductCardWithBannerDesktop(
                 src={categoryBanners.banner1.video!}
                 width={WIDTH}
                 height={HEIGHT}
-                style={{ aspectRatio: ASPECT_RATIO }}
-                class="w-full h-full"
+                controls={false}
+                autoPlay
+                loop
+                muted
+                class="w-full h-full object-cover"
               />
             )}
         </a>
@@ -95,18 +110,22 @@ export default function ProductCardWithBannerDesktop(
       >
         <a
           href={categoryBanners.banner2.action?.href}
-          class="max-w-[835px] max-h-[668px] w-full h-full object-cover"
-          style={{ aspectRatio: "613/930" }}
+          class=" w-full h-full object-cover"
         >
           {categoryBanners.banner2.type === "image"
             ? (
-              <Image
-                src={categoryBanners.banner2.image!}
-                width={835}
-                height={668}
-                class="w-full h-full object-cover"
-                loading={"lazy"}
-              />
+              <figure
+                style={{ aspectRatio: ASPECT_RATIO }}
+                class="w-full h-full"
+              >
+                <Image
+                  src={categoryBanners.banner2.image!}
+                  width={WIDTH}
+                  height={HEIGHT}
+                  class="w-full h-full object-cover"
+                  loading={"lazy"}
+                />
+              </figure>
             )
             : (
               <Video
@@ -160,7 +179,7 @@ export default function ProductCardWithBannerDesktop(
                   src={categoryBanners.banner3.image!}
                   width={WIDTH}
                   height={HEIGHT}
-                  class="w-full h-full"
+                  class="w-full h-full object-cover"
                   loading={"lazy"}
                 />
               </figure>
@@ -170,8 +189,11 @@ export default function ProductCardWithBannerDesktop(
                 src={categoryBanners.banner3.video!}
                 width={WIDTH}
                 height={HEIGHT}
-                style={{ aspectRatio: ASPECT_RATIO }}
-                class="w-full h-full"
+                controls={false}
+                autoPlay
+                loop
+                muted
+                class="w-full h-full object-cover"
               />
             )}
         </a>

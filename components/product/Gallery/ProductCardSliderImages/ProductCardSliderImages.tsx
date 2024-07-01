@@ -146,8 +146,8 @@ function ProductCardSliderImages({
             )}
           >
             {!!flagNewIn && (
-              <div class="bg-dark-blue w-fit absolute z-10 p-1 top-4 left-4">
-                <h4 class="text-xs text-[#F8FAFC] font-medium">
+              <div class="w-fit absolute z-10 p-1 top-1 left-1">
+                <h4 class="text-xs text-[#00000066] font-medium">
                   ÍCONES 10 ANOS
                 </h4>
               </div>

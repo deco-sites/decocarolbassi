@@ -70,10 +70,14 @@ export default function ProductCardWithBannerMobile(
             : (
               <Video
                 src={categoryBanners.banner1.video!}
+                style={{ aspectRatio: ASPECT_RATIO }}
                 width={WIDTH}
                 height={HEIGHT}
-                style={{ aspectRatio: ASPECT_RATIO }}
-                class="w-full h-full"
+                controls={false}
+                autoPlay
+                loop
+                muted
+                class="w-full h-full object-cover"
               />
             )}
         </a>
@@ -181,10 +185,14 @@ export default function ProductCardWithBannerMobile(
             : (
               <Video
                 src={categoryBanners.banner3.video!}
+                style={{ aspectRatio: ASPECT_RATIO }}
                 width={WIDTH}
                 height={HEIGHT}
-                style={{ aspectRatio: ASPECT_RATIO }}
-                class="w-full h-full"
+                controls={false}
+                autoPlay
+                loop
+                muted
+                class="w-full h-full object-cover"
               />
             )}
         </a>
