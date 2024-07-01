@@ -1,5 +1,8 @@
 import type { ImageWidget, VideoWidget } from "apps/admin/widgets.ts";
 import Video from "apps/website/components/Video.tsx";
+import { Device } from "apps/website/matchers/device.ts";
+import { SectionProps } from "deco/types.ts";
+import { AppContext } from "../../apps/site.ts";
 import {
   SendEventOnClick,
   SendEventOnView,
@@ -109,7 +112,12 @@ const DEFAULT_PROPS = {
 };
 
 function BannerItem(
-  { element, lcp, id }: { element: Element; lcp?: boolean; id: string },
+  { element, lcp, id, device }: {
+    element: Element;
+    lcp?: boolean;
+    id: string;
+    device: Device;
+  },
 ) {
   const {
     alt,
@@ -172,11 +180,20 @@ function BannerItem(
             class="w-full h-full object-cover"
           />
         )
-        : (
+        : device !== "mobile"
+        ? (
           <img
             class="object-fill w-full h-full"
             loading={lcp ? "eager" : "lazy"}
             src={desktop!}
+            alt={alt}
+          />
+        )
+        : (
+          <img
+            class="object-fill w-full h-full"
+            loading={lcp ? "eager" : "lazy"}
+            src={mobile!}
             alt={alt}
           />
         )}
@@ -243,9 +260,9 @@ function Buttons() {
   );
 }
 
-function BannerCarousel(props: Props) {
+function BannerCarousel(props: SectionProps<typeof loader>) {
   const id = useId();
-  const { elements, preload, interval } = props;
+  const { elements, preload, interval, device } = props;
 
   return (
     <div
@@ -259,6 +276,7 @@ function BannerCarousel(props: Props) {
             <Slider.Item index={index} class="carousel-item w-full">
               <BannerItem
                 element={element}
+                device={device}
                 lcp={index === 0 && preload}
                 id={`${id}::${index}`}
               />
@@ -283,5 +301,12 @@ function BannerCarousel(props: Props) {
     </div>
   );
 }
+
+export const loader = (props: Props, req: Request, ctx: AppContext) => {
+  return {
+    ...props,
+    device: ctx.device,
+  };
+};
 
 export default BannerCarousel;
