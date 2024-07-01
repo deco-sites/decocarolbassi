@@ -424,5 +424,29 @@
     "path": "/jeans",
     "blockType": "pages",
     "__resolveType": "website/pages/Page.tsx"
+  },
+  "/.deco/blocks/pages-Carol%2520Bassi%2520%252B%2520Maria%2520Rudge-543857.json": {
+    "name": "Carol Bassi + Maria Rudge",
+    "path": "/maria-rudge-23",
+    "blockType": "pages",
+    "__resolveType": "website/pages/Page.tsx"
+  },
+  "/.deco/blocks/pages-Winter%252024-468664.json": {
+    "name": "Winter 24",
+    "path": "/winter24",
+    "blockType": "pages",
+    "__resolveType": "website/pages/Page.tsx"
+  },
+  "/.deco/blocks/pages-Lifestyle%2520CB-228431.json": {
+    "name": "Lifestyle CB",
+    "path": "/lifestyle-cb",
+    "blockType": "pages",
+    "__resolveType": "website/pages/Page.tsx"
+  },
+  "/.deco/blocks/pages-%25C3%258Dcones%252010%2520anos-516929.json": {
+    "name": "Ícones 10 anos",
+    "path": "/icones10anos",
+    "blockType": "pages",
+    "__resolveType": "website/pages/Page.tsx"
   }
 }

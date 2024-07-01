@@ -16,7 +16,7 @@
             "buttonNegative": false
           },
           "desktop": "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/9166/03e203de-ab50-4d8e-acb4-e919a2af8f8d",
-          "mobile": "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/9166/dc21d517-173d-4aba-9c69-ed9ad24e8772"
+          "mobile": "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/9166/29feab7e-2f63-45f6-be6e-9d7f63569d43"
         },
         {
           "action": {
@@ -269,7 +269,7 @@
     {
       "__resolveType": "site/sections/Category/CategoryGrid.tsx",
       "header": {
-        "title": "red is the new black"
+        "title": "shop by category"
       },
       "layout": {
         "headerAlignment": "left",
@@ -280,19 +280,19 @@
       },
       "list": [
         {
-          "image": "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/9166/e4e1d5af-cca6-4ec1-9d9b-8db9b533dcb0",
-          "href": "/shop",
-          "buttonText": "Shop Now"
+          "image": "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/9166/64601cd5-2378-4cfa-9350-ab21dcbb7563",
+          "href": "/roupas/blusa",
+          "buttonText": "blusas"
         },
         {
-          "href": "/show-now",
-          "image": "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/9166/8dfd0ca8-aef6-4bf6-9378-6de75c5a94bc",
-          "buttonText": "Shop now"
+          "href": "/roupas/casaco",
+          "image": "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/9166/dbc5fe27-e5e7-4c34-96b2-3d8d7a8eb6ed",
+          "buttonText": "casacos"
         },
         {
-          "href": "/show-now",
-          "image": "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/9166/03842968-4224-4510-9c28-7648f2ac9381",
-          "buttonText": "Shop now"
+          "href": "/roupas/vestido",
+          "image": "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/9166/3f48f0c6-8217-41d9-b1f9-1421123f1f5e",
+          "buttonText": "vestidos"
         }
       ],
       "isThreeImages": true,
