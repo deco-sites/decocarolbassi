@@ -8,7 +8,7 @@ import type {
 } from "apps/commerce/types.ts";
 import type { JSX } from "preact";
 import { useMemo } from "preact/hooks";
-import ColorAvatarFilter from "../ui/ColorAvatarFilter.tsx";
+import CategoryColorFilter from "../category/CategoryColorFilter.tsx/CategoryColorFilter.tsx";
 import Icon from "../ui/Icon.tsx";
 
 export type FilterValuesProps = {
@@ -81,19 +81,8 @@ function FilterValues(
   return (
     <ul class={`flex flex-wrap gap-8 flex-col my-4`}>
       {values.map((item) => {
-        const { selected, value }: FilterToggleValue = item;
-
         if (key === "cores") {
-          const capitalizeValue = value[0].toUpperCase() + value.slice(1);
-          return (
-            <div class="flex items-center justify-between">
-              <ValueItem {...item} />
-              <ColorAvatarFilter
-                content={capitalizeValue}
-                variant={selected ? "active" : "default"}
-              />
-            </div>
-          );
+          return <CategoryColorFilter {...item} />;
         }
         return <ValueItem {...item} />;
       })}
