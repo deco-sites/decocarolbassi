@@ -1,7 +1,10 @@
+import { useUser } from "apps/vtex/hooks/useUser.ts";
 import { AppContext, SectionProps } from "deco/mod.ts";
 import SearchResult, {
   Props as SearchResultProps,
 } from "../../components/search/SearchResult.tsx";
+
+import WishlistMessageLogin from "../../islands/WishlistMessageLogin.tsx";
 
 export type Props = SearchResultProps;
 
@@ -36,31 +39,18 @@ export const loader = async (
 function WishlistGallery(props: SectionProps<typeof loader>) {
   const isEmpty = !props.page || props.page.products?.length === 0;
 
-  if (isEmpty) {
-    return (
-      <div class="container mx-4 sm:mx-auto">
-        <div class="mx-10 my-20 flex flex-col gap-4 justify-center items-center">
-          <span class="font-medium text-2xl">
-            Favoritos
-          </span>
-          <p>
-            <a href="/user-myaccount" class="underline">Faça seu login</a>{" "}
-            <span>
-              para visualização a lista de produtos de sua wishlist.
-            </span>
-          </p>
-        </div>
-      </div>
-    );
-  }
+  const { user } = useUser();
+  console.log("banana", user.value);
 
-  return (
-    <SearchResult
-      {...props}
-      categoryBanners={undefined}
-      device={props.device}
-    />
-  );
+  return !isEmpty
+    ? (
+      <SearchResult
+        {...props}
+        categoryBanners={undefined}
+        device={props.device}
+      />
+    )
+    : <WishlistMessageLogin />;
 }
 
 export default WishlistGallery;
