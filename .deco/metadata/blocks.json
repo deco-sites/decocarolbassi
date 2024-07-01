@@ -448,5 +448,23 @@
     "path": "/icones10anos",
     "blockType": "pages",
     "__resolveType": "website/pages/Page.tsx"
+  },
+  "/.deco/blocks/pages-Tricot-727616.json": {
+    "name": "Tricot",
+    "path": "/tricot",
+    "blockType": "pages",
+    "__resolveType": "website/pages/Page.tsx"
+  },
+  "/.deco/blocks/pages-Alfaiataria-527036.json": {
+    "name": "Alfaiataria",
+    "path": "/alfaiataria",
+    "blockType": "pages",
+    "__resolveType": "website/pages/Page.tsx"
+  },
+  "/.deco/blocks/pages-Veludo-217014.json": {
+    "name": "Veludo",
+    "path": "/veludo",
+    "blockType": "pages",
+    "__resolveType": "website/pages/Page.tsx"
   }
 }
