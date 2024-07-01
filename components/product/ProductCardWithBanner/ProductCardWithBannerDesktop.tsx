@@ -95,14 +95,15 @@ export default function ProductCardWithBannerDesktop(
       >
         <a
           href={categoryBanners.banner2.action?.href}
-          class="w-full h-full object-cover"
+          class="max-w-[835px] max-h-[668px] w-full h-full object-cover"
+          style={{ aspectRatio: "613/930" }}
         >
           {categoryBanners.banner2.type === "image"
             ? (
               <Image
                 src={categoryBanners.banner2.image!}
-                width={WIDTH}
-                height={HEIGHT}
+                width={835}
+                height={668}
                 class="w-full h-full object-cover"
                 loading={"lazy"}
               />

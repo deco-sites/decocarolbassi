@@ -1,5 +1,4 @@
 import type { ImageWidget, VideoWidget } from "apps/admin/widgets.ts";
-import { Picture, Source } from "apps/website/components/Picture.tsx";
 import Video from "apps/website/components/Video.tsx";
 import {
   SendEventOnClick,
@@ -174,28 +173,12 @@ function BannerItem(
           />
         )
         : (
-          <Picture preload={lcp}>
-            <Source
-              media="(max-width: 767px)"
-              fetchPriority={lcp ? "high" : "auto"}
-              src={mobile!}
-              width={390}
-              height={614}
-            />
-            <Source
-              media="(min-width: 768px)"
-              fetchPriority={lcp ? "high" : "auto"}
-              src={desktop!}
-              width={1440}
-              height={680}
-            />
-            <img
-              class="object-cover w-full h-full"
-              loading={lcp ? "eager" : "lazy"}
-              src={desktop}
-              alt={alt}
-            />
-          </Picture>
+          <img
+            class="object-fill w-full h-full"
+            loading={lcp ? "eager" : "lazy"}
+            src={desktop!}
+            alt={alt}
+          />
         )}
     </a>
   );
@@ -267,9 +250,9 @@ function BannerCarousel(props: Props) {
   return (
     <div
       id={id}
-      class="grid grid-cols-[48px_1fr_48px] sm:grid-cols-[120px_1fr_120px] grid-rows-[1fr_48px_1fr_64px] sm:min-h-min"
+      class="grid grid-cols-[48px_1fr_48px] sm:grid-cols-[120px_1fr_120px] grid-rows-[1fr_48px_1fr_64px] sm:min-h-min 2xl:max-h-[850px]"
     >
-      <Slider class="carousel carousel-center w-full col-span-full row-span-full gap-6 max-h-[85dvh] md:max-h-[700px]">
+      <Slider class="carousel carousel-center w-full col-span-full row-span-full gap-6 max-h-[85dvh] sm:max-h-full">
         {elements?.map((element, index) => {
           const params = { promotion_name: element.alt };
           return (
