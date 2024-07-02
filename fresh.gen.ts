@@ -26,7 +26,6 @@ import * as $OutOfStock from "./islands/OutOfStock.tsx";
 import * as $ProductAccordionInfo from "./islands/ProductAccordionInfo.tsx";
 import * as $ProductCardSliderImages from "./islands/ProductCardSliderImages.tsx";
 import * as $ProductCardWithBannerMobile from "./islands/ProductCardWithBannerMobile.tsx";
-import * as $ProductDetails from "./islands/ProductDetails.tsx";
 import * as $ProductGalleryMobile from "./islands/ProductGalleryMobile.tsx";
 import * as $ProductImageZoom from "./islands/ProductImageZoom.tsx";
 import * as $ProductImages from "./islands/ProductImages.tsx";
@@ -70,7 +69,6 @@ const manifest = {
     "./islands/ProductAccordionInfo.tsx": $ProductAccordionInfo,
     "./islands/ProductCardSliderImages.tsx": $ProductCardSliderImages,
     "./islands/ProductCardWithBannerMobile.tsx": $ProductCardWithBannerMobile,
-    "./islands/ProductDetails.tsx": $ProductDetails,
     "./islands/ProductGalleryMobile.tsx": $ProductGalleryMobile,
     "./islands/ProductImageZoom.tsx": $ProductImageZoom,
     "./islands/ProductImages.tsx": $ProductImages,
