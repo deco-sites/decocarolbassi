@@ -42,8 +42,6 @@ export default function ProductDetails(
 
   // "to have sticky ProductInfo component put this class -> sticky top-32"
 
-  console.log({ productRecommendations });
-
   return (
     <div class="w-full flex flex-col gap-6 lg:py-10 lg:pl-8 2xl:pl-20">
       <Breadcrumb itemListElement={breadcrumb.itemListElement} />

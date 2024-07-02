@@ -3,6 +3,7 @@ import { mapProductToAnalyticsItem } from "apps/commerce/utils/productToAnalytic
 import { Device } from "apps/website/matchers/device.ts";
 import { SendEventOnView } from "../../components/Analytics.tsx";
 import ProductAccordionInfo from "../../islands/ProductAccordionInfo.tsx";
+import ProductSelector from "../../islands/ProductVariantSelector.tsx";
 import ShareProduct from "../../islands/Share/ShareProduct.tsx";
 import WishlistButtonVtex from "../../islands/WishlistButton/vtex.tsx";
 import { formatPrice } from "../../sdk/format.ts";
@@ -10,7 +11,6 @@ import { useId } from "../../sdk/useId.ts";
 import { useOffer } from "../../sdk/useOffer.ts";
 import { usePercentualDiscount } from "../../sdk/usePercentualPrice.ts";
 import { ProductPolicy } from "../../sections/Product/ProductDetails.tsx";
-import ProductSelector from "../product/ProductVariantSelector.tsx";
 import { MediaOptionProps } from "../share/ShareProduct.tsx";
 
 export interface Props {

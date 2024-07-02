@@ -1,34 +1,25 @@
+import { useSignal } from "@preact/signals";
 import type { BreadcrumbList, Product } from "apps/commerce/types.ts";
 import Avatar from "../../components/ui/Avatar.tsx";
 import SizeSelector from "../../islands/ProductSizeVariantSelector.tsx";
 import { relative } from "../../sdk/url.ts";
 import { useSizeVariantOfferAvailability } from "../../sdk/useOfferAvailability.ts";
+import { useProductField } from "../../sdk/useProductField.ts";
+import { useSimilarColors } from "../../sdk/useSimilarsColors.ts";
 import { useVariantPossibilities } from "../../sdk/useVariantPossiblities.ts";
 
-interface Props {
+export interface Props {
   product: Product;
   breadcrumb?: BreadcrumbList;
 }
 
 function VariantSelector({ product, breadcrumb }: Props) {
   const { url, isVariantOf, isSimilarTo } = product;
+  const productVariant = useSignal<Product | undefined>(product);
+  const selectedProduct = productVariant.value;
+  const similarsColors = useSimilarColors(isSimilarTo);
 
-  const productSimilars = isSimilarTo?.map((similar) => {
-    return {
-      url: similar.url ?? "",
-      sku: similar.sku ?? "",
-      color: similar.additionalProperty?.find((property) =>
-        property.name === "Cores"
-      )?.value ?? "",
-    };
-  });
-
-  //TODO: get similars colors from isSimilarTo
-  console.log({ productSimilars });
-
-  const getProductExactColor = isVariantOf?.additionalProperty.find((
-    { name },
-  ) => name === "Cor exata")?.value;
+  const getProductExactColor = useProductField(product, "Cor exata");
 
   const hasVariant = isVariantOf?.hasVariant ?? [];
   const possibilities = useVariantPossibilities(hasVariant, product);
@@ -87,12 +78,37 @@ function VariantSelector({ product, breadcrumb }: Props) {
                     </li>
                   );
                 })}
+
+                {similarsColors?.map((item, index) => {
+                  const { sizeOfferIsAvailable } =
+                    useSizeVariantOfferAvailability(index, isVariantOf);
+
+                  const relativeUrl = relative(url);
+                  const relativeLink = relative(item.url);
+
+                  return (
+                    <li key={item.color}>
+                      <button f-partial={relativeLink} f-client-nav>
+                        <Avatar
+                          label={name}
+                          content={item.color}
+                          variant={!sizeOfferIsAvailable
+                            ? "disabled" || relativeLink !== relativeUrl
+                            : "default"}
+                          productExactColor={item.specificColor!}
+                        />
+                      </button>
+                    </li>
+                  );
+                })}
               </ul>
             </li>
           );
         }
 
-        return <SizeSelector product={product} breadcrumb={breadcrumb} />;
+        return (
+          <SizeSelector product={selectedProduct!} breadcrumb={breadcrumb} />
+        );
       })}
     </ul>
   );
