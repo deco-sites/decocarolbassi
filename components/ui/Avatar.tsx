@@ -71,9 +71,10 @@ interface Props {
 
 const colorVariantsClasses = {
   active:
-    "text-base-content rounded-full border-solid border-[1px] border-primary-500 p-[3px]",
-  disabled: "line-through text-neutral-content",
-  default: "text-base-content bg-base-100",
+    "text-base-content rounded-full border-solid border-[1px] border-primary-500 p-[3px] h-8",
+  disabled: "line-through text-neutral-content h-7",
+  default:
+    "text-base-content bg-base-100 border border-solid border-[#3B3B3B] rounded-full h-7",
 };
 
 const sizeVariantsClasses: Record<string, string> = {
@@ -106,7 +107,7 @@ function Avatar(
   return label === "Cores"
     ? (
       <div
-        class={`avatar placeholder text-base font-light h-8 ${
+        class={`avatar placeholder text-base font-light border border-solid border-[#9AA4B2] rounded-full ${
           colors[content] && colorVariantsClasses[variant]
         }`}
       >
