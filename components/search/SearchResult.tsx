@@ -40,6 +40,7 @@ export interface Props {
   /** @description 0 for ?page=0 as your first page */
   startingPage?: 0 | 1;
   categoryBannersMediaSources?: CategoryBannersMediaSource[];
+  titlePage?: string;
 }
 
 function Result({
@@ -54,6 +55,7 @@ function Result({
   url: string;
   device: Device;
   categoryBanners?: CategoryBannersMediaSource;
+  titlePage?: string;
 }) {
   const { products, filters, breadcrumb, pageInfo, sortOptions } = page;
   const perPage = pageInfo?.recordPerPage || products.length;
@@ -67,9 +69,11 @@ function Result({
   const zeroIndexedOffsetPage = pageInfo.currentPage - startingPage;
   const offset = zeroIndexedOffsetPage * perPage;
 
-  const isCollectionPage = pageInfo?.pageTypes?.some((type) =>
-    type === "Collection"
-  );
+  const isCollectionPage = pageInfo?.pageTypes?.some((
+    type,
+  ) => (type === "Collection" || type === "Search"));
+
+  console.log({ pageInfo });
 
   const isPartial = url.searchParams.get("partial") === "true";
   const isFirstPage = !pageInfo.previousPage;
