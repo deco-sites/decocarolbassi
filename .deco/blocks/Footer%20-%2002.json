@@ -59,7 +59,8 @@
         },
         {
           "href": "https://api.whatsapp.com/send/?phone=5511976664900&text&app_absent=0",
-          "label": "Fale com nossas consultoras"
+          "label": "Fale com nossas consultoras",
+          "openNewTab": true
         }
       ],
       "label": "Atendimento",

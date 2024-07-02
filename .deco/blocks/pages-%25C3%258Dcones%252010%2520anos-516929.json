@@ -1,6 +1,6 @@
 {
   "name": "Ícones 10 anos",
-  "path": "/icones10anos",
+  "path": "/icones-10-anos",
   "sections": [
     {
       "__resolveType": "commerce/sections/Seo/SeoPLP.tsx",
@@ -126,11 +126,6 @@
     },
     {
       "__resolveType": "Footer - 02"
-    },
-    {
-      "__resolveType": "website/sections/Seo/SeoV2.tsx",
-      "title": "Roupas",
-      "description": "Roupa e Vestidos"
     }
   ],
   "seo": {
