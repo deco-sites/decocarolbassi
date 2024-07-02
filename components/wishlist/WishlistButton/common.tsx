@@ -21,7 +21,6 @@ function ButtonCommon({
   variant = "icon",
   productGroupID,
   productID,
-  productUrl,
   loading,
   inWishlist,
   isUserLoggedIn,
@@ -51,7 +50,7 @@ function ButtonCommon({
             </button>
             <h1 className="m-8">
               Para adicionar o item a sua wishlist,{" "}
-              <a href={`/user-myaccount?returnUrl=${productUrl}`}>
+              <a href={"/user-myaccount"}>
                 <span class="underline">faça seu login.</span>
               </a>
             </h1>
