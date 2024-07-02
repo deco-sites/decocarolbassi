@@ -282,7 +282,8 @@
         {
           "image": "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/9166/64601cd5-2378-4cfa-9350-ab21dcbb7563",
           "href": "/roupas/blusa",
-          "buttonText": "blusas"
+          "buttonText": "shop now",
+          "label": "blusas"
         },
         {
           "href": "/roupas/casaco",
