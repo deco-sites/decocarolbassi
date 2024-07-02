@@ -4,7 +4,7 @@ export default function WishlistMessageLogin() {
   const { user } = useUser();
   const isUserLoggedIn = Boolean(user.value?.email);
 
-  if (isUserLoggedIn) {
+  if (!isUserLoggedIn) {
     return (
       <div class="container mx-4 sm:mx-auto">
         <div class="mx-10 my-20 flex flex-col gap-4 justify-center items-center">
@@ -30,9 +30,9 @@ export default function WishlistMessageLogin() {
         </span>
         <p>
           Não há itens salvos em suas wishlist. Que tal começar a sua lista
-          vendo nossas{"  "}
+          vendo{"  "}
           <a href="/new-in" class="underline">
-            novidades?
+            nossas novidades?
           </a>
         </p>
       </div>
