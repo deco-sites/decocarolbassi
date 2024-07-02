@@ -6,6 +6,7 @@ import Button from "./common.tsx";
 export interface Props {
   productID: string;
   productGroupID?: string;
+  productUrl?: string;
   variant?: "icon" | "full";
   class?: string;
 }
@@ -14,6 +15,7 @@ function WishlistButton({
   variant = "icon",
   productGroupID,
   productID,
+  productUrl,
   class: _class,
 }: Props) {
   const { user } = useUser();
@@ -34,6 +36,7 @@ function WishlistButton({
       variant={variant}
       productGroupID={productGroupID}
       productID={productID}
+      productUrl={productUrl}
       removeItem={() => removeItem({ id: listItem.value!.id }!)}
       addItem={() =>
         addItem({ sku: productID, productId: productGroupID || productID })}

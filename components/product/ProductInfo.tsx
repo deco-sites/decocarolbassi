@@ -49,6 +49,7 @@ function ProductInfo(
     productID,
     offers,
     isVariantOf,
+    url,
   } = product;
 
   const productName = product.isVariantOf?.name;
@@ -95,6 +96,7 @@ function ProductInfo(
             <WishlistButtonVtex
               variant="icon"
               productID={productID}
+              productUrl={url}
               productGroupID={productGroupID}
               class="btn btn-circle"
             />
