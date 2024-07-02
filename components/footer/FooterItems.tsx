@@ -1,6 +1,7 @@
 export type Item = {
   label: string;
   href: string;
+  openNewTab?: boolean;
 };
 
 export type Section = {
@@ -33,6 +34,7 @@ export default function FooterItems(
                         <a
                           href={item.href}
                           class="block py-1 link link-hover font-light"
+                          target={item.openNewTab ? "_blank" : ""}
                         >
                           {item.label}
                         </a>
@@ -64,6 +66,7 @@ export default function FooterItems(
                           <a
                             href={item.href}
                             class="text-[13px] lg:text-[16px] block py-1 link link-hover font-light"
+                            target={item.openNewTab ? "_blank" : ""}
                           >
                             {item.label}
                           </a>

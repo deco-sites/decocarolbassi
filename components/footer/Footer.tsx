@@ -17,6 +17,7 @@ import { clx } from "../../sdk/clx.ts";
 export type Item = {
   label: string;
   href: string;
+  openNewTab?: boolean;
 };
 
 export type Section = {
