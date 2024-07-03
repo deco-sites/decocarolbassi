@@ -783,7 +783,73 @@
       "name": "Assets",
       "pinned": true,
       "icon": "photo",
-      "layout": [],
+      "layout": {
+        "settings": {
+          "hasHeaders": true,
+          "constrainDragToContainer": true,
+          "reorderEnabled": true,
+          "selectionEnabled": false,
+          "popoutWholeStack": false,
+          "blockedPopoutsThrowError": true,
+          "closePopoutsOnUnload": true,
+          "showPopoutIcon": false,
+          "showMaximiseIcon": false,
+          "showCloseIcon": false,
+          "responsiveMode": "onload"
+        },
+        "dimensions": {
+          "borderWidth": 8,
+          "minItemHeight": 10,
+          "minItemWidth": 10,
+          "headerHeight": 40,
+          "dragProxyWidth": 300,
+          "dragProxyHeight": 200
+        },
+        "labels": {
+          "close": "close",
+          "maximise": "maximise",
+          "minimise": "minimise",
+          "popout": "open in new window",
+          "popin": "pop in",
+          "tabDropdown": "additional tabs"
+        },
+        "content": [
+          {
+            "type": "row",
+            "isClosable": true,
+            "reorderEnabled": true,
+            "title": "",
+            "content": [
+              {
+                "type": "stack",
+                "width": 100,
+                "isClosable": true,
+                "reorderEnabled": true,
+                "title": "",
+                "activeItemIndex": 0,
+                "content": [
+                  {
+                    "id": "assets::Assets::photo::Assets::%7B%7D",
+                    "title": "<div class=\"contents text-base-700\" id=\"header-assets::Assets::photo::Assets::%7B%7D\" />",
+                    "type": "component",
+                    "componentName": "component",
+                    "componentState": {
+                      "id": "assets::Assets::photo::Assets::%7B%7D"
+                    },
+                    "isClosable": true,
+                    "reorderEnabled": true
+                  }
+                ]
+              }
+            ]
+          }
+        ],
+        "isClosable": true,
+        "reorderEnabled": true,
+        "title": "",
+        "openPopouts": [],
+        "maximisedItemId": null
+      },
       "tabs": {
         "assets::Assets::photo::Assets::%7B%7D": {
           "name": "Assets",
@@ -1096,12 +1162,12 @@
                 "activeItemIndex": 0,
                 "content": [
                   {
-                    "id": "%2F.deco%2Fblocks%2Fsite.json::Preview::visibility::Preview::%7B%7D",
-                    "title": "<div class=\"contents text-base-700\" id=\"header-%2F.deco%2Fblocks%2Fsite.json::Preview::visibility::Preview::%7B%7D\" />",
+                    "id": "%2F.deco%2Fblocks%2Fsite.json::Preview::world::Preview::%7B%7D",
+                    "title": "<div class=\"contents text-base-700\" id=\"header-%2F.deco%2Fblocks%2Fsite.json::Preview::world::Preview::%7B%7D\" />",
                     "type": "component",
                     "componentName": "component",
                     "componentState": {
-                      "id": "%2F.deco%2Fblocks%2Fsite.json::Preview::visibility::Preview::%7B%7D"
+                      "id": "%2F.deco%2Fblocks%2Fsite.json::Preview::world::Preview::%7B%7D"
                     },
                     "isClosable": true,
                     "reorderEnabled": true,
@@ -1131,14 +1197,14 @@
             "__signal": null
           }
         },
-        "%2F.deco%2Fblocks%2Fsite.json::Preview::visibility::Preview::%7B%7D": {
+        "%2F.deco%2Fblocks%2Fsite.json::Preview::world::Preview::%7B%7D": {
           "name": "Preview",
-          "icon": "visibility",
+          "icon": "world",
           "accepts": "function",
           "render": "function",
           "viewId": "Preview",
           "width": 70,
-          "id": "%2F.deco%2Fblocks%2Fsite.json::Preview::visibility::Preview::%7B%7D",
+          "id": "%2F.deco%2Fblocks%2Fsite.json::Preview::world::Preview::%7B%7D",
           "state": {
             "__signal": null
           }
@@ -2218,26 +2284,34 @@
         },
         "content": [
           {
-            "type": "stack",
+            "type": "row",
             "isClosable": true,
             "reorderEnabled": true,
             "title": "",
             "content": [
               {
-                "type": "component",
-                "width": 70,
+                "type": "stack",
+                "width": 100,
                 "isClosable": true,
                 "reorderEnabled": true,
-                "title": "<div class=\"contents text-base-700\" id=\"header-%2F.deco%2Fblocks%2Fpages-category-7493d4326022.json::Preview::world::Preview::%7B%7D\" />",
-                "id": "%2F.deco%2Fblocks%2Fpages-category-7493d4326022.json::Preview::world::Preview::%7B%7D",
-                "componentName": "component",
-                "componentState": {
-                  "id": "%2F.deco%2Fblocks%2Fpages-category-7493d4326022.json::Preview::world::Preview::%7B%7D"
-                }
+                "title": "",
+                "activeItemIndex": 0,
+                "content": [
+                  {
+                    "id": "%2F.deco%2Fblocks%2Fpages-category-7493d4326022.json::Preview::world::Preview::%7B%7D",
+                    "title": "<div class=\"contents text-base-700\" id=\"header-%2F.deco%2Fblocks%2Fpages-category-7493d4326022.json::Preview::world::Preview::%7B%7D\" />",
+                    "type": "component",
+                    "componentName": "component",
+                    "componentState": {
+                      "id": "%2F.deco%2Fblocks%2Fpages-category-7493d4326022.json::Preview::world::Preview::%7B%7D"
+                    },
+                    "width": 70,
+                    "isClosable": true,
+                    "reorderEnabled": true
+                  }
+                ]
               }
-            ],
-            "width": 100,
-            "activeItemIndex": 0
+            ]
           }
         ],
         "isClosable": true,
@@ -2384,7 +2458,7 @@
       "id": "/.deco/blocks/Header%20-%2003.json",
       "name": "Header - 03",
       "pinned": false,
-      "icon": "block",
+      "icon": "package",
       "layout": {
         "settings": {
           "hasHeaders": true,
@@ -2453,12 +2527,12 @@
                 "activeItemIndex": 0,
                 "content": [
                   {
-                    "id": "%2F.deco%2Fblocks%2FHeader%2520-%252003.json::Preview::visibility::Preview::%7B%7D",
-                    "title": "<div class=\"contents text-base-700\" id=\"header-%2F.deco%2Fblocks%2FHeader%2520-%252003.json::Preview::visibility::Preview::%7B%7D\" />",
+                    "id": "%2F.deco%2Fblocks%2FHeader%2520-%252003.json::Preview::world::Preview::%7B%7D",
+                    "title": "<div class=\"contents text-base-700\" id=\"header-%2F.deco%2Fblocks%2FHeader%2520-%252003.json::Preview::world::Preview::%7B%7D\" />",
                     "type": "component",
                     "componentName": "component",
                     "componentState": {
-                      "id": "%2F.deco%2Fblocks%2FHeader%2520-%252003.json::Preview::visibility::Preview::%7B%7D"
+                      "id": "%2F.deco%2Fblocks%2FHeader%2520-%252003.json::Preview::world::Preview::%7B%7D"
                     },
                     "width": 70,
                     "isClosable": true,
@@ -2488,14 +2562,14 @@
             "__signal": null
           }
         },
-        "%2F.deco%2Fblocks%2FHeader%2520-%252003.json::Preview::visibility::Preview::%7B%7D": {
+        "%2F.deco%2Fblocks%2FHeader%2520-%252003.json::Preview::world::Preview::%7B%7D": {
           "name": "Preview",
-          "icon": "visibility",
+          "icon": "world",
           "accepts": "function",
           "render": "function",
           "viewId": "Preview",
           "width": 70,
-          "id": "%2F.deco%2Fblocks%2FHeader%2520-%252003.json::Preview::visibility::Preview::%7B%7D",
+          "id": "%2F.deco%2Fblocks%2FHeader%2520-%252003.json::Preview::world::Preview::%7B%7D",
           "state": {
             "__signal": null
           }
@@ -2506,7 +2580,7 @@
       "id": "/.deco/blocks/Footer%20-%2002.json",
       "name": "Footer - 02",
       "pinned": false,
-      "icon": "block",
+      "icon": "package",
       "layout": {
         "settings": {
           "hasHeaders": true,
@@ -2575,12 +2649,12 @@
                 "activeItemIndex": 0,
                 "content": [
                   {
-                    "id": "%2F.deco%2Fblocks%2FFooter%2520-%252002.json::Preview::visibility::Preview::%7B%7D",
-                    "title": "<div class=\"contents text-base-700\" id=\"header-%2F.deco%2Fblocks%2FFooter%2520-%252002.json::Preview::visibility::Preview::%7B%7D\" />",
+                    "id": "%2F.deco%2Fblocks%2FFooter%2520-%252002.json::Preview::world::Preview::%7B%7D",
+                    "title": "<div class=\"contents text-base-700\" id=\"header-%2F.deco%2Fblocks%2FFooter%2520-%252002.json::Preview::world::Preview::%7B%7D\" />",
                     "type": "component",
                     "componentName": "component",
                     "componentState": {
-                      "id": "%2F.deco%2Fblocks%2FFooter%2520-%252002.json::Preview::visibility::Preview::%7B%7D"
+                      "id": "%2F.deco%2Fblocks%2FFooter%2520-%252002.json::Preview::world::Preview::%7B%7D"
                     },
                     "width": 70,
                     "isClosable": true,
@@ -2607,17 +2681,17 @@
           "width": 30,
           "id": "%2F.deco%2Fblocks%2FFooter%2520-%252002.json::Properties::list::Properties::%7B%7D",
           "state": {
-            "__signal": null
+            "__signal": "error"
           }
         },
-        "%2F.deco%2Fblocks%2FFooter%2520-%252002.json::Preview::visibility::Preview::%7B%7D": {
+        "%2F.deco%2Fblocks%2FFooter%2520-%252002.json::Preview::world::Preview::%7B%7D": {
           "name": "Preview",
-          "icon": "visibility",
+          "icon": "world",
           "accepts": "function",
           "render": "function",
           "viewId": "Preview",
           "width": 70,
-          "id": "%2F.deco%2Fblocks%2FFooter%2520-%252002.json::Preview::visibility::Preview::%7B%7D",
+          "id": "%2F.deco%2Fblocks%2FFooter%2520-%252002.json::Preview::world::Preview::%7B%7D",
           "state": {
             "__signal": null
           }
@@ -3343,9 +3417,9 @@
     },
     {
       "id": "/.deco/blocks/vtex.json",
-      "name": "vtex.json",
+      "name": "vtex",
       "pinned": false,
-      "icon": "data-object",
+      "icon": "apps",
       "layout": {
         "settings": {
           "hasHeaders": true,
@@ -3385,20 +3459,43 @@
             "content": [
               {
                 "type": "stack",
-                "width": 100,
+                "width": 41.66666666666667,
                 "isClosable": true,
                 "reorderEnabled": true,
                 "title": "",
                 "activeItemIndex": 0,
                 "content": [
                   {
-                    "id": "%2F.deco%2Fblocks%2Fvtex.json::Code::code::Code::%7B%22spaceId%22%3A%22%2F.deco%2Fblocks%2Fvtex.json%22%7D",
-                    "title": "<div class=\"contents text-base-700\" id=\"header-%2F.deco%2Fblocks%2Fvtex.json::Code::code::Code::%7B%22spaceId%22%3A%22%2F.deco%2Fblocks%2Fvtex.json%22%7D\" />",
+                    "id": "%2F.deco%2Fblocks%2Fvtex.json::Properties::list::Properties::%7B%7D",
+                    "title": "<div class=\"contents text-base-700\" id=\"header-%2F.deco%2Fblocks%2Fvtex.json::Properties::list::Properties::%7B%7D\" />",
                     "type": "component",
                     "componentName": "component",
                     "componentState": {
-                      "id": "%2F.deco%2Fblocks%2Fvtex.json::Code::code::Code::%7B%22spaceId%22%3A%22%2F.deco%2Fblocks%2Fvtex.json%22%7D"
+                      "id": "%2F.deco%2Fblocks%2Fvtex.json::Properties::list::Properties::%7B%7D"
                     },
+                    "isClosable": true,
+                    "reorderEnabled": true,
+                    "width": 30
+                  }
+                ]
+              },
+              {
+                "type": "stack",
+                "width": 58.333333333333336,
+                "isClosable": true,
+                "reorderEnabled": true,
+                "title": "",
+                "activeItemIndex": 0,
+                "content": [
+                  {
+                    "id": "%2F.deco%2Fblocks%2Fvtex.json::Preview::world::Preview::%7B%7D",
+                    "title": "<div class=\"contents text-base-700\" id=\"header-%2F.deco%2Fblocks%2Fvtex.json::Preview::world::Preview::%7B%7D\" />",
+                    "type": "component",
+                    "componentName": "component",
+                    "componentState": {
+                      "id": "%2F.deco%2Fblocks%2Fvtex.json::Preview::world::Preview::%7B%7D"
+                    },
+                    "width": 70,
                     "isClosable": true,
                     "reorderEnabled": true
                   }
@@ -3414,18 +3511,28 @@
         "maximisedItemId": null
       },
       "tabs": {
-        "%2F.deco%2Fblocks%2Fvtex.json::Code::code::Code::%7B%22spaceId%22%3A%22%2F.deco%2Fblocks%2Fvtex.json%22%7D": {
-          "name": "Code",
-          "icon": "code",
+        "%2F.deco%2Fblocks%2Fvtex.json::Properties::list::Properties::%7B%7D": {
+          "name": "Properties",
+          "icon": "list",
           "accepts": "function",
           "render": "function",
-          "viewId": "Code",
-          "viewProps": {
-            "spaceId": "/.deco/blocks/vtex.json"
-          },
-          "id": "%2F.deco%2Fblocks%2Fvtex.json::Code::code::Code::%7B%22spaceId%22%3A%22%2F.deco%2Fblocks%2Fvtex.json%22%7D",
+          "viewId": "Properties",
+          "width": 30,
+          "id": "%2F.deco%2Fblocks%2Fvtex.json::Properties::list::Properties::%7B%7D",
           "state": {
-            "__signal": "error"
+            "__signal": null
+          }
+        },
+        "%2F.deco%2Fblocks%2Fvtex.json::Preview::world::Preview::%7B%7D": {
+          "name": "Preview",
+          "icon": "world",
+          "accepts": "function",
+          "render": "function",
+          "viewId": "Preview",
+          "width": 70,
+          "id": "%2F.deco%2Fblocks%2Fvtex.json::Preview::world::Preview::%7B%7D",
+          "state": {
+            "__signal": null
           }
         }
       }
@@ -4264,8 +4371,7 @@
           "width": 30,
           "id": "%2F.deco%2Fblocks%2Fdeco-vtex.json::Properties::list::Properties::%7B%7D",
           "state": {
-            "__signal": null,
-            "value": null
+            "__signal": null
           }
         },
         "%2F.deco%2Fblocks%2Fdeco-vtex.json::Preview::visibility::Preview::%7B%7D": {
@@ -6025,10 +6131,10 @@
       }
     },
     {
-      "id": "{\"oid\":\"cfdb1d1f5650d3fca28fbf345ef808b5f140f9f0\",\"short\":\"cfdb1d1\",\"commit\":{\"message\":\"feat: productSimilars colors\\n\",\"parent\":[\"deea2098d2008662dff7f9f325a624dc42058aa4\"],\"tree\":\"d1b35991585213d10915d9c4f9dada463669f0b3\",\"author\":{\"name\":\"luiz felipe\",\"email\":\"luizfelipebragaa@gmail.com\",\"timestamp\":1719884307,\"timezoneOffset\":180},\"committer\":{\"name\":\"luiz felipe\",\"email\":\"luizfelipebragaa@gmail.com\",\"timestamp\":1719884307,\"timezoneOffset\":180}}}",
-      "name": "Release cfdb1d1",
+      "id": "/.deco/blocks/pages-Winter%252024-468664.json",
+      "name": "Winter 24",
       "pinned": false,
-      "icon": "rocket-launch",
+      "icon": "file",
       "layout": {
         "settings": {
           "hasHeaders": true,
@@ -6068,20 +6174,43 @@
             "content": [
               {
                 "type": "stack",
-                "width": 100,
+                "width": 41.66666666666667,
                 "isClosable": true,
                 "reorderEnabled": true,
                 "title": "",
                 "activeItemIndex": 0,
                 "content": [
                   {
-                    "id": "%7B%22oid%22%3A%22cfdb1d1f5650d3fca28fbf345ef808b5f140f9f0%22%2C%22short%22%3A%22cfdb1d1%22%2C%22commit%22%3A%7B%22message%22%3A%22feat%3A%20productSimilars%20colors%5Cn%22%2C%22parent%22%3A%5B%22deea2098d2008662dff7f9f325a624dc42058aa4%22%5D%2C%22tree%22%3A%22d1b35991585213d10915d9c4f9dada463669f0b3%22%2C%22author%22%3A%7B%22name%22%3A%22luiz%20felipe%22%2C%22email%22%3A%22luizfelipebragaa%40gmail.com%22%2C%22timestamp%22%3A1719884307%2C%22timezoneOffset%22%3A180%7D%2C%22committer%22%3A%7B%22name%22%3A%22luiz%20felipe%22%2C%22email%22%3A%22luizfelipebragaa%40gmail.com%22%2C%22timestamp%22%3A1719884307%2C%22timezoneOffset%22%3A180%7D%7D%7D::Release::rocket-launch::Release::%7B%7D",
-                    "title": "<div class=\"contents text-base-700\" id=\"header-%7B%22oid%22%3A%22cfdb1d1f5650d3fca28fbf345ef808b5f140f9f0%22%2C%22short%22%3A%22cfdb1d1%22%2C%22commit%22%3A%7B%22message%22%3A%22feat%3A%20productSimilars%20colors%5Cn%22%2C%22parent%22%3A%5B%22deea2098d2008662dff7f9f325a624dc42058aa4%22%5D%2C%22tree%22%3A%22d1b35991585213d10915d9c4f9dada463669f0b3%22%2C%22author%22%3A%7B%22name%22%3A%22luiz%20felipe%22%2C%22email%22%3A%22luizfelipebragaa%40gmail.com%22%2C%22timestamp%22%3A1719884307%2C%22timezoneOffset%22%3A180%7D%2C%22committer%22%3A%7B%22name%22%3A%22luiz%20felipe%22%2C%22email%22%3A%22luizfelipebragaa%40gmail.com%22%2C%22timestamp%22%3A1719884307%2C%22timezoneOffset%22%3A180%7D%7D%7D::Release::rocket-launch::Release::%7B%7D\" />",
+                    "id": "%2F.deco%2Fblocks%2Fpages-Winter%25252024-468664.json::Properties::list::Properties::%7B%7D",
+                    "title": "<div class=\"contents text-base-700\" id=\"header-%2F.deco%2Fblocks%2Fpages-Winter%25252024-468664.json::Properties::list::Properties::%7B%7D\" />",
                     "type": "component",
                     "componentName": "component",
                     "componentState": {
-                      "id": "%7B%22oid%22%3A%22cfdb1d1f5650d3fca28fbf345ef808b5f140f9f0%22%2C%22short%22%3A%22cfdb1d1%22%2C%22commit%22%3A%7B%22message%22%3A%22feat%3A%20productSimilars%20colors%5Cn%22%2C%22parent%22%3A%5B%22deea2098d2008662dff7f9f325a624dc42058aa4%22%5D%2C%22tree%22%3A%22d1b35991585213d10915d9c4f9dada463669f0b3%22%2C%22author%22%3A%7B%22name%22%3A%22luiz%20felipe%22%2C%22email%22%3A%22luizfelipebragaa%40gmail.com%22%2C%22timestamp%22%3A1719884307%2C%22timezoneOffset%22%3A180%7D%2C%22committer%22%3A%7B%22name%22%3A%22luiz%20felipe%22%2C%22email%22%3A%22luizfelipebragaa%40gmail.com%22%2C%22timestamp%22%3A1719884307%2C%22timezoneOffset%22%3A180%7D%7D%7D::Release::rocket-launch::Release::%7B%7D"
+                      "id": "%2F.deco%2Fblocks%2Fpages-Winter%25252024-468664.json::Properties::list::Properties::%7B%7D"
                     },
+                    "width": 30,
+                    "isClosable": true,
+                    "reorderEnabled": true
+                  }
+                ]
+              },
+              {
+                "type": "stack",
+                "width": 58.333333333333336,
+                "isClosable": true,
+                "reorderEnabled": true,
+                "title": "",
+                "activeItemIndex": 0,
+                "content": [
+                  {
+                    "id": "%2F.deco%2Fblocks%2Fpages-Winter%25252024-468664.json::Preview::visibility::Preview::%7B%7D",
+                    "title": "<div class=\"contents text-base-700\" id=\"header-%2F.deco%2Fblocks%2Fpages-Winter%25252024-468664.json::Preview::visibility::Preview::%7B%7D\" />",
+                    "type": "component",
+                    "componentName": "component",
+                    "componentState": {
+                      "id": "%2F.deco%2Fblocks%2Fpages-Winter%25252024-468664.json::Preview::visibility::Preview::%7B%7D"
+                    },
+                    "width": 70,
                     "isClosable": true,
                     "reorderEnabled": true
                   }
@@ -6097,182 +6226,26 @@
         "maximisedItemId": null
       },
       "tabs": {
-        "%7B%22oid%22%3A%22cfdb1d1f5650d3fca28fbf345ef808b5f140f9f0%22%2C%22short%22%3A%22cfdb1d1%22%2C%22commit%22%3A%7B%22message%22%3A%22feat%3A%20productSimilars%20colors%5Cn%22%2C%22parent%22%3A%5B%22deea2098d2008662dff7f9f325a624dc42058aa4%22%5D%2C%22tree%22%3A%22d1b35991585213d10915d9c4f9dada463669f0b3%22%2C%22author%22%3A%7B%22name%22%3A%22luiz%20felipe%22%2C%22email%22%3A%22luizfelipebragaa%40gmail.com%22%2C%22timestamp%22%3A1719884307%2C%22timezoneOffset%22%3A180%7D%2C%22committer%22%3A%7B%22name%22%3A%22luiz%20felipe%22%2C%22email%22%3A%22luizfelipebragaa%40gmail.com%22%2C%22timestamp%22%3A1719884307%2C%22timezoneOffset%22%3A180%7D%7D%7D::Release::rocket-launch::Release::%7B%7D": {
-          "name": "Release",
-          "icon": "rocket-launch",
+        "%2F.deco%2Fblocks%2Fpages-Winter%25252024-468664.json::Properties::list::Properties::%7B%7D": {
+          "name": "Properties",
+          "icon": "list",
+          "accepts": "function",
           "render": "function",
-          "viewId": "Release",
-          "id": "%7B%22oid%22%3A%22cfdb1d1f5650d3fca28fbf345ef808b5f140f9f0%22%2C%22short%22%3A%22cfdb1d1%22%2C%22commit%22%3A%7B%22message%22%3A%22feat%3A%20productSimilars%20colors%5Cn%22%2C%22parent%22%3A%5B%22deea2098d2008662dff7f9f325a624dc42058aa4%22%5D%2C%22tree%22%3A%22d1b35991585213d10915d9c4f9dada463669f0b3%22%2C%22author%22%3A%7B%22name%22%3A%22luiz%20felipe%22%2C%22email%22%3A%22luizfelipebragaa%40gmail.com%22%2C%22timestamp%22%3A1719884307%2C%22timezoneOffset%22%3A180%7D%2C%22committer%22%3A%7B%22name%22%3A%22luiz%20felipe%22%2C%22email%22%3A%22luizfelipebragaa%40gmail.com%22%2C%22timestamp%22%3A1719884307%2C%22timezoneOffset%22%3A180%7D%7D%7D::Release::rocket-launch::Release::%7B%7D",
+          "viewId": "Properties",
+          "width": 30,
+          "id": "%2F.deco%2Fblocks%2Fpages-Winter%25252024-468664.json::Properties::list::Properties::%7B%7D",
           "state": {
             "__signal": null
           }
-        }
-      }
-    },
-    {
-      "id": "build-log-cfdb1d1f5650d3fca28fbf345ef808b5f140f9f0",
-      "name": "Build Log cfdb1d1",
-      "pinned": false,
-      "icon": "manage-search",
-      "layout": {
-        "settings": {
-          "hasHeaders": true,
-          "constrainDragToContainer": true,
-          "reorderEnabled": true,
-          "selectionEnabled": false,
-          "popoutWholeStack": false,
-          "blockedPopoutsThrowError": true,
-          "closePopoutsOnUnload": true,
-          "showPopoutIcon": false,
-          "showMaximiseIcon": false,
-          "showCloseIcon": false,
-          "responsiveMode": "onload"
         },
-        "dimensions": {
-          "borderWidth": 8,
-          "minItemHeight": 10,
-          "minItemWidth": 10,
-          "headerHeight": 40,
-          "dragProxyWidth": 300,
-          "dragProxyHeight": 200
-        },
-        "labels": {
-          "close": "close",
-          "maximise": "maximise",
-          "minimise": "minimise",
-          "popout": "open in new window",
-          "popin": "pop in",
-          "tabDropdown": "additional tabs"
-        },
-        "content": [
-          {
-            "type": "row",
-            "isClosable": true,
-            "reorderEnabled": true,
-            "title": "",
-            "content": [
-              {
-                "type": "stack",
-                "width": 100,
-                "isClosable": true,
-                "reorderEnabled": true,
-                "title": "",
-                "activeItemIndex": 0,
-                "content": [
-                  {
-                    "id": "build-log-cfdb1d1f5650d3fca28fbf345ef808b5f140f9f0::Build%20Logs::manage-search::Build%20Logs::%7B%7D",
-                    "title": "<div class=\"contents text-base-700\" id=\"header-build-log-cfdb1d1f5650d3fca28fbf345ef808b5f140f9f0::Build%20Logs::manage-search::Build%20Logs::%7B%7D\" />",
-                    "type": "component",
-                    "componentName": "component",
-                    "componentState": {
-                      "id": "build-log-cfdb1d1f5650d3fca28fbf345ef808b5f140f9f0::Build%20Logs::manage-search::Build%20Logs::%7B%7D"
-                    },
-                    "isClosable": true,
-                    "reorderEnabled": true
-                  }
-                ]
-              }
-            ]
-          }
-        ],
-        "isClosable": true,
-        "reorderEnabled": true,
-        "title": "",
-        "openPopouts": [],
-        "maximisedItemId": null
-      },
-      "tabs": {
-        "build-log-cfdb1d1f5650d3fca28fbf345ef808b5f140f9f0::Build%20Logs::manage-search::Build%20Logs::%7B%7D": {
-          "name": "Build Logs",
-          "icon": "manage-search",
+        "%2F.deco%2Fblocks%2Fpages-Winter%25252024-468664.json::Preview::visibility::Preview::%7B%7D": {
+          "name": "Preview",
+          "icon": "visibility",
+          "accepts": "function",
           "render": "function",
-          "viewId": "Build Logs",
-          "id": "build-log-cfdb1d1f5650d3fca28fbf345ef808b5f140f9f0::Build%20Logs::manage-search::Build%20Logs::%7B%7D",
-          "state": {
-            "__signal": null
-          }
-        }
-      }
-    },
-    {
-      "id": "build-log-9c0c019f642c61b0357887bab1f5888183de661e",
-      "name": "Build Log 9c0c019",
-      "pinned": false,
-      "icon": "manage-search",
-      "layout": {
-        "settings": {
-          "hasHeaders": true,
-          "constrainDragToContainer": true,
-          "reorderEnabled": true,
-          "selectionEnabled": false,
-          "popoutWholeStack": false,
-          "blockedPopoutsThrowError": true,
-          "closePopoutsOnUnload": true,
-          "showPopoutIcon": false,
-          "showMaximiseIcon": false,
-          "showCloseIcon": false,
-          "responsiveMode": "onload"
-        },
-        "dimensions": {
-          "borderWidth": 8,
-          "minItemHeight": 10,
-          "minItemWidth": 10,
-          "headerHeight": 40,
-          "dragProxyWidth": 300,
-          "dragProxyHeight": 200
-        },
-        "labels": {
-          "close": "close",
-          "maximise": "maximise",
-          "minimise": "minimise",
-          "popout": "open in new window",
-          "popin": "pop in",
-          "tabDropdown": "additional tabs"
-        },
-        "content": [
-          {
-            "type": "row",
-            "isClosable": true,
-            "reorderEnabled": true,
-            "title": "",
-            "content": [
-              {
-                "type": "stack",
-                "width": 100,
-                "isClosable": true,
-                "reorderEnabled": true,
-                "title": "",
-                "activeItemIndex": 0,
-                "content": [
-                  {
-                    "id": "build-log-9c0c019f642c61b0357887bab1f5888183de661e::Build%20Logs::manage-search::Build%20Logs::%7B%7D",
-                    "title": "<div class=\"contents text-base-700\" id=\"header-build-log-9c0c019f642c61b0357887bab1f5888183de661e::Build%20Logs::manage-search::Build%20Logs::%7B%7D\" />",
-                    "type": "component",
-                    "componentName": "component",
-                    "componentState": {
-                      "id": "build-log-9c0c019f642c61b0357887bab1f5888183de661e::Build%20Logs::manage-search::Build%20Logs::%7B%7D"
-                    },
-                    "isClosable": true,
-                    "reorderEnabled": true
-                  }
-                ]
-              }
-            ]
-          }
-        ],
-        "isClosable": true,
-        "reorderEnabled": true,
-        "title": "",
-        "openPopouts": [],
-        "maximisedItemId": null
-      },
-      "tabs": {
-        "build-log-9c0c019f642c61b0357887bab1f5888183de661e::Build%20Logs::manage-search::Build%20Logs::%7B%7D": {
-          "name": "Build Logs",
-          "icon": "manage-search",
-          "render": "function",
-          "viewId": "Build Logs",
-          "id": "build-log-9c0c019f642c61b0357887bab1f5888183de661e::Build%20Logs::manage-search::Build%20Logs::%7B%7D",
+          "viewId": "Preview",
+          "width": 70,
+          "id": "%2F.deco%2Fblocks%2Fpages-Winter%25252024-468664.json::Preview::visibility::Preview::%7B%7D",
           "state": {
             "__signal": null
           }
@@ -6352,12 +6325,12 @@
                 "activeItemIndex": 0,
                 "content": [
                   {
-                    "id": "%2F.deco%2Fblocks%2Fpages-%2525C3%25258Dcones%25252010%252520anos-516929.json::Preview::visibility::Preview::%7B%7D",
-                    "title": "<div class=\"contents text-base-700\" id=\"header-%2F.deco%2Fblocks%2Fpages-%2525C3%25258Dcones%25252010%252520anos-516929.json::Preview::visibility::Preview::%7B%7D\" />",
+                    "id": "%2F.deco%2Fblocks%2Fpages-%2525C3%25258Dcones%25252010%252520anos-516929.json::Preview::world::Preview::%7B%7D",
+                    "title": "<div class=\"contents text-base-700\" id=\"header-%2F.deco%2Fblocks%2Fpages-%2525C3%25258Dcones%25252010%252520anos-516929.json::Preview::world::Preview::%7B%7D\" />",
                     "type": "component",
                     "componentName": "component",
                     "componentState": {
-                      "id": "%2F.deco%2Fblocks%2Fpages-%2525C3%25258Dcones%25252010%252520anos-516929.json::Preview::visibility::Preview::%7B%7D"
+                      "id": "%2F.deco%2Fblocks%2Fpages-%2525C3%25258Dcones%25252010%252520anos-516929.json::Preview::world::Preview::%7B%7D"
                     },
                     "width": 70,
                     "isClosable": true,
@@ -6387,14 +6360,14 @@
             "__signal": null
           }
         },
-        "%2F.deco%2Fblocks%2Fpages-%2525C3%25258Dcones%25252010%252520anos-516929.json::Preview::visibility::Preview::%7B%7D": {
+        "%2F.deco%2Fblocks%2Fpages-%2525C3%25258Dcones%25252010%252520anos-516929.json::Preview::world::Preview::%7B%7D": {
           "name": "Preview",
-          "icon": "visibility",
+          "icon": "world",
           "accepts": "function",
           "render": "function",
           "viewId": "Preview",
           "width": 70,
-          "id": "%2F.deco%2Fblocks%2Fpages-%2525C3%25258Dcones%25252010%252520anos-516929.json::Preview::visibility::Preview::%7B%7D",
+          "id": "%2F.deco%2Fblocks%2Fpages-%2525C3%25258Dcones%25252010%252520anos-516929.json::Preview::world::Preview::%7B%7D",
           "state": {
             "__signal": null
           }
@@ -6402,8 +6375,8 @@
       }
     },
     {
-      "id": "/.deco/blocks/pages-Alfaiataria-527036.json",
-      "name": "Alfaiataria",
+      "id": "/.deco/blocks/pages-Carol%2520Bassi%2520%252B%2520Maria%2520Rudge-543857.json",
+      "name": "Carol Bassi + Maria Rudge",
       "pinned": false,
       "icon": "file",
       "layout": {
@@ -6452,12 +6425,12 @@
                 "activeItemIndex": 0,
                 "content": [
                   {
-                    "id": "%2F.deco%2Fblocks%2Fpages-Alfaiataria-527036.json::Properties::list::Properties::%7B%7D",
-                    "title": "<div class=\"contents text-base-700\" id=\"header-%2F.deco%2Fblocks%2Fpages-Alfaiataria-527036.json::Properties::list::Properties::%7B%7D\" />",
+                    "id": "%2F.deco%2Fblocks%2Fpages-Carol%252520Bassi%252520%25252B%252520Maria%252520Rudge-543857.json::Properties::list::Properties::%7B%7D",
+                    "title": "<div class=\"contents text-base-700\" id=\"header-%2F.deco%2Fblocks%2Fpages-Carol%252520Bassi%252520%25252B%252520Maria%252520Rudge-543857.json::Properties::list::Properties::%7B%7D\" />",
                     "type": "component",
                     "componentName": "component",
                     "componentState": {
-                      "id": "%2F.deco%2Fblocks%2Fpages-Alfaiataria-527036.json::Properties::list::Properties::%7B%7D"
+                      "id": "%2F.deco%2Fblocks%2Fpages-Carol%252520Bassi%252520%25252B%252520Maria%252520Rudge-543857.json::Properties::list::Properties::%7B%7D"
                     },
                     "width": 30,
                     "isClosable": true,
@@ -6474,12 +6447,12 @@
                 "activeItemIndex": 0,
                 "content": [
                   {
-                    "id": "%2F.deco%2Fblocks%2Fpages-Alfaiataria-527036.json::Preview::visibility::Preview::%7B%7D",
-                    "title": "<div class=\"contents text-base-700\" id=\"header-%2F.deco%2Fblocks%2Fpages-Alfaiataria-527036.json::Preview::visibility::Preview::%7B%7D\" />",
+                    "id": "%2F.deco%2Fblocks%2Fpages-Carol%252520Bassi%252520%25252B%252520Maria%252520Rudge-543857.json::Preview::world::Preview::%7B%7D",
+                    "title": "<div class=\"contents text-base-700\" id=\"header-%2F.deco%2Fblocks%2Fpages-Carol%252520Bassi%252520%25252B%252520Maria%252520Rudge-543857.json::Preview::world::Preview::%7B%7D\" />",
                     "type": "component",
                     "componentName": "component",
                     "componentState": {
-                      "id": "%2F.deco%2Fblocks%2Fpages-Alfaiataria-527036.json::Preview::visibility::Preview::%7B%7D"
+                      "id": "%2F.deco%2Fblocks%2Fpages-Carol%252520Bassi%252520%25252B%252520Maria%252520Rudge-543857.json::Preview::world::Preview::%7B%7D"
                     },
                     "width": 70,
                     "isClosable": true,
@@ -6497,26 +6470,26 @@
         "maximisedItemId": null
       },
       "tabs": {
-        "%2F.deco%2Fblocks%2Fpages-Alfaiataria-527036.json::Properties::list::Properties::%7B%7D": {
+        "%2F.deco%2Fblocks%2Fpages-Carol%252520Bassi%252520%25252B%252520Maria%252520Rudge-543857.json::Properties::list::Properties::%7B%7D": {
           "name": "Properties",
           "icon": "list",
           "accepts": "function",
           "render": "function",
           "viewId": "Properties",
           "width": 30,
-          "id": "%2F.deco%2Fblocks%2Fpages-Alfaiataria-527036.json::Properties::list::Properties::%7B%7D",
+          "id": "%2F.deco%2Fblocks%2Fpages-Carol%252520Bassi%252520%25252B%252520Maria%252520Rudge-543857.json::Properties::list::Properties::%7B%7D",
           "state": {
             "__signal": null
           }
         },
-        "%2F.deco%2Fblocks%2Fpages-Alfaiataria-527036.json::Preview::visibility::Preview::%7B%7D": {
+        "%2F.deco%2Fblocks%2Fpages-Carol%252520Bassi%252520%25252B%252520Maria%252520Rudge-543857.json::Preview::world::Preview::%7B%7D": {
           "name": "Preview",
-          "icon": "visibility",
+          "icon": "world",
           "accepts": "function",
           "render": "function",
           "viewId": "Preview",
           "width": 70,
-          "id": "%2F.deco%2Fblocks%2Fpages-Alfaiataria-527036.json::Preview::visibility::Preview::%7B%7D",
+          "id": "%2F.deco%2Fblocks%2Fpages-Carol%252520Bassi%252520%25252B%252520Maria%252520Rudge-543857.json::Preview::world::Preview::%7B%7D",
           "state": {
             "__signal": null
           }
@@ -6524,8 +6497,8 @@
       }
     },
     {
-      "id": "/.deco/blocks/pages-Lifestyle%2520CB-228431.json",
-      "name": "Lifestyle CB",
+      "id": "/.deco/blocks/pages-Hemisf%25C3%25A9rio%2520Norte%2520Ver%25C3%25A3o%252024-953465.json",
+      "name": "Hemisfério Norte Verão 24",
       "pinned": false,
       "icon": "file",
       "layout": {
@@ -6574,12 +6547,12 @@
                 "activeItemIndex": 0,
                 "content": [
                   {
-                    "id": "%2F.deco%2Fblocks%2Fpages-Lifestyle%252520CB-228431.json::Properties::list::Properties::%7B%7D",
-                    "title": "<div class=\"contents text-base-700\" id=\"header-%2F.deco%2Fblocks%2Fpages-Lifestyle%252520CB-228431.json::Properties::list::Properties::%7B%7D\" />",
+                    "id": "%2F.deco%2Fblocks%2Fpages-Hemisf%2525C3%2525A9rio%252520Norte%252520Ver%2525C3%2525A3o%25252024-953465.json::Properties::list::Properties::%7B%7D",
+                    "title": "<div class=\"contents text-base-700\" id=\"header-%2F.deco%2Fblocks%2Fpages-Hemisf%2525C3%2525A9rio%252520Norte%252520Ver%2525C3%2525A3o%25252024-953465.json::Properties::list::Properties::%7B%7D\" />",
                     "type": "component",
                     "componentName": "component",
                     "componentState": {
-                      "id": "%2F.deco%2Fblocks%2Fpages-Lifestyle%252520CB-228431.json::Properties::list::Properties::%7B%7D"
+                      "id": "%2F.deco%2Fblocks%2Fpages-Hemisf%2525C3%2525A9rio%252520Norte%252520Ver%2525C3%2525A3o%25252024-953465.json::Properties::list::Properties::%7B%7D"
                     },
                     "width": 30,
                     "isClosable": true,
@@ -6596,12 +6569,12 @@
                 "activeItemIndex": 0,
                 "content": [
                   {
-                    "id": "%2F.deco%2Fblocks%2Fpages-Lifestyle%252520CB-228431.json::Preview::visibility::Preview::%7B%7D",
-                    "title": "<div class=\"contents text-base-700\" id=\"header-%2F.deco%2Fblocks%2Fpages-Lifestyle%252520CB-228431.json::Preview::visibility::Preview::%7B%7D\" />",
+                    "id": "%2F.deco%2Fblocks%2Fpages-Hemisf%2525C3%2525A9rio%252520Norte%252520Ver%2525C3%2525A3o%25252024-953465.json::Preview::world::Preview::%7B%7D",
+                    "title": "<div class=\"contents text-base-700\" id=\"header-%2F.deco%2Fblocks%2Fpages-Hemisf%2525C3%2525A9rio%252520Norte%252520Ver%2525C3%2525A3o%25252024-953465.json::Preview::world::Preview::%7B%7D\" />",
                     "type": "component",
                     "componentName": "component",
                     "componentState": {
-                      "id": "%2F.deco%2Fblocks%2Fpages-Lifestyle%252520CB-228431.json::Preview::visibility::Preview::%7B%7D"
+                      "id": "%2F.deco%2Fblocks%2Fpages-Hemisf%2525C3%2525A9rio%252520Norte%252520Ver%2525C3%2525A3o%25252024-953465.json::Preview::world::Preview::%7B%7D"
                     },
                     "width": 70,
                     "isClosable": true,
@@ -6619,26 +6592,26 @@
         "maximisedItemId": null
       },
       "tabs": {
-        "%2F.deco%2Fblocks%2Fpages-Lifestyle%252520CB-228431.json::Properties::list::Properties::%7B%7D": {
+        "%2F.deco%2Fblocks%2Fpages-Hemisf%2525C3%2525A9rio%252520Norte%252520Ver%2525C3%2525A3o%25252024-953465.json::Properties::list::Properties::%7B%7D": {
           "name": "Properties",
           "icon": "list",
           "accepts": "function",
           "render": "function",
           "viewId": "Properties",
           "width": 30,
-          "id": "%2F.deco%2Fblocks%2Fpages-Lifestyle%252520CB-228431.json::Properties::list::Properties::%7B%7D",
+          "id": "%2F.deco%2Fblocks%2Fpages-Hemisf%2525C3%2525A9rio%252520Norte%252520Ver%2525C3%2525A3o%25252024-953465.json::Properties::list::Properties::%7B%7D",
           "state": {
             "__signal": null
           }
         },
-        "%2F.deco%2Fblocks%2Fpages-Lifestyle%252520CB-228431.json::Preview::visibility::Preview::%7B%7D": {
+        "%2F.deco%2Fblocks%2Fpages-Hemisf%2525C3%2525A9rio%252520Norte%252520Ver%2525C3%2525A3o%25252024-953465.json::Preview::world::Preview::%7B%7D": {
           "name": "Preview",
-          "icon": "visibility",
+          "icon": "world",
           "accepts": "function",
           "render": "function",
           "viewId": "Preview",
           "width": 70,
-          "id": "%2F.deco%2Fblocks%2Fpages-Lifestyle%252520CB-228431.json::Preview::visibility::Preview::%7B%7D",
+          "id": "%2F.deco%2Fblocks%2Fpages-Hemisf%2525C3%2525A9rio%252520Norte%252520Ver%2525C3%2525A3o%25252024-953465.json::Preview::world::Preview::%7B%7D",
           "state": {
             "__signal": null
           }

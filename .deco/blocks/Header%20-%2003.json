@@ -52,21 +52,35 @@
         "@type": "SiteNavigationElement",
         "image": [
           {
-            "url": "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/239/575c3b0f-1a2e-4ecb-aaad-532671dc553d",
-            "@type": "ImageObject"
+            "url": "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/9166/847b75e2-bc9c-4a9d-b24e-5ec7bca85b3d",
+            "@type": "ImageObject",
+            "encodingFormat": "Hemisfério Norte",
+            "embedUrl": "/hemisferio-norte-verao-2024",
+            "thumbnailUrl": "/hemisferio-norte-verao-2024",
+            "contentUrl": "Hemisfério Norte"
           },
           {
-            "url": "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/9166/b0524cd2-6658-4174-bc96-71332a9ad96f",
-            "contentUrl": "Sapatos",
-            "thumbnailUrl": "/sapatos"
+            "url": "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/9166/2752960f-04de-4575-b6cb-1cfb3b4633d0",
+            "contentUrl": "Winter 24",
+            "thumbnailUrl": "/winter24",
+            "encodingFormat": "Winter 24",
+            "embedUrl": "/Winter24"
           }
         ],
         "children": [
           {
-            "url": "/icones-10-anos",
+            "url": "/hemisferio-norte-verao-2024",
+            "name": "Hemisfério Norte",
+            "children": [],
+            "image": [],
+            "additionalType": "Hemisfério Norte",
+            "identifier": "Hemisfério Norte"
+          },
+          {
+            "children": [],
             "name": "Ícones 10 anos",
-            "@type": "SiteNavigationElement",
-            "children": []
+            "url": "/icones10anos",
+            "@type": "SiteNavigationElement"
           },
           {
             "image": [],
@@ -83,8 +97,8 @@
           {
             "image": [],
             "children": [],
-            "name": "Lifestyle CB",
-            "url": "/lifestyle-cb"
+            "url": "/lifestyle-cb",
+            "name": "Lifestyle CB"
           }
         ]
       },
@@ -92,17 +106,7 @@
         "url": "/roupas",
         "name": "Roupas",
         "@type": "SiteNavigationElement",
-        "image": [
-          {
-            "url": "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/239/575c3b0f-1a2e-4ecb-aaad-532671dc553d",
-            "@type": "ImageObject"
-          },
-          {
-            "url": "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/9166/b0524cd2-6658-4174-bc96-71332a9ad96f",
-            "contentUrl": "Sapatos",
-            "thumbnailUrl": "/sapatos"
-          }
-        ],
+        "image": [],
         "children": [
           {
             "url": "/roupas/blusa",
@@ -182,17 +186,7 @@
         "url": "/sapatos",
         "name": "Sapatos",
         "@type": "SiteNavigationElement",
-        "image": [
-          {
-            "url": "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/239/575c3b0f-1a2e-4ecb-aaad-532671dc553d",
-            "@type": "ImageObject"
-          },
-          {
-            "url": "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/9166/b0524cd2-6658-4174-bc96-71332a9ad96f",
-            "contentUrl": "Sapatos",
-            "thumbnailUrl": "/sapatos"
-          }
-        ],
+        "image": [],
         "children": [
           {
             "url": "/sapatos/bota",
@@ -239,6 +233,6 @@
     "searches": []
   },
   "logoPosition": "left",
-  "itemsPerColumn": 6,
-  "lightThemeBar": false
+  "lightThemeBar": false,
+  "itemsPerColumn": 6
 }

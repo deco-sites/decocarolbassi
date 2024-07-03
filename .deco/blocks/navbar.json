@@ -31,36 +31,6 @@
       ]
     },
     {
-      "url": "/masculino",
-      "name": "Masculino",
-      "@type": "SiteNavigationElement",
-      "image": [
-        {
-          "url": "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/239/575c3b0f-1a2e-4ecb-aaad-532671dc553d",
-          "@type": "ImageObject"
-        }
-      ],
-      "children": [
-        {
-          "url": "/masculino",
-          "name": "Novidades",
-          "@type": "SiteNavigationElement",
-          "children": [
-            {
-              "url": "/masculino",
-              "name": "Mais vendidos",
-              "@type": "SiteNavigationElement"
-            },
-            {
-              "url": "/masculino",
-              "name": "Parcerias",
-              "@type": "SiteNavigationElement"
-            }
-          ]
-        }
-      ]
-    },
-    {
       "url": "/sale",
       "name": "Sale",
       "@type": "SiteNavigationElement",

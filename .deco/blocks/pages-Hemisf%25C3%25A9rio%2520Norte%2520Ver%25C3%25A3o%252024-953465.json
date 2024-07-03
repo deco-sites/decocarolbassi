@@ -1,6 +1,6 @@
 {
-  "name": "Carol Bassi + Maria Rudge",
-  "path": "/maria-rudge-23",
+  "name": "Hemisfério Norte Verão 24",
+  "path": "/hemisferio-norte-verao-2024",
   "sections": [
     {
       "__resolveType": "commerce/sections/Seo/SeoPLP.tsx",
@@ -22,8 +22,8 @@
           "__resolveType": "vtex/loaders/intelligentSearch/productListingPage.ts",
           "selectedFacets": [
             {
-              "value": "234",
-              "key": "productClusterIds"
+              "key": "productClusterIds",
+              "value": "270"
             }
           ],
           "count": 28

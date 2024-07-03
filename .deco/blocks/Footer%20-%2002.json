@@ -59,8 +59,7 @@
         },
         {
           "href": "https://api.whatsapp.com/send/?phone=5511976664900&text&app_absent=0",
-          "label": "Fale com nossas consultoras",
-          "openNewTab": true
+          "label": "Fale com nossas consultoras"
         }
       ],
       "label": "Atendimento",
@@ -153,14 +152,16 @@
   "newsletter": {
     "form": {
       "helpText": "<p>Ao se inscrever, você está aceitando nossa <a href=\"/\" class=\"link\">Política de Privacidade</a>.</p>",
-      "backgroundColor": "#000000",
-      "placeholder": "Digite seu e-mail"
+      "backgroundColor": "#ebebeb",
+      "placeholder": "Digite seu e-mail",
+      "color": "#272720"
     },
     "title": "Conteúdo exclusivo Carol Bassi",
     "description": "Inscreva-se para ser a primeira a saber das novidades, lançamentos, eventos e muito mais.",
     "images": {
-      "desktop": "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/9166/0f6087a0-3e21-4ece-a885-89367a1f2ff8",
-      "mobile": "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/9166/afc0962c-38fe-474e-aa26-a6fffcfcad04"
+      "desktop": "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/9166/7e5e252f-d3bb-45a4-9369-c28d2ccf5a74",
+      "mobile": "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/9166/5fe4adca-de46-41d3-b919-4480aa216b43",
+      "action": {}
     }
   },
   "backToTheTop": {

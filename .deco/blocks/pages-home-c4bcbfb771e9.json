@@ -256,7 +256,7 @@
         {
           "href": "/maria-rudge-23",
           "image": "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/9166/3ac1ca58-48bc-43b1-8969-797832ef9343",
-          "label": "collab maria rudge",
+          "label": "Collab Maria Rudge",
           "buttonText": "Ver todos os itens"
         }
       ],
@@ -280,20 +280,19 @@
       },
       "list": [
         {
-          "image": "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/9166/64601cd5-2378-4cfa-9350-ab21dcbb7563",
-          "href": "/roupas/blusa",
-          "buttonText": "shop now",
-          "label": "blusas"
-        },
-        {
-          "href": "/roupas/casaco",
-          "image": "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/9166/dbc5fe27-e5e7-4c34-96b2-3d8d7a8eb6ed",
-          "buttonText": "casacos"
-        },
-        {
+          "image": "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/9166/5304c78d-0cd3-4227-8c0f-4325f6182652",
           "href": "/roupas/vestido",
-          "image": "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/9166/3f48f0c6-8217-41d9-b1f9-1421123f1f5e",
-          "buttonText": "vestidos"
+          "buttonText": "Vestidos"
+        },
+        {
+          "href": "/roupas/blusa",
+          "image": "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/9166/2936d56c-38ec-4f78-8eff-eb0b5f2218c4",
+          "buttonText": "Blusas"
+        },
+        {
+          "href": "/roupas/shorts",
+          "image": "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/9166/d692190d-b0e4-4beb-8907-a396d04b1902",
+          "buttonText": "shorts"
         }
       ],
       "isThreeImages": true,
