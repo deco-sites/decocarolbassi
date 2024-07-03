@@ -1,13 +1,12 @@
 {
   "seo": {
     "type": "website",
-    "image": "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/2177/a5d890ba-e5b8-471e-8b77-7412c1d4fa56",
-    "title": "Carol bassi",
+    "image": "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/9166/384f3dd3-f885-4cc4-b9f6-5354f3237ef5",
+    "title": "Carol Bassi - Moda feminina com Estilo atemporal",
     "jsonLDs": [],
     "noIndexing": false,
-    "description": "Improve your page performance with deco.cx ",
-    "titleTemplate": "%s | deco.cx",
-    "descriptionTemplate": "%s | Deco.cx"
+    "description": "Estilo e influência de Anna Carolina Bassi com todo o seu lifestyle, com foco em peças atemporais e versáteis que a cada estação conquistam o closet de mulheres modernas e antenadas que não abrem mão da sofisticação e da feminilidade.",
+    "favicon": "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/9166/36343c99-55a9-4e18-8476-ee8754abeac9"
   },
   "theme": {
     "__resolveType": "Carol Bassi"
