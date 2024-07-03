@@ -2580,7 +2580,7 @@
       "id": "/.deco/blocks/Footer%20-%2002.json",
       "name": "Footer - 02",
       "pinned": false,
-      "icon": "package",
+      "icon": "block",
       "layout": {
         "settings": {
           "hasHeaders": true,
@@ -2649,12 +2649,12 @@
                 "activeItemIndex": 0,
                 "content": [
                   {
-                    "id": "%2F.deco%2Fblocks%2FFooter%2520-%252002.json::Preview::world::Preview::%7B%7D",
-                    "title": "<div class=\"contents text-base-700\" id=\"header-%2F.deco%2Fblocks%2FFooter%2520-%252002.json::Preview::world::Preview::%7B%7D\" />",
+                    "id": "%2F.deco%2Fblocks%2FFooter%2520-%252002.json::Preview::visibility::Preview::%7B%7D",
+                    "title": "<div class=\"contents text-base-700\" id=\"header-%2F.deco%2Fblocks%2FFooter%2520-%252002.json::Preview::visibility::Preview::%7B%7D\" />",
                     "type": "component",
                     "componentName": "component",
                     "componentState": {
-                      "id": "%2F.deco%2Fblocks%2FFooter%2520-%252002.json::Preview::world::Preview::%7B%7D"
+                      "id": "%2F.deco%2Fblocks%2FFooter%2520-%252002.json::Preview::visibility::Preview::%7B%7D"
                     },
                     "width": 70,
                     "isClosable": true,
@@ -2684,14 +2684,14 @@
             "__signal": "error"
           }
         },
-        "%2F.deco%2Fblocks%2FFooter%2520-%252002.json::Preview::world::Preview::%7B%7D": {
+        "%2F.deco%2Fblocks%2FFooter%2520-%252002.json::Preview::visibility::Preview::%7B%7D": {
           "name": "Preview",
-          "icon": "world",
+          "icon": "visibility",
           "accepts": "function",
           "render": "function",
           "viewId": "Preview",
           "width": 70,
-          "id": "%2F.deco%2Fblocks%2FFooter%2520-%252002.json::Preview::world::Preview::%7B%7D",
+          "id": "%2F.deco%2Fblocks%2FFooter%2520-%252002.json::Preview::visibility::Preview::%7B%7D",
           "state": {
             "__signal": null
           }
