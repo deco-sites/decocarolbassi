@@ -36,8 +36,6 @@ function SearchControls(
     item: collectionName ?? "",
   };
 
-  console.log({ collectionData, isCollectionPage });
-
   return (
     <Drawer
       class="drawer-end"

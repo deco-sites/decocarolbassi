@@ -266,18 +266,14 @@ function CategoryGrid(props: SectionProps<typeof loader>) {
                         muted
                         autoPlay
                         loop
-                        class={`h-full object-cover w-full ${
-                          device === "mobile" ? "aspect-[3/3]" : ""
-                        }`}
+                        class={`h-full object-cover w-full`}
                       />
                     )
                     : image
                     ? (
                       <figure>
                         <Image
-                          class={`w-full ${
-                            device === "mobile" ? "aspect-[3/3]" : ""
-                          }`}
+                          class={`w-full`}
                           src={image}
                           alt={label}
                           width={isBannerRowList ? 421 : 770}
