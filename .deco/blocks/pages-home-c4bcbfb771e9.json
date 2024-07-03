@@ -2,6 +2,10 @@
   "name": "Home",
   "sections": [
     {
+      "__resolveType": "website/sections/Seo/SeoV2.tsx",
+      "title": "Carol Bassi - Home"
+    },
+    {
       "__resolveType": "Header - 03"
     },
     {
@@ -29,8 +33,8 @@
     {
       "__resolveType": "site/sections/Product/ProductShelf.tsx",
       "layout": {
-        "showArrows": true,
         "headerAlignment": "left",
+        "showArrows": true,
         "headerfontSize": "Small",
         "numberOfSliders": {
           "desktop": 3
@@ -85,6 +89,9 @@
     },
     {
       "__resolveType": "site/sections/Category/CategoryGrid.tsx",
+      "header": {
+        "title": "New Arrivals"
+      },
       "layout": {
         "headerAlignment": "left",
         "categoryCard": {
@@ -94,10 +101,10 @@
       },
       "list": [
         {
-          "href": "/new-in",
           "image": "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/9166/ac8a49e3-dbf4-49df-863e-71537e7e3425",
-          "label": "New In",
+          "href": "/new-in",
           "buttonText": "Ver todos os itens",
+          "label": "New In",
           "media": {
             "0": "h",
             "1": "t",
@@ -220,8 +227,8 @@
         {
           "href": "/winter24",
           "image": "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/9166/bb613e9d-f9d9-492c-a3fa-26c0b3d5208c",
-          "label": "Winter 24",
           "buttonText": "Ver todos os itens",
+          "label": "Winter 24",
           "media": {
             "type": "image",
             "src": "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/9166/ba96ff48-8d14-445e-8fe3-2ccf7bfdbbdc"
@@ -230,8 +237,8 @@
         {
           "href": "/icones10anos",
           "image": "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/9166/4edd7e45-5457-488d-88ed-4035495137a4",
-          "label": "Ícones 10 Anos",
-          "buttonText": "Ver todos os itens"
+          "buttonText": "Ver todos os itens",
+          "label": "Ícones 10 Anos"
         },
         {
           "href": "/maria-rudge-23",
@@ -240,9 +247,6 @@
           "buttonText": "Ver todos os itens"
         }
       ],
-      "header": {
-        "title": "New Arrivals"
-      },
       "isThreeImages": false,
       "isBannerRowList": false
     },

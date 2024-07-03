@@ -3,7 +3,8 @@
   "path": "/cashback",
   "sections": [
     {
-      "__resolveType": "website/sections/Seo/SeoV2.tsx"
+      "__resolveType": "website/sections/Seo/SeoV2.tsx",
+      "title": "Carol Bassi - Cashback"
     },
     {
       "__resolveType": "Header - 03"

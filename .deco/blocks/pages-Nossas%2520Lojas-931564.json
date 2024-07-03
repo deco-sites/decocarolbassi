@@ -3,6 +3,10 @@
   "path": "/nossas-lojas",
   "sections": [
     {
+      "__resolveType": "website/sections/Seo/SeoV2.tsx",
+      "title": "Carol Bassi -Nossas Lojas"
+    },
+    {
       "__resolveType": "Header - 03"
     },
     {

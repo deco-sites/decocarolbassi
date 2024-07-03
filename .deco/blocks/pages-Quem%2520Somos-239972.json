@@ -8,8 +8,8 @@
     {
       "__resolveType": "site/sections/Content/Banner.tsx",
       "image": {
-        "desktop": "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/9166/ad0fab59-2f1a-4c7b-866f-44b3391b97a8",
-        "mobile": "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/9166/63defdb3-5b50-49b1-9414-cb6da36ceb7e"
+        "desktop": "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/9166/7217a125-0f11-4a94-9cfa-2691c12e3034",
+        "mobile": "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/9166/fff74617-da33-4e44-86d3-5f939e63b0a2"
       }
     },
     {
@@ -21,7 +21,7 @@
       "__resolveType": "site/sections/Content/ImageSection.tsx",
       "title": "A marca",
       "description": "A marca é referência em criar uma moda cool, com peças atemporais e de qualidade premium. A marca homônima de Carol conquistou um espaço desejável no mercado nacional e é queridinha entre fashionistas e personalidades influentes no universo da moda. Sua expertise é transformar suas inspirações e criatividade em peças exclusivas, que transbordam referências adquiridas no universo da arte, cultura e moda, além de suas viagens pelo mundo.",
-      "image": "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/9166/f4b8b8ff-15a8-4e0c-a3a8-0ea281f75946",
+      "image": "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/9166/a1841116-ed39-4235-8217-bc7cda014dae",
       "placement": "right"
     },
     {

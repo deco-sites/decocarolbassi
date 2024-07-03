@@ -3,7 +3,8 @@
   "path": "/termos-e-condicoes",
   "sections": [
     {
-      "__resolveType": "website/sections/Seo/SeoV2.tsx"
+      "__resolveType": "website/sections/Seo/SeoV2.tsx",
+      "title": "Carol Bassi - Termos e Condições"
     },
     {
       "__resolveType": "Header - 03"

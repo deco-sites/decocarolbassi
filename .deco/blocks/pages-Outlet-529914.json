@@ -6,7 +6,8 @@
       "__resolveType": "commerce/sections/Seo/SeoPLP.tsx",
       "jsonLD": {
         "__resolveType": "PLP Loader"
-      }
+      },
+      "title": "Carol Bassi - Outlet"
     },
     {
       "__resolveType": "Header - 03"
