@@ -915,12 +915,12 @@
                 "activeItemIndex": 0,
                 "content": [
                   {
-                    "id": "%2F.deco%2Fblocks%2Fpages-home-c4bcbfb771e9.json::Preview::visibility::Preview::%7B%7D",
-                    "title": "<div class=\"contents text-base-700\" id=\"header-%2F.deco%2Fblocks%2Fpages-home-c4bcbfb771e9.json::Preview::visibility::Preview::%7B%7D\" />",
+                    "id": "%2F.deco%2Fblocks%2Fpages-home-c4bcbfb771e9.json::Properties::list::Properties::%7B%7D",
+                    "title": "<div class=\"contents text-base-700\" id=\"header-%2F.deco%2Fblocks%2Fpages-home-c4bcbfb771e9.json::Properties::list::Properties::%7B%7D\" />",
                     "type": "component",
                     "componentName": "component",
                     "componentState": {
-                      "id": "%2F.deco%2Fblocks%2Fpages-home-c4bcbfb771e9.json::Preview::visibility::Preview::%7B%7D"
+                      "id": "%2F.deco%2Fblocks%2Fpages-home-c4bcbfb771e9.json::Properties::list::Properties::%7B%7D"
                     },
                     "isClosable": true,
                     "reorderEnabled": true
@@ -936,12 +936,12 @@
                 "activeItemIndex": 0,
                 "content": [
                   {
-                    "id": "%2F.deco%2Fblocks%2Fpages-home-c4bcbfb771e9.json::Properties::list::Properties::%7B%7D",
-                    "title": "<div class=\"contents text-base-700\" id=\"header-%2F.deco%2Fblocks%2Fpages-home-c4bcbfb771e9.json::Properties::list::Properties::%7B%7D\" />",
+                    "id": "%2F.deco%2Fblocks%2Fpages-home-c4bcbfb771e9.json::Preview::visibility::Preview::%7B%7D",
+                    "title": "<div class=\"contents text-base-700\" id=\"header-%2F.deco%2Fblocks%2Fpages-home-c4bcbfb771e9.json::Preview::visibility::Preview::%7B%7D\" />",
                     "type": "component",
                     "componentName": "component",
                     "componentState": {
-                      "id": "%2F.deco%2Fblocks%2Fpages-home-c4bcbfb771e9.json::Properties::list::Properties::%7B%7D"
+                      "id": "%2F.deco%2Fblocks%2Fpages-home-c4bcbfb771e9.json::Preview::visibility::Preview::%7B%7D"
                     },
                     "isClosable": true,
                     "reorderEnabled": true
@@ -966,7 +966,8 @@
           "viewId": "Properties",
           "id": "%2F.deco%2Fblocks%2Fpages-home-c4bcbfb771e9.json::Properties::list::Properties::%7B%7D",
           "state": {
-            "__signal": null
+            "__signal": null,
+            "value": null
           }
         },
         "%2F.deco%2Fblocks%2Fpages-home-c4bcbfb771e9.json::Preview::visibility::Preview::%7B%7D": {
