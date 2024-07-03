@@ -272,7 +272,8 @@
         {
           "href": "/roupas/shorts",
           "image": "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/9166/d692190d-b0e4-4beb-8907-a396d04b1902",
-          "buttonText": "shorts"
+          "buttonText": "shorts",
+          "negative": false
         }
       ],
       "isThreeImages": true,

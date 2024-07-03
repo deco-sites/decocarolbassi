@@ -177,7 +177,9 @@ function CategoryGrid(props: SectionProps<typeof loader>) {
                           {label}
                         </h3>
                         <ButtonBanner
-                          class="font-normal bg-transparent border-secondary-neutral-100 text-sm text-secondary-neutral-100 uppercase py-3 px-6"
+                          class={negative
+                            ? ""
+                            : "font-normal bg-transparent border-secondary-neutral-100 text-sm text-secondary-neutral-100 uppercase py-3 px-6"}
                           aria-label={label}
                           negative={negative}
                         >
@@ -296,7 +298,9 @@ function CategoryGrid(props: SectionProps<typeof loader>) {
                       {label}
                     </h3>
                     <ButtonBanner
-                      class="font-normal text-xs lg:text-sm bg-transparent border-secondary-neutral-100 text-secondary-neutral-100 uppercase py-3 px-6"
+                      class={negative
+                        ? ""
+                        : "font-normal text-xs lg:text-sm bg-transparent border-secondary-neutral-100 text-secondary-neutral-100 uppercase py-3 px-6"}
                       aria-label={label}
                       negative={negative}
                     >
