@@ -2,7 +2,7 @@
   "__resolveType": "site/apps/deco/vtex.ts",
   "account": "carolbassi",
   "platform": "vtex",
-  "publicUrl": "www.carolbassi.com.br",
+  "publicUrl": "secure.carolbassi.com.br",
   "salesChannel": "1",
   "defaultSegment": {
     "channelPrivacy": "public"

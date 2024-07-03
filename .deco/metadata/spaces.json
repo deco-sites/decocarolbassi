@@ -1191,8 +1191,7 @@
           "width": 30,
           "id": "%2F.deco%2Fblocks%2Fsite.json::Properties::list::Properties::%7B%7D",
           "state": {
-            "__signal": null,
-            "value": null
+            "__signal": null
           }
         },
         "%2F.deco%2Fblocks%2Fsite.json::Preview::visibility::Preview::%7B%7D": {
@@ -1335,91 +1334,6 @@
       "icon": "file",
       "layout": [],
       "tabs": {}
-    },
-    {
-      "id": "Publish",
-      "name": "Publish",
-      "pinned": false,
-      "icon": "rocket-launch",
-      "layout": {
-        "settings": {
-          "hasHeaders": true,
-          "constrainDragToContainer": true,
-          "reorderEnabled": true,
-          "selectionEnabled": false,
-          "popoutWholeStack": false,
-          "blockedPopoutsThrowError": true,
-          "closePopoutsOnUnload": true,
-          "showPopoutIcon": false,
-          "showMaximiseIcon": false,
-          "showCloseIcon": false,
-          "responsiveMode": "onload"
-        },
-        "dimensions": {
-          "borderWidth": 8,
-          "minItemHeight": 10,
-          "minItemWidth": 10,
-          "headerHeight": 40,
-          "dragProxyWidth": 300,
-          "dragProxyHeight": 200
-        },
-        "labels": {
-          "close": "close",
-          "maximise": "maximise",
-          "minimise": "minimise",
-          "popout": "open in new window",
-          "popin": "pop in",
-          "tabDropdown": "additional tabs"
-        },
-        "content": [
-          {
-            "type": "row",
-            "isClosable": true,
-            "reorderEnabled": true,
-            "title": "",
-            "content": [
-              {
-                "type": "stack",
-                "width": 100,
-                "isClosable": true,
-                "reorderEnabled": true,
-                "title": "",
-                "activeItemIndex": 0,
-                "content": [
-                  {
-                    "id": "Publish::Environment::rocket-launch::Environment::%7B%7D",
-                    "title": "<div class=\"contents text-base-700\" id=\"header-Publish::Environment::rocket-launch::Environment::%7B%7D\" />",
-                    "type": "component",
-                    "componentName": "component",
-                    "componentState": {
-                      "id": "Publish::Environment::rocket-launch::Environment::%7B%7D"
-                    },
-                    "isClosable": true,
-                    "reorderEnabled": true
-                  }
-                ]
-              }
-            ]
-          }
-        ],
-        "isClosable": true,
-        "reorderEnabled": true,
-        "title": "",
-        "openPopouts": [],
-        "maximisedItemId": null
-      },
-      "tabs": {
-        "Publish::Environment::rocket-launch::Environment::%7B%7D": {
-          "name": "Environment",
-          "icon": "rocket-launch",
-          "render": "function",
-          "viewId": "Environment",
-          "id": "Publish::Environment::rocket-launch::Environment::%7B%7D",
-          "state": {
-            "__signal": null
-          }
-        }
-      }
     },
     {
       "id": "/.deco/blocks/pages-Home%2520for%2520Mobile%2520App-906989.json",
@@ -1835,9 +1749,9 @@
                     "componentState": {
                       "id": "%2F.deco%2Fblocks%2Fpages-productpage-ce4850591828.json::Properties::list::Properties::%7B%7D"
                     },
-                    "width": 30,
                     "isClosable": true,
-                    "reorderEnabled": true
+                    "reorderEnabled": true,
+                    "width": 30
                   }
                 ]
               },
@@ -1857,9 +1771,9 @@
                     "componentState": {
                       "id": "%2F.deco%2Fblocks%2Fpages-productpage-ce4850591828.json::Preview::world::Preview::%7B%7D"
                     },
-                    "width": 70,
                     "isClosable": true,
-                    "reorderEnabled": true
+                    "reorderEnabled": true,
+                    "width": 70
                   }
                 ]
               },
@@ -1975,10 +1889,10 @@
             "content": [
               {
                 "type": "stack",
+                "width": 50,
                 "isClosable": true,
                 "reorderEnabled": true,
                 "title": "",
-                "width": 50,
                 "activeItemIndex": 0,
                 "content": [
                   {
@@ -2171,10 +2085,10 @@
             "content": [
               {
                 "type": "stack",
-                "width": 50,
                 "isClosable": true,
                 "reorderEnabled": true,
                 "title": "",
+                "width": 50,
                 "activeItemIndex": 0,
                 "content": [
                   {
@@ -2303,9 +2217,9 @@
                     "componentState": {
                       "id": "%2F.deco%2Fblocks%2Fpages-category-7493d4326022.json::Preview::world::Preview::%7B%7D"
                     },
-                    "width": 70,
                     "isClosable": true,
-                    "reorderEnabled": true
+                    "reorderEnabled": true,
+                    "width": 70
                   }
                 ]
               }
@@ -2510,9 +2424,9 @@
                     "componentState": {
                       "id": "%2F.deco%2Fblocks%2FHeader%2520-%252003.json::Properties::list::Properties::%7B%7D"
                     },
-                    "width": 30,
                     "isClosable": true,
-                    "reorderEnabled": true
+                    "reorderEnabled": true,
+                    "width": 30
                   }
                 ]
               },
@@ -2532,9 +2446,9 @@
                     "componentState": {
                       "id": "%2F.deco%2Fblocks%2FHeader%2520-%252003.json::Preview::visibility::Preview::%7B%7D"
                     },
-                    "width": 70,
                     "isClosable": true,
-                    "reorderEnabled": true
+                    "reorderEnabled": true,
+                    "width": 70
                   }
                 ]
               }
@@ -3471,9 +3385,9 @@
                     "componentState": {
                       "id": "%2F.deco%2Fblocks%2Fpages-Quem%252520Somos-239972.json::Properties::list::Properties::%7B%7D"
                     },
+                    "width": 30,
                     "isClosable": true,
-                    "reorderEnabled": true,
-                    "width": 30
+                    "reorderEnabled": true
                   }
                 ]
               },
@@ -3594,9 +3508,9 @@
                     "componentState": {
                       "id": "%2F.deco%2Fblocks%2Fdeco-analytics.json::Properties::list::Properties::%7B%7D"
                     },
-                    "width": 30,
                     "isClosable": true,
-                    "reorderEnabled": true
+                    "reorderEnabled": true,
+                    "width": 30
                   }
                 ]
               },
@@ -4069,7 +3983,7 @@
             "content": [
               {
                 "type": "stack",
-                "width": 49.99999999999999,
+                "width": 50,
                 "isClosable": true,
                 "reorderEnabled": true,
                 "title": "",
@@ -4090,7 +4004,7 @@
               },
               {
                 "type": "stack",
-                "width": 49.99999999999999,
+                "width": 50,
                 "isClosable": true,
                 "reorderEnabled": true,
                 "title": "",
@@ -4138,7 +4052,8 @@
           "viewId": "Properties",
           "id": "%2F.deco%2Fblocks%2FPreview%2520vtex%252Fsections%252FAnalytics%252FVtex.tsx.json::Properties::list::Properties::%7B%7D",
           "state": {
-            "__signal": null
+            "__signal": null,
+            "value": null
           }
         }
       }
@@ -4201,9 +4116,9 @@
                     "componentState": {
                       "id": "%2F.deco%2Fblocks%2Fdeco-vtex.json::Properties::list::Properties::%7B%7D"
                     },
-                    "width": 30,
                     "isClosable": true,
-                    "reorderEnabled": true
+                    "reorderEnabled": true,
+                    "width": 30
                   }
                 ]
               },
@@ -4223,9 +4138,9 @@
                     "componentState": {
                       "id": "%2F.deco%2Fblocks%2Fdeco-vtex.json::Preview::visibility::Preview::%7B%7D"
                     },
-                    "width": 70,
                     "isClosable": true,
-                    "reorderEnabled": true
+                    "reorderEnabled": true,
+                    "width": 70
                   }
                 ]
               }
@@ -5943,9 +5858,9 @@
                     "componentState": {
                       "id": "%2F.deco%2Fblocks%2Fnavbar.json::Properties::list::Properties::%7B%7D"
                     },
-                    "width": 30,
                     "isClosable": true,
-                    "reorderEnabled": true
+                    "reorderEnabled": true,
+                    "width": 30
                   }
                 ]
               },
@@ -6574,6 +6489,91 @@
           "render": "function",
           "viewId": "Release",
           "id": "%7B%22oid%22%3A%2298f8fda58f065c69aa1bf3feef9664e05b827c40%22%2C%22short%22%3A%2298f8fda%22%2C%22commit%22%3A%7B%22message%22%3A%22Release%20staging%20environment%20with%200%20changes%20made%20by%20%5Cn%22%2C%22parent%22%3A%5B%221e148ad01adc514c32be0ecd0d57a8535b52a21e%22%5D%2C%22tree%22%3A%2253710c6ebaff02a8f2b0fe779b8e077d294b9f6f%22%2C%22author%22%3A%7B%22name%22%3A%22Luiz%20Felipe%20Braga%22%2C%22email%22%3A%22luiz.felipe%40econverse.com.br%22%2C%22timestamp%22%3A1720025170%2C%22timezoneOffset%22%3A0%7D%2C%22committer%22%3A%7B%22name%22%3A%22Luiz%20Felipe%20Braga%22%2C%22email%22%3A%22luiz.felipe%40econverse.com.br%22%2C%22timestamp%22%3A1720025170%2C%22timezoneOffset%22%3A0%7D%7D%7D::Release::rocket-launch::Release::%7B%7D",
+          "state": {
+            "__signal": null
+          }
+        }
+      }
+    },
+    {
+      "id": "Publish",
+      "name": "Publish",
+      "pinned": false,
+      "icon": "rocket-launch",
+      "layout": {
+        "settings": {
+          "hasHeaders": true,
+          "constrainDragToContainer": true,
+          "reorderEnabled": true,
+          "selectionEnabled": false,
+          "popoutWholeStack": false,
+          "blockedPopoutsThrowError": true,
+          "closePopoutsOnUnload": true,
+          "showPopoutIcon": false,
+          "showMaximiseIcon": false,
+          "showCloseIcon": false,
+          "responsiveMode": "onload"
+        },
+        "dimensions": {
+          "borderWidth": 8,
+          "minItemHeight": 10,
+          "minItemWidth": 10,
+          "headerHeight": 40,
+          "dragProxyWidth": 300,
+          "dragProxyHeight": 200
+        },
+        "labels": {
+          "close": "close",
+          "maximise": "maximise",
+          "minimise": "minimise",
+          "popout": "open in new window",
+          "popin": "pop in",
+          "tabDropdown": "additional tabs"
+        },
+        "content": [
+          {
+            "type": "row",
+            "isClosable": true,
+            "reorderEnabled": true,
+            "title": "",
+            "content": [
+              {
+                "type": "stack",
+                "width": 100,
+                "isClosable": true,
+                "reorderEnabled": true,
+                "title": "",
+                "activeItemIndex": 0,
+                "content": [
+                  {
+                    "id": "Publish::Environment::rocket-launch::Environment::%7B%7D",
+                    "title": "<div class=\"contents text-base-700\" id=\"header-Publish::Environment::rocket-launch::Environment::%7B%7D\" />",
+                    "type": "component",
+                    "componentName": "component",
+                    "componentState": {
+                      "id": "Publish::Environment::rocket-launch::Environment::%7B%7D"
+                    },
+                    "isClosable": true,
+                    "reorderEnabled": true
+                  }
+                ]
+              }
+            ]
+          }
+        ],
+        "isClosable": true,
+        "reorderEnabled": true,
+        "title": "",
+        "openPopouts": [],
+        "maximisedItemId": null
+      },
+      "tabs": {
+        "Publish::Environment::rocket-launch::Environment::%7B%7D": {
+          "name": "Environment",
+          "icon": "rocket-launch",
+          "render": "function",
+          "viewId": "Environment",
+          "id": "Publish::Environment::rocket-launch::Environment::%7B%7D",
           "state": {
             "__signal": null
           }

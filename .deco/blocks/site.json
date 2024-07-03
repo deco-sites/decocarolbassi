@@ -32,11 +32,7 @@
     {
       "__resolveType": "vtex/loaders/proxy.ts",
       "includeSiteMap": [],
-      "extraPathsToProxy": [
-        "/",
-        "/*",
-        "/:slug/p"
-      ],
+      "extraPathsToProxy": [],
       "includeScriptsToHead": {
         "includes": [
           {
@@ -48,6 +44,9 @@
     },
     {
       "__resolveType": "website/loaders/redirects.ts"
+    },
+    {
+      "__resolveType": "website/loaders/pages.ts"
     }
   ],
   "caching": {
