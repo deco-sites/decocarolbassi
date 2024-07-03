@@ -1,7 +1,7 @@
 {
   "account": "carolbassi",
   "platform": "vtex",
-  "publicUrl": "www.carolbassi.com.br",
+  "publicUrl": "secure.carolbassi.com.br",
   "salesChannel": "1",
   "__resolveType": "decohub/apps/vtex.ts",
   "defaultSegment": {

@@ -68,7 +68,7 @@
       "channelPrivacy": "public"
     },
     "account": "carolbassi",
-    "publicUrl": "www.carolbassi.com.br"
+    "publicUrl": "secure.carolbassi.com.br"
   },
   "platform": "vtex",
   "__resolveType": "site/apps/site.ts",
