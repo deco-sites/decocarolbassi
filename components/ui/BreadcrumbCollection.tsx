@@ -13,8 +13,6 @@ interface Props {
 function BreadcrumbCollection(
   { itemListElement = [], collectionBreadcrumb }: Props,
 ) {
-  console.log({ collectionBreadcrumb });
-
   const items = [
     { name: "Home", item: "/" },
     collectionBreadcrumb,

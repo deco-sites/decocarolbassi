@@ -14,6 +14,7 @@ export type Props =
     displayFilter?: boolean;
     isCollectionPage?: boolean;
     collectionName: string;
+    isSearchPage: boolean;
   };
 
 function SearchControls(
@@ -24,6 +25,7 @@ function SearchControls(
     sortOptions,
     isCollectionPage,
     collectionName,
+    isSearchPage,
   }: Props,
 ) {
   const open = useSignal(false);
@@ -62,7 +64,7 @@ function SearchControls(
     >
       <div class="flex flex-col justify-between px-4 mb-2 sm:p-0 sm:gap-4 sm:flex-row sm:h-[53px] sm:border-b sm:border-base-200">
         <div class="flex flex-row items-center sm:p-0 mb-2">
-          {isCollectionPage
+          {isSearchPage ? null : isCollectionPage
             ? (
               <BreadcrumbCollection
                 itemListElement={breadcrumb?.itemListElement}

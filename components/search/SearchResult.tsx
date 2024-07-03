@@ -73,8 +73,6 @@ function Result({
     type,
   ) => (type === "Collection" || type === "Search"));
 
-  console.log({ pageInfo });
-
   const isPartial = url.searchParams.get("partial") === "true";
   const isFirstPage = !pageInfo.previousPage;
   const isSearchPage = url.search.includes("?q");
@@ -109,6 +107,7 @@ function Result({
               filters={filters}
               breadcrumb={breadcrumb}
               isCollectionPage={isCollectionPage}
+              isSearchPage={isSearchPage}
               collectionName={pageName}
               displayFilter={layout?.variant === "drawer"}
             />
