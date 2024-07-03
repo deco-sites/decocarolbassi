@@ -61,17 +61,32 @@ export default function ProductGridImages(props: Props) {
               class="carousel-item w-11/12"
               onClick={handleClick}
             >
-              <Image
-                class="w-full"
-                sizes="(max-width: 640px) 100vw, 40vw"
-                style={{ aspectRatio }}
-                src={img.url!}
-                alt={img.alternateName}
-                width={width}
-                height={height}
-                preload={index === 0}
-                loading={index === 0 ? "eager" : "lazy"}
-              />
+              {img.name?.toLocaleLowerCase() === "novas"
+                ? (
+                  <Image
+                    class="w-full"
+                    sizes="(max-width: 640px) 100vw, 40vw"
+                    style={{ aspectRatio }}
+                    src={img.url!}
+                    alt={img.alternateName}
+                    width={width}
+                    height={height}
+                    preload={index === 0}
+                    loading={index === 0 ? "eager" : "lazy"}
+                  />
+                )
+                : (
+                  <img
+                    class="w-full"
+                    sizes="(max-width: 640px) 100vw, 40vw"
+                    src={img.url!}
+                    alt={img.alternateName}
+                    width={500}
+                    height={749}
+                    style={{ aspectRatio: "500/749" }}
+                    loading={index === 0 ? "eager" : "lazy"}
+                  />
+                )}
             </Slider.Item>
           ))}
         </Slider>
@@ -93,15 +108,29 @@ export default function ProductGridImages(props: Props) {
               class="hover:cursor-zoom-in"
               onClick={handleClick}
             >
-              <Image
-                src={image.url!}
-                alt={image.alternateName}
-                width={WIDTH}
-                height={HEIGHT}
-                style={{ aspectRatio: ASPECT_RATIO }}
-                preload={index <= 4}
-                loading={index <= 4 ? "eager" : "lazy"}
-              />
+              {image.name?.toLowerCase() === "novas"
+                ? (
+                  <Image
+                    src={image.url!}
+                    alt={image.alternateName}
+                    width={WIDTH}
+                    height={HEIGHT}
+                    style={{ aspectRatio: ASPECT_RATIO }}
+                    preload={index <= 4}
+                    loading={index <= 4 ? "eager" : "lazy"}
+                  />
+                )
+                : (
+                  <img
+                    src={image.url!}
+                    alt={image.alternateName}
+                    width={500}
+                    height={749}
+                    style={{ aspectRatio: "500/749" }}
+                    loading={index <= 4 ? "eager" : "lazy"}
+                    class="object-fill"
+                  />
+                )}
             </figure>
           );
         })}
@@ -135,15 +164,29 @@ export default function ProductGridImages(props: Props) {
               class="hover:cursor-zoom-in"
               onClick={handleClick}
             >
-              <Image
-                src={image.url!}
-                alt={image.alternateName}
-                width={WIDTH}
-                height={HEIGHT}
-                style={{ aspectRatio: ASPECT_RATIO }}
-                preload={index <= 4}
-                loading={index <= 4 ? "eager" : "lazy"}
-              />
+              {image.name?.toLowerCase() === "novas"
+                ? (
+                  <Image
+                    src={image.url!}
+                    alt={image.alternateName}
+                    width={WIDTH}
+                    height={HEIGHT}
+                    style={{ aspectRatio: ASPECT_RATIO }}
+                    preload={index <= 4}
+                    loading={index <= 4 ? "eager" : "lazy"}
+                  />
+                )
+                : (
+                  <img
+                    src={image.url!}
+                    alt={image.alternateName}
+                    width={500}
+                    height={749}
+                    style={{ aspectRatio: "500/749" }}
+                    loading={index <= 4 ? "eager" : "lazy"}
+                    class="object-fill"
+                  />
+                )}
             </figure>
           );
         })}
