@@ -17,29 +17,9 @@
           },
           "desktop": "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/9166/03e203de-ab50-4d8e-acb4-e919a2af8f8d",
           "mobile": "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/9166/61853b11-89f7-4bd2-9a85-fb48cad93b47"
-        },
-        {
-          "action": {
-            "buttonPositionDesktop": "Left",
-            "buttonPositionMobile": "Left",
-            "href": "/teste",
-            "label": "Ver nova coleção",
-            "buttonNegative": false
-          },
-          "video": "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/9166/5bd25767-42a6-4503-8ea9-1cc8bcaabc4b"
-        },
-        {
-          "action": {
-            "buttonPositionDesktop": "Center",
-            "buttonPositionMobile": "Center",
-            "href": "/",
-            "buttonNegative": false,
-            "label": "teste"
-          },
-          "video": "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/9166/c49f63c3-1a88-41f1-98e7-b5a7a13a9006"
         }
       ],
-      "arrows": true,
+      "arrows": false,
       "dots": false,
       "preload": true,
       "images": [

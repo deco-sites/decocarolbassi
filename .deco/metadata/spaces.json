@@ -2677,7 +2677,7 @@
           "width": 30,
           "id": "%2F.deco%2Fblocks%2FFooter%2520-%252002.json::Properties::list::Properties::%7B%7D",
           "state": {
-            "__signal": "error"
+            "__signal": null
           }
         },
         "%2F.deco%2Fblocks%2FFooter%2520-%252002.json::Preview::visibility::Preview::%7B%7D": {
