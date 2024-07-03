@@ -16,6 +16,7 @@ export interface CategoryGridProps {
   /** @description Alternative text */
   label?: string;
   buttonText?: string;
+  negative?: boolean;
 }
 
 export interface Props {
@@ -53,6 +54,7 @@ const DEFAULT_LIST = [
     label: "category",
     video: "",
     buttonText: "Explore collection",
+    negative: false,
   },
   {
     href: "/category",
@@ -61,6 +63,7 @@ const DEFAULT_LIST = [
     label: "category",
     video: "",
     buttonText: "Explore collection",
+    negative: false,
   },
   {
     href: "/category",
@@ -69,6 +72,7 @@ const DEFAULT_LIST = [
     label: "category",
     video: "",
     buttonText: "Explore collection",
+    negative: false,
   },
   {
     href: "/category",
@@ -77,6 +81,7 @@ const DEFAULT_LIST = [
     label: "category",
     video: "",
     buttonText: "Explore collection",
+    negative: false,
   },
 ];
 
@@ -129,7 +134,10 @@ function CategoryGrid(props: SectionProps<typeof loader>) {
             class={"relative grid grid-cols-[0px_1fr_0px] sm:grid-cols-[48px_1fr_48px] mt-6"}
           >
             <Slider class="relative carousel carousel-center col-start-2 col-end-2 row-start-1 row-end-4 ">
-              {list?.map(({ href, image, label, buttonText, video }, index) => (
+              {list?.map((
+                { href, image, label, buttonText, video, negative },
+                index,
+              ) => (
                 <Slider.Item
                   index={index}
                   class="carousel-item w-auto max-h-full"
@@ -171,6 +179,7 @@ function CategoryGrid(props: SectionProps<typeof loader>) {
                         <ButtonBanner
                           class="font-normal bg-transparent border-secondary-neutral-100 text-sm text-secondary-neutral-100 uppercase py-3 px-6"
                           aria-label={label}
+                          negative={negative}
                         >
                           {buttonText}
                         </ButtonBanner>
@@ -231,7 +240,7 @@ function CategoryGrid(props: SectionProps<typeof loader>) {
             } grid-cols-1 mt-6 gap-4`}
           >
             {list?.map((
-              { href, image, label, buttonText, video },
+              { href, image, label, buttonText, video, negative },
             ) => (
               <div>
                 <a
@@ -289,6 +298,7 @@ function CategoryGrid(props: SectionProps<typeof loader>) {
                     <ButtonBanner
                       class="font-normal text-xs lg:text-sm bg-transparent border-secondary-neutral-100 text-secondary-neutral-100 uppercase py-3 px-6"
                       aria-label={label}
+                      negative={negative}
                     >
                       {buttonText}
                     </ButtonBanner>
