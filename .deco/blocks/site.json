@@ -16,7 +16,10 @@
   "global": [
     {
       "__resolveType": "website/sections/Analytics/Analytics.tsx",
-      "dangerouslyRunOnMainThread": true
+      "dangerouslyRunOnMainThread": true,
+      "trackingIds": [
+        "GTM-PNLHPKB"
+      ]
     },
     {
       "__resolveType": "algolia/sections/Analytics/Algolia.tsx"
@@ -43,10 +46,10 @@
       }
     },
     {
-      "__resolveType": "website/loaders/redirects.ts"
+      "__resolveType": "website/loaders/pages.ts"
     },
     {
-      "__resolveType": "website/loaders/pages.ts"
+      "__resolveType": "website/loaders/redirects.ts"
     }
   ],
   "caching": {
@@ -68,7 +71,7 @@
       "channelPrivacy": "public"
     },
     "account": "carolbassi",
-    "publicUrl": "secure.carolbassi.com.br"
+    "publicUrl": "www.carolbassi.com.br"
   },
   "platform": "vtex",
   "__resolveType": "site/apps/site.ts",

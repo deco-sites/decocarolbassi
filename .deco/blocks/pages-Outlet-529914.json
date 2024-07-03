@@ -17,7 +17,7 @@
       "page": {
         "__resolveType": "commerce/loaders/product/extensions/listingPage.ts",
         "data": {
-          "sort": "price:desc",
+          "sort": "",
           "count": 24,
           "fuzzy": "automatic",
           "pageOffset": 1,
@@ -70,32 +70,7 @@
           }
         }
       ],
-      "categoryBannersMediaSources": [
-        {
-          "banner1": {
-            "type": "image",
-            "image": "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/9166/ce5eaa4a-22b2-46f4-87fc-d78c8d053dc9",
-            "action": {
-              "href": "/"
-            }
-          },
-          "banner2": {
-            "type": "video",
-            "video": "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/9166/83d52eae-4f4a-4745-bd2d-c85541eb2a7d",
-            "action": {
-              "href": "/"
-            }
-          },
-          "banner3": {
-            "type": "image",
-            "image": "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/9166/74fc3c18-bda2-41c2-9092-d580e5c75bb0",
-            "action": {
-              "href": "/"
-            }
-          },
-          "matcher": "/sapatos"
-        }
-      ]
+      "categoryBannersMediaSources": []
     },
     {
       "__resolveType": "site/sections/Category/CategorySeoText.tsx",

@@ -1,6 +1,6 @@
 {
   "data": {
-    "sort": "price:desc",
+    "sort": "release:desc",
     "count": 8,
     "fuzzy": "automatic",
     "pageOffset": 1,
