@@ -908,7 +908,7 @@
             "content": [
               {
                 "type": "stack",
-                "width": 50,
+                "width": 24.816176470588236,
                 "isClosable": true,
                 "reorderEnabled": true,
                 "title": "",
@@ -929,7 +929,7 @@
               },
               {
                 "type": "stack",
-                "width": 50,
+                "width": 75.18382352941177,
                 "isClosable": true,
                 "reorderEnabled": true,
                 "title": "",
