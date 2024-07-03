@@ -6,7 +6,9 @@
     "jsonLDs": [],
     "noIndexing": false,
     "description": "Estilo e influência de Anna Carolina Bassi com todo o seu lifestyle, com foco em peças atemporais e versáteis que a cada estação conquistam o closet de mulheres modernas e antenadas que não abrem mão da sofisticação e da feminilidade.",
-    "favicon": "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/9166/36343c99-55a9-4e18-8476-ee8754abeac9"
+    "favicon": "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/9166/36343c99-55a9-4e18-8476-ee8754abeac9",
+    "titleTemplate": "%s",
+    "descriptionTemplate": "%s"
   },
   "theme": {
     "__resolveType": "Carol Bassi"
@@ -30,7 +32,11 @@
     {
       "__resolveType": "vtex/loaders/proxy.ts",
       "includeSiteMap": [],
-      "extraPathsToProxy": [],
+      "extraPathsToProxy": [
+        "/",
+        "/*",
+        "/:slug/p"
+      ],
       "includeScriptsToHead": {
         "includes": [
           {
@@ -39,9 +45,6 @@
         ],
         "includePlausible": true
       }
-    },
-    {
-      "__resolveType": "website/loaders/pages.ts"
     },
     {
       "__resolveType": "website/loaders/redirects.ts"
