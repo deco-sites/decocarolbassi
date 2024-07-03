@@ -50,6 +50,10 @@ export default function ProductGridImages(props: Props) {
     displayProductZoomModal.value = true;
   };
 
+  const hasNotNewImages = images?.some((image) =>
+    image.name?.toLocaleLowerCase() !== "novas"
+  );
+
   return (
     <div id={id} class="">
       {/* Image Slider */}
@@ -137,22 +141,24 @@ export default function ProductGridImages(props: Props) {
         {productVideo && (
           <figure
             style={{
-              aspectRatio: ASPECT_RATIO,
-              maxWidth: WIDTH,
-              maxHeightheight: HEIGHT,
+              aspectRatio: hasNotNewImages ? "500/749" : ASPECT_RATIO,
+              maxWidth: hasNotNewImages ? 500 : WIDTH,
+              maxHeightheight: hasNotNewImages ? 749 : HEIGHT,
             }}
             class="relative hover:cursor-zoom-in"
             onClick={handleClick}
           >
             <Video
               src={productVideo.contentUrl!}
-              width={WIDTH}
-              height={HEIGHT}
+              width={hasNotNewImages ? 500 : WIDTH}
+              height={hasNotNewImages ? 749 : HEIGHT}
               muted
               autoPlay
               loop
               class="object-none w-full h-full"
-              style={{ aspectRatio: ASPECT_RATIO }}
+              style={{
+                aspectRatio: hasNotNewImages ? "500/749" : ASPECT_RATIO,
+              }}
             />
           </figure>
         )}

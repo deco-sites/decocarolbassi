@@ -161,13 +161,13 @@ function CategoryGrid(props: SectionProps<typeof loader>) {
                         )
                         : image
                         ? (
-                          <img
+                          <Image
                             src={image!}
-                            height={550}
-                            width={300}
+                            height={447}
+                            width={320}
                             alt={"banner image"}
                             loading="lazy"
-                            class="h-full"
+                            class="w-full"
                           />
                         )
                         : null}
