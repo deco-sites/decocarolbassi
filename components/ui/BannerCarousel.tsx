@@ -1,4 +1,5 @@
 import type { ImageWidget, VideoWidget } from "apps/admin/widgets.ts";
+import { Picture, Source } from "apps/website/components/Picture.tsx";
 import Video from "apps/website/components/Video.tsx";
 import { Device } from "apps/website/matchers/device.ts";
 import { SectionProps } from "deco/types.ts";
@@ -171,8 +172,8 @@ function BannerItem(
         ? (
           <Video
             src={video}
-            width={1440}
-            height={680}
+            width={1920}
+            height={907}
             controls={false}
             autoPlay
             loop
@@ -180,22 +181,29 @@ function BannerItem(
             class="w-full h-full object-cover"
           />
         )
-        : device !== "mobile"
-        ? (
-          <img
-            class="object-fill w-full h-full"
-            loading={lcp ? "eager" : "lazy"}
-            src={desktop!}
-            alt={alt}
-          />
-        )
         : (
-          <img
-            class="object-fill w-full h-full mt-5 sm:mt-0"
-            loading={lcp ? "eager" : "lazy"}
-            src={mobile!}
-            alt={alt}
-          />
+          <Picture preload={lcp}>
+            <Source
+              media="(max-width: 767px)"
+              fetchPriority={lcp ? "high" : "auto"}
+              src={mobile!}
+              width={390}
+              height={614}
+            />
+            <Source
+              media="(min-width: 768px)"
+              fetchPriority={lcp ? "high" : "auto"}
+              src={desktop!}
+              width={1920}
+              height={907}
+            />
+            <img
+              class="object-fill w-full h-full mt-5 sm:mt-0"
+              loading={lcp ? "eager" : "lazy"}
+              src={desktop}
+              alt={alt}
+            />
+          </Picture>
         )}
     </a>
   );
