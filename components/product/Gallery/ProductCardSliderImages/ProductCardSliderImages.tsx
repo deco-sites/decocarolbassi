@@ -47,7 +47,9 @@ function ProductCardSliderImages({
     additionalProperty,
   } = product;
 
-  const flagNewIn = additionalProperty?.find(({ value }) => value === "New in");
+  const flagNewIn = additionalProperty?.find(({ value }) =>
+    value === "Ícones 10 Anos"
+  );
 
   const id = `product-card-${productID}`;
 

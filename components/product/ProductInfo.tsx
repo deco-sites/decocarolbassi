@@ -79,6 +79,7 @@ function ProductInfo(
   });
 
   const hasDiscount = (listPrice ?? 0) > (price ?? 0);
+
   const productPercentualOff = hasDiscount &&
     usePercentualDiscount(listPrice!, price!);
 

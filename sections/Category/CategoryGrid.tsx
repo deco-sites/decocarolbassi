@@ -284,10 +284,8 @@ function CategoryGrid(props: SectionProps<typeof loader>) {
                     )
                     : null}
 
-                  {!isBannerRowList && (
-                    <div class="absolute inset-0 bg-gradient-to-b from-transparent to-[#21212191]">
-                    </div>
-                  )}
+                  <div class="absolute inset-0 bg-gradient-to-b from-transparent to-[#21212191]">
+                  </div>
 
                   <div class="absolute flex flex-col items-center gap-4 uppercase m-6">
                     <h3 class="text-secondary-neutral-100 text-2xl lg:text-[32px]">

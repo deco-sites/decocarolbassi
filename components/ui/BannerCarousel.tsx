@@ -191,7 +191,7 @@ function BannerItem(
         )
         : (
           <img
-            class="object-fill w-full h-full"
+            class="object-fill w-full h-full mt-5 sm:mt-0"
             loading={lcp ? "eager" : "lazy"}
             src={mobile!}
             alt={alt}
@@ -269,7 +269,7 @@ function BannerCarousel(props: SectionProps<typeof loader>) {
       id={id}
       class="grid grid-cols-[48px_1fr_48px] sm:grid-cols-[120px_1fr_120px] grid-rows-[1fr_48px_1fr_64px] sm:min-h-min"
     >
-      <Slider class="carousel carousel-center w-full col-span-full row-span-full gap-6 max-h-[85dvh] sm:max-h-full">
+      <Slider class="carousel carousel-center w-full col-span-full row-span-full gap-6 max-h-[100dvh] sm:max-h-full">
         {elements?.map((element, index) => {
           const params = { promotion_name: element.alt };
           return (
