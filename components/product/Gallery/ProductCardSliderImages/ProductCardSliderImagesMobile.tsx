@@ -39,7 +39,7 @@ function ProductCardSliderImagesMobile({
     url,
     productID,
     image: images,
-    video: videos,
+    video: _videos,
     offers,
     isVariantOf,
     additionalProperty,
@@ -52,18 +52,24 @@ function ProductCardSliderImagesMobile({
   const relativeUrl = relative(url);
   const aspectRatio = `${WIDTH} / ${HEIGHT}`;
 
-  const productImages = videos && videos.length > 0
-    ? images?.slice(0, 2) ?? []
-    : images?.slice(0, 3) ?? [];
-
-  const productVideo = videos && videos.length > 0
-    ? videos?.slice(0) ?? []
-    : [];
+  const productImages = images?.slice(0, 3) ?? [];
 
   const sourcesMedia: (ImageObject | VideoObject)[] = [
     ...productImages,
-    ...productVideo,
   ];
+
+  // const productImages = videos && videos.length > 0
+  //   ? images?.slice(0, 2) ?? []
+  //   : images?.slice(0, 3) ?? [];
+
+  // const productVideo = videos && videos.length > 0
+  //   ? videos?.slice(0) ?? []
+  //   : [];
+
+  // const sourcesMedia: (ImageObject | VideoObject)[] = [
+  //   ...productImages,
+  //   ...productVideo,
+  // ];
 
   const { listPrice, price } = useOffer(offers);
   const { hasOfferAvailable } = useVariantOfferAvailability(isVariantOf);
