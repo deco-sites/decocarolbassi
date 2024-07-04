@@ -45,7 +45,9 @@ function ProductCardSliderImagesMobile({
     additionalProperty,
   } = product;
 
-  const flagNewIn = additionalProperty?.find(({ value }) => value === "New in");
+  const flagNewIn = additionalProperty?.find(({ value }) =>
+    value === "Ícones 10 Anos"
+  );
   const id = `product-card-${productID}`;
   const relativeUrl = relative(url);
   const aspectRatio = `${WIDTH} / ${HEIGHT}`;

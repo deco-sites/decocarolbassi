@@ -172,6 +172,9 @@ function CategoryGrid(props: SectionProps<typeof loader>) {
                         )
                         : null}
 
+                      <div class="absolute inset-0 bg-gradient-to-b from-transparent to-[#21212191]">
+                      </div>
+
                       <div class="absolute left-0 right-0 flex flex-col items-center gap-4 uppercase m-6 bottom-0 lg:bottom-[100px]">
                         <h3 class="text-secondary-neutral-100 text-[32px]">
                           {label}
