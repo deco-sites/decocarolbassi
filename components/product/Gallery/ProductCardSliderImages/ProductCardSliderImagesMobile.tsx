@@ -40,7 +40,7 @@ function ProductCardSliderImagesMobile({
     url,
     productID,
     image: images,
-    video: _videos,
+    video: videos,
     isVariantOf,
     additionalProperty,
   } = product;
@@ -56,24 +56,18 @@ function ProductCardSliderImagesMobile({
   const relativeUrl = relative(url);
   const aspectRatio = `${WIDTH} / ${HEIGHT}`;
 
-  const productImages = images?.slice(0, 3) ?? [];
+  const productImages = videos && videos.length > 0
+    ? images?.slice(0, 2) ?? []
+    : images?.slice(0, 3) ?? [];
+
+  const productVideo = videos && videos.length > 0
+    ? videos?.slice(0) ?? []
+    : [];
 
   const sourcesMedia: (ImageObject | VideoObject)[] = [
     ...productImages,
+    ...productVideo,
   ];
-
-  // const productImages = videos && videos.length > 0
-  //   ? images?.slice(0, 2) ?? []
-  //   : images?.slice(0, 3) ?? [];
-
-  // const productVideo = videos && videos.length > 0
-  //   ? videos?.slice(0) ?? []
-  //   : [];
-
-  // const sourcesMedia: (ImageObject | VideoObject)[] = [
-  //   ...productImages,
-  //   ...productVideo,
-  // ];
 
   const { listPrice, price } = useOffer(offers);
   const { hasOfferAvailable } = useVariantOfferAvailability(isVariantOf);
@@ -130,7 +124,7 @@ function ProductCardSliderImagesMobile({
                 </h4>
               </div>
             )}
-            <Slider class="carousel carousel-center">
+            <Slider class="carousel">
               {sourcesMedia?.map((source, index) => {
                 return source.encodingFormat === "image"
                   ? (
@@ -183,6 +177,8 @@ function ProductCardSliderImagesMobile({
                         muted
                         autoPlay
                         loop
+                        playsinline
+                        playsInline
                       />
                     </Slider.Item>
                   );
