@@ -466,5 +466,11 @@
     "path": "/veludo",
     "blockType": "pages",
     "__resolveType": "website/pages/Page.tsx"
+  },
+  "/.deco/blocks/pages-Fernanda%2520Fischer-218718.json": {
+    "name": "Fernanda Fischer",
+    "path": "/fernanda-fischer",
+    "blockType": "pages",
+    "__resolveType": "website/pages/Page.tsx"
   }
 }
