@@ -70,29 +70,7 @@
           }
         }
       ],
-      "categoryBannersMediaSources": [
-        {
-          "banner1": {
-            "type": "image",
-            "image": "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/9166/e0a2b632-4abc-4fc8-8299-376b261bc5ae",
-            "action": {
-              "href": "/"
-            }
-          },
-          "banner2": {
-            "type": "image",
-            "image": "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/9166/94496afe-e904-4f74-b152-87568aa2725c",
-            "action": {
-              "href": "/"
-            }
-          },
-          "banner3": {
-            "type": "image",
-            "image": "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/9166/52e4abf7-ab90-411a-a9ed-ef4dee7dfbaf"
-          },
-          "matcher": "/new-in"
-        }
-      ]
+      "categoryBannersMediaSources": []
     },
     {
       "__resolveType": "site/sections/Category/CategorySeoText.tsx",
