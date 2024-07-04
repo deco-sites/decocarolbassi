@@ -87,9 +87,7 @@
       "__resolveType": "Footer - 02"
     },
     {
-      "__resolveType": "website/sections/Seo/SeoV2.tsx",
-      "title": "Roupas",
-      "description": "Roupa e Vestidos"
+      "__resolveType": "website/sections/Seo/SeoV2.tsx"
     }
   ],
   "__resolveType": "website/pages/Page.tsx",

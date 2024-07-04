@@ -17,7 +17,7 @@
       "page": {
         "__resolveType": "commerce/loaders/product/extensions/listingPage.ts",
         "data": {
-          "sort": "release:desc",
+          "sort": "",
           "count": 24,
           "fuzzy": "automatic",
           "__resolveType": "vtex/loaders/intelligentSearch/productListingPage.ts",
