@@ -9,6 +9,7 @@ import { relative } from "../../../../sdk/url.ts";
 import { useOffer } from "../../../../sdk/useOffer.ts";
 import { useVariantOfferAvailability } from "../../../../sdk/useOfferAvailability.ts";
 import { usePercentualDiscount } from "../../../../sdk/usePercentualPrice.ts";
+import { useProductVariantDiscount } from "../../../../sdk/useProductVariantDiscount.ts";
 import { SendEventOnClick } from "../../../Analytics.tsx";
 import Slider from "../../../ui/Slider.tsx";
 
@@ -40,7 +41,6 @@ function ProductCardSliderImagesMobile({
     productID,
     image: images,
     video: _videos,
-    offers,
     isVariantOf,
     additionalProperty,
   } = product;
@@ -48,6 +48,10 @@ function ProductCardSliderImagesMobile({
   const flagNewIn = additionalProperty?.find(({ value }) =>
     value === "Ícones 10 Anos"
   );
+
+  const { productVariantDiscount } = useProductVariantDiscount(product);
+  const { offers } = productVariantDiscount;
+
   const id = `product-card-${productID}`;
   const relativeUrl = relative(url);
   const aspectRatio = `${WIDTH} / ${HEIGHT}`;

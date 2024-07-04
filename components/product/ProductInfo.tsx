@@ -10,6 +10,7 @@ import { formatPrice } from "../../sdk/format.ts";
 import { useId } from "../../sdk/useId.ts";
 import { useOffer } from "../../sdk/useOffer.ts";
 import { usePercentualDiscount } from "../../sdk/usePercentualPrice.ts";
+import { useProductVariantDiscount } from "../../sdk/useProductVariantDiscount.ts";
 import { ProductPolicy } from "../../sections/Product/ProductDetails.tsx";
 import { MediaOptionProps } from "../share/ShareProduct.tsx";
 
@@ -47,10 +48,12 @@ function ProductInfo(
 
   const {
     productID,
-    offers,
     isVariantOf,
     url,
   } = product;
+
+  const { productVariantDiscount } = useProductVariantDiscount(product);
+  const { offers } = productVariantDiscount;
 
   const productName = product.isVariantOf?.name;
   const description = product.description || isVariantOf?.description;

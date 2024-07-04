@@ -11,6 +11,7 @@ import { relative } from "../../../../sdk/url.ts";
 import { useOffer } from "../../../../sdk/useOffer.ts";
 import { useVariantOfferAvailability } from "../../../../sdk/useOfferAvailability.ts";
 import { usePercentualDiscount } from "../../../../sdk/usePercentualPrice.ts";
+import { useProductVariantDiscount } from "../../../../sdk/useProductVariantDiscount.ts";
 import { SendEventOnClick } from "../../../Analytics.tsx";
 import Slider from "../../../ui/Slider.tsx";
 
@@ -42,7 +43,6 @@ function ProductCardSliderImages({
     productID,
     image: images,
     video: videos,
-    offers,
     isVariantOf,
     additionalProperty,
   } = product;
@@ -53,6 +53,8 @@ function ProductCardSliderImages({
 
   const id = `product-card-${productID}`;
 
+  const { productVariantDiscount } = useProductVariantDiscount(product);
+  const { offers } = productVariantDiscount;
   const { listPrice, price } = useOffer(offers);
   const { hasOfferAvailable } = useVariantOfferAvailability(isVariantOf);
 
