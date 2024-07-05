@@ -201,7 +201,7 @@ function BannerItem(
               class="object-fill w-full h-full mt-5 sm:mt-0"
               loading={lcp ? "eager" : "lazy"}
               src={desktop}
-              alt={alt}
+              alt={alt ?? "carousel banner"}
             />
           </Picture>
         )}

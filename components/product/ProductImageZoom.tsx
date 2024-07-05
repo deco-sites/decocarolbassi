@@ -9,15 +9,13 @@ import Icon from "../ui/Icon.tsx";
 
 export interface Props {
   images: ImageObject[];
-  height: number;
-  width: number;
 }
 
 const WIDTH = 624;
 const HEIGHT = 731;
 const ASPECT_RATIO = `${WIDTH}/${HEIGHT}`;
 
-function ProductImageZoom({ images, height, width }: Props) {
+function ProductImageZoom({ images }: Props) {
   const id = useId();
   const { displayProductZoomModal, productZoomIndex } = useUI();
 
@@ -68,7 +66,7 @@ function ProductImageZoom({ images, height, width }: Props) {
               return (
                 <Slider.Item
                   index={index}
-                  class="carousel-item w-full h-[560px] md:h-full justify-center items-center md:pt-8"
+                  class="carousel-item w-full h-[calc(100%-120px)] md:h-full justify-center items-center md:pt-8"
                 >
                   <div
                     className="zoom-container h-full w-auto hover:cursor-crosshair"
@@ -77,13 +75,12 @@ function ProductImageZoom({ images, height, width }: Props) {
                     onMouseLeave={() => handleMouseLeave(containerRef)}
                     style={{ aspectRatio: ASPECT_RATIO }}
                   >
-                    <Image
+                    <img
                       style={{ aspectRatio: ASPECT_RATIO }}
                       src={image.url!}
                       alt={image.alternateName}
-                      width={width}
-                      height={height}
-                      class="h-full w-auto"
+                      class="h-full w-auto object-contain"
+                      loading={"lazy"}
                     />
                   </div>
                 </Slider.Item>
@@ -120,7 +117,7 @@ function ProductImageZoom({ images, height, width }: Props) {
             </Slider.NextButton>
           </div>
 
-          <ul class="absolute left-0 bottom-[168px] md:bottom-auto carousel carousel-center gap-1 px-0 sm:flex-col order-2 sm:order-1">
+          <ul class="absolute left-0 bottom-0 sm:left-0 sm:bottom-[168px] md:bottom-auto carousel carousel-center gap-1 px-0 sm:flex-col order-2 sm:order-1">
             {images.map((img, index) => {
               return (
                 <li

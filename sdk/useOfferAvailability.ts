@@ -12,7 +12,7 @@ export const useVariantOfferAvailability = (isVariantOf?: ProductGroup) => {
 
 
 export const useSizeVariantOfferAvailability = (index: number, isVariantOf?: ProductGroup) => {
-  const sizeOfferIsAvailable = isVariantOf?.hasVariant[index].offers?.offers[0]?.availability === "https://schema.org/InStock";
+  const sizeOfferIsAvailable = isVariantOf?.hasVariant[index]?.offers?.offers[0]?.availability === "https://schema.org/InStock";
 
   return { sizeOfferIsAvailable }
 }

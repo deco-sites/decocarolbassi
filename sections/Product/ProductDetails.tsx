@@ -55,7 +55,9 @@ export default function ProductDetails(
           <ProductGridImages page={page} />
         </div>
         <div
-          className={`w-full lg:w-2/4 ${hasNotNewImages ? "" : "2xl:w-2/6"}`}
+          className={`w-full ${
+            hasNotNewImages ? "lg:w-full 2xl:w-4/6 " : "lg:w-2/4 2xl:w-2/6"
+          }`}
         >
           <ProductInfo
             page={page}

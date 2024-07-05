@@ -39,7 +39,7 @@ export default function ProductGridImages(props: Props) {
     layout,
   } = props;
 
-  const { width, height } = layout || { width: 300, height: 370 };
+  const { width, height } = layout || { width: 1200, height: 1480 };
 
   const aspectRatio = `${width} / ${height}`;
   const productVideo = videos[0];
@@ -58,7 +58,7 @@ export default function ProductGridImages(props: Props) {
     <div id={id} class="">
       {/* Image Slider */}
       <div class="sm:hidden relative order-1 sm:order-2">
-        <Slider class="carousel carousel-center gap-[14px] w-screen sm:w-[40vw]">
+        <Slider class="carousel carousel-center gap-[14px] w-screen sm:w-[40vw] mt-4 sm:mt-0">
           {images.map((img, index) => (
             <Slider.Item
               index={index}
@@ -69,7 +69,6 @@ export default function ProductGridImages(props: Props) {
                 ? (
                   <Image
                     class="w-full"
-                    sizes="(max-width: 640px) 100vw, 40vw"
                     style={{ aspectRatio }}
                     src={img.url!}
                     alt={img.alternateName}
@@ -82,12 +81,8 @@ export default function ProductGridImages(props: Props) {
                 : (
                   <img
                     class="w-full"
-                    sizes="(max-width: 640px) 100vw, 40vw"
                     src={img.url!}
                     alt={img.alternateName}
-                    width={500}
-                    height={749}
-                    style={{ aspectRatio: "500/749" }}
                     loading={index === 0 ? "eager" : "lazy"}
                   />
                 )}
@@ -98,8 +93,6 @@ export default function ProductGridImages(props: Props) {
         <div class="absolute top-2 right-2 bg-base-100 rounded-full">
           <ProductImageZoom
             images={images}
-            width={700}
-            height={Math.trunc(700 * height / width)}
           />
         </div>
       </div>
@@ -128,9 +121,6 @@ export default function ProductGridImages(props: Props) {
                   <img
                     src={image.url!}
                     alt={image.alternateName}
-                    width={500}
-                    height={749}
-                    style={{ aspectRatio: "500/749" }}
                     loading={index <= 4 ? "eager" : "lazy"}
                     class="object-fill"
                   />
@@ -141,25 +131,37 @@ export default function ProductGridImages(props: Props) {
         {productVideo && (
           <figure
             style={{
-              aspectRatio: hasNotNewImages ? "500/749" : ASPECT_RATIO,
-              maxWidth: hasNotNewImages ? 500 : WIDTH,
-              maxHeightheight: hasNotNewImages ? 749 : HEIGHT,
+              aspectRatio: hasNotNewImages ? "" : ASPECT_RATIO,
+              maxWidth: hasNotNewImages ? "" : WIDTH,
+              maxHeightheight: hasNotNewImages ? "" : HEIGHT,
             }}
             class="relative hover:cursor-zoom-in"
             onClick={handleClick}
           >
-            <Video
-              src={productVideo.contentUrl!}
-              width={hasNotNewImages ? 500 : WIDTH}
-              height={hasNotNewImages ? 749 : HEIGHT}
-              muted
-              autoPlay
-              loop
-              class="object-none w-full h-full"
-              style={{
-                aspectRatio: hasNotNewImages ? "500/749" : ASPECT_RATIO,
-              }}
-            />
+            {hasNotNewImages
+              ? (
+                <video
+                  src={productVideo.contentUrl!}
+                  muted
+                  autoPlay
+                  loop
+                  class="object-cover w-full h-full"
+                />
+              )
+              : (
+                <Video
+                  src={productVideo.contentUrl!}
+                  width={hasNotNewImages ? 500 : WIDTH}
+                  height={hasNotNewImages ? 749 : HEIGHT}
+                  muted
+                  autoPlay
+                  loop
+                  class="object-cover w-full h-full"
+                  style={{
+                    aspectRatio: ASPECT_RATIO,
+                  }}
+                />
+              )}
           </figure>
         )}
 
@@ -186,9 +188,6 @@ export default function ProductGridImages(props: Props) {
                   <img
                     src={image.url!}
                     alt={image.alternateName}
-                    width={500}
-                    height={749}
-                    style={{ aspectRatio: "500/749" }}
                     loading={index <= 4 ? "eager" : "lazy"}
                     class="object-fill"
                   />
@@ -200,8 +199,6 @@ export default function ProductGridImages(props: Props) {
         <div class="absolute top-2 right-2 bg-base-100 rounded-full">
           <ProductImageZoom
             images={images}
-            width={700}
-            height={Math.trunc(700 * height / width)}
           />
         </div>
       </div>
