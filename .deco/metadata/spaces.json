@@ -2087,9 +2087,9 @@
                     "componentState": {
                       "id": "%2F.deco%2Fblocks%2Fpages-productpage-ce4850591828.json::Properties::list::Properties::%7B%7D"
                     },
+                    "width": 30,
                     "isClosable": true,
-                    "reorderEnabled": true,
-                    "width": 30
+                    "reorderEnabled": true
                   }
                 ]
               },
@@ -2109,9 +2109,9 @@
                     "componentState": {
                       "id": "%2F.deco%2Fblocks%2Fpages-productpage-ce4850591828.json::Preview::world::Preview::%7B%7D"
                     },
+                    "width": 70,
                     "isClosable": true,
-                    "reorderEnabled": true,
-                    "width": 70
+                    "reorderEnabled": true
                   }
                 ]
               },
@@ -2541,7 +2541,7 @@
             "content": [
               {
                 "type": "stack",
-                "width": 30,
+                "width": 41.66666666666667,
                 "isClosable": true,
                 "reorderEnabled": true,
                 "title": "",
@@ -2563,7 +2563,7 @@
               },
               {
                 "type": "stack",
-                "width": 70,
+                "width": 58.333333333333336,
                 "isClosable": true,
                 "reorderEnabled": true,
                 "title": "",
@@ -2577,6 +2577,7 @@
                     "componentState": {
                       "id": "%2F.deco%2Fblocks%2Fpages-category-7493d4326022.json::Preview::visibility::Preview::%7B%7D"
                     },
+                    "width": 70,
                     "isClosable": true,
                     "reorderEnabled": true
                   }
@@ -2610,6 +2611,7 @@
           "accepts": "function",
           "render": "function",
           "viewId": "Preview",
+          "width": 70,
           "id": "%2F.deco%2Fblocks%2Fpages-category-7493d4326022.json::Preview::visibility::Preview::%7B%7D",
           "state": {
             "__signal": null
