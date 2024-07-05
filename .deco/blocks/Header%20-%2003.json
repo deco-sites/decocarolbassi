@@ -54,10 +54,10 @@
           {
             "url": "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/9166/847b75e2-bc9c-4a9d-b24e-5ec7bca85b3d",
             "@type": "ImageObject",
-            "encodingFormat": "Hemisfério Norte",
+            "encodingFormat": "Verão Hemisfério Norte",
             "embedUrl": "/hemisferio-norte-verao-2024",
             "thumbnailUrl": "/hemisferio-norte-verao-2024",
-            "contentUrl": "Hemisfério Norte"
+            "contentUrl": "Verão Hemisfério Norte"
           },
           {
             "url": "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/9166/2752960f-04de-4575-b6cb-1cfb3b4633d0",
@@ -70,11 +70,11 @@
         "children": [
           {
             "url": "/hemisferio-norte-verao-2024",
-            "name": "Hemisfério Norte",
+            "name": "Verão Hemisfério Norte",
             "children": [],
             "image": [],
-            "additionalType": "Hemisfério Norte",
-            "identifier": "Hemisfério Norte"
+            "additionalType": "Verão Hemisfério Norte",
+            "identifier": "Verão Hemisfério Norte"
           },
           {
             "children": [],
