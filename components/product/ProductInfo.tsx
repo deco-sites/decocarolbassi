@@ -13,6 +13,7 @@ import { usePercentualDiscount } from "../../sdk/usePercentualPrice.ts";
 import { useProductVariantDiscount } from "../../sdk/useProductVariantDiscount.ts";
 import { ProductPolicy } from "../../sections/Product/ProductDetails.tsx";
 import { MediaOptionProps } from "../share/ShareProduct.tsx";
+import ProductSizebayButtons from "../../islands/ProductSizebayButtons.tsx";
 
 export interface Props {
   page: ProductDetailsPage | null;
@@ -20,6 +21,9 @@ export interface Props {
   productExchangesReturnsPolicy?: ProductPolicy;
   device: Device;
   socialOptions?: MediaOptionProps[];
+  showButtons: string | null;
+  buttonsUrl: (mode: string) => string;
+  recommendedSize: string | null;
   layout?: {
     /**
      * @title Product Name
@@ -36,6 +40,9 @@ function ProductInfo(
     productExchangesReturnsPolicy,
     device,
     socialOptions,
+    showButtons,
+    buttonsUrl,
+    recommendedSize,
   }: Props,
 ) {
   const id = useId();
@@ -134,6 +141,18 @@ function ProductInfo(
           </div>
         </div>
       </div>
+
+      {buttonsUrl
+        ? (
+          <ProductSizebayButtons
+            showButtons={showButtons}
+            urlChart={buttonsUrl("chart")}
+            urlVfr={buttonsUrl("vfr")}
+            recommendedSize={recommendedSize}
+          />
+        )
+        : null}
+
       {/* Sku Selector */}
       <div class="mt-4 sm:mt-6">
         <ProductSelector product={product} breadcrumb={breadcrumb} />

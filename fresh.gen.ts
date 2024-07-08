@@ -30,8 +30,10 @@ import * as $ProductGalleryMobile from "./islands/ProductGalleryMobile.tsx";
 import * as $ProductImageZoom from "./islands/ProductImageZoom.tsx";
 import * as $ProductImages from "./islands/ProductImages.tsx";
 import * as $ProductSizeVariantSelector from "./islands/ProductSizeVariantSelector.tsx";
+import * as $ProductSizebayButtons from "./islands/ProductSizebayButtons.tsx";
 import * as $ProductVariantSelector from "./islands/ProductVariantSelector.tsx";
 import * as $ProxyIframe from "./islands/ProxyIframe.tsx";
+import * as $SIzebayIframe from "./islands/SIzebayIframe.tsx";
 import * as $SearchControls from "./islands/SearchControls.tsx";
 import * as $Share_ShareProduct from "./islands/Share/ShareProduct.tsx";
 import * as $ShippingSimulation from "./islands/ShippingSimulation.tsx";
@@ -73,8 +75,10 @@ const manifest = {
     "./islands/ProductImageZoom.tsx": $ProductImageZoom,
     "./islands/ProductImages.tsx": $ProductImages,
     "./islands/ProductSizeVariantSelector.tsx": $ProductSizeVariantSelector,
+    "./islands/ProductSizebayButtons.tsx": $ProductSizebayButtons,
     "./islands/ProductVariantSelector.tsx": $ProductVariantSelector,
     "./islands/ProxyIframe.tsx": $ProxyIframe,
+    "./islands/SIzebayIframe.tsx": $SIzebayIframe,
     "./islands/SearchControls.tsx": $SearchControls,
     "./islands/Share/ShareProduct.tsx": $Share_ShareProduct,
     "./islands/ShippingSimulation.tsx": $ShippingSimulation,
