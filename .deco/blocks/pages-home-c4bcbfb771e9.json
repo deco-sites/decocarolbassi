@@ -17,10 +17,10 @@
             "buttonPositionMobile": "Center",
             "href": "/new-in",
             "label": "VER NOVA COLEÇÃO",
-            "buttonNegative": false
+            "buttonNegative": true
           },
-          "desktop": "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/9166/03e203de-ab50-4d8e-acb4-e919a2af8f8d",
-          "mobile": "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/9166/61853b11-89f7-4bd2-9a85-fb48cad93b47"
+          "desktop": "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/9166/0df99ef1-a7b5-47d9-abcf-cfb99d0559ed",
+          "mobile": "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/9166/eaaa11a3-14f7-4bf9-a50f-a583fc094aa3"
         }
       ],
       "arrows": false,
@@ -50,9 +50,9 @@
       },
       "products": {
         "props": {
-          "sort": "release:desc",
+          "sort": "",
           "count": 6,
-          "collection": "270"
+          "collection": "262"
         },
         "crossSelling": "similars",
         "__resolveType": "vtex/loaders/intelligentSearch/productList.ts"
@@ -84,7 +84,7 @@
         },
         "__resolveType": "site/loaders/Layouts/ProductCard.tsx"
       },
-      "title": "hemisfério norte verão 24",
+      "title": "ícones 10 anos",
       "description": "Confira a nova coleção"
     },
     {
