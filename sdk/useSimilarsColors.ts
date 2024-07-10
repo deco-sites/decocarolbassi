@@ -1,4 +1,5 @@
 import type { Product } from "apps/commerce/types.ts";
+import { useProductField } from "./useProductField.ts";
 
 
 export const useSimilarColors = (isSimilarTo: Product[] | undefined) => {
@@ -9,7 +10,7 @@ export const useSimilarColors = (isSimilarTo: Product[] | undefined) => {
       url: similar.url ?? "",
       sku: similar.sku ?? "",
       color: similar.additionalProperty?.find((property) => property.name === "Cores")?.value ?? "",
-      specificColor: similar.isVariantOf?.additionalProperty?.find(({ name }) => name === "Cor exata")?.value ?? "",
+      specificColor: useProductField(similar, "Cor exata")
     };
   });
 

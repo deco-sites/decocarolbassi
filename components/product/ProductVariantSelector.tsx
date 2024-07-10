@@ -11,9 +11,15 @@ import { useVariantPossibilities } from "../../sdk/useVariantPossiblities.ts";
 export interface Props {
   product: Product;
   breadcrumb?: BreadcrumbList;
+  sizebay: {
+    showButtons: string | null;
+    urlChart: string;
+    urlVfr: string;
+    recommendedSize: string | null;
+  };
 }
 
-function VariantSelector({ product, breadcrumb }: Props) {
+function VariantSelector({ product, breadcrumb, sizebay }: Props) {
   const { url, isVariantOf, isSimilarTo } = product;
   const productVariant = useSignal<Product | undefined>(product);
   const selectedProduct = productVariant.value;
@@ -107,7 +113,11 @@ function VariantSelector({ product, breadcrumb }: Props) {
         }
 
         return (
-          <SizeSelector product={selectedProduct!} breadcrumb={breadcrumb} />
+          <SizeSelector
+            product={selectedProduct!}
+            breadcrumb={breadcrumb}
+            sizebay={sizebay}
+          />
         );
       })}
     </ul>

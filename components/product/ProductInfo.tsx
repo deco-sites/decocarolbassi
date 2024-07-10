@@ -13,7 +13,6 @@ import { usePercentualDiscount } from "../../sdk/usePercentualPrice.ts";
 import { useProductVariantDiscount } from "../../sdk/useProductVariantDiscount.ts";
 import { ProductPolicy } from "../../sections/Product/ProductDetails.tsx";
 import { MediaOptionProps } from "../share/ShareProduct.tsx";
-import ProductSizebayButtons from "../../islands/ProductSizebayButtons.tsx";
 
 export interface Props {
   page: ProductDetailsPage | null;
@@ -93,6 +92,13 @@ function ProductInfo(
   const productPercentualOff = hasDiscount &&
     usePercentualDiscount(listPrice!, price!);
 
+  const sizebayProps = {
+    showButtons,
+    urlChart: buttonsUrl("chart"),
+    urlVfr: buttonsUrl("vfr"),
+    recommendedSize: recommendedSize,
+  };
+
   return (
     <div class="flex flex-col px-4 max-w-[420px] w-full" id={id}>
       {/* Code and name */}
@@ -142,20 +148,13 @@ function ProductInfo(
         </div>
       </div>
 
-      {buttonsUrl
-        ? (
-          <ProductSizebayButtons
-            showButtons={showButtons}
-            urlChart={buttonsUrl("chart")}
-            urlVfr={buttonsUrl("vfr")}
-            recommendedSize={recommendedSize}
-          />
-        )
-        : null}
-
       {/* Sku Selector */}
       <div class="mt-4 sm:mt-6">
-        <ProductSelector product={product} breadcrumb={breadcrumb} />
+        <ProductSelector
+          product={product}
+          breadcrumb={breadcrumb}
+          sizebay={sizebayProps}
+        />
       </div>
       {/* Description card */}
       <div class="mt-4 sm:mt-6 max-w-[373px]">

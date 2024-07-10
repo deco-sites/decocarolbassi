@@ -1,13 +1,12 @@
 import { HTMLWidget as HTML } from "apps/admin/widgets.ts";
 import { ProductDetailsPage } from "apps/commerce/types.ts";
 import { SectionProps } from "deco/types.ts";
+import { AppContext } from "../../apps/site.ts";
 import ProductInfo from "../../components/product/ProductInfo.tsx";
 import { MediaOptionProps } from "../../components/share/ShareProduct.tsx";
 import Breadcrumb from "../../components/ui/Breadcrumb.tsx";
 import ProductGridImages from "../../islands/ProductImages.tsx";
 import NotFound from "../../sections/Product/NotFound.tsx";
-import { getCookies, setCookie } from "std/http/mod.ts";
-import { AppContext } from "../../apps/site.ts";
 
 export type ProductPolicy = {
   title: string;
@@ -88,8 +87,6 @@ export const loader = async (props: Props, _req: Request, ctx: AppContext) => {
 
   const { buttonsUrl, recommendedSize, showButtons } = await ctx.invoke.site
     .loaders.sizebay({ page: props.page });
-
-  console.log({ buttonsUrl, recommendedSize, showButtons });
 
   return {
     ...props,

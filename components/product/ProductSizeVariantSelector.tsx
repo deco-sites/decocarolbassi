@@ -8,6 +8,7 @@ import { mapProductToAnalyticsItem } from "apps/commerce/utils/productToAnalytic
 import Avatar from "../../components/ui/Avatar.tsx";
 import AddToCartButtonVTEX from "../../islands/AddToCartButton/vtex.tsx";
 import OutOfStock from "../../islands/OutOfStock.tsx";
+import ProductSizebayButtons from "../../islands/ProductSizebayButtons.tsx";
 import { useOffer } from "../../sdk/useOffer.ts";
 import { useSizeVariantOfferAvailability } from "../../sdk/useOfferAvailability.ts";
 import Button from "../ui/ButtonBanner.tsx";
@@ -15,9 +16,15 @@ import Button from "../ui/ButtonBanner.tsx";
 interface Props {
   product: Product;
   breadcrumb?: BreadcrumbList;
+  sizebay: {
+    showButtons: string | null;
+    urlChart: string;
+    urlVfr: string;
+    recommendedSize: string | null;
+  };
 }
 
-function SizeSelector({ product, breadcrumb }: Props) {
+function SizeSelector({ product, breadcrumb, sizebay }: Props) {
   const signalProduct = useSignal<ProductLeaf | null>(null);
   const errorMessage = useSignal<boolean>(false);
 
@@ -52,6 +59,11 @@ function SizeSelector({ product, breadcrumb }: Props) {
       <span className="text-base text-dark-blue uppercase font-light">
         Tamanho: {signalProduct?.value?.name}
       </span>
+
+      <ProductSizebayButtons
+        {...sizebay}
+      />
+
       <ul class="flex flex-row gap-3">
         {variants?.map((variant, index) => {
           const { sizeOfferIsAvailable } = useSizeVariantOfferAvailability(
