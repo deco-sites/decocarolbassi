@@ -1,7 +1,8 @@
-// import { useState } from "preact/hooks";
+import { ComponentChildren } from "preact";
 
 export interface Props {
   url: string;
+  children: ComponentChildren;
 }
 
 const runOnMount = () => {
@@ -16,13 +17,14 @@ const runOnMount = () => {
 
 function SizebayIframe({
   url = "",
+  children,
 }: Props) {
   return (
     <>
       <script dangerouslySetInnerHTML={{ __html: `(${runOnMount})();` }}>
       </script>
-      <div>
-        <main class="w-full text-center">
+      <div class="w-full text-center">
+        <main class="block max-w-[948px] w-screen h-[540px] m-auto relative">
           <iframe
             src={url}
             id="sizebay-iframe"
@@ -34,6 +36,7 @@ function SizebayIframe({
             marginWidth={0}
           >
           </iframe>
+          {children}
         </main>
       </div>
     </>

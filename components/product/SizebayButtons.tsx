@@ -1,6 +1,7 @@
 import { Suspense } from "preact/compat";
 import { useState } from "preact/hooks";
 import Loading from "../daisy/Loading.tsx";
+import Icon from "../ui/Icon.tsx";
 import Modal from "../ui/Modal.tsx";
 import SizebayIframe from "../ui/SizebayIframe.tsx";
 
@@ -70,7 +71,15 @@ function ProductSizebayButtons(
                   <Loading size="loading-md" style={"loading-spinner"} />
                 }
               >
-                <SizebayIframe url={urlChart} />
+                <SizebayIframe url={urlChart}>
+                  <button
+                    aria-label={"Fechar modal Sizebay"}
+                    class="h-[48px] w-[48px] flex items-center justify-center absolute top-0 sm:top-10 right-0 bg-secondary-neutral-100"
+                    onClick={() => setDisplayChartIframe(false)}
+                  >
+                    <Icon id="XMark" size={24} strokeWidth={1} />
+                  </button>
+                </SizebayIframe>
               </Suspense>
             </Modal>
           </div>
@@ -90,7 +99,15 @@ function ProductSizebayButtons(
                   <Loading size="loading-md" style={"loading-spinner"} />
                 }
               >
-                <SizebayIframe url={urlVfr} />
+                <SizebayIframe url={urlVfr}>
+                  <button
+                    aria-label={"Fechar modal Sizebay"}
+                    class="h-[48px] w-[48px] flex items-center justify-center absolute top-0 sm:top-10 right-0 bg-secondary-neutral-100"
+                    onClick={() => setDisplayVfrIframe(false)}
+                  >
+                    <Icon id="XMark" size={24} strokeWidth={1} />
+                  </button>
+                </SizebayIframe>
               </Suspense>
             </Modal>
           </div>
