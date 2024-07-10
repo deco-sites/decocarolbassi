@@ -61,5 +61,6 @@
     "base-200": "#ffffff",
     "base-300": "#ffffff",
     "neutral-content": "#f9f9f9"
-  }
+  },
+  "mode": "dark"
 }
