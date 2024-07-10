@@ -28,7 +28,7 @@
                 "longitude": -46.69755666525704,
                 "latitude": -23.597981704745184
               },
-              "storeTitle": "Loja Cidade Jardim"
+              "storeTitle": "Shopping Cidade Jardim"
             }
           ],
           "city": "São Paulo"
@@ -45,7 +45,7 @@
                 "latitude": -22.99933327288209,
                 "longitude": -43.351549083547766
               },
-              "storeTitle": "Loja Village Mall"
+              "storeTitle": "Shopping Village Mall"
             },
             {
               "coordinates": {
@@ -91,6 +91,19 @@
             }
           ],
           "city": "Paraná"
+        },
+        {
+          "storeInfo": [
+            {
+              "coordinates": {
+                "latitude": -16.709227,
+                "longitude": -49.23711217
+              },
+              "storeTitle": "Shopping Flamboyant",
+              "info": "<p dir=\"ltr\">Shopping Flamboyant</p><p dir=\"ltr\">Endereço: Av. Dep. Jamel Cecílio, 3300 - Jardim Goiás, Goiânia - GO, 74810-907</p><p><strong><br></strong></p><p dir=\"ltr\">Telefone: (11) 976980042</p><p><strong><br></strong></p><p dir=\"ltr\">Horário de funcionamento: </p><p dir=\"ltr\">De segunda à sábado das 10h às 22h</p><p dir=\"ltr\">Domingos e feriados das 12h às 22h</p>"
+            }
+          ],
+          "city": "Goiás"
         }
       ]
     },
