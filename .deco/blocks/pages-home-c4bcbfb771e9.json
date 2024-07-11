@@ -52,7 +52,7 @@
         }
       ],
       "arrows": true,
-      "dots": true,
+      "dots": false,
       "preload": true,
       "images": [
         {}
