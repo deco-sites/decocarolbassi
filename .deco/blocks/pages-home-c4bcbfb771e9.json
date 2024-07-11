@@ -6,9 +6,6 @@
       "title": "Carol Bassi - Moda feminina com Estilo atemporal"
     },
     {
-      "__resolveType": "Header - 03"
-    },
-    {
       "__resolveType": "site/sections/Images/Carousel.tsx",
       "elements": [
         {
@@ -21,10 +18,41 @@
           },
           "desktop": "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/9166/0df99ef1-a7b5-47d9-abcf-cfb99d0559ed",
           "mobile": "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/9166/eaaa11a3-14f7-4bf9-a50f-a583fc094aa3"
+        },
+        {
+          "action": {
+            "buttonPositionDesktop": "Right",
+            "buttonPositionMobile": "Center",
+            "href": "/new-in",
+            "label": "VER NOVA COLEÇÃO",
+            "buttonNegative": false
+          },
+          "desktop": "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/9166/e2453de6-e79a-40e8-a8cb-e50e4171eb0d",
+          "mobile": "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/9166/37f657b4-ff4f-49fe-b957-76dbdc0562d0"
+        },
+        {
+          "action": {
+            "buttonPositionDesktop": "Right",
+            "buttonPositionMobile": "Center",
+            "href": "/sapatos",
+            "label": "VER SELEÇÃO"
+          },
+          "desktop": "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/9166/48db2cb1-f757-446d-807d-806617259943",
+          "mobile": "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/9166/6755980e-8af7-432c-9000-0009d957751f"
+        },
+        {
+          "action": {
+            "buttonPositionDesktop": "Right",
+            "buttonPositionMobile": "Center",
+            "href": "/OUTLET",
+            "label": "VER SELEÇÃO"
+          },
+          "desktop": "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/9166/90d1a74d-1093-4b6f-a402-fe3e7f68266c",
+          "mobile": "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/9166/ddb5eeff-be5f-4196-845c-e55e0834b373"
         }
       ],
-      "arrows": false,
-      "dots": false,
+      "arrows": true,
+      "dots": true,
       "preload": true,
       "images": [
         {}
@@ -89,15 +117,15 @@
     },
     {
       "__resolveType": "site/sections/Category/CategoryGrid.tsx",
-      "header": {
-        "title": "New Arrivals"
-      },
       "layout": {
         "headerAlignment": "left",
         "categoryCard": {
           "textPosition": "bottom",
           "textAlignment": "center"
         }
+      },
+      "header": {
+        "title": "New Arrivals"
       },
       "list": [
         {
