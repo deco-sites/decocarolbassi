@@ -42,7 +42,7 @@ function Navbar(
     return (
       <div
         style={{ height: navbarHeight }}
-        class="lg:hidden grid grid-cols-2 justify-between items-center border-b border-solid border-[#e9e9e9] w-full px-6 pb-6 gap-2"
+        class="lg:hidden grid grid-cols-2 justify-between items-center border-b border-solid border-[#e9e9e9] w-full px-6 pb-6 gap-2 bg-secondary-neutral-100"
       >
         {logo && (
           <a

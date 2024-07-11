@@ -63,8 +63,8 @@ function Menu({ items }: Props) {
   const totalItems = cartItems.length;
 
   return (
-    <div class="flex flex-col h-full w-[350px]">
-      <ul class="px-4 flex-grow flex flex-col divide-y divide-base-200 mt-4">
+    <div class="flex flex-col h-full w-[350px] bg-secondary-neutral-100">
+      <ul class="px-4 flex-grow flex flex-col divide-y divide-base-200 mt-4 ">
         {items.map((item) => (
           <li>
             <MenuItem item={item} />
@@ -72,7 +72,7 @@ function Menu({ items }: Props) {
         ))}
       </ul>
 
-      <ul class="flex justify-evenly py-2 bg-base-200">
+      <ul class="flex justify-evenly py-2 bg-secondary-neutral-100">
         <li class="w-full">
           <a
             class="flex flex-col items-center px-4 py-4 m-3 border-2 border-dotted border-secondary-neutral-600"

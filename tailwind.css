@@ -5,12 +5,19 @@
 @layer base {
 
   :root {
-    color-scheme: light only !important;
+    color-scheme: only light;
   }
 
   /* Allow changing font family via CMS */
   html {
     font-family: var(--font-family);
+    background-color: #fff;
+    color-scheme: only light;
+  }
+
+  body {
+    background-color: #fff;
+    color-scheme: only light;
   }
 
   mark {

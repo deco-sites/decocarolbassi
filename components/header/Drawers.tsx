@@ -29,7 +29,7 @@ const Aside = (
     children: ComponentChildren;
   },
 ) => (
-  <div class="bg-base-100 grid grid-rows-[auto_1fr] h-full divide-y max-w-[100vw] overflow-scroll z-50">
+  <div class="grid grid-rows-[auto_1fr] h-full divide-y max-w-[100vw] overflow-scroll z-50 bg-secondary-neutral-100">
     <div class="flex justify-between items-center">
       <h1 class="px-4 py-3">
         <span class="font-light text-2xl">{title}</span>

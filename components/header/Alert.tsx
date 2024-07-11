@@ -26,14 +26,14 @@ function Alert({ alerts = [], interval = 5, lightTheme = false }: Props) {
     <div id={id}>
       <Slider
         class={`carousel carousel-center w-screen ${
-          lightTheme ? "bg-secondary-neutral-300" : "bg-secondary"
+          lightTheme ? "bg-secondary-neutral-300" : "bg-dark-blue"
         } gap-6`}
       >
         {alerts.map((alert, index) => (
           <Slider.Item index={index} class="carousel-item">
             <span
-              class={`text-sm text-center ${
-                lightTheme ? "text-primary-600" : "text-secondary-content"
+              class={`text-sm text-center font-light ${
+                lightTheme ? "text-primary-600" : "text-secondary-neutral-100"
               } flex p-2 justify-center items-center w-screen gap-2 flex-row-reverse lg:flex-row`}
             >
               {alert.label}
