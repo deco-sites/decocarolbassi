@@ -113,11 +113,12 @@ const DEFAULT_PROPS = {
 };
 
 function BannerItem(
-  { element, lcp, id, device }: {
+  { element, lcp, id, device, dots }: {
     element: Element;
     lcp?: boolean;
     id: string;
     device: Device;
+    dots?: boolean;
   },
 ) {
   const {
@@ -152,7 +153,11 @@ function BannerItem(
             alignMobileButton[action?.buttonPositionMobile!]
           } ${alignDesktopButton[action?.buttonPositionDesktop!]}`}
         >
-          <div class="flex flex-col justify-center items-center gap-4 px-8 py-6">
+          <div
+            class={`flex flex-col justify-center items-center gap-4 px-8  ${
+              device !== "desktop" && dots ? "py-14" : "py-6"
+            }`}
+          >
             <span class="text-2xl font-light text-base-100">
               {action.title}
             </span>
@@ -225,14 +230,9 @@ function Dots({ elements, interval = 0 }: Props) {
       />
       <ul class="carousel justify-center col-span-full gap-6 z-10 row-start-4">
         {elements?.map((_, index) => (
-          <li class="carousel-item">
+          <li class="carousel-item" key={index}>
             <Slider.Dot index={index}>
-              <div class="py-5">
-                <div
-                  class="w-16 sm:w-20 h-0.5 rounded group-disabled:animate-progress bg-gradient-to-r from-base-100 from-[length:var(--dot-progress)] to-[rgba(255,255,255,0.4)] to-[length:var(--dot-progress)]"
-                  style={{ animationDuration: `${interval}s` }}
-                />
-              </div>
+              <div class="w-9 h-[2px] group-disabled:bg-dark-blue bg-[#fff]" />
             </Slider.Dot>
           </li>
         ))}
@@ -270,7 +270,7 @@ function Buttons() {
 
 function BannerCarousel(props: SectionProps<typeof loader>) {
   const id = useId();
-  const { elements, preload, interval, device } = props;
+  const { elements, preload, interval, device, dots } = props;
 
   return (
     <div
@@ -287,6 +287,7 @@ function BannerCarousel(props: SectionProps<typeof loader>) {
                 device={device}
                 lcp={index === 0 && preload}
                 id={`${id}::${index}`}
+                dots={dots}
               />
               <SendEventOnClick
                 id={`${id}::${index}`}

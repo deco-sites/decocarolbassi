@@ -55,7 +55,7 @@
         }
       ],
       "arrows": true,
-      "dots": false,
+      "dots": true,
       "preload": true,
       "images": [
         {}
