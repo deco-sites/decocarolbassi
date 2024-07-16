@@ -48,21 +48,11 @@
           "action": {
             "buttonPositionDesktop": "Right",
             "buttonPositionMobile": "Center",
-            "href": "/sapatos",
+            "href": "/OUTLET",
             "label": "VER SELEÇÃO"
           },
-          "desktop": "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/9166/48db2cb1-f757-446d-807d-806617259943",
-          "mobile": "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/9166/6755980e-8af7-432c-9000-0009d957751f"
-        },
-        {
-          "action": {
-            "href": "/OUTLET",
-            "label": "VER SELEÇÃO",
-            "buttonPositionDesktop": "Right",
-            "buttonPositionMobile": "Center"
-          },
-          "mobile": "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/9166/ddb5eeff-be5f-4196-845c-e55e0834b373",
-          "desktop": "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/9166/90d1a74d-1093-4b6f-a402-fe3e7f68266c"
+          "desktop": "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/9166/90d1a74d-1093-4b6f-a402-fe3e7f68266c",
+          "mobile": "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/9166/ddb5eeff-be5f-4196-845c-e55e0834b373"
         }
       ],
       "arrows": true,
