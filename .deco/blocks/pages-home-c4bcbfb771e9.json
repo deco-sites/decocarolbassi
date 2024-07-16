@@ -15,8 +15,8 @@
           "action": {
             "buttonPositionDesktop": "Left",
             "buttonPositionMobile": "Left",
-            "href": "/",
-            "label": "Teste"
+            "href": "/lifestyle-cb",
+            "label": "VER COLEÇÃO"
           },
           "video": "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/9166/b9e5b64a-c01f-4ffc-b7c7-4389778970f8"
         },
