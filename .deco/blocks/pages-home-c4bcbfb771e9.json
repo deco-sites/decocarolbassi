@@ -13,14 +13,23 @@
       "elements": [
         {
           "action": {
+            "buttonPositionDesktop": "Left",
+            "buttonPositionMobile": "Left",
+            "href": "/",
+            "label": "Teste"
+          },
+          "video": "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/9166/b9e5b64a-c01f-4ffc-b7c7-4389778970f8"
+        },
+        {
+          "action": {
+            "buttonPositionDesktop": "Center",
+            "buttonPositionMobile": "Center",
             "href": "/lifestyle-cb",
             "label": "Confira a seleção",
-            "buttonPositionDesktop": "Center",
-            "buttonNegative": false,
-            "buttonPositionMobile": "Center"
+            "buttonNegative": false
           },
-          "mobile": "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/9166/197053d3-8c76-4da9-9341-e9bbdbfd07c2",
-          "desktop": "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/9166/c2d82cb1-4532-4125-84b9-f2b49ac28581"
+          "desktop": "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/9166/c2d82cb1-4532-4125-84b9-f2b49ac28581",
+          "mobile": "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/9166/197053d3-8c76-4da9-9341-e9bbdbfd07c2"
         },
         {
           "action": {
