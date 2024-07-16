@@ -13,6 +13,17 @@
       "elements": [
         {
           "action": {
+            "href": "/lifestyle-cb",
+            "label": "Confira a seleção",
+            "buttonPositionDesktop": "Center",
+            "buttonNegative": false,
+            "buttonPositionMobile": "Center"
+          },
+          "mobile": "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/9166/197053d3-8c76-4da9-9341-e9bbdbfd07c2",
+          "desktop": "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/9166/c2d82cb1-4532-4125-84b9-f2b49ac28581"
+        },
+        {
+          "action": {
             "buttonPositionDesktop": "Right",
             "buttonPositionMobile": "Center",
             "href": "/new-in",
@@ -45,17 +56,17 @@
         },
         {
           "action": {
-            "buttonPositionDesktop": "Right",
-            "buttonPositionMobile": "Center",
             "href": "/OUTLET",
-            "label": "VER SELEÇÃO"
+            "label": "VER SELEÇÃO",
+            "buttonPositionDesktop": "Right",
+            "buttonPositionMobile": "Center"
           },
-          "desktop": "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/9166/90d1a74d-1093-4b6f-a402-fe3e7f68266c",
-          "mobile": "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/9166/ddb5eeff-be5f-4196-845c-e55e0834b373"
+          "mobile": "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/9166/ddb5eeff-be5f-4196-845c-e55e0834b373",
+          "desktop": "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/9166/90d1a74d-1093-4b6f-a402-fe3e7f68266c"
         }
       ],
       "arrows": true,
-      "dots": true,
+      "dots": false,
       "preload": true,
       "images": [
         {}

@@ -209,8 +209,39 @@
         ]
       },
       {
-        "url": "/outlet",
+        "url": "/acessorios",
+        "name": "Acessórios",
+        "children": [
+          {
+            "image": [],
+            "children": [],
+            "url": "/acessorios/bolsa",
+            "name": "Bolsas"
+          },
+          {
+            "image": [],
+            "children": [],
+            "name": "Bonés",
+            "url": "/acessorios/bone"
+          },
+          {
+            "image": [],
+            "children": [],
+            "url": "/acessorios/cinto",
+            "name": "Cintos"
+          },
+          {
+            "image": [],
+            "children": [],
+            "name": "Lenços",
+            "url": "/lenco"
+          }
+        ],
+        "image": []
+      },
+      {
         "name": "Outlet",
+        "url": "/outlet",
         "@type": "SiteNavigationElement"
       }
     ]
