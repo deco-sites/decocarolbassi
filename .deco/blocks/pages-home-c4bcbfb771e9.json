@@ -18,7 +18,9 @@
             "href": "/lifestyle-cb",
             "label": "VER COLEÇÃO"
           },
-          "video": "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/9166/b9e5b64a-c01f-4ffc-b7c7-4389778970f8"
+          "video": "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/9166/b9e5b64a-c01f-4ffc-b7c7-4389778970f8",
+          "videoDesktop": "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/9166/e5ff6d8b-0926-4d98-a64e-103da674fec9",
+          "videoMobile": "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/9166/4cfabf1c-cbc8-44cd-a615-c820ad0feb16"
         },
         {
           "action": {

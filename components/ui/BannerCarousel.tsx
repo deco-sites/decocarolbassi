@@ -17,7 +17,8 @@ import ButtonBanner from "./ButtonBanner.tsx";
  * @titleBy alt
  */
 export interface Element {
-  video?: VideoWidget;
+  videoDesktop?: VideoWidget;
+  videoMobile?: VideoWidget;
   /** @description desktop otimized image */
   desktop?: ImageWidget;
   /** @description mobile otimized image */
@@ -64,7 +65,7 @@ export interface Props {
   interval?: number;
 }
 
-const DEFAULT_PROPS = {
+const _DEFAULT_PROPS = {
   elements: [
     {
       alt: "/feminino",
@@ -126,7 +127,8 @@ function BannerItem(
     mobile,
     desktop,
     action,
-    video,
+    videoDesktop,
+    videoMobile,
   } = element;
 
   const alignDesktopButton = {
@@ -173,16 +175,33 @@ function BannerItem(
           </div>
         </div>
       )}
-      {video
+      {videoDesktop && device !== "mobile"
         ? (
           <Video
-            src={video}
+            src={videoDesktop}
             width={1920}
             height={907}
             controls={false}
             autoPlay
             loop
             muted
+            playsInline
+            playsinline
+            class="w-full h-full object-cover"
+          />
+        )
+        : videoMobile && device === "mobile"
+        ? (
+          <Video
+            src={videoMobile}
+            width={390}
+            height={614}
+            controls={false}
+            autoPlay
+            loop
+            muted
+            playsInline
+            playsinline
             class="w-full h-full object-cover"
           />
         )
@@ -311,7 +330,7 @@ function BannerCarousel(props: SectionProps<typeof loader>) {
   );
 }
 
-export const loader = (props: Props, req: Request, ctx: AppContext) => {
+export const loader = (props: Props, _req: Request, ctx: AppContext) => {
   return {
     ...props,
     device: ctx.device,
