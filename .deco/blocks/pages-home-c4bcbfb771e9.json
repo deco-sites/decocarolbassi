@@ -13,10 +13,11 @@
       "elements": [
         {
           "action": {
-            "buttonPositionDesktop": "Center",
+            "buttonPositionDesktop": "Right",
             "buttonPositionMobile": "Center",
             "href": "/lifestyle-cb",
-            "label": "VER COLEÇÃO"
+            "label": "VER COLEÇÃO",
+            "buttonNegative": true
           },
           "video": "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/9166/b9e5b64a-c01f-4ffc-b7c7-4389778970f8",
           "videoDesktop": "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/9166/e5ff6d8b-0926-4d98-a64e-103da674fec9",
@@ -55,7 +56,7 @@
           "mobile": "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/9166/ddb5eeff-be5f-4196-845c-e55e0834b373"
         }
       ],
-      "arrows": true,
+      "arrows": false,
       "dots": false,
       "preload": true,
       "images": [
