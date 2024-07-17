@@ -13,8 +13,8 @@
       "elements": [
         {
           "action": {
-            "buttonPositionDesktop": "Left",
-            "buttonPositionMobile": "Left",
+            "buttonPositionDesktop": "Center",
+            "buttonPositionMobile": "Center",
             "href": "/lifestyle-cb",
             "label": "VER COLEÇÃO"
           },
@@ -84,7 +84,7 @@
         "props": {
           "sort": "",
           "count": 6,
-          "collection": "262"
+          "collection": "137"
         },
         "crossSelling": "similars",
         "__resolveType": "vtex/loaders/intelligentSearch/productList.ts"
