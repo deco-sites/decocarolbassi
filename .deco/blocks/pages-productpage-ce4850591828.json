@@ -12,7 +12,8 @@
       "jsonLDs": [
         {}
       ],
-      "__resolveType": "commerce/sections/Seo/SeoPDP.tsx"
+      "__resolveType": "commerce/sections/Seo/SeoPDP.tsx",
+      "favicon": "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/9166/73a520da-9b76-4a7b-86ab-5813c80a3ad1"
     },
     {
       "__resolveType": "Header - 03"
