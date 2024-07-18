@@ -15,7 +15,7 @@
           "action": {
             "buttonPositionDesktop": "Right",
             "buttonPositionMobile": "Center",
-            "href": "/lifestyle-cb",
+            "href": "/new-in",
             "label": "VER COLEÇÃO",
             "buttonNegative": true
           },
@@ -56,7 +56,7 @@
           "mobile": "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/9166/ddb5eeff-be5f-4196-845c-e55e0834b373"
         }
       ],
-      "arrows": false,
+      "arrows": true,
       "dots": false,
       "preload": true,
       "images": [
