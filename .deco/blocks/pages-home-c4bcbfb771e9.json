@@ -49,7 +49,7 @@
           "action": {
             "buttonPositionDesktop": "Right",
             "buttonPositionMobile": "Center",
-            "href": "/OUTLET",
+            "href": "/outlet",
             "label": "VER SELEÇÃO"
           },
           "desktop": "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/9166/90d1a74d-1093-4b6f-a402-fe3e7f68266c",
