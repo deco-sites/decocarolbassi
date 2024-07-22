@@ -32,7 +32,8 @@
             "buttonNegative": true
           },
           "desktop": "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/9166/0df99ef1-a7b5-47d9-abcf-cfb99d0559ed",
-          "mobile": "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/9166/eaaa11a3-14f7-4bf9-a50f-a583fc094aa3"
+          "mobile": "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/9166/eaaa11a3-14f7-4bf9-a50f-a583fc094aa3",
+          "videoDesktop": "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/9166/94085aea-cd2e-4439-a776-9242dc3c9b73"
         },
         {
           "action": {
