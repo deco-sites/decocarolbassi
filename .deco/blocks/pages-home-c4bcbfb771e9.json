@@ -28,7 +28,7 @@
             "buttonPositionDesktop": "Right",
             "buttonPositionMobile": "Center",
             "href": "/new-in",
-            "label": "VER NOVA COLEÇÃO",
+            "label": "VER COLEÇÃO",
             "buttonNegative": true
           },
           "desktop": "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/9166/0df99ef1-a7b5-47d9-abcf-cfb99d0559ed",
@@ -40,7 +40,7 @@
             "buttonPositionDesktop": "Right",
             "buttonPositionMobile": "Center",
             "href": "/new-in",
-            "label": "VER NOVA COLEÇÃO",
+            "label": "VER COLEÇÃO",
             "buttonNegative": false
           },
           "desktop": "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/9166/e2453de6-e79a-40e8-a8cb-e50e4171eb0d",
