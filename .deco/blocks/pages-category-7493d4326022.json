@@ -70,7 +70,8 @@
     },
     {
       "__resolveType": "site/sections/Category/CategorySeoText.tsx",
-      "seoTexts": []
+      "seoTexts": [],
+      "showMore": false
     },
     {
       "__resolveType": "Footer - 02"
@@ -80,5 +81,5 @@
     }
   ],
   "__resolveType": "website/pages/Page.tsx",
-  "path": "/sapatos"
+  "path": "/*"
 }
