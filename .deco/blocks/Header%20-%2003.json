@@ -69,9 +69,16 @@
         ],
         "children": [
           {
-            "url": "/hemisferio-norte-verao-2024",
-            "name": "Verão Hemisfério Norte",
+            "url": "/preview-ss-25",
+            "name": "Preview SS 25",
             "children": [],
+            "image": [],
+            "additionalType": "Preview SS 25"
+          },
+          {
+            "children": [],
+            "name": "Verão Hemisfério Norte",
+            "url": "/hemisferio-norte-verao-2024",
             "image": [],
             "additionalType": "Verão Hemisfério Norte",
             "identifier": "Verão Hemisfério Norte"
@@ -91,14 +98,14 @@
           {
             "image": [],
             "children": [],
-            "name": "Winter 24",
-            "url": "/winter24"
+            "url": "/winter24",
+            "name": "Winter 24"
           },
           {
             "image": [],
             "children": [],
-            "url": "/lifestyle-cb",
-            "name": "Lifestyle CB"
+            "name": "Lifestyle CB",
+            "url": "/lifestyle-cb"
           }
         ]
       },
@@ -243,6 +250,10 @@
         "name": "Outlet",
         "url": "/outlet",
         "@type": "SiteNavigationElement"
+      },
+      {
+        "children": [],
+        "image": []
       }
     ]
   },

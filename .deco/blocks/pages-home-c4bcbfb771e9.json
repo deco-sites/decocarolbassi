@@ -13,15 +13,14 @@
       "elements": [
         {
           "action": {
-            "buttonPositionDesktop": "Right",
-            "buttonPositionMobile": "Center",
+            "buttonNegative": true,
             "href": "/new-in",
             "label": "VER COLEÇÃO",
-            "buttonNegative": true
+            "buttonPositionDesktop": "Right"
           },
           "video": "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/9166/b9e5b64a-c01f-4ffc-b7c7-4389778970f8",
-          "videoDesktop": "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/9166/e5ff6d8b-0926-4d98-a64e-103da674fec9",
-          "videoMobile": "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/9166/4cfabf1c-cbc8-44cd-a615-c820ad0feb16"
+          "desktop": "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/9166/9cd44152-bd43-43ae-bb45-b1c6f53b399d",
+          "mobile": "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/9166/15d938f7-f57e-4fa9-9a20-b8d633cede43"
         },
         {
           "action": {
@@ -34,17 +33,6 @@
           "desktop": "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/9166/0df99ef1-a7b5-47d9-abcf-cfb99d0559ed",
           "mobile": "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/9166/eaaa11a3-14f7-4bf9-a50f-a583fc094aa3",
           "videoDesktop": "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/9166/94085aea-cd2e-4439-a776-9242dc3c9b73"
-        },
-        {
-          "action": {
-            "buttonPositionDesktop": "Right",
-            "buttonPositionMobile": "Center",
-            "href": "/new-in",
-            "label": "VER COLEÇÃO",
-            "buttonNegative": false
-          },
-          "desktop": "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/9166/e2453de6-e79a-40e8-a8cb-e50e4171eb0d",
-          "mobile": "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/9166/37f657b4-ff4f-49fe-b957-76dbdc0562d0"
         },
         {
           "action": {
@@ -135,7 +123,7 @@
       },
       "list": [
         {
-          "image": "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/9166/ac8a49e3-dbf4-49df-863e-71537e7e3425",
+          "image": "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/9166/cf1cf940-7077-4173-b03e-0dbb4e43ce80",
           "href": "/new-in",
           "buttonText": "Ver todos os itens",
           "label": "New In",
@@ -259,14 +247,14 @@
           }
         },
         {
-          "href": "/winter24",
-          "image": "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/9166/bb613e9d-f9d9-492c-a3fa-26c0b3d5208c",
+          "href": "/preview-ss-25",
+          "image": "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/9166/2f2e9af8-07b9-42f6-ab1b-e75607d16443",
           "buttonText": "Ver todos os itens",
-          "label": "Winter 24",
           "media": {
             "type": "image",
             "src": "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/9166/ba96ff48-8d14-445e-8fe3-2ccf7bfdbbdc"
-          }
+          },
+          "label": "Preview SS 25"
         },
         {
           "href": "/icones10anos",
@@ -298,19 +286,19 @@
       },
       "list": [
         {
-          "image": "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/9166/5304c78d-0cd3-4227-8c0f-4325f6182652",
+          "image": "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/9166/dfa4dde9-988a-4b99-b6c7-56925ef141b3",
+          "href": "/roupas/calca",
+          "buttonText": "Calças"
+        },
+        {
           "href": "/roupas/vestido",
-          "buttonText": "Vestidos"
+          "image": "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/9166/d1e99e7f-fdb3-4224-bb91-26f2fdc9dc67",
+          "buttonText": "VESTIDOS"
         },
         {
           "href": "/roupas/blusa",
-          "image": "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/9166/2936d56c-38ec-4f78-8eff-eb0b5f2218c4",
-          "buttonText": "Blusas"
-        },
-        {
-          "href": "/roupas/shorts",
-          "image": "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/9166/d692190d-b0e4-4beb-8907-a396d04b1902",
-          "buttonText": "shorts",
+          "image": "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/9166/0f4ce26c-7e88-4c6b-83f2-d74e13636fb7",
+          "buttonText": "blusas",
           "negative": false
         }
       ],

@@ -1,0 +1,18 @@
+{
+  "__resolveType": "site/sections/Header/Header.tsx",
+  "alerts": [],
+  "searchbar": {
+    "placeholder": "What are you looking for?",
+    "action": "/s",
+    "name": "q",
+    "loader": {
+      "data": {
+        "searches": [],
+        "products": []
+      },
+      "__resolveType": "resolved"
+    }
+  },
+  "navItems": [],
+  "logoPosition": "left"
+}
