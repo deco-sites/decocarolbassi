@@ -250,10 +250,6 @@
         "name": "Outlet",
         "url": "/outlet",
         "@type": "SiteNavigationElement"
-      },
-      {
-        "children": [],
-        "image": []
       }
     ]
   },
