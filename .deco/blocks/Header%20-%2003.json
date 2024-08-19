@@ -69,11 +69,11 @@
         ],
         "children": [
           {
-            "url": "/preview-ss-25",
-            "name": "Preview SS 25",
+            "url": "/preview-verao-25",
+            "name": "Preview Verão 25",
             "children": [],
             "image": [],
-            "additionalType": "Preview SS 25"
+            "additionalType": "Preview Verão 25"
           },
           {
             "children": [],
@@ -271,6 +271,6 @@
     "searches": []
   },
   "logoPosition": "left",
-  "lightThemeBar": false,
+  "lightThemeBar": true,
   "itemsPerColumn": 6
 }
