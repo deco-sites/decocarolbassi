@@ -6,7 +6,280 @@
       "title": "Carol Bassi - Moda feminina com Estilo atemporal"
     },
     {
-      "__resolveType": "Header - 03"
+      "__resolveType": "site/sections/Header/Header.tsx",
+      "cart": {
+        "freeShippingObjectiveQuantity": 600
+      },
+      "logo": {
+        "alt": "Glamour logo by deco",
+        "src": "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/9166/cdf6dc48-e5ff-4876-b830-42da67fd3f19",
+        "width": 219,
+        "height": 23
+      },
+      "alerts": [
+        {
+          "0": "E",
+          "1": "n",
+          "2": "j",
+          "3": "o",
+          "4": "y",
+          "5": " ",
+          "6": "C",
+          "7": "o",
+          "8": "m",
+          "9": "p",
+          "10": "l",
+          "11": "i",
+          "12": "m",
+          "13": "e",
+          "14": "n",
+          "15": "t",
+          "16": "a",
+          "17": "r",
+          "18": "y",
+          "19": " ",
+          "20": "S",
+          "21": "h",
+          "22": "i",
+          "23": "p",
+          "24": "p",
+          "25": "i",
+          "26": "n",
+          "27": "g",
+          "icon": "Desconto",
+          "label": "Frete Grátis nas compras acima de R$ 3.000 | 10%OFF na primeira compra com o cupom: CAROLBASSI10"
+        }
+      ],
+      "navItems": {
+        "__resolveType": "commerce/loaders/navbar.ts",
+        "items": [
+          {
+            "url": "/new-in",
+            "name": "New in",
+            "@type": "SiteNavigationElement",
+            "image": [
+              {
+                "url": "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/9166/847b75e2-bc9c-4a9d-b24e-5ec7bca85b3d",
+                "@type": "ImageObject",
+                "encodingFormat": "Verão Hemisfério Norte",
+                "embedUrl": "/hemisferio-norte-verao-2024",
+                "thumbnailUrl": "/hemisferio-norte-verao-2024",
+                "contentUrl": "Verão Hemisfério Norte"
+              },
+              {
+                "url": "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/9166/2752960f-04de-4575-b6cb-1cfb3b4633d0",
+                "contentUrl": "Winter 24",
+                "thumbnailUrl": "/winter24",
+                "encodingFormat": "Winter 24",
+                "embedUrl": "/Winter24"
+              }
+            ],
+            "children": [
+              {
+                "url": "/preview-verao-25",
+                "name": "Preview Verão 25",
+                "children": [],
+                "image": [],
+                "additionalType": "Preview Verão 25"
+              },
+              {
+                "children": [],
+                "name": "Verão Hemisfério Norte",
+                "url": "/hemisferio-norte-verao-2024",
+                "image": [],
+                "additionalType": "Verão Hemisfério Norte",
+                "identifier": "Verão Hemisfério Norte"
+              },
+              {
+                "children": [],
+                "name": "Ícones 10 anos",
+                "url": "/icones10anos",
+                "@type": "SiteNavigationElement"
+              },
+              {
+                "image": [],
+                "children": [],
+                "name": "Carol Bassi + Maria Rudge",
+                "url": "/collab-maria-rudge"
+              },
+              {
+                "image": [],
+                "children": [],
+                "url": "/winter24",
+                "name": "Winter 24"
+              },
+              {
+                "image": [],
+                "children": [],
+                "name": "Lifestyle CB",
+                "url": "/lifestyle-cb"
+              }
+            ]
+          },
+          {
+            "url": "/roupas",
+            "name": "Roupas",
+            "@type": "SiteNavigationElement",
+            "image": [],
+            "children": [
+              {
+                "url": "/roupas/blusa",
+                "name": "Blusas",
+                "@type": "SiteNavigationElement",
+                "children": []
+              },
+              {
+                "image": [],
+                "children": [],
+                "name": "Calças",
+                "url": "/roupas/calca"
+              },
+              {
+                "image": [],
+                "children": [],
+                "name": "Casacos",
+                "url": "/roupas/casaco"
+              },
+              {
+                "image": [],
+                "children": [],
+                "name": "Vestidos",
+                "url": "/roupas/vestido"
+              },
+              {
+                "image": [],
+                "children": [],
+                "name": "Saias",
+                "url": "/roupas/saia"
+              },
+              {
+                "image": [],
+                "children": [],
+                "name": "Shorts",
+                "url": "/roupas/shorts"
+              },
+              {
+                "image": [],
+                "children": [],
+                "name": "Tops",
+                "url": "/roupas/top"
+              },
+              {
+                "image": [],
+                "children": [],
+                "url": "/roupas/blazer",
+                "name": "Blazers"
+              },
+              {
+                "image": [],
+                "children": [],
+                "name": "Jeans",
+                "url": "/jeans"
+              },
+              {
+                "image": [],
+                "children": [],
+                "name": "Tricot",
+                "url": "/tricot"
+              },
+              {
+                "image": [],
+                "children": [],
+                "name": "Alfaiataria",
+                "url": "/alfaiataria"
+              },
+              {
+                "image": [],
+                "children": [],
+                "name": "Veludo",
+                "url": "/veludo"
+              }
+            ]
+          },
+          {
+            "url": "/sapatos",
+            "name": "Sapatos",
+            "@type": "SiteNavigationElement",
+            "image": [],
+            "children": [
+              {
+                "url": "/sapatos/bota",
+                "name": "Botas",
+                "@type": "SiteNavigationElement",
+                "children": []
+              },
+              {
+                "url": "/sapatos/mule",
+                "name": "Mules",
+                "children": [],
+                "image": []
+              },
+              {
+                "image": [],
+                "children": [],
+                "name": "Sandálias",
+                "url": "/sapatos/sandalia"
+              }
+            ]
+          },
+          {
+            "url": "/acessorios",
+            "name": "Acessórios",
+            "children": [
+              {
+                "image": [],
+                "children": [],
+                "url": "/acessorios/bolsa",
+                "name": "Bolsas"
+              },
+              {
+                "image": [],
+                "children": [],
+                "name": "Bonés",
+                "url": "/acessorios/bone"
+              },
+              {
+                "image": [],
+                "children": [],
+                "url": "/acessorios/cinto",
+                "name": "Cintos"
+              },
+              {
+                "image": [],
+                "children": [],
+                "name": "Lenços",
+                "url": "/lenco"
+              }
+            ],
+            "image": []
+          },
+          {
+            "name": "Outlet",
+            "url": "/outlet",
+            "@type": "SiteNavigationElement"
+          }
+        ]
+      },
+      "products": [],
+      "searchbar": {
+        "name": "q",
+        "action": "/s",
+        "loader": {
+          "data": {
+            "count": 4,
+            "__resolveType": "vtex/loaders/intelligentSearch/suggestions.ts"
+          },
+          "__resolveType": "resolved"
+        },
+        "placeholder": "O que você procura?"
+      },
+      "suggestions": {
+        "products": [],
+        "searches": []
+      },
+      "logoPosition": "left",
+      "lightThemeBar": true,
+      "itemsPerColumn": 6
     },
     {
       "__resolveType": "site/sections/Images/Carousel.tsx",
