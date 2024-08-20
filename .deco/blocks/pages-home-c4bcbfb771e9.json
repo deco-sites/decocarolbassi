@@ -17,25 +17,24 @@
         {
           "action": {
             "buttonNegative": true,
-            "href": "/new-in",
+            "href": "/icones-10-anos",
             "label": "VER COLEÇÃO",
-            "buttonPositionDesktop": "Right"
+            "buttonPositionDesktop": "Right",
+            "buttonPositionMobile": "Center"
           },
-          "video": "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/9166/b9e5b64a-c01f-4ffc-b7c7-4389778970f8",
-          "desktop": "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/9166/9cd44152-bd43-43ae-bb45-b1c6f53b399d",
-          "mobile": "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/9166/15d938f7-f57e-4fa9-9a20-b8d633cede43"
+          "desktop": "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/9166/901b4621-2bda-4627-8f2f-960110b155e0",
+          "mobile": "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/9166/efcb519d-766a-4268-8d83-c6c7b2ae6d84"
         },
         {
           "action": {
             "buttonPositionDesktop": "Right",
-            "buttonPositionMobile": "Center",
-            "href": "/icones-10-anos",
+            "href": "/new-in",
             "label": "VER COLEÇÃO",
             "buttonNegative": true
           },
-          "desktop": "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/9166/0df99ef1-a7b5-47d9-abcf-cfb99d0559ed",
-          "mobile": "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/9166/eaaa11a3-14f7-4bf9-a50f-a583fc094aa3",
-          "videoDesktop": "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/9166/94085aea-cd2e-4439-a776-9242dc3c9b73"
+          "desktop": "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/9166/9cd44152-bd43-43ae-bb45-b1c6f53b399d",
+          "mobile": "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/9166/15d938f7-f57e-4fa9-9a20-b8d633cede43",
+          "video": "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/9166/b9e5b64a-c01f-4ffc-b7c7-4389778970f8"
         },
         {
           "action": {
