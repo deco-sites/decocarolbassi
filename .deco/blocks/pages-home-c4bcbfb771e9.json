@@ -6,10 +6,7 @@
       "title": "Carol Bassi - Moda feminina com Estilo atemporal"
     },
     {
-      "__resolveType": "website/sections/Rendering/Lazy.tsx",
-      "section": {
-        "__resolveType": "Header - 03"
-      }
+      "__resolveType": "Header - 03"
     },
     {
       "__resolveType": "site/sections/Images/Carousel.tsx",
