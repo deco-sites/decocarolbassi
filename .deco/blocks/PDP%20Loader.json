@@ -5,7 +5,8 @@
       "param": "slug",
       "__resolveType": "website/functions/requestToParam.ts"
     },
-    "similars": true
+    "similars": true,
+    "indexingSkus": true
   },
   "extensions": [
     {
