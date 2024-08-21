@@ -6,7 +6,7 @@
       "__resolveType": "website/functions/requestToParam.ts"
     },
     "similars": true,
-    "indexingSkus": true
+    "indexingSkus": false
   },
   "extensions": [
     {
