@@ -52,12 +52,12 @@
         "@type": "SiteNavigationElement",
         "image": [
           {
-            "url": "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/9166/847b75e2-bc9c-4a9d-b24e-5ec7bca85b3d",
+            "url": "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/9166/97d87aa3-d3cc-4dac-afd5-79ba7ee21f68",
             "@type": "ImageObject",
-            "encodingFormat": "Verão Hemisfério Norte",
-            "embedUrl": "/hemisferio-norte-verao-2024",
-            "thumbnailUrl": "/hemisferio-norte-verao-2024",
-            "contentUrl": "Verão Hemisfério Norte"
+            "encodingFormat": "Preview Verão 25",
+            "embedUrl": "/preview-ss-25",
+            "thumbnailUrl": "/preview-ss-25",
+            "contentUrl": "Preview Verão 25"
           },
           {
             "url": "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/9166/2752960f-04de-4575-b6cb-1cfb3b4633d0",
