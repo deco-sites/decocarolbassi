@@ -54,6 +54,8 @@ function CategorySeoText(
   );
 }
 
+export const cache = "no-cache";
+
 export const loader = (props: Props, req: Request) => {
   const { seoTexts } = props;
 

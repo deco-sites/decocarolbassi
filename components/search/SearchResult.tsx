@@ -206,6 +206,8 @@ function SearchResult(
   return <Result {...props} page={page} />;
 }
 
+export const cache = "no-cache";
+
 export const loader = (props: Props, req: Request, ctx: AppContext) => {
   const { categoryBannersMediaSources } = props;
 

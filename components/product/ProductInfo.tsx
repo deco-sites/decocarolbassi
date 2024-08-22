@@ -1,18 +1,23 @@
+import { SendEventOnView } from "$store/components/Analytics.tsx";
+import { MediaOptionProps } from "$store/components/share/ShareProduct.tsx";
+import ProductAccordionInfo from "$store/islands/ProductAccordionInfo.tsx";
+import ProductSelector from "$store/islands/ProductVariantSelector.tsx";
+import ShareProduct from "$store/islands/Share/ShareProduct.tsx";
+import WishlistButtonVtex from "$store/islands/WishlistButton/vtex.tsx";
+import { formatPrice } from "$store/sdk/format.ts";
+import { useId } from "$store/sdk/useId.ts";
+import { useOffer } from "$store/sdk/useOffer.ts";
+import { usePercentualDiscount } from "$store/sdk/usePercentualPrice.ts";
+import { useProductVariantDiscount } from "$store/sdk/useProductVariantDiscount.ts";
+import { HTMLWidget as HTML } from "apps/admin/widgets.ts";
 import { ProductDetailsPage } from "apps/commerce/types.ts";
 import { mapProductToAnalyticsItem } from "apps/commerce/utils/productToAnalyticsItem.ts";
 import { Device } from "apps/website/matchers/device.ts";
-import { SendEventOnView } from "../../components/Analytics.tsx";
-import ProductAccordionInfo from "../../islands/ProductAccordionInfo.tsx";
-import ProductSelector from "../../islands/ProductVariantSelector.tsx";
-import ShareProduct from "../../islands/Share/ShareProduct.tsx";
-import WishlistButtonVtex from "../../islands/WishlistButton/vtex.tsx";
-import { formatPrice } from "../../sdk/format.ts";
-import { useId } from "../../sdk/useId.ts";
-import { useOffer } from "../../sdk/useOffer.ts";
-import { usePercentualDiscount } from "../../sdk/usePercentualPrice.ts";
-import { useProductVariantDiscount } from "../../sdk/useProductVariantDiscount.ts";
-import { ProductPolicy } from "../../sections/Product/ProductDetails.tsx";
-import { MediaOptionProps } from "../share/ShareProduct.tsx";
+
+export type ProductPolicy = {
+  title: string;
+  description: HTML;
+};
 
 export interface Props {
   page: ProductDetailsPage | null;
