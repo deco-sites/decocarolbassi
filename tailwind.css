@@ -83,6 +83,10 @@
   .btn {
     box-shadow: none;
   }
+
+  .skeleton {
+    background-color: var(--fallback-b3, oklch(0.93 0 0));
+  }
 }
 
 .group:disabled .group-disabled\:animate-progress {

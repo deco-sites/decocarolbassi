@@ -74,8 +74,8 @@ export default function ProductGridImages(props: Props) {
                     alt={img.alternateName}
                     width={width}
                     height={height}
-                    preload={index === 0}
-                    loading={index === 0 ? "eager" : "lazy"}
+                    preload={true}
+                    loading={"eager"}
                   />
                 )
                 : (
@@ -83,7 +83,7 @@ export default function ProductGridImages(props: Props) {
                     class="w-full"
                     src={img.url!}
                     alt={img.alternateName}
-                    loading={index === 0 ? "eager" : "lazy"}
+                    loading={"eager"}
                   />
                 )}
             </Slider.Item>
@@ -104,6 +104,7 @@ export default function ProductGridImages(props: Props) {
               style={{ aspectRatio: ASPECT_RATIO }}
               class="hover:cursor-zoom-in"
               onClick={handleClick}
+              key={index}
             >
               {image.name?.toLowerCase() === "novas"
                 ? (
@@ -113,16 +114,18 @@ export default function ProductGridImages(props: Props) {
                     width={WIDTH}
                     height={HEIGHT}
                     style={{ aspectRatio: ASPECT_RATIO }}
-                    preload={index <= 4}
-                    loading={index <= 4 ? "eager" : "lazy"}
+                    preload={true}
+                    loading={"eager"}
+                    decoding={"async"}
                   />
                 )
                 : (
                   <img
                     src={image.url!}
                     alt={image.alternateName}
-                    loading={index <= 4 ? "eager" : "lazy"}
+                    loading={"eager"}
                     class="object-fill"
+                    decoding={"async"}
                   />
                 )}
             </figure>
@@ -160,6 +163,7 @@ export default function ProductGridImages(props: Props) {
                   style={{
                     aspectRatio: ASPECT_RATIO,
                   }}
+                  decoding={"async"}
                 />
               )}
           </figure>
@@ -168,6 +172,7 @@ export default function ProductGridImages(props: Props) {
         {images.slice(1).map((image, index) => {
           return (
             <figure
+              key={index}
               style={{ aspectRatio: ASPECT_RATIO }}
               class="hover:cursor-zoom-in"
               onClick={handleClick}
@@ -180,15 +185,17 @@ export default function ProductGridImages(props: Props) {
                     width={WIDTH}
                     height={HEIGHT}
                     style={{ aspectRatio: ASPECT_RATIO }}
-                    preload={index <= 4}
-                    loading={index <= 4 ? "eager" : "lazy"}
+                    preload={false}
+                    loading={"lazy"}
+                    decoding={"async"}
                   />
                 )
                 : (
                   <img
                     src={image.url!}
                     alt={image.alternateName}
-                    loading={index <= 4 ? "eager" : "lazy"}
+                    loading={"lazy"}
+                    decoding={"async"}
                     class="object-fill"
                   />
                 )}
