@@ -37,6 +37,8 @@ export interface Props {
   items: Benefit[];
 }
 
+export const cache = "no-cache";
+
 export const loader = (props: Props, req: Request, _ctx: AppContext) => {
   const url = new URL(req.url);
   return {

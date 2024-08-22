@@ -210,6 +210,8 @@ function ProductShelf({
   );
 }
 
+export const cache = "no-cache";
+
 export const loader = (props: Props, req: Request, ctx: AppContext) => {
   const url = new URL(req.url);
 

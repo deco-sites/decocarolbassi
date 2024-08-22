@@ -25,6 +25,8 @@ function OurStores({
   );
 }
 
+export const cache = "no-cache";
+
 export const loader = (props: Props, _req: Request, ctx: AppContext) => {
   return {
     ...props,

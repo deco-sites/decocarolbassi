@@ -1,8 +1,8 @@
 import { HTMLWidget } from "apps/admin/widgets.ts";
+import { SectionProps } from "deco/types.ts";
+import { AppContext } from "../../apps/site.ts";
 import Faq from "../../islands/Faq.tsx";
 import Breadcrumb from "./Breadcrumb.tsx";
-import { AppContext } from "../../apps/site.ts";
-import { SectionProps } from "deco/types.ts";
 
 /**
  * @title {{{faqTitle}}}
@@ -55,6 +55,8 @@ function Institutional(
     </main>
   );
 }
+
+export const cache = "no-cache";
 
 export const loader = (props: Props, req: Request, _ctx: AppContext) => {
   const url = new URL(req.url);

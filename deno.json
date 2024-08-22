@@ -1,6 +1,6 @@
 {
   "imports": {
-    "deco/": "https://cdn.jsdelivr.net/gh/deco-cx/deco@1.92.2/",
+    "deco/": "https://cdn.jsdelivr.net/gh/deco-cx/deco@1.92.3/",
     "apps/": "https://cdn.jsdelivr.net/gh/deco-cx/apps@0.56.3/",
     "$store/": "./",
     "$fresh/": "https://deno.land/x/fresh@1.6.8/",

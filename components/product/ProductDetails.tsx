@@ -6,7 +6,7 @@ import ProductGridImages from "$store/islands/ProductImages.tsx";
 import NotFound from "$store/sections/Product/NotFound.tsx";
 import { HTMLWidget as HTML } from "apps/admin/widgets.ts";
 import { ProductDetailsPage } from "apps/commerce/types.ts";
-import { LoaderContext, SectionProps } from "deco/types.ts";
+import { SectionProps } from "deco/types.ts";
 
 export type ProductPolicy = {
   title: string;
@@ -89,12 +89,7 @@ export const loader = async (props: Props, _req: Request, ctx: AppContext) => {
   };
 };
 
-export const cache = "stale-while-revalidate";
-
-export const cacheKey = (req: Request, _ctx: LoaderContext) => {
-  const url = new URL(req.url);
-  return url.searchParams.get(":slug");
-};
+export const cache = "no-cache";
 
 export function LoadingFallback() {
   return (
