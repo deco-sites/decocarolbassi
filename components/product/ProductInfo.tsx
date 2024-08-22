@@ -149,7 +149,7 @@ function ProductInfo(
       </div>
 
       {/* Sku Selector */}
-      <div class="mt-4 sm:mt-6">
+      <div class="mt-4 sm:mt-6 flex flex-col gap-4">
         <ProductSelector
           product={product}
           breadcrumb={breadcrumb}

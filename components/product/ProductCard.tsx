@@ -37,7 +37,7 @@ function ProductCard({
   const id = `product-card-${productID}`;
   const [front, back] = images ?? [];
   const { listPrice, price } = useOffer(offers);
-  const relativeUrl = relative(url);
+  const relativeUrl = url && relative(url);
   const aspectRatio = `${WIDTH} / ${HEIGHT}`;
 
   const hasDiscount = (listPrice ?? 0) > (price ?? 0);
