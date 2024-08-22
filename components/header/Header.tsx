@@ -128,4 +128,11 @@ export const loader = (props: Props, _req: Request, ctx: AppContext) => {
   return { ...props, device: ctx.device };
 };
 
+export function LoadingFallback() {
+  return (
+    <div style={{ height: "135px" }}>
+    </div>
+  );
+}
+
 export default Header;
