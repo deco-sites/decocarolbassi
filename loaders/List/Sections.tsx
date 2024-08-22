@@ -5,6 +5,8 @@ interface Props {
   sections: Section[] | null;
 }
 
+export const cache = "no-cache";
+
 function Sections({ sections }: Props): VNode[] | null {
   if (sections === null) {
     return null;

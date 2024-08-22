@@ -7,6 +7,7 @@ import { ExtensionOf } from "apps/website/loaders/extension.ts";
  * @title VTEX Integration - Color Similars
  * @description Add extra data to your loader. This may harm performance
  */
+export const cache = "no-cache";
 
 export default function productDetailsPage(
   _props: unknown,

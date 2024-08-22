@@ -5,7 +5,7 @@ interface Props {
   /** @title Product Card layout props */
   layout: unknown;
 }
-
+export const cache = "no-cache";
 /** @title Product Card Layout */
 const loader = ({ layout }: Props): unknown => layout;
 

@@ -6,6 +6,9 @@ export interface Props {
   page: ProductDetailsPage | null;
 }
 
+
+export const cache = "no-cache";
+
 export default async function SizebayLoader({ page }: Props, req: Request, ctx: AppContext) {
   const cookies = getCookies(req.headers);
   let SID: string | null = cookies.SIZEBAY_SESSION_ID_V4;

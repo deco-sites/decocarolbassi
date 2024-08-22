@@ -1,37 +1,39 @@
 import { AppContext } from "apps/vtex/mod.ts";
 
 export interface Props {
-  productId: string ;
+  productId: string;
 }
+
+export const cache = "no-cache";
 
 export default async function ProductRecommendationsLoader(props: Props, _req: Request, ctx: AppContext) {
   const productId = props.productId;
-  
+
   if (!productId) {
     console.error("Product ID is missing.");
     return null;
   }
-  
+
   try {
-      const { io } = await ctx.invoke.vtex.loaders.config();
-      const response = io.query<
-        {
-          productRecommendations: {
-            productName: string;
-            linkText: string;
-            items: {
-              images: { imageUrl: string }[];
-              sellers: { commertialOffer: { Price: number } }[];
-            }[];
-          };
-        },
-        { productId: string }
-      >({
-        operationName: "productRecommendations",
-        variables: {
-          productId,
-        },
-        query: `
+    const { io } = await ctx.invoke.vtex.loaders.config();
+    const response = io.query<
+      {
+        productRecommendations: {
+          productName: string;
+          linkText: string;
+          items: {
+            images: { imageUrl: string }[];
+            sellers: { commertialOffer: { Price: number } }[];
+          }[];
+        };
+      },
+      { productId: string }
+    >({
+      operationName: "productRecommendations",
+      variables: {
+        productId,
+      },
+      query: `
           query productRecommendations($productId: ID!) {
             productRecommendations(
               identifier: { field: id, value: $productId }, 
@@ -52,10 +54,10 @@ export default async function ProductRecommendationsLoader(props: Props, _req: R
             }
           }
         `,
-      });
-      return response;
-    } catch (error) {
-      console.error("Error fetching product recommendations:", error);
-      return null;
-    }
+    });
+    return response;
+  } catch (error) {
+    console.error("Error fetching product recommendations:", error);
+    return null;
+  }
 }

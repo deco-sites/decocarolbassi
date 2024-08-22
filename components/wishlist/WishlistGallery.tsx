@@ -7,6 +7,8 @@ import WishlistMessageLogin from "../../islands/WishlistMessageLogin.tsx";
 
 export type Props = SearchResultProps;
 
+export const cache = "no-cache";
+
 export const loader = async (
   props: Props,
   req: Request,
