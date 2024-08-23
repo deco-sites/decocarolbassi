@@ -92,7 +92,12 @@ function Header({
   itemsPerColumn,
 }: SectionProps<typeof loader>) {
   const platform = usePlatform();
-  const items = navItems ?? [];
+
+  if (!navItems || navItems.length === 0) {
+    return null;
+  }
+
+  const items = navItems;
 
   return (
     <>
