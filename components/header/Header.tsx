@@ -130,7 +130,7 @@ export const loader = (props: Props, _req: Request, ctx: AppContext) => {
 
 export function LoadingFallback() {
   return (
-    <div style={{ height: "135px" }}>
+    <div style={{ height: "129px" }}>
     </div>
   );
 }
