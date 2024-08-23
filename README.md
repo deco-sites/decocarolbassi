@@ -1,4 +1,4 @@
-# Storefront starter by deco.cx   
+# Storefront starter by deco.cx    
 
 ## Carolbassi
  
