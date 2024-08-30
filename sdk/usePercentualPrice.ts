@@ -1,4 +1,7 @@
-export const usePercentualDiscount = (listPrice: number, price: number): string | void => {
+export const usePercentualDiscount = (
+  listPrice: number,
+  price: number,
+): string | void => {
   if (!listPrice || !price) return;
 
   const discount = ((listPrice - price) / listPrice) * 100;

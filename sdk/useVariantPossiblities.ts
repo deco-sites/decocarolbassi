@@ -35,8 +35,8 @@ export const useVariantPossibilities = (
       possibilities[name][value] = isSelected
         ? url
         : isSelectable
-          ? possibilities[name][value] || url
-          : possibilities[name][value];
+        ? possibilities[name][value] || url
+        : possibilities[name][value];
     }
   }
 

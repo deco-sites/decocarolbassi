@@ -153,8 +153,9 @@ export const buttonClasses = {
 };
 
 export function getButtonClasses(style: ButtonType) {
-  const allButtonClasses = `btn ${buttonClasses[style?.color || "Default"]} ${style?.outline ? "btn-outline" : ""
-    }`;
+  const allButtonClasses = `btn ${buttonClasses[style?.color || "Default"]} ${
+    style?.outline ? "btn-outline" : ""
+  }`;
 
   return allButtonClasses;
 }
