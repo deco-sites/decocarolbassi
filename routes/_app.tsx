@@ -44,8 +44,15 @@ export default defineApp(async (_req, ctx) => {
       </Head>
 
       {/* <!-- Google Tag Manager (noscript) --> */}
-      <noscript><iframe src="https://trckss.carolbassi.com.br/ns.html?id=GTM-PNLHPKB"
-      height="0" width="0" style="display:none;visibility:hidden;"></iframe></noscript>
+      <noscript>
+        <iframe
+          src="https://trckss.carolbassi.com.br/ns.html?id=GTM-PNLHPKB"
+          height="0"
+          width="0"
+          style="display:none;visibility:hidden;"
+        >
+        </iframe>
+      </noscript>
 
       {/* Rest of Preact tree */}
       <ctx.Component />

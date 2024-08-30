@@ -7,12 +7,16 @@ export const useVariantOfferAvailability = (isVariantOf?: ProductGroup) => {
     offer?.offers[0].availability === "https://schema.org/InStock"
   );
 
-  return { hasOfferAvailable: someOfferIsAvailable }
-}
+  return { hasOfferAvailable: someOfferIsAvailable };
+};
 
+export const useSizeVariantOfferAvailability = (
+  index: number,
+  isVariantOf?: ProductGroup,
+) => {
+  const sizeOfferIsAvailable =
+    isVariantOf?.hasVariant[index]?.offers?.offers[0]?.availability ===
+      "https://schema.org/InStock";
 
-export const useSizeVariantOfferAvailability = (index: number, isVariantOf?: ProductGroup) => {
-  const sizeOfferIsAvailable = isVariantOf?.hasVariant[index]?.offers?.offers[0]?.availability === "https://schema.org/InStock";
-
-  return { sizeOfferIsAvailable }
-}
+  return { sizeOfferIsAvailable };
+};

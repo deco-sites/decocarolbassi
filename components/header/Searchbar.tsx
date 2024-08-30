@@ -14,13 +14,13 @@ function SearchbarModal({ searchbar }: Props) {
     return null;
   }
 
-  return displaySearchPopup.value ? (
-    <div
-      class="absolute top-0 bg-base-100 z-50 w-screen right-0"
-    >
-      <Searchbar {...searchbar} />
-    </div>
-  ) : null;
+  return displaySearchPopup.value
+    ? (
+      <div class="absolute top-0 bg-base-100 z-50 w-screen right-0">
+        <Searchbar {...searchbar} />
+      </div>
+    )
+    : null;
 }
 
 export default SearchbarModal;

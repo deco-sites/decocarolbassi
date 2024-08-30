@@ -6,7 +6,11 @@ export interface Props {
 
 export const cache = "no-cache";
 
-export default async function ProductRecommendationsLoader(props: Props, _req: Request, ctx: AppContext) {
+export default async function ProductRecommendationsLoader(
+  props: Props,
+  _req: Request,
+  ctx: AppContext,
+) {
   const productId = props.productId;
 
   if (!productId) {

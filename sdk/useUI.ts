@@ -14,8 +14,8 @@ const displayProductZoomModal = signal(false);
 const productZoomIndex = signal<number>(0);
 const storeLocal = signal({
   lat: -23.597981704745184,
-  lng: -46.69755666525704
-})
+  lng: -46.69755666525704,
+});
 
 const state = {
   displayCart,
@@ -25,7 +25,7 @@ const state = {
   displayGridLayout,
   displayProductZoomModal,
   productZoomIndex,
-  storeLocal
+  storeLocal,
 };
 
 // Keyboard event listeners

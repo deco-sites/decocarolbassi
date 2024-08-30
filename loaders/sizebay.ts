@@ -6,10 +6,13 @@ export interface Props {
   page: ProductDetailsPage | null;
 }
 
-
 export const cache = "no-cache";
 
-export default async function SizebayLoader({ page }: Props, req: Request, ctx: AppContext) {
+export default async function SizebayLoader(
+  { page }: Props,
+  req: Request,
+  ctx: AppContext,
+) {
   const cookies = getCookies(req.headers);
   let SID: string | null = cookies.SIZEBAY_SESSION_ID_V4;
   let showButtons: string | null = null;
@@ -89,5 +92,5 @@ export default async function SizebayLoader({ page }: Props, req: Request, ctx: 
     showButtons,
     buttonsUrl,
     recommendedSize,
-  }
+  };
 }
