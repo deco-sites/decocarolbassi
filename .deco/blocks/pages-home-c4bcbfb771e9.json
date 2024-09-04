@@ -16,7 +16,8 @@
             "buttonNegative": true,
             "href": "/new-in",
             "label": "VER COLEÇÃO",
-            "buttonPositionDesktop": "Right"
+            "buttonPositionDesktop": "Right",
+            "buttonPositionMobile": "Center"
           },
           "desktop": "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/9166/9cd44152-bd43-43ae-bb45-b1c6f53b399d",
           "mobile": "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/9166/15d938f7-f57e-4fa9-9a20-b8d633cede43",
@@ -31,7 +32,7 @@
             "buttonPositionMobile": "Center"
           },
           "desktop": "https://deco-sites-assets.s3.sa-east-1.amazonaws.com/decocarolbassi/d8da9c1d-48bc-4e95-b363-bc02da212f30/banner-smoking-desktop.jpg",
-          "videoMobile": "https://deco-sites-assets.s3.sa-east-1.amazonaws.com/decocarolbassi/5f95fb2a-2718-4dc9-af8f-9a4e69796062/banner-mobile.mp4"
+          "mobile": "https://deco-sites-assets.s3.sa-east-1.amazonaws.com/decocarolbassi/e08cbab3-46f0-4526-85d6-ef15de9e6e39/banner-smoking-mobile.jpg"
         },
         {
           "action": {
