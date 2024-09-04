@@ -14,24 +14,24 @@
         {
           "action": {
             "buttonNegative": true,
-            "href": "/icones-10-anos",
-            "label": "VER COLEÇÃO",
-            "buttonPositionDesktop": "Right",
-            "buttonPositionMobile": "Center"
-          },
-          "desktop": "https://deco-sites-assets.s3.sa-east-1.amazonaws.com/decocarolbassi/d8da9c1d-48bc-4e95-b363-bc02da212f30/banner-smoking-desktop.jpg",
-          "mobile": "https://deco-sites-assets.s3.sa-east-1.amazonaws.com/decocarolbassi/9714d110-2e3a-4b12-acb1-e9eec1b4be2d/banner-smoking-mobile.jpg"
-        },
-        {
-          "action": {
-            "buttonPositionDesktop": "Right",
             "href": "/new-in",
             "label": "VER COLEÇÃO",
-            "buttonNegative": true
+            "buttonPositionDesktop": "Right"
           },
           "desktop": "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/9166/9cd44152-bd43-43ae-bb45-b1c6f53b399d",
           "mobile": "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/9166/15d938f7-f57e-4fa9-9a20-b8d633cede43",
           "video": "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/9166/b9e5b64a-c01f-4ffc-b7c7-4389778970f8"
+        },
+        {
+          "action": {
+            "buttonPositionDesktop": "Right",
+            "href": "/icones-10-anos",
+            "label": "VER COLEÇÃO",
+            "buttonNegative": true,
+            "buttonPositionMobile": "Center"
+          },
+          "desktop": "https://deco-sites-assets.s3.sa-east-1.amazonaws.com/decocarolbassi/d8da9c1d-48bc-4e95-b363-bc02da212f30/banner-smoking-desktop.jpg",
+          "videoMobile": "https://deco-sites-assets.s3.sa-east-1.amazonaws.com/decocarolbassi/5f95fb2a-2718-4dc9-af8f-9a4e69796062/banner-mobile.mp4"
         },
         {
           "action": {
