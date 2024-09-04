@@ -32,7 +32,8 @@
             "buttonPositionMobile": "Center"
           },
           "desktop": "https://deco-sites-assets.s3.sa-east-1.amazonaws.com/decocarolbassi/d8da9c1d-48bc-4e95-b363-bc02da212f30/banner-smoking-desktop.jpg",
-          "mobile": "https://deco-sites-assets.s3.sa-east-1.amazonaws.com/decocarolbassi/e08cbab3-46f0-4526-85d6-ef15de9e6e39/banner-smoking-mobile.jpg"
+          "mobile": "https://deco-sites-assets.s3.sa-east-1.amazonaws.com/decocarolbassi/e08cbab3-46f0-4526-85d6-ef15de9e6e39/banner-smoking-mobile.jpg",
+          "videoMobile": "https://deco-sites-assets.s3.sa-east-1.amazonaws.com/decocarolbassi/5f95fb2a-2718-4dc9-af8f-9a4e69796062/banner-mobile.mp4"
         },
         {
           "action": {
