@@ -271,6 +271,6 @@
     "searches": []
   },
   "logoPosition": "left",
-  "lightThemeBar": true,
+  "lightThemeBar": false,
   "itemsPerColumn": 6
 }
