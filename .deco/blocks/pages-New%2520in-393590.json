@@ -27,7 +27,8 @@
               "value": "137"
             }
           ],
-          "pageOffset": 1
+          "pageOffset": 1,
+          "similars": false
         },
         "extensions": [
           {
