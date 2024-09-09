@@ -15,13 +15,6 @@
   },
   "global": [
     {
-      "__resolveType": "website/sections/Analytics/Analytics.tsx",
-      "dangerouslyRunOnMainThread": true,
-      "trackingIds": [
-        "GTM-PNLHPKB"
-      ]
-    },
-    {
       "__resolveType": "algolia/sections/Analytics/Algolia.tsx"
     },
     {

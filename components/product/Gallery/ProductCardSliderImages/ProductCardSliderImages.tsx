@@ -29,8 +29,8 @@ export interface Props {
   platform?: Platform;
 }
 
-const WIDTH = 200;
-const HEIGHT = 279;
+const WIDTH = 232;
+const HEIGHT = 280;
 
 function ProductCardSliderImages({
   product,
@@ -62,7 +62,7 @@ function ProductCardSliderImages({
   const productPercentualOff = hasDiscount &&
     usePercentualDiscount(listPrice!, price!);
 
-  const relativeUrl = relative(url);
+  const relativeUrl = relative(url!);
   const aspectRatio = `${WIDTH} / ${HEIGHT}`;
 
   const currentIndex = useSignal(0);
