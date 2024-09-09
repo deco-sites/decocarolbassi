@@ -25,7 +25,7 @@ export default defineApp(async (_req, ctx) => {
             j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
             'https://trckss.carolbassi.com.br/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
             })(window,document,'script','dataLayer','GTM-PNLHPKB')`}
-        </script> 
+        </script>
 
         {/* Enable View Transitions API */}
         <meta name="view-transition" content="same-origin" />
