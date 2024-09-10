@@ -287,18 +287,18 @@
       },
       "list": [
         {
-          "image": "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/9166/dfa4dde9-988a-4b99-b6c7-56925ef141b3",
+          "image": "https://deco-sites-assets.s3.sa-east-1.amazonaws.com/decocarolbassi/a0e1710b-334f-4336-9d54-dcc55c1cc5b3/Calca.jpg",
           "href": "/roupas/calca",
           "buttonText": "Calças"
         },
         {
           "href": "/roupas/vestido",
-          "image": "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/9166/d1e99e7f-fdb3-4224-bb91-26f2fdc9dc67",
+          "image": "https://deco-sites-assets.s3.sa-east-1.amazonaws.com/decocarolbassi/bf1d2820-d290-47c5-a629-cde41003db99/Vestido.jpg",
           "buttonText": "VESTIDOS"
         },
         {
           "href": "/roupas/blusa",
-          "image": "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/9166/0f4ce26c-7e88-4c6b-83f2-d74e13636fb7",
+          "image": "https://deco-sites-assets.s3.sa-east-1.amazonaws.com/decocarolbassi/d6554b02-5e12-46f0-967b-bb9ebc2b956e/Blusa.jpg",
           "buttonText": "blusas",
           "negative": false
         }
