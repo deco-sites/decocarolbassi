@@ -264,10 +264,10 @@
           "label": "Ícones 10 Anos"
         },
         {
-          "href": "/preview-verao-25",
-          "image": "https://deco-sites-assets.s3.sa-east-1.amazonaws.com/decocarolbassi/a063837f-b4a9-413f-a13e-bb1ea12206ee/3.png",
-          "label": "Preview Verão 25",
-          "buttonText": "Ver todos os itens"
+          "href": "/jeans",
+          "image": "https://deco-sites-assets.s3.sa-east-1.amazonaws.com/decocarolbassi/5aa5ac62-5a13-4f59-9563-9d6886abcb61/HEADER-SPRING.png",
+          "buttonText": "Ver todos os itens",
+          "label": "Jeans"
         }
       ],
       "isThreeImages": false,

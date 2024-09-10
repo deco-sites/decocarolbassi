@@ -1,1 +1,5 @@
-{"__resolveType":"site/apps/deco/implementation.ts","expectedGoLive":"2023-11-30"}
+{
+  "__resolveType": "site/apps/deco/implementation.ts",
+  "expectedGoLive": "2023-11-30",
+  "serviceProvider": "2B Digital"
+}
