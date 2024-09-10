@@ -1,6 +1,6 @@
 {
-  "name": "Preview SS 25",
-  "path": "/preview-ss-25",
+  "name": "Spring ",
+  "path": "/spring-25",
   "sections": [
     {
       "__resolveType": "commerce/sections/Seo/SeoPLP.tsx",
