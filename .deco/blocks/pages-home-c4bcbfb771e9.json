@@ -248,25 +248,25 @@
           }
         },
         {
-          "href": "/preview-verao-25",
-          "image": "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/9166/2f2e9af8-07b9-42f6-ab1b-e75607d16443",
+          "href": "/spring-summer-25",
+          "image": "https://deco-sites-assets.s3.sa-east-1.amazonaws.com/decocarolbassi/375e7037-fdc0-4b85-8648-1604d030b4d9/4.png",
           "buttonText": "Ver todos os itens",
           "media": {
             "type": "image",
             "src": "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/9166/ba96ff48-8d14-445e-8fe3-2ccf7bfdbbdc"
           },
-          "label": "Preview Verão 25"
+          "label": "Spring 24"
         },
         {
           "href": "/icones10anos",
-          "image": "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/9166/4edd7e45-5457-488d-88ed-4035495137a4",
+          "image": "https://deco-sites-assets.s3.sa-east-1.amazonaws.com/decocarolbassi/aafeba5e-a688-4b60-a1a9-2682dceb8116/2.png",
           "buttonText": "Ver todos os itens",
           "label": "Ícones 10 Anos"
         },
         {
-          "href": "/collab-maria-rudge",
-          "image": "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/9166/3ac1ca58-48bc-43b1-8969-797832ef9343",
-          "label": "Collab Maria Rudge",
+          "href": "/preview-verao-25",
+          "image": "https://deco-sites-assets.s3.sa-east-1.amazonaws.com/decocarolbassi/a063837f-b4a9-413f-a13e-bb1ea12206ee/3.png",
+          "label": "Preview Verão 25",
           "buttonText": "Ver todos os itens"
         }
       ],
