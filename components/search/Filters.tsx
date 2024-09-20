@@ -207,7 +207,7 @@ function Filters({ filters, sortOptions }: Props) {
           aria-label="toggle filter item"
         >
           <span class="flex items-center uppercase text-dark-blue text-base font-light w-full justify-between mr-[2px]">
-            ordernar
+            ordenar
             {!isOpenOrderBy.value
               ? <Icon id="Plus" size={18} />
               : <MinusIcon />}

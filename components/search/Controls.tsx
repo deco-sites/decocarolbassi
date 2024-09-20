@@ -97,7 +97,7 @@ function SearchControls(
             }}
           >
             <span class={"text-paragraph-color font-light text-sm"}>
-              Filtrar e ordernar
+              Filtrar e ordenar
             </span>
             <Icon
               id="FilterOptions"
