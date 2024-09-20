@@ -1,13 +1,13 @@
-import { useEffect } from "preact/hooks";
+import { useEffect, useState } from "preact/hooks";
 import { useSignal } from "@preact/signals";
 import { invoke } from "$store/runtime.ts";
 
 const FirstBuyModal = () => {
-  const isVisible = useSignal(false);
+  const [isVisible, setIsVisible] = useState(false);
   const email = useSignal("");
 
   const closeModal = () => {
-    isVisible.value = true;
+    setIsVisible(false);
     localStorage.setItem("modalShown", "true");
   };
 
@@ -21,11 +21,15 @@ const FirstBuyModal = () => {
     const isModalShown = localStorage.getItem("modalShown");
     if (!isModalShown) {
       const timer = setTimeout(() => {
-        isVisible.value = true;
+        setIsVisible(true);
       }, 1000);
       return () => clearTimeout(timer);
     }
   }, []);
+
+  useEffect(() => {
+    console.log({ email });
+  }, [email]);
 
   return (
     isVisible && (
@@ -70,3 +74,4 @@ const FirstBuyModal = () => {
 };
 
 export default FirstBuyModal;
+
