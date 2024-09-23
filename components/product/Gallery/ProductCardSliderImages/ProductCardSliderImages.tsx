@@ -68,8 +68,8 @@ function ProductCardSliderImages({
   const currentIndex = useSignal(0);
   const intervalId = useSignal<number | null>(null);
 
-  const isNewImages = images?.some(image => image.alternateName === "novas")
-  const newImages = images?.filter(image => image.alternateName === "novas")
+  const isNewImages = images?.some((image) => image.alternateName === "novas");
+  const newImages = images?.filter((image) => image.alternateName === "novas");
 
   const productNewImages = videos && videos.length > 0
     ? newImages?.slice(0, 2) ?? []
@@ -87,7 +87,7 @@ function ProductCardSliderImages({
     ? [
       ...productNewImages,
       ...productVideo,
-    ] 
+    ]
     : [
       ...productImages,
       ...productVideo,
@@ -185,7 +185,9 @@ function ProductCardSliderImages({
                       style={{ display: isActive ? "block" : "none" }}
                     >
                       <Image
-                        src={isNewImages ? productNewImages[index].url! : productImages[index].url!}
+                        src={isNewImages
+                          ? productNewImages[index].url!
+                          : productImages[index].url!}
                         alt={source.alternateName}
                         width={WIDTH}
                         height={HEIGHT}

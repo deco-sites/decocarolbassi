@@ -19,8 +19,8 @@
             "buttonPositionDesktop": "Right",
             "buttonPositionMobile": "Center"
           },
-          "desktop": "https://deco-sites-assets.s3.sa-east-1.amazonaws.com/decocarolbassi/5ec2d234-0f31-4ebe-84fe-c03853bb614c/BANNER-DESKTOP-PREVIEW.jpg",
-          "mobile": "https://deco-sites-assets.s3.sa-east-1.amazonaws.com/decocarolbassi/12685636-84ff-47fd-9195-5b5e0456345c/BANNER-MOBILE-SILVIA-BRAZ-(1).png",
+          "desktop": "https://deco-sites-assets.s3.sa-east-1.amazonaws.com/decocarolbassi/b0d98031-b827-4089-80a5-06df9cfaa28f/BANNER-DESKTOP-paris.png",
+          "mobile": "https://deco-sites-assets.s3.sa-east-1.amazonaws.com/decocarolbassi/0a754dff-52b0-44b4-9afd-c7b4c9c26e4f/BANNER-MOBILE-paris.png",
           "video": "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/9166/b9e5b64a-c01f-4ffc-b7c7-4389778970f8"
         },
         {
@@ -124,7 +124,7 @@
       },
       "list": [
         {
-          "image": "https://deco-sites-assets.s3.sa-east-1.amazonaws.com/decocarolbassi/48880d8b-c004-465d-be93-4ed9a75f13d2/Preview-24.png",
+          "image": "https://deco-sites-assets.s3.sa-east-1.amazonaws.com/decocarolbassi/f1576b7f-fbaa-49f4-94b0-6afea7e80896/new-in.png",
           "href": "/new-in",
           "buttonText": "Ver todos os itens",
           "label": "New In",
@@ -248,14 +248,14 @@
           }
         },
         {
-          "href": "/spring-25",
-          "image": "https://deco-sites-assets.s3.sa-east-1.amazonaws.com/decocarolbassi/375e7037-fdc0-4b85-8648-1604d030b4d9/4.png",
+          "href": "/paris",
+          "image": "https://deco-sites-assets.s3.sa-east-1.amazonaws.com/decocarolbassi/6c146aeb-e764-4718-a885-09b29d13c129/spring-24-new-drop-paris.png",
           "buttonText": "Ver todos os itens",
           "media": {
             "type": "image",
             "src": "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/9166/ba96ff48-8d14-445e-8fe3-2ccf7bfdbbdc"
           },
-          "label": "Spring 24"
+          "label": "Spring 24: New Drop"
         },
         {
           "href": "/icones10anos",
@@ -287,18 +287,18 @@
       },
       "list": [
         {
-          "image": "https://deco-sites-assets.s3.sa-east-1.amazonaws.com/decocarolbassi/a0e1710b-334f-4336-9d54-dcc55c1cc5b3/Calca.jpg",
+          "image": "https://deco-sites-assets.s3.sa-east-1.amazonaws.com/decocarolbassi/8c3172a8-edc8-498f-a466-9427bc9adc47/calca.png",
           "href": "/roupas/calca",
           "buttonText": "Calças"
         },
         {
           "href": "/roupas/vestido",
-          "image": "https://deco-sites-assets.s3.sa-east-1.amazonaws.com/decocarolbassi/bf1d2820-d290-47c5-a629-cde41003db99/Vestido.jpg",
+          "image": "https://deco-sites-assets.s3.sa-east-1.amazonaws.com/decocarolbassi/63c4695f-81b7-4a3f-957d-fa89acba7b24/vestido.png",
           "buttonText": "VESTIDOS"
         },
         {
           "href": "/roupas/blusa",
-          "image": "https://deco-sites-assets.s3.sa-east-1.amazonaws.com/decocarolbassi/d6554b02-5e12-46f0-967b-bb9ebc2b956e/Blusa.jpg",
+          "image": "https://deco-sites-assets.s3.sa-east-1.amazonaws.com/decocarolbassi/df38a143-f8f7-4050-9678-cdd1f0cceebe/blusas.png",
           "buttonText": "blusas",
           "negative": false
         }
