@@ -56,9 +56,7 @@ const portugueseMappings = {
 const isToggle = (filter: Filter): filter is FilterToggle =>
   filter["@type"] === "FilterToggle";
 
-function ValueItem(
-  { url, selected, label, quantity }: FilterToggleValue,
-) {
+function ValueItem({ url, selected, label, quantity }: FilterToggleValue) {
   return (
     <a href={url} rel="nofollow" class="flex items-center gap-2">
       <div
@@ -73,9 +71,7 @@ function ValueItem(
   );
 }
 
-function FilterValues(
-  { key, values }: FilterToggle,
-) {
+function FilterValues({ key, values }: FilterToggle) {
   if (key === "tamanho") return null;
 
   return (
@@ -91,7 +87,10 @@ function FilterValues(
 }
 
 function OrderItem(props: OrderByProps) {
-  const { item: { label, value }, sort } = props;
+  const {
+    item: { label, value },
+    sort,
+  } = props;
   return (
     <button
       onClick={applySort}
@@ -127,13 +126,17 @@ function FilterItem(item: FilterToggle) {
   const isChildrenChecked = item.values.some((value) => value.selected);
   const isOpen = useSignal<boolean>(isChildrenChecked);
 
-  const filterNumberSizes = (item.key === "tamanho" &&
-    item.values.filter(({ value }) => !isNaN(Number(value)))) ?? [];
+  const filterNumberSizes =
+    (item.key === "tamanho" &&
+      item.values.filter(({ value }) => !isNaN(Number(value)))) ??
+    [];
 
-  const filterClothesSizes = (item.key === "tamanho" &&
-    item.values.filter(({ value }) => isNaN(Number(value)))) ?? [];
+  const filterClothesSizes =
+    (item.key === "tamanho" &&
+      item.values.filter(({ value }) => isNaN(Number(value)))) ??
+    [];
 
-  const handleClick = () => isOpen.value = !isOpen.value;
+  const handleClick = () => (isOpen.value = !isOpen.value);
 
   if (item.key === "price") return null;
 
@@ -151,24 +154,24 @@ function FilterItem(item: FilterToggle) {
           </span>
         </button>
         <div class={`${!isOpen.value ? "hidden" : ""}`}>
-          {item.key === "tamanho"
-            ? (
-              <div class="grid grid-cols-2 gap-4">
-                <div class="flex flex-col gap-4 my-4">
-                  {!!filterNumberSizes &&
-                    filterNumberSizes.map((sizeItem, index) => (
-                      <ValueItem key={index} {...sizeItem} />
-                    ))}
-                </div>
-                <div class="flex flex-col gap-4 my-4">
-                  {!!filterClothesSizes &&
-                    filterClothesSizes.map((sizeItem, index) => (
-                      <ValueItem key={index} {...sizeItem} />
-                    ))}
-                </div>
+          {item.key === "tamanho" ? (
+            <div class="grid grid-cols-2 gap-4">
+              <div class="flex flex-col gap-4 my-4">
+                {!!filterNumberSizes &&
+                  filterNumberSizes.map((sizeItem, index) => (
+                    <ValueItem key={index} {...sizeItem} />
+                  ))}
               </div>
-            )
-            : <FilterValues {...item} />}
+              <div class="flex flex-col gap-4 my-4">
+                {!!filterClothesSizes &&
+                  filterClothesSizes.map((sizeItem, index) => (
+                    <ValueItem key={index} {...sizeItem} />
+                  ))}
+              </div>
+            </div>
+          ) : (
+            <FilterValues {...item} />
+          )}
         </div>
       </li>
     );
@@ -195,7 +198,7 @@ function FilterItem(item: FilterToggle) {
 
 function Filters({ filters, sortOptions }: Props) {
   const isOpenOrderBy = useSignal<boolean>(false);
-  const handleClick = () => isOpenOrderBy.value = !isOpenOrderBy.value;
+  const handleClick = () => (isOpenOrderBy.value = !isOpenOrderBy.value);
   const sort = useSort();
 
   return (
@@ -207,10 +210,12 @@ function Filters({ filters, sortOptions }: Props) {
           aria-label="toggle filter item"
         >
           <span class="flex items-center uppercase text-dark-blue text-base font-light w-full justify-between mr-[2px]">
-            ordernar
-            {!isOpenOrderBy.value
-              ? <Icon id="Plus" size={18} />
-              : <MinusIcon />}
+            ordenar
+            {!isOpenOrderBy.value ? (
+              <Icon id="Plus" size={18} />
+            ) : (
+              <MinusIcon />
+            )}
           </span>
         </button>
         <div
@@ -218,20 +223,23 @@ function Filters({ filters, sortOptions }: Props) {
             !isOpenOrderBy.value ? "hidden" : "flex flex-col gap-8 my-4"
           }`}
         >
-          {sortOptions.map(({ value, label }) => ({
-            value,
-            label:
-              portugueseMappings[label as keyof typeof portugueseMappings] ??
+          {sortOptions
+            .map(({ value, label }) => ({
+              value,
+              label:
+                portugueseMappings[label as keyof typeof portugueseMappings] ??
                 "",
-          })).filter(({ label }) => label).map((item) => (
-            <OrderItem item={item} sort={sort} />
-          ))}
+            }))
+            .filter(({ label }) => label)
+            .map((item) => (
+              <OrderItem item={item} sort={sort} />
+            ))}
         </div>
       </div>
 
-      {filters
-        .filter(isToggle)
-        .map((filter) => <FilterItem {...filter} />)}
+      {filters.filter(isToggle).map((filter) => (
+        <FilterItem {...filter} />
+      ))}
     </ul>
   );
 }
@@ -258,3 +266,4 @@ const MinusIcon = () => (
     />
   </svg>
 );
+

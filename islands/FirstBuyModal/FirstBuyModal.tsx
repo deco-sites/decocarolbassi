@@ -1,6 +1,7 @@
 import { useEffect, useState } from "preact/hooks";
 import { useSignal } from "@preact/signals";
 import { invoke } from "$store/runtime.ts";
+import type { JSX } from "preact";
 
 const FirstBuyModal = () => {
   const [isVisible, setIsVisible] = useState(false);
@@ -27,9 +28,23 @@ const FirstBuyModal = () => {
     }
   }, []);
 
-  useEffect(() => {
-    console.log({ email });
-  }, [email]);
+  const handleSubmit: JSX.GenericEventHandler<HTMLFormElement> = async (e) => {
+    e.preventDefault();
+
+    try {
+      const email = (
+        e.currentTarget.elements.namedItem("email") as RadioNodeList
+      )?.value;
+
+      await invoke.vtex.actions.masterdata.createDocument({
+        data: { email },
+        acronym: "NL",
+      });
+      alert("E-mail cadastrado com sucesso!");
+    } finally {
+      closeModal();
+    }
+  };
 
   return (
     isVisible && (
@@ -53,16 +68,19 @@ const FirstBuyModal = () => {
               newsletter e receba 10% de desconto na sua próxima compra usando o
               voucher <strong>CAROLBASSI10</strong>
             </p>
-            <input
-              type="email"
-              value={email}
-              onChange={(e) => {
-                const target = e.target as HTMLInputElement;
-                email.value = target.value;
-              }}
-              placeholder="E-mail"
-              className="border border-[#000] px-6 w-full rounded-[19px] mb-2 h-[55px] placeholder:text-xs max-[1024px]:h-[37px]"
-            />
+            <form onSubmit={handleSubmit}>
+              <input
+                type="email"
+                name="email"
+                value={email}
+                onChange={(e) => {
+                  const target = e.target as HTMLInputElement;
+                  email.value = target.value;
+                }}
+                placeholder="E-mail"
+                className="border border-[#000] px-6 w-full rounded-[19px] mb-2 h-[55px] placeholder:text-xs max-[1024px]:h-[37px]"
+              />
+            </form>
             <p className="text-sm text-[#000] self-start max-[1024px]:text-[6px]">
               *Desconto válido apenas em produtos full price
             </p>
@@ -74,3 +92,4 @@ const FirstBuyModal = () => {
 };
 
 export default FirstBuyModal;
+
