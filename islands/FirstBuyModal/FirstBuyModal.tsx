@@ -92,4 +92,3 @@ const FirstBuyModal = () => {
 };
 
 export default FirstBuyModal;
-

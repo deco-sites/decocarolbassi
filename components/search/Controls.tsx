@@ -8,15 +8,17 @@ import Icon from "../../components/ui/Icon.tsx";
 import { useUI } from "../../sdk/useUI.ts";
 import BreadcrumbCollection from "../ui/BreadcrumbCollection.tsx";
 
-export type Props = Pick<
-  ProductListingPage,
-  "filters" | "breadcrumb" | "sortOptions"
-> & {
-  displayFilter?: boolean;
-  isCollectionPage?: boolean;
-  collectionName: string;
-  isSearchPage: boolean;
-};
+export type Props =
+  & Pick<
+    ProductListingPage,
+    "filters" | "breadcrumb" | "sortOptions"
+  >
+  & {
+    displayFilter?: boolean;
+    isCollectionPage?: boolean;
+    collectionName: string;
+    isSearchPage: boolean;
+  };
 
 function SearchControls({
   filters,
@@ -64,14 +66,14 @@ function SearchControls({
     >
       <div class="flex flex-col justify-between px-4 mb-2 sm:p-0 sm:gap-4 sm:flex-row sm:h-[53px] sm:border-b sm:border-base-200">
         <div class="flex flex-row items-center sm:p-0 mb-2">
-          {isSearchPage ? null : isCollectionPage ? (
-            <BreadcrumbCollection
-              itemListElement={breadcrumb?.itemListElement}
-              collectionBreadcrumb={collectionData}
-            />
-          ) : (
-            <Breadcrumb itemListElement={breadcrumb?.itemListElement} />
-          )}
+          {isSearchPage ? null : isCollectionPage
+            ? (
+              <BreadcrumbCollection
+                itemListElement={breadcrumb?.itemListElement}
+                collectionBreadcrumb={collectionData}
+              />
+            )
+            : <Breadcrumb itemListElement={breadcrumb?.itemListElement} />}
         </div>
 
         <div class="flex flex-row items-center justify-between border-b border-base-200 sm:gap-4 sm:border-none">
@@ -145,4 +147,3 @@ const LayoutGrid2Icon = () => (
     />
   </svg>
 );
-
