@@ -65,6 +65,7 @@ function VariantSelector({ product, breadcrumb, sizebay }: Props) {
                   {variants.map(([value, link], index) => {
                     const { sizeOfferIsAvailable } =
                       useSizeVariantOfferAvailability(index, isVariantOf);
+                    console.log({ sizeOfferIsAvailable });
 
                     const relativeUrl = url && relative(url);
                     const relativeLink = link && relative(link);
@@ -74,11 +75,13 @@ function VariantSelector({ product, breadcrumb, sizebay }: Props) {
                           <Avatar
                             label={name}
                             content={value}
-                            variant={!sizeOfferIsAvailable && "disabled" ||
-                                sizeOfferIsAvailable &&
-                                  relativeLink === relativeUrl
-                              ? "active"
-                              : "default"}
+                            variant={
+                              (!sizeOfferIsAvailable && "disabled") ||
+                              (sizeOfferIsAvailable &&
+                                relativeLink === relativeUrl)
+                                ? "active"
+                                : "default"
+                            }
                             productExactColor={getProductExactColor!}
                           />
                         </button>
@@ -99,9 +102,11 @@ function VariantSelector({ product, breadcrumb, sizebay }: Props) {
                           <Avatar
                             label={name}
                             content={item.color}
-                            variant={!sizeOfferIsAvailable
-                              ? "disabled" || relativeLink !== relativeUrl
-                              : "default"}
+                            variant={
+                              !sizeOfferIsAvailable
+                                ? "disabled" || relativeLink !== relativeUrl
+                                : "default"
+                            }
                             productExactColor={item.specificColor!}
                           />
                         </button>
@@ -124,3 +129,4 @@ function VariantSelector({ product, breadcrumb, sizebay }: Props) {
 }
 
 export default VariantSelector;
+
