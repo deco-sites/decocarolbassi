@@ -1,6 +1,5 @@
 {
-  "name": "Essentials",
-  "path": "/essentials",
+  "path": "/spring-25",
   "sections": [
     {
       "__resolveType": "commerce/sections/Seo/SeoPLP.tsx",
@@ -23,7 +22,7 @@
           "selectedFacets": [
             {
               "key": "productClusterIds",
-              "value": "160"
+              "value": "272"
             }
           ],
           "count": 28
@@ -86,5 +85,6 @@
   "seo": {
     "__resolveType": "website/sections/Seo/SeoV2.tsx"
   },
-  "__resolveType": "website/pages/Page.tsx"
+  "__resolveType": "website/pages/Page.tsx",
+  "name": "Spring 25"
 }

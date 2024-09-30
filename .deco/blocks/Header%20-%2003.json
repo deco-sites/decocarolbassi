@@ -52,12 +52,12 @@
         "@type": "SiteNavigationElement",
         "image": [
           {
-            "url": "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/9166/97d87aa3-d3cc-4dac-afd5-79ba7ee21f68",
+            "url": "https://deco-sites-assets.s3.sa-east-1.amazonaws.com/decocarolbassi/a48af3e8-a62f-4854-8a9a-51d9fdd81102/HEADER-SPRING.png.jpg",
             "@type": "ImageObject",
-            "encodingFormat": "Preview Verão 25",
-            "embedUrl": "/preview-ss-25",
-            "thumbnailUrl": "/preview-ss-25",
-            "contentUrl": "Preview Verão 25"
+            "encodingFormat": "Spring 24",
+            "embedUrl": "/spring-25",
+            "thumbnailUrl": "/spring-25",
+            "contentUrl": "Spring 24"
           },
           {
             "url": "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/9166/2752960f-04de-4575-b6cb-1cfb3b4633d0",
@@ -69,11 +69,11 @@
         ],
         "children": [
           {
-            "url": "/preview-ss-25",
-            "name": "Preview Verão 25",
+            "url": "/spring-25",
+            "name": "Spring 24",
             "children": [],
             "image": [],
-            "additionalType": "Preview Verão 25"
+            "additionalType": "Spring 24"
           },
           {
             "children": [],
@@ -271,6 +271,6 @@
     "searches": []
   },
   "logoPosition": "left",
-  "lightThemeBar": true,
+  "lightThemeBar": false,
   "itemsPerColumn": 6
 }

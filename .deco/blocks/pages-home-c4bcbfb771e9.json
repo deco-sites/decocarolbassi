@@ -6,12 +6,6 @@
       "title": "Carol Bassi - Moda feminina com Estilo atemporal"
     },
     {
-      "__resolveType": "website/sections/Rendering/Lazy.tsx",
-      "section": {
-        "__resolveType": "site/sections/FirstBuyModal/FirstBuyModal.tsx"
-      }
-    },
-    {
       "__resolveType": "Header - 03"
     },
     {
@@ -20,24 +14,25 @@
         {
           "action": {
             "buttonNegative": true,
-            "href": "/icones-10-anos",
+            "href": "/new-in",
             "label": "VER COLEÇÃO",
             "buttonPositionDesktop": "Right",
             "buttonPositionMobile": "Center"
           },
-          "desktop": "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/9166/2fe8c4bd-6eb7-43cc-870c-155ceb7b16b0",
-          "mobile": "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/9166/03c850b7-fcf8-4928-adbc-c79a9dae65c6"
+          "desktop": "https://deco-sites-assets.s3.sa-east-1.amazonaws.com/decocarolbassi/b0d98031-b827-4089-80a5-06df9cfaa28f/BANNER-DESKTOP-paris.png",
+          "mobile": "https://deco-sites-assets.s3.sa-east-1.amazonaws.com/decocarolbassi/0a754dff-52b0-44b4-9afd-c7b4c9c26e4f/BANNER-MOBILE-paris.png",
+          "video": "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/9166/b9e5b64a-c01f-4ffc-b7c7-4389778970f8"
         },
         {
           "action": {
             "buttonPositionDesktop": "Right",
-            "href": "/new-in",
+            "href": "/lifestyle-cb",
             "label": "VER COLEÇÃO",
-            "buttonNegative": true
+            "buttonNegative": true,
+            "buttonPositionMobile": "Center"
           },
-          "desktop": "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/9166/9cd44152-bd43-43ae-bb45-b1c6f53b399d",
-          "mobile": "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/9166/15d938f7-f57e-4fa9-9a20-b8d633cede43",
-          "video": "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/9166/b9e5b64a-c01f-4ffc-b7c7-4389778970f8"
+          "desktop": "https://deco-sites-assets.s3.sa-east-1.amazonaws.com/decocarolbassi/cd8ff0d8-2611-4b2c-8e97-6c6caea8ca2a/CB_BANNERSITE_WEB-01.jpg",
+          "mobile": "https://deco-sites-assets.s3.sa-east-1.amazonaws.com/decocarolbassi/8444a87a-999e-4d68-9b1c-3a60bb2e782c/CB_BANNERSITE_WEB-01-1.jpg"
         },
         {
           "action": {
@@ -53,9 +48,7 @@
       "arrows": true,
       "dots": false,
       "preload": true,
-      "images": [
-        {}
-      ]
+      "images": [{}]
     },
     {
       "__resolveType": "site/sections/Product/ProductShelf.tsx",
@@ -128,7 +121,7 @@
       },
       "list": [
         {
-          "image": "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/9166/cf1cf940-7077-4173-b03e-0dbb4e43ce80",
+          "image": "https://deco-sites-assets.s3.sa-east-1.amazonaws.com/decocarolbassi/f1576b7f-fbaa-49f4-94b0-6afea7e80896/new-in.png",
           "href": "/new-in",
           "buttonText": "Ver todos os itens",
           "label": "New In",
@@ -252,26 +245,26 @@
           }
         },
         {
-          "href": "/preview-verao-25",
-          "image": "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/9166/2f2e9af8-07b9-42f6-ab1b-e75607d16443",
+          "href": "/paris",
+          "image": "https://deco-sites-assets.s3.sa-east-1.amazonaws.com/decocarolbassi/6c146aeb-e764-4718-a885-09b29d13c129/spring-24-new-drop-paris.png",
           "buttonText": "Ver todos os itens",
           "media": {
             "type": "image",
             "src": "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/9166/ba96ff48-8d14-445e-8fe3-2ccf7bfdbbdc"
           },
-          "label": "Preview Verão 25"
+          "label": "Spring 24: New Drop"
         },
         {
           "href": "/icones10anos",
-          "image": "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/9166/4edd7e45-5457-488d-88ed-4035495137a4",
+          "image": "https://deco-sites-assets.s3.sa-east-1.amazonaws.com/decocarolbassi/aafeba5e-a688-4b60-a1a9-2682dceb8116/2.png",
           "buttonText": "Ver todos os itens",
           "label": "Ícones 10 Anos"
         },
         {
-          "href": "/collab-maria-rudge",
-          "image": "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/9166/3ac1ca58-48bc-43b1-8969-797832ef9343",
-          "label": "Collab Maria Rudge",
-          "buttonText": "Ver todos os itens"
+          "href": "/jeans",
+          "image": "https://deco-sites-assets.s3.sa-east-1.amazonaws.com/decocarolbassi/70aa8446-1150-4c82-8387-30940c891b7d/Prancheta-1-copiar-5.jpg",
+          "buttonText": "Ver todos os itens",
+          "label": "Jeans"
         }
       ],
       "isThreeImages": false,
@@ -291,18 +284,18 @@
       },
       "list": [
         {
-          "image": "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/9166/dfa4dde9-988a-4b99-b6c7-56925ef141b3",
+          "image": "https://deco-sites-assets.s3.sa-east-1.amazonaws.com/decocarolbassi/8c3172a8-edc8-498f-a466-9427bc9adc47/calca.png",
           "href": "/roupas/calca",
           "buttonText": "Calças"
         },
         {
           "href": "/roupas/vestido",
-          "image": "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/9166/d1e99e7f-fdb3-4224-bb91-26f2fdc9dc67",
+          "image": "https://deco-sites-assets.s3.sa-east-1.amazonaws.com/decocarolbassi/63c4695f-81b7-4a3f-957d-fa89acba7b24/vestido.png",
           "buttonText": "VESTIDOS"
         },
         {
           "href": "/roupas/blusa",
-          "image": "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/9166/0f4ce26c-7e88-4c6b-83f2-d74e13636fb7",
+          "image": "https://deco-sites-assets.s3.sa-east-1.amazonaws.com/decocarolbassi/df38a143-f8f7-4050-9678-cdd1f0cceebe/blusas.png",
           "buttonText": "blusas",
           "negative": false
         }

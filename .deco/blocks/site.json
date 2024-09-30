@@ -17,9 +17,8 @@
     {
       "__resolveType": "website/sections/Analytics/Analytics.tsx",
       "dangerouslyRunOnMainThread": true,
-      "trackingIds": [
-        "GTM-PNLHPKB"
-      ]
+      "trackingIds": [],
+      "disableAutomaticEventPush": false
     },
     {
       "__resolveType": "algolia/sections/Analytics/Algolia.tsx"
