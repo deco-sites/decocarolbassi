@@ -55,7 +55,8 @@ const imageColors: Record<string, string> = {
     "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/9166/0f45b090-73cf-4cac-8cb3-20e89514ecc9",
   Xadrez:
     "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/9166/8179d00d-9d95-46a0-8f5a-c634a7508eda",
-  Onca: "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/9166/db436dac-0977-4d75-bb54-ce02e6118feb",
+  Onca:
+    "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/9166/db436dac-0977-4d75-bb54-ce02e6118feb",
   Madrepérola:
     "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/9166/69c9faf4-2572-4288-be8a-f55a78e345fa",
 };
@@ -95,7 +96,9 @@ function Avatar({
     return (
       <div class={`avatar placeholder text-base font-light h-6 `}>
         <div
-          class={`${imageColors[content]} border-solid border-primary-600 border rounded-full`}
+          class={`${
+            imageColors[content]
+          } border-solid border-primary-600 border rounded-full`}
         >
           <img src={avatarImage} alt={content} />
         </div>
@@ -103,27 +106,33 @@ function Avatar({
     );
   }
 
-  return label === "Cores" ? (
-    <div
-      class={`avatar placeholder text-base font-light border border-solid border-[#9AA4B2] rounded-full items-center ${
-        colors[content] && colorVariantsClasses[variant]
-      }`}
-    >
+  return label === "Cores"
+    ? (
       <div
-        className={`${colors[content] ?? colors[variant]} rounded-full w-6 h-6`}
-        style={productExactColor ? { backgroundColor: productExactColor } : {}}
-      ></div>
-    </div>
-  ) : (
-    <div class="avatar placeholder text-base font-light h-8">
-      <div class={`${sizeVariantsClasses[variant]} ${_class}`}>
-        <span class="uppercase font-medium">
-          {sizeVariantsClasses[content] ? "" : content.substring(0, 2)}
-        </span>
+        class={`avatar placeholder text-base font-light border border-solid border-[#9AA4B2] rounded-full items-center ${
+          colors[content] && colorVariantsClasses[variant]
+        }`}
+      >
+        <div
+          className={`${
+            colors[content] ?? colors[variant]
+          } rounded-full w-6 h-6`}
+          style={productExactColor
+            ? { backgroundColor: productExactColor }
+            : {}}
+        >
+        </div>
       </div>
-    </div>
-  );
+    )
+    : (
+      <div class="avatar placeholder text-base font-light h-8">
+        <div class={`${sizeVariantsClasses[variant]} ${_class}`}>
+          <span class="uppercase font-medium">
+            {sizeVariantsClasses[content] ? "" : content.substring(0, 2)}
+          </span>
+        </div>
+      </div>
+    );
 }
 
 export default Avatar;
-
