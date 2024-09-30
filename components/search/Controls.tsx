@@ -9,7 +9,10 @@ import { useUI } from "../../sdk/useUI.ts";
 import BreadcrumbCollection from "../ui/BreadcrumbCollection.tsx";
 
 export type Props =
-  & Pick<ProductListingPage, "filters" | "breadcrumb" | "sortOptions">
+  & Pick<
+    ProductListingPage,
+    "filters" | "breadcrumb" | "sortOptions"
+  >
   & {
     displayFilter?: boolean;
     isCollectionPage?: boolean;
@@ -17,17 +20,15 @@ export type Props =
     isSearchPage: boolean;
   };
 
-function SearchControls(
-  {
-    filters,
-    breadcrumb,
-    displayFilter,
-    sortOptions,
-    isCollectionPage,
-    collectionName,
-    isSearchPage,
-  }: Props,
-) {
+function SearchControls({
+  filters,
+  breadcrumb,
+  displayFilter,
+  sortOptions,
+  isCollectionPage,
+  collectionName,
+  isSearchPage,
+}: Props) {
   const open = useSignal(false);
   const { displayGridLayout } = useUI();
 
@@ -41,7 +42,7 @@ function SearchControls(
       class="drawer-end"
       loading="lazy"
       open={open.value}
-      onClose={() => open.value = false}
+      onClose={() => (open.value = false)}
       aside={
         <>
           <div class="bg-base-100 flex flex-col h-full divide-y overflow-y-hidden w-3/4 md:w-[480px] md:p-4">
@@ -49,7 +50,10 @@ function SearchControls(
               <h1 class="px-4 py-3">
                 <span class="font-normal text-xl text-dark-blue">Filtros</span>
               </h1>
-              <Button class="btn btn-ghost" onClick={() => open.value = false}>
+              <Button
+                class="btn btn-ghost"
+                onClick={() => (open.value = false)}
+              >
                 <Icon id="XMark" size={24} strokeWidth={1} />
               </Button>
             </div>

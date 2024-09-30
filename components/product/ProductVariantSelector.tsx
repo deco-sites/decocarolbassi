@@ -65,6 +65,7 @@ function VariantSelector({ product, breadcrumb, sizebay }: Props) {
                   {variants.map(([value, link], index) => {
                     const { sizeOfferIsAvailable } =
                       useSizeVariantOfferAvailability(index, isVariantOf);
+                    console.log({ sizeOfferIsAvailable });
 
                     const relativeUrl = url && relative(url);
                     const relativeLink = link && relative(link);
@@ -74,9 +75,9 @@ function VariantSelector({ product, breadcrumb, sizebay }: Props) {
                           <Avatar
                             label={name}
                             content={value}
-                            variant={!sizeOfferIsAvailable && "disabled" ||
-                                sizeOfferIsAvailable &&
-                                  relativeLink === relativeUrl
+                            variant={(!sizeOfferIsAvailable && "disabled") ||
+                                (sizeOfferIsAvailable &&
+                                  relativeLink === relativeUrl)
                               ? "active"
                               : "default"}
                             productExactColor={getProductExactColor!}

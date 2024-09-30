@@ -20,9 +20,7 @@ function NavItem({
     <li className="group flex items-center relative">
       <a href={url} className="py-6">
         <span
-          className={
-            "group-hover:underline text-sm font-thin flex items-center gap-2 text-paragraph-color whitespace-nowrap"
-          }
+          className={"group-hover:underline text-sm font-thin flex items-center gap-2 text-paragraph-color whitespace-nowrap"}
         >
           {name}
           {children && children.length > 0 && (
@@ -45,7 +43,7 @@ function NavItem({
                 {children
                   .slice(
                     columnIndex * itemsPerColumn,
-                    (columnIndex + 1) * itemsPerColumn
+                    (columnIndex + 1) * itemsPerColumn,
                   )
                   .map((node) => (
                     <li key={node.name}>
@@ -89,7 +87,7 @@ function NavItem({
                       {image.contentUrl}
                     </h3>
                   </a>
-                )
+                ),
             )}
           </div>
         </div>
@@ -99,4 +97,3 @@ function NavItem({
 }
 
 export default NavItem;
-

@@ -56,9 +56,7 @@ const portugueseMappings = {
 const isToggle = (filter: Filter): filter is FilterToggle =>
   filter["@type"] === "FilterToggle";
 
-function ValueItem(
-  { url, selected, label, quantity }: FilterToggleValue,
-) {
+function ValueItem({ url, selected, label, quantity }: FilterToggleValue) {
   return (
     <a href={url} rel="nofollow" class="flex items-center gap-2">
       <div
@@ -73,9 +71,7 @@ function ValueItem(
   );
 }
 
-function FilterValues(
-  { key, values }: FilterToggle,
-) {
+function FilterValues({ key, values }: FilterToggle) {
   if (key === "tamanho") return null;
 
   return (
@@ -91,7 +87,10 @@ function FilterValues(
 }
 
 function OrderItem(props: OrderByProps) {
-  const { item: { label, value }, sort } = props;
+  const {
+    item: { label, value },
+    sort,
+  } = props;
   return (
     <button
       onClick={applySort}
@@ -128,12 +127,14 @@ function FilterItem(item: FilterToggle) {
   const isOpen = useSignal<boolean>(isChildrenChecked);
 
   const filterNumberSizes = (item.key === "tamanho" &&
-    item.values.filter(({ value }) => !isNaN(Number(value)))) ?? [];
+    item.values.filter(({ value }) => !isNaN(Number(value)))) ??
+    [];
 
   const filterClothesSizes = (item.key === "tamanho" &&
-    item.values.filter(({ value }) => isNaN(Number(value)))) ?? [];
+    item.values.filter(({ value }) => isNaN(Number(value)))) ??
+    [];
 
-  const handleClick = () => isOpen.value = !isOpen.value;
+  const handleClick = () => (isOpen.value = !isOpen.value);
 
   if (item.key === "price") return null;
 
@@ -195,7 +196,7 @@ function FilterItem(item: FilterToggle) {
 
 function Filters({ filters, sortOptions }: Props) {
   const isOpenOrderBy = useSignal<boolean>(false);
-  const handleClick = () => isOpenOrderBy.value = !isOpenOrderBy.value;
+  const handleClick = () => (isOpenOrderBy.value = !isOpenOrderBy.value);
   const sort = useSort();
 
   return (
@@ -218,20 +219,19 @@ function Filters({ filters, sortOptions }: Props) {
             !isOpenOrderBy.value ? "hidden" : "flex flex-col gap-8 my-4"
           }`}
         >
-          {sortOptions.map(({ value, label }) => ({
-            value,
-            label:
-              portugueseMappings[label as keyof typeof portugueseMappings] ??
-                "",
-          })).filter(({ label }) => label).map((item) => (
-            <OrderItem item={item} sort={sort} />
-          ))}
+          {sortOptions
+            .map(({ value, label }) => ({
+              value,
+              label:
+                portugueseMappings[label as keyof typeof portugueseMappings] ??
+                  "",
+            }))
+            .filter(({ label }) => label)
+            .map((item) => <OrderItem item={item} sort={sort} />)}
         </div>
       </div>
 
-      {filters
-        .filter(isToggle)
-        .map((filter) => <FilterItem {...filter} />)}
+      {filters.filter(isToggle).map((filter) => <FilterItem {...filter} />)}
     </ul>
   );
 }
