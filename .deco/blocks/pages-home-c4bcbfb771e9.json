@@ -26,7 +26,7 @@
         {
           "action": {
             "buttonPositionDesktop": "Right",
-            "href": "/lifestyle-cb",
+            "href": "/icones10anos",
             "label": "VER COLEÇÃO",
             "buttonNegative": true,
             "buttonPositionMobile": "Center"
@@ -48,7 +48,9 @@
       "arrows": true,
       "dots": false,
       "preload": true,
-      "images": [{}]
+      "images": [
+        {}
+      ]
     },
     {
       "__resolveType": "site/sections/Product/ProductShelf.tsx",
