@@ -48,9 +48,7 @@
       "arrows": true,
       "dots": false,
       "preload": true,
-      "images": [
-        {}
-      ]
+      "images": [{}]
     },
     {
       "__resolveType": "site/sections/Product/ProductShelf.tsx",

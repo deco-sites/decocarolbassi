@@ -6,6 +6,9 @@ export default {
   content: ["./**/*.tsx"],
   theme: {
     container: { center: true },
+    fontFamily: {
+      Montserrat: ["Montserrat"],
+    },
     extend: {
       animation: {
         sliding: "sliding 30s linear ",
@@ -67,7 +70,7 @@ export default {
       "4": "4 4 0%",
     },
     boxShadow: {
-      "header": "0px 4px 6px -1px #0000000D",
+      header: "0px 4px 6px -1px #0000000D",
     },
   },
 };

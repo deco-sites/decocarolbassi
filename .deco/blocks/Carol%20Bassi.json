@@ -28,6 +28,10 @@
           }
         ],
         "family": "Red Hat Display"
+      },
+      {
+        "variations": [],
+        "family": "Montserrat"
       }
     ]
   },
@@ -61,5 +65,7 @@
     "base-200": "#ffffff",
     "base-300": "#ffffff",
     "neutral-content": "#f9f9f9"
-  }
+  },
+  "colorScheme": "light",
+  "mode": "dark"
 }

@@ -249,7 +249,83 @@
       {
         "name": "Outlet",
         "url": "/outlet",
-        "@type": "SiteNavigationElement"
+        "@type": "SiteNavigationElement",
+        "children": [
+          {
+            "image": [],
+            "children": [],
+            "name": "Blusas",
+            "url": "/roupas/blusa",
+            "additionalType": "Blusas",
+            "identifier": "Blusas"
+          },
+          {
+            "image": [],
+            "children": [],
+            "url": "/roupas/calca",
+            "name": "Calças"
+          },
+          {
+            "image": [],
+            "children": [],
+            "url": "/roupas/casaco",
+            "name": "Casacos"
+          },
+          {
+            "image": [],
+            "children": [],
+            "url": "/roupas/vestido",
+            "name": "Vestidos"
+          },
+          {
+            "image": [],
+            "children": [],
+            "url": "/roupas/saia",
+            "name": "Saias"
+          },
+          {
+            "image": [],
+            "children": [],
+            "url": "/roupas/shorts",
+            "name": "Shorts"
+          },
+          {
+            "image": [],
+            "children": [],
+            "url": "/roupas/top",
+            "name": "Tops"
+          },
+          {
+            "image": [],
+            "children": [],
+            "name": "Blazers",
+            "url": "/roupas/blazer"
+          },
+          {
+            "image": [],
+            "children": [],
+            "name": "Jeans",
+            "url": "/jeans"
+          },
+          {
+            "image": [],
+            "children": [],
+            "url": "/tricot",
+            "name": "Tricot"
+          },
+          {
+            "image": [],
+            "children": [],
+            "url": "/alfaiataria",
+            "name": "Alfaiataria"
+          },
+          {
+            "image": [],
+            "children": [],
+            "url": "/veludo",
+            "name": "Veludo"
+          }
+        ]
       }
     ]
   },
