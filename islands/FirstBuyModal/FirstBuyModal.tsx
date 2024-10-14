@@ -66,9 +66,9 @@ const FirstBuyModal = () => {
               GARANTA 10% OFF
             </h2>
             <p className="font-[Montserrat] text-[18px] text-center mb-6 max-[1024px]:text-[9px] max-[600px]:mb-2">
-              Quer estar sempre por dentro das nossas novidades? <br></br>Assine
-              nossa newsletter e receba 10% de desconto na sua próxima compra
-              usando o voucher: <strong>CAROLBASSI10</strong>
+              Quer estar sempre por dentro das nossas novidades?{" "}
+              <br></br>Assine nossa newsletter e receba 10% de desconto na sua
+              próxima compra usando o voucher: <strong>CAROLBASSI10</strong>
             </p>
             <form
               onSubmit={handleSubmit}
