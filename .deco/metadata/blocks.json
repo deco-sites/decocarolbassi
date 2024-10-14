@@ -621,6 +621,10 @@
     "blockType": "sections",
     "__resolveType": "site/sections/Header/Header.tsx"
   },
+  "/.deco/blocks/Preview%20site%2Fsections%2FFirstBuyModal%2FFirstBuyModal.tsx.json": {
+    "blockType": "sections",
+    "__resolveType": "site/sections/FirstBuyModal/FirstBuyModal.tsx"
+  },
   "/.deco/blocks/pages-Tricot-727616.json": {
     "name": "Tricot",
     "path": "/tricot",
