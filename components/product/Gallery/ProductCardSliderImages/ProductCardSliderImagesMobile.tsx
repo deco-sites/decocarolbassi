@@ -27,8 +27,8 @@ export interface Props {
   platform?: Platform;
 }
 
-const WIDTH = 200;
-const HEIGHT = 279;
+const WIDTH = 232;
+const HEIGHT = 280;
 
 function ProductCardSliderImagesMobile({
   product,
@@ -53,7 +53,7 @@ function ProductCardSliderImagesMobile({
   const { offers } = productVariantDiscount;
 
   const id = `product-card-${productID}`;
-  const relativeUrl = relative(url);
+  const relativeUrl = relative(url!);
   const aspectRatio = `${WIDTH} / ${HEIGHT}`;
 
   const productImages = videos && videos.length > 0

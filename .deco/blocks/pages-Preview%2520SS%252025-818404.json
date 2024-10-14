@@ -1,6 +1,5 @@
 {
-  "name": "Preview SS 25",
-  "path": "/preview-ss-25",
+  "path": "/paris",
   "sections": [
     {
       "__resolveType": "commerce/sections/Seo/SeoPLP.tsx",
@@ -23,7 +22,7 @@
           "selectedFacets": [
             {
               "key": "productClusterIds",
-              "value": "272"
+              "value": "275"
             }
           ],
           "count": 28
@@ -86,5 +85,6 @@
   "seo": {
     "__resolveType": "website/sections/Seo/SeoV2.tsx"
   },
-  "__resolveType": "website/pages/Page.tsx"
+  "__resolveType": "website/pages/Page.tsx",
+  "name": "Paris"
 }

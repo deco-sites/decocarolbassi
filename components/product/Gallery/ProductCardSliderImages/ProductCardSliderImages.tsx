@@ -29,8 +29,8 @@ export interface Props {
   platform?: Platform;
 }
 
-const WIDTH = 200;
-const HEIGHT = 279;
+const WIDTH = 232;
+const HEIGHT = 280;
 
 function ProductCardSliderImages({
   product,
@@ -62,11 +62,18 @@ function ProductCardSliderImages({
   const productPercentualOff = hasDiscount &&
     usePercentualDiscount(listPrice!, price!);
 
-  const relativeUrl = relative(url);
+  const relativeUrl = relative(url!);
   const aspectRatio = `${WIDTH} / ${HEIGHT}`;
 
   const currentIndex = useSignal(0);
   const intervalId = useSignal<number | null>(null);
+
+  const isNewImages = images?.some((image) => image.alternateName === "novas");
+  const newImages = images?.filter((image) => image.alternateName === "novas");
+
+  const productNewImages = videos && videos.length > 0
+    ? newImages?.slice(0, 2) ?? []
+    : newImages?.slice(0, 3) ?? [];
 
   const productImages = videos && videos.length > 0
     ? images?.slice(0, 2) ?? []
@@ -76,10 +83,15 @@ function ProductCardSliderImages({
     ? videos?.slice(0) ?? []
     : [];
 
-  const sourcesMedia: (ImageObject | VideoObject)[] = [
-    ...productImages,
-    ...productVideo,
-  ];
+  const sourcesMedia: (ImageObject | VideoObject)[] = isNewImages
+    ? [
+      ...productNewImages,
+      ...productVideo,
+    ]
+    : [
+      ...productImages,
+      ...productVideo,
+    ];
 
   const sourcesLength = (productImages?.length ?? 0) +
     (productVideo?.length ?? 0);
@@ -173,7 +185,9 @@ function ProductCardSliderImages({
                       style={{ display: isActive ? "block" : "none" }}
                     >
                       <Image
-                        src={productImages[index].url!}
+                        src={isNewImages
+                          ? productNewImages[index].url!
+                          : productImages[index].url!}
                         alt={source.alternateName}
                         width={WIDTH}
                         height={HEIGHT}

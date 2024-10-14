@@ -161,8 +161,8 @@
     "title": "Conteúdo exclusivo Carol Bassi",
     "description": "Inscreva-se para ser a primeira a saber das novidades, lançamentos, eventos e muito mais.",
     "images": {
-      "desktop": "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/9166/351aa541-ccd5-4333-add5-bb61635478d6",
-      "mobile": "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/9166/c28563c6-7b84-431c-8289-05106cbfb938",
+      "desktop": "https://deco-sites-assets.s3.sa-east-1.amazonaws.com/decocarolbassi/89db2099-8ccb-4ce9-90c2-8048191e11d4/FOOTER.png",
+      "mobile": "https://deco-sites-assets.s3.sa-east-1.amazonaws.com/decocarolbassi/89db2099-8ccb-4ce9-90c2-8048191e11d4/FOOTER.png",
       "action": {}
     }
   },
