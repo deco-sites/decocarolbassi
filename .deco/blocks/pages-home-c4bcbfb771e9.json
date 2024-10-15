@@ -9,6 +9,12 @@
       "__resolveType": "Header - 03"
     },
     {
+      "__resolveType": "website/sections/Rendering/Lazy.tsx",
+      "section": {
+        "__resolveType": "site/sections/FirstBuyModal/FirstBuyModal.tsx"
+      }
+    },
+    {
       "__resolveType": "site/sections/Images/Carousel.tsx",
       "elements": [
         {
@@ -111,15 +117,15 @@
     },
     {
       "__resolveType": "site/sections/Category/CategoryGrid.tsx",
+      "header": {
+        "title": "New Arrivals"
+      },
       "layout": {
         "headerAlignment": "left",
         "categoryCard": {
           "textPosition": "bottom",
           "textAlignment": "center"
         }
-      },
-      "header": {
-        "title": "New Arrivals"
       },
       "list": [
         {
