@@ -69,9 +69,16 @@
         ],
         "children": [
           {
-            "url": "/spring-25",
-            "name": "Spring 24",
+            "url": "/summer-25",
+            "name": "Summer 25",
             "children": [],
+            "image": [],
+            "additionalType": "Summer 25"
+          },
+          {
+            "children": [],
+            "name": "Spring 24",
+            "url": "/spring-25",
             "image": [],
             "additionalType": "Spring 24"
           },
@@ -92,20 +99,14 @@
           {
             "image": [],
             "children": [],
-            "name": "Carol Bassi + Maria Rudge",
-            "url": "/collab-maria-rudge"
+            "url": "/collab-maria-rudge",
+            "name": "Carol Bassi + Maria Rudge"
           },
           {
             "image": [],
             "children": [],
-            "url": "/winter24",
-            "name": "Winter 24"
-          },
-          {
-            "image": [],
-            "children": [],
-            "name": "Lifestyle CB",
-            "url": "/lifestyle-cb"
+            "name": "Winter 24",
+            "url": "/winter24"
           }
         ]
       },

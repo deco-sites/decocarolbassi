@@ -9,7 +9,7 @@ const sw = () =>
     () =>
       navigator &&
       navigator.serviceWorker &&
-      navigator.serviceWorker.register("/sw.js"),
+      navigator.serviceWorker.register("/sw.js")
   );
 
 export default defineApp(async (_req, ctx) => {
@@ -63,24 +63,20 @@ export default defineApp(async (_req, ctx) => {
             __html: `
               @font-face {
                 font-family: "Montserrat"; 
-                src: url(${
-              asset(
-                "/fonts/Montserrat-Regular.ttf",
-              )
-            }) format('woff');
+                src: url(${asset(
+                  "/fonts/Montserrat-Regular.ttf"
+                )}) format('woff');
                 font-weight: 400; 
                 font-display: swap;
                 font-style: normal;
               }
 
               @font-face {
-                font-family: "Montserrat"; 
-                src: url(${
-              asset(
-                "/fonts/Montserrat-SemiBold.ttf",
-              )
-            }) format('woff');
-                font-weight: 400; 
+                font-family: "Montserrat-SemiBold"; 
+                src: url(${asset(
+                  "/fonts/Montserrat-SemiBold.ttf"
+                )}) format('woff');
+                font-weight: 500; 
                 font-display: swap;
                 font-style: normal;
               }
@@ -96,8 +92,7 @@ export default defineApp(async (_req, ctx) => {
           height="0"
           width="0"
           style="display:none;visibility:hidden;"
-        >
-        </iframe>
+        ></iframe>
       </noscript>
 
       {/* Rest of Preact tree */}
@@ -111,3 +106,4 @@ export default defineApp(async (_req, ctx) => {
     </>
   );
 });
+

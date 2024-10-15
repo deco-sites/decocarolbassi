@@ -25,8 +25,8 @@
             "buttonPositionDesktop": "Right",
             "buttonPositionMobile": "Center"
           },
-          "desktop": "https://deco-sites-assets.s3.sa-east-1.amazonaws.com/decocarolbassi/b0d98031-b827-4089-80a5-06df9cfaa28f/BANNER-DESKTOP-paris.png",
-          "mobile": "https://deco-sites-assets.s3.sa-east-1.amazonaws.com/decocarolbassi/0a754dff-52b0-44b4-9afd-c7b4c9c26e4f/BANNER-MOBILE-paris.png",
+          "desktop": "https://deco-sites-assets.s3.sa-east-1.amazonaws.com/decocarolbassi/da5d506d-14ad-4603-b97d-8b5311e77d63/CB_BANNERSITE_DESK-01-(1).png",
+          "mobile": "https://deco-sites-assets.s3.sa-east-1.amazonaws.com/decocarolbassi/b3b1aa79-1d73-4ebc-91e5-599d7126dadf/CB_BANNERSITE_MOBILE-01.png",
           "video": "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/9166/b9e5b64a-c01f-4ffc-b7c7-4389778970f8"
         },
         {
@@ -129,7 +129,7 @@
       },
       "list": [
         {
-          "image": "https://deco-sites-assets.s3.sa-east-1.amazonaws.com/decocarolbassi/f1576b7f-fbaa-49f4-94b0-6afea7e80896/new-in.png",
+          "image": "https://deco-sites-assets.s3.sa-east-1.amazonaws.com/decocarolbassi/9c539995-c7dc-4dba-a85c-b8af6c581d5b/home-new-in-(1).png",
           "href": "/new-in",
           "buttonText": "Ver todos os itens",
           "label": "New In",
@@ -253,14 +253,14 @@
           }
         },
         {
-          "href": "/paris",
-          "image": "https://deco-sites-assets.s3.sa-east-1.amazonaws.com/decocarolbassi/6c146aeb-e764-4718-a885-09b29d13c129/spring-24-new-drop-paris.png",
+          "href": "/summer-25",
+          "image": "https://deco-sites-assets.s3.sa-east-1.amazonaws.com/decocarolbassi/7317ceb7-ad42-4a9a-baa0-0044a40a7a25/home-summer-25.png",
           "buttonText": "Ver todos os itens",
           "media": {
             "type": "image",
             "src": "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/9166/ba96ff48-8d14-445e-8fe3-2ccf7bfdbbdc"
           },
-          "label": "Spring 24: New Drop"
+          "label": "Summer 25"
         },
         {
           "href": "/icones10anos",
