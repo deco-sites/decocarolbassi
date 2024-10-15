@@ -52,19 +52,19 @@
         "@type": "SiteNavigationElement",
         "image": [
           {
-            "url": "https://deco-sites-assets.s3.sa-east-1.amazonaws.com/decocarolbassi/a48af3e8-a62f-4854-8a9a-51d9fdd81102/HEADER-SPRING.png.jpg",
-            "@type": "ImageObject",
-            "encodingFormat": "Spring 24",
-            "embedUrl": "/spring-25",
-            "thumbnailUrl": "/spring-25",
-            "contentUrl": "Spring 24"
+            "url": "https://deco-sites-assets.s3.sa-east-1.amazonaws.com/decocarolbassi/aa4da835-8634-4039-a70a-f4a5664f1e28/HEADER-summer-25.png",
+            "encodingFormat": "Summer 25",
+            "embedUrl": "/summer-25",
+            "thumbnailUrl": "/summer-25",
+            "contentUrl": "Summer 25"
           },
           {
-            "url": "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/9166/2752960f-04de-4575-b6cb-1cfb3b4633d0",
-            "contentUrl": "Winter 24",
-            "thumbnailUrl": "/winter24",
-            "encodingFormat": "Winter 24",
-            "embedUrl": "/Winter24"
+            "url": "https://deco-sites-assets.s3.sa-east-1.amazonaws.com/decocarolbassi/a48af3e8-a62f-4854-8a9a-51d9fdd81102/HEADER-SPRING.png.jpg",
+            "contentUrl": "Spring 24",
+            "thumbnailUrl": "/spring-25",
+            "encodingFormat": "Spring 24",
+            "embedUrl": "/spring-25",
+            "@type": "ImageObject"
           }
         ],
         "children": [
