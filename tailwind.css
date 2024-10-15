@@ -2,24 +2,9 @@
 @tailwind components;
 @tailwind utilities;
 
-@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap");
-
 @layer base {
   :root {
     color-scheme: only light;
-  }
-
-  @font-face {
-    font-family: "Montserrat";
-    font-style: normal;
-    font-weight: 400;
-    src: url(/static/fonts/Montserrat-Regular.ttf) format("ttf");
-  }
-  @font-face {
-    font-family: "Montserrat";
-    font-style: normal;
-    font-weight: 400;
-    src: url(/static/fonts/Montserrat-SemiBold.ttf) format("ttf");
   }
 
   /* Allow changing font family via CMS */

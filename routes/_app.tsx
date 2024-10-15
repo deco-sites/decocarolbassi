@@ -4,9 +4,13 @@ import { Context } from "deco/deco.ts";
 import Theme from "../sections/Theme/Theme.tsx";
 
 const sw = () =>
-  addEventListener("load", () =>
-    navigator && navigator.serviceWorker &&
-    navigator.serviceWorker.register("/sw.js"));
+  addEventListener(
+    "load",
+    () =>
+      navigator &&
+      navigator.serviceWorker &&
+      navigator.serviceWorker.register("/sw.js")
+  );
 
 export default defineApp(async (_req, ctx) => {
   const revision = await Context.active().release?.revision();
@@ -39,8 +43,46 @@ export default defineApp(async (_req, ctx) => {
           rel="stylesheet"
         />
 
+        <link
+          rel="preload"
+          type="text/css"
+          href={asset("/fonts/Montserrat-Regular.ttf")}
+        />
+        <link
+          rel="preload"
+          type="text/css"
+          href={asset("/fonts/Montserrat-SemiBold.ttf")}
+        />
+
         {/* Web Manifest */}
         <link rel="manifest" href={asset("/site.webmanifest")} />
+
+        <style
+          type="text/css"
+          dangerouslySetInnerHTML={{
+            __html: `
+              @font-face {
+                font-family: "Montserrat"; 
+                src: url(${asset(
+                  "/fonts/Montserrat-Regular.ttf"
+                )}) format('woff');
+                font-weight: 400; 
+                font-display: swap;
+                font-style: normal;
+              }
+
+              @font-face {
+                font-family: "Montserrat"; 
+                src: url(${asset(
+                  "/fonts/Montserrat-SemiBold.ttf"
+                )}) format('woff');
+                font-weight: 400; 
+                font-display: swap;
+                font-style: normal;
+              }
+            `,
+          }}
+        />
       </Head>
 
       {/* <!-- Google Tag Manager (noscript) --> */}
@@ -50,8 +92,7 @@ export default defineApp(async (_req, ctx) => {
           height="0"
           width="0"
           style="display:none;visibility:hidden;"
-        >
-        </iframe>
+        ></iframe>
       </noscript>
 
       {/* Rest of Preact tree */}
