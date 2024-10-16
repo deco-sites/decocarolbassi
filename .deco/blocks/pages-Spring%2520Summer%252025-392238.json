@@ -1,5 +1,5 @@
 {
-  "path": "/sprin-summer",
+  "path": "/spring-summer",
   "sections": [
     {
       "__resolveType": "commerce/sections/Seo/SeoPLP.tsx",
