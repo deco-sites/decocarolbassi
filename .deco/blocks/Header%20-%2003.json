@@ -77,13 +77,6 @@
           },
           {
             "children": [],
-            "name": "Spring 24",
-            "url": "/spring-25",
-            "image": [],
-            "additionalType": "Spring 24"
-          },
-          {
-            "children": [],
             "name": "Verão Hemisfério Norte",
             "url": "/hemisferio-norte-verao-2024",
             "image": [],
@@ -97,16 +90,16 @@
             "@type": "SiteNavigationElement"
           },
           {
-            "image": [],
             "children": [],
+            "name": "Carol Bassi + Maria Rudge",
             "url": "/collab-maria-rudge",
-            "name": "Carol Bassi + Maria Rudge"
+            "image": []
           },
           {
             "image": [],
             "children": [],
-            "name": "Winter 24",
-            "url": "/winter24"
+            "url": "/winter24",
+            "name": "Winter 24"
           },
           {
             "image": [],
