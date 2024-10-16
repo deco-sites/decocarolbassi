@@ -313,24 +313,6 @@
             "children": [],
             "name": "Jeans",
             "url": "/jeans"
-          },
-          {
-            "image": [],
-            "children": [],
-            "url": "/tricot",
-            "name": "Tricot"
-          },
-          {
-            "image": [],
-            "children": [],
-            "url": "/alfaiataria",
-            "name": "Alfaiataria"
-          },
-          {
-            "image": [],
-            "children": [],
-            "url": "/veludo",
-            "name": "Veludo"
           }
         ]
       }
