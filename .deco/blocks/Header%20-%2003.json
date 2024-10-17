@@ -71,12 +71,7 @@
           {
             "url": "/spring-summer",
             "name": "Spring Summer 25",
-            "children": [
-              {
-                "image": [],
-                "children": []
-              }
-            ],
+            "children": [],
             "image": [],
             "additionalType": "Spring Summer 25"
           },
